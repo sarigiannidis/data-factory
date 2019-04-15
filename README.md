@@ -39,6 +39,6 @@ The ```data-factory``` project is open source. The code is published on [github]
 
 The Xeger code in ```Df.Stochastic.Fare``` has been copied from [Fare](https://github.com/moodmosaic/Fare) by [moodmosaic](https://github.com/moodmosaic/) - many thanks to [moodmosaic](https://github.com/moodmosaic/) for maintaining such a great port. Most -but not all!- of [Fare](https://github.com/moodmosaic/Fare) is covered by an MIT license. Please review the licenses there if you are considering incorporating any impacted part of the ```data-factory``` code into your project.
 
-The ```data-factory``` project also depends on numerous NuGet packages which all come with their own licenses. Please run the command ```Get-Package``` in the Package Manager Console in Visual Studio to view an extensive and current list of referenced packages.
+The ```data-factory``` project also depends on numerous NuGet packages which all come with their own licenses. Please visit the project's [dependencies](https://github.com/sarigiannidis/data-factory/network/dependencies) to view an extensive and current list of all referenced packages.
 
 A good developer always reviews their licenses.
