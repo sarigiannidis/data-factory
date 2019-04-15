@@ -1,0 +1,1 @@
+df add alltables --project demo.json

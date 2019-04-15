@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "documentationRules": {
+      "companyName": "Michalis Sarigiannidis",
+      "documentationCulture": "en-US",
+      "documentInterfaces": true,
+      "documentInternalElements": false,
+      "copyrightText": "Copyright 2019 © {companyName}. All rights reserved.\nLicensed under the {licenseName} license. See {licenseFile} file in the solution root for full license information.",
+      "variables": {
+        "licenseName": "MIT",
+        "licenseFile": "LICENSE"
+      },
+      "xmlHeader": true,
+      "headerDecoration": "--------------------------------------------------------------------------------"
+    },
+    "layoutRules": {
+      "allowConsecutiveUsings": true,
+      "newlineAtEndOfFile": "omit"
+    },
+    "maintainabilityRules": {
+      "topLevelTypes": [
+        "class",
+        "interface",
+        "struct",
+        "enum",
+        "delegate"
+      ]
+    },
+    "orderingRules": {
+      "elementOrder": [
+        "constant",
+        "static",
+        "kind",
+        "accessibility",
+        "readonly"
+      ],
+      "systemUsingDirectivesFirst": false,
+      "usingDirectivesPlacement": "insideNamespace",
+      "blankLinesBetweenUsingGroups": "omit"
+    }
+  }
+}
