@@ -1,4 +1,4 @@
-# ```data-factory```
+# data-factory
 ```data-factory``` fills MS SQL databases with random data according to your configuration.
 It respects foreign key relationships and primary keys, it can handle all value types, and it is very extensible.
 
