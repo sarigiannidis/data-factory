@@ -1,31 +1,35 @@
-# README
+# data-factory
+data-factory fills MS SQL databases with random data according to your configuration.
+It respects foreign key relationships and primary keys, it can handle all value types, and it is very extensible.
 
-```df``` is a data factory tool: it can be used to produce random data to insert into SQL Server tables.
+data-factory is open source.
+The code is published on github under the [MIT license](https://github.com/sarigiannidis/data-factory/blob/master/LICENSE). This tool WILL overwrite data in your database, so backup your data!
 
-This application targets SQL Server 2017, as it was the latest version of SQL Server available at the time of development.
+The binaries are only published for win-x64. Please check the [releases](https://github.com/sarigiannidis/data-factory/releases) for the latest version.
 
-```df``` is extensible. Developers may create their own configurable value factories if the ones provided do not meet their needs. Please see the projects ```df.valuefactories``` and ```df.valuefactories.spatial``` for examples.
+## Usage
+To create a new project file given a connection string:
+```
+df new --name demo.json -c "Data Source=(localdb)\demo_server;Initial Catalog=demo_db;"
+```
 
-For comments etc. please contact me, Michail Sarigiannidis, at [df@hacking.services](mailto:df@hacking.services?Subject=df).
+To auto-configure your project file:
+```
+df add alltables --project demo.json
+```
 
+To generate a file with all the SQL INSERT statements:
+```
+df generate file -n demo.json -o demo.sql
+```
 
-## Development
-This solution has been created using [Visual Studio 2019 Enterprise Edition](https://visualstudio.com). The projects are built with [dotnet core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) and the code has been written in [C# 8.0](https://github.com/dotnet/csharplang).
+To write directly to the database named in the above connection string:
+```
+df generate database -n demo.json
+```
 
-### Visual Studio extensions
-* [Intellicode](https://prod.intellicode.vsengsaas.visualstudio.com/get?m=88DA84992B9A4A57A981B27DF936E21D) has been used.
+## Compatibility
+This tool will configure all MS SQL databases including, of course, those on LocalDB and Express servers, as long as their compatibility level is 2017 or higher.
+While it may work with previous versions, this has not been tested.
 
-## Dependencies
-
-### LocalDB
-A few of the test projects depend on [LocalDB 2017](https://www.mssqltips.com/sqlservertip/5612/getting-started-with-sql-server-2017-express-localdb/).
-However, the application does not need it to operate.
-
-### SQLite
-```Df.Data``` makes use of [SQLite3](https://www.sqlite.org/index.html). [DB Browser for SQLite](https://sqlitebrowser.org/) was used during development.
-
-### Github repositories
-The Xeger code in ```Df.Stochastic.Fare``` has been copied from [Fare](https://github.com/moodmosaic/Fare).
-
-### NuGet Packages
-Please run the command ```Get-Package``` in the Package Manager Console in Visual Studio to view and extensive and current list of referenced packages.
+This tool has been tested on Windows 10, and depends on the 2017 version of SQLLocalDB. You can download this [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads-free-trial). If you click on "Download Media" you will be given the option to only download SQLLocalDB.
