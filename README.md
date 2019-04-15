@@ -9,27 +9,27 @@ The binaries are only published for win-x64. Please check the [releases](https:/
 
 ## Usage
 To create a new project file given a connection string:
-```
+```batchfile
 df new --name demo.json -c "Data Source=(localdb)\demo_server;Initial Catalog=demo_db;"
 ```
 
 To auto-configure your project file:
-```
+```batchfile
 df add alltables --project demo.json
 ```
 
 To generate a file with all the SQL INSERT statements:
-```
+```batchfile
 df generate file -n demo.json -o demo.sql
 ```
 
 To write directly to the database named in the above connection string:
-```
+```batchfile
 df generate database -n demo.json
 ```
 
 ## Compatibility
-This tool will configure all MS SQL databases including, of course, those on LocalDB and Express servers, as long as their compatibility level is 2017 or higher.
+This tool will configure all MS SQL databases including, of course, those on SQLLocalDB and Express servers, as long as their compatibility level is 2017 or higher.
 While it may work with previous versions, this has not been tested.
 
 This tool has been tested on Windows 10, and depends on the 2017 version of SQLLocalDB. You can download this [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads-free-trial). If you click on "Download Media" you will be given the option to only download SQLLocalDB.
