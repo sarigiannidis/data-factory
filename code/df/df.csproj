@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\artifacts_read.targets" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Df</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\df.core\df.core.csproj" />
+    <ProjectReference Include="..\df.data\df.data.csproj" />
+    <ProjectReference Include="..\df.extensibility\df.extensibility.csproj" />
+    <ProjectReference Include="..\df.io\df.io.csproj" />
+    <ProjectReference Include="..\df.production\df.production.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ValueFactories Include="$(SolutionDir)../artifacts/$(TargetFramework)/ValueFactories/**/*" />
+    <ResolvedFileToPublish Include="@(ValueFactories)">
+      <RelativePath>ValueFactories/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+    </ResolvedFileToPublish>
+    
+  </ItemGroup>
+
+  <ItemGroup>
+      <None Update="settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

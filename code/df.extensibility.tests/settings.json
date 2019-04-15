@@ -1,0 +1,6 @@
+﻿{
+  "ValueFactoryManagerOptions": {
+    "Path": ".\\ValueFactories",
+    "Timeout": 1000
+  }
+}
