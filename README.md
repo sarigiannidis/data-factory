@@ -2,7 +2,7 @@
 ```data-factory``` fills MS SQL databases with random data according to your configuration.
 It respects foreign key relationships and primary keys, it can handle all value types, and it is very extensible.
 
-This tool WILL overwrite data in your database, so backup your data!
+This tool **WILL** overwrite data in your database, so backup your data!
 
 ## Downloads
 The binaries are only published for win-x64. Please check the [releases](https://github.com/sarigiannidis/data-factory/releases) for the latest version.
