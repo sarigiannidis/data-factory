@@ -189,7 +189,10 @@ namespace Df.Production
                         .Cast<Table>()
                         .First(Match);
 
+                    var tableName = tableDescription.TableName();
+                    stream.WriteLine("SET IDENTITY_INSERT {0} ON;".FormatInvariant(tableName));
                     WriteInsertions(stream, table);
+                    stream.WriteLine("SET IDENTITY_INSERT {0} OFF;".FormatInvariant(tableName));
                 }
             }
         }
