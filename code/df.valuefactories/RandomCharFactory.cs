@@ -10,7 +10,7 @@ namespace Df.ValueFactories
     using Df.Extensibility;
     using static Constants;
 
-    [ValueFactory("string-random", "Generates random string values based on a regex", typeof(char), typeof(RandomCharFactory))]
+    [ValueFactory("char-random", "Generates random string values based on a regex", typeof(char), typeof(RandomCharFactory))]
     public sealed class RandomCharFactory
         : RandomStringFactory
     {
