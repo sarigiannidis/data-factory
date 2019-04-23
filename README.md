@@ -10,7 +10,7 @@ This application targets SQL Server 2017, as it was the latest version of SQL Se
 This solution has been created using [Visual Studio 2019 Enterprise Edition](https://visualstudio.com). The projects are built with [dotnet core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) and the code has been written in [C# 8.0](https://github.com/dotnet/csharplang).
 
 ### Visual Studio extensions
-* [Intellicode](https://prod.intellicode.vsengsaas.visualstudio.com/get?m=88DA84992B9A4A57A981B27DF936E21D) has been used.
+* [Intellicode](https://prod.intellicode.vsengsaas.visualstudio.com/get?m=3F21C15928EE4133BC0355CA68388B50) has been used.
 
 ## Dependencies
 
