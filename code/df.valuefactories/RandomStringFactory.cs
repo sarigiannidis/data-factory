@@ -14,7 +14,7 @@ namespace Df.ValueFactories
     using static Constants;
 
     [ValueFactory("string-random", "Generates random string values based on a regex", typeof(string), typeof(RandomStringFactory))]
-    public sealed class RandomStringFactory
+    public class RandomStringFactory
         : RandomFactory<string, RandomStringConfiguration>,
         IConstrainableConfigurator
     {
@@ -25,16 +25,16 @@ namespace Df.ValueFactories
         private Xeger _Xeger;
 
         public RandomStringFactory() =>
-            ConfigurationChanged += RandomStringFactory_ConfigurationChanged;
+            ConfigurationChanged += Reset;
 
         public IValueFactoryConfiguration CreateConfiguration() =>
             CreateConfiguration(ConfiguratorConstraints.Empty);
 
-        public IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        public virtual IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
             var maxLength = configuratorConstraints?.MaxLength ?? 0;
             var length = maxLength >= 0 ? maxLength : REGEX_LENGTH;
-            var pattern = "[a-zA-Z0-9]{{{0}}}".FormatInvariant(length);
+            var pattern = DEFAULT_RANDOM_STRING_PATTERN_FORMAT.FormatInvariant(length);
             return new RandomStringConfiguration(pattern);
         }
 
@@ -46,7 +46,7 @@ namespace Df.ValueFactories
             }
         }
 
-        private void RandomStringFactory_ConfigurationChanged(object sender, EventArgs e) =>
+        private void Reset(object sender, EventArgs e) =>
             _Xeger = new Xeger(Configuration.RegexPattern, Random);
     }
 }
