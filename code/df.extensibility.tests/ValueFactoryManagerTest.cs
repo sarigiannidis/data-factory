@@ -27,7 +27,7 @@ namespace Df.Extensibility.Tests
         }
 
         [Fact]
-        public void InitializeAsync()
+        public void Initialize()
         {
             var manager = Fixture.ServiceProvider.GetService<IValueFactoryManager>();
             manager.Initialize();

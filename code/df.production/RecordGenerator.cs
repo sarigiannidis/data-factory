@@ -32,6 +32,12 @@ namespace Df.Production
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private HardRandom _Random = new HardRandom();
 
+        public RecordGenerator(int recordsToCreate, IEnumerable<(IValueFactory factory, Type type, float nullPercentage)> factories)
+        {
+            _RecordsToCreate = Check.GreaterThan(nameof(recordsToCreate), recordsToCreate, 0);
+            _Factories = new List<(IValueFactory factory, Type type, float nullPercentage)>(Check.NotNull(nameof(factories), factories));
+        }
+
         public int Depth => 0;
 
         public int FieldCount =>
@@ -43,16 +49,10 @@ namespace Df.Production
         public int RecordsAffected { get; private set; }
 
         public object this[string name] =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public object this[int i] =>
             GetValue(i);
-
-        public RecordGenerator(int recordsToCreate, IEnumerable<(IValueFactory factory, Type type, float nullPercentage)> factories)
-        {
-            _RecordsToCreate = Check.GreaterThan(nameof(recordsToCreate), recordsToCreate, 0);
-            _Factories = new List<(IValueFactory factory, Type type, float nullPercentage)>(Check.NotNull(nameof(factories), factories));
-        }
 
         public void Close() =>
             _Closed = true;
@@ -64,70 +64,70 @@ namespace Df.Production
         }
 
         public bool GetBoolean(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public byte GetByte(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public char GetChar(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public IDataReader GetData(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public string GetDataTypeName(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public DateTime GetDateTime(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public decimal GetDecimal(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public double GetDouble(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public Type GetFieldType(int i) =>
             _Factories[i].type;
 
         public float GetFloat(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public Guid GetGuid(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public short GetInt16(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public int GetInt32(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public long GetInt64(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public string GetName(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public int GetOrdinal(string name) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public DataTable GetSchemaTable() =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public string GetString(int i) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public object GetValue(int i) =>
             _Factories[i].factory.CreateValue();
 
         public int GetValues(object[] values) =>
-            throw new NotImplementedException();
+            ThrowNotImplemented();
 
         public bool IsDBNull(int i)
         {
@@ -151,6 +151,9 @@ namespace Df.Production
 
         public bool Read() =>
             NextResult();
+
+        private static dynamic ThrowNotImplemented() =>
+            throw new NotImplementedException();
 
         private void Dispose(bool disposing)
         {

@@ -53,9 +53,9 @@ namespace Df.Stochastic.Fare
         {
             public StateListNode Next { get; private set; }
 
-            public State State { get; private set; }
+            public State State { get; }
 
-            public StateList StateList { get; private set; }
+            public StateList StateList { get; }
 
             private StateListNode Prev { get; set; }
 

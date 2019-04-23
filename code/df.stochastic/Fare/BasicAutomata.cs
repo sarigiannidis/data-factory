@@ -195,7 +195,7 @@ namespace Df.Stochastic.Fare
             }
             else
             {
-                b1.Append(value.Substring(i, p - i));
+                b1.Append(value, i, p - i);
                 i = value.Length - 1;
                 while (i > p)
                 {
@@ -208,7 +208,7 @@ namespace Df.Stochastic.Fare
                     i--;
                 }
 
-                b2.Append(value.Substring(p + 1, i + 1 - (p + 1)));
+                b2.Append(value, p + 1, i + 1 - (p + 1));
             }
 
             if (b1.Length == 0)
@@ -406,7 +406,7 @@ namespace Df.Stochastic.Fare
             b.Append("0*(0|");
             if (i < n.Length)
             {
-                b.Append("[0-9]{1," + (n.Length - i - 1) + "}|");
+                b.Append("[0-9]{1,").Append(n.Length - i - 1).Append("}|");
             }
 
             MaxInteger(n.Substring(i), 0, b);
@@ -724,7 +724,7 @@ namespace Df.Stochastic.Fare
                 var c = n[i];
                 if (c != '0')
                 {
-                    b.Append("[0-" + (char)(c - 1) + "][0-9]{" + (n.Length - i - 1) + "}|");
+                    b.Append("[0-").Append((char)(c - 1)).Append("][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
                 b.Append(c);
@@ -742,7 +742,7 @@ namespace Df.Stochastic.Fare
                 var c = n[i];
                 if (c != '9')
                 {
-                    b.Append("[" + (char)(c + 1) + "-9][0-9]{" + (n.Length - i - 1) + "}|");
+                    b.Append('[').Append((char)(c + 1)).Append("-9][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
                 b.Append(c);

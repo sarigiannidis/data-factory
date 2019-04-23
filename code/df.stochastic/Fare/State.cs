@@ -104,19 +104,19 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public int CompareTo(object other)
+        public int CompareTo(object obj)
         {
-            if (other == null)
+            if (obj == null)
             {
                 return 1;
             }
 
-            if (other.GetType() != typeof(State))
+            if (obj.GetType() != typeof(State))
             {
                 throw new ArgumentException("Object is not a State");
             }
 
-            return CompareTo((State)other);
+            return CompareTo((State)obj);
         }
 
         /// <inheritdoc/>
@@ -170,10 +170,7 @@ namespace Df.Stochastic.Fare
         {
             unchecked
             {
-                var result = Id;
-                result = (result * 397) ^ Accept.GetHashCode();
-                result = (result * 397) ^ Number;
-                return result;
+                return (((Id * 397) ^ Accept.GetHashCode()) * 397) ^ Number;
             }
         }
 

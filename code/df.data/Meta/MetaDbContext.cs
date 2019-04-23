@@ -87,7 +87,7 @@ namespace Df.Data.Meta
         }
 
         private static dynamic ThrowLinqOnly() =>
-                    throw new DbFunctionException("Please use this function only in LINQ statements.");
+            throw new DbFunctionException("Please use this function only in LINQ statements.");
 
 #pragma warning restore IDE0060 // Remove unused parameter
 #pragma warning restore CA1801 // Review unused parameters

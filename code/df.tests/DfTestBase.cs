@@ -26,7 +26,7 @@ namespace Df.Tests
 
         public ITestOutputHelper Output { get; }
 
-        public DfTestBase(ITestOutputHelper output, DfFixture fixture)
+        protected DfTestBase(ITestOutputHelper output, DfFixture fixture)
         {
             Output = Check.NotNull(nameof(output), output);
             Fixture = Check.NotNull(nameof(fixture), fixture);

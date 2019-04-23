@@ -38,7 +38,7 @@ namespace Df.Io.Tests
 
         public IValueFactoryManager ValueFactoryManager => Fixture.ServiceProvider.GetService<IValueFactoryManager>();
 
-        public IoTestBase(ITestOutputHelper output, IoFixture fixture)
+        protected IoTestBase(ITestOutputHelper output, IoFixture fixture)
         {
             Output = output;
             Fixture = fixture;

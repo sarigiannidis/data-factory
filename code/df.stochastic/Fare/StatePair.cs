@@ -41,24 +41,6 @@ namespace Df.Stochastic.Fare
     internal class StatePair : IEquatable<StatePair>
     {
         /// <summary>
-        /// Gets or sets the first component of this pair.
-        /// </summary>
-        /// <value>
-        /// The first state.
-        /// </value>
-        public State FirstState { get; set; }
-
-        public State S { get; set; }
-
-        /// <summary>
-        /// Gets or sets the second component of this pair.
-        /// </summary>
-        /// <value>
-        /// The second state.
-        /// </value>
-        public State SecondState { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="StatePair"/> class.
         /// </summary>
         /// <param name="s">
@@ -90,6 +72,24 @@ namespace Df.Stochastic.Fare
             : this(null, s1, s2)
         {
         }
+
+        /// <summary>
+        /// Gets or sets the first component of this pair.
+        /// </summary>
+        /// <value>
+        /// The first state.
+        /// </value>
+        public State FirstState { get; set; }
+
+        public State S { get; set; }
+
+        /// <summary>
+        /// Gets or sets the second component of this pair.
+        /// </summary>
+        /// <value>
+        /// The second state.
+        /// </value>
+        public State SecondState { get; set; }
 
         /// <summary>
         /// Implements the operator !=.
@@ -165,10 +165,7 @@ namespace Df.Stochastic.Fare
         {
             unchecked
             {
-                var result = 0;
-                result = (result * 397) ^ (FirstState != null ? FirstState.GetHashCode() : 0);
-                result = (result * 397) ^ (SecondState != null ? SecondState.GetHashCode() : 0);
-                return result;
+                return ((0 ^ (FirstState?.GetHashCode() ?? 0)) * 397) ^ (SecondState?.GetHashCode() ?? 0);
             }
         }
     }

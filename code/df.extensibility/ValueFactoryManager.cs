@@ -49,11 +49,13 @@ namespace Df.Extensibility
             if (!_Initialized)
             {
                 lock (_SyncObject)
+                {
                     if (!_Initialized)
                     {
                         Refresh();
                         _Initialized = true;
                     }
+                }
             }
         }
 

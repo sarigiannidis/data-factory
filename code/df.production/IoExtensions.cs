@@ -26,12 +26,9 @@ namespace Df.Production
                     null);
 
         public static string TableName(this TableDescription tableDescription) =>
-                    ToTableName(tableDescription.Schema, tableDescription.Name);
+            "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name);
 
         public static string TableName(this TablePrescription tablePrescription) =>
             TableName(tablePrescription.TableDescription);
-
-        public static string ToTableName(string schema, string name) =>
-            "[{0}].[{1}]".FormatInvariant(schema, name);
     }
 }

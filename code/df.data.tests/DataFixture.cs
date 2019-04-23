@@ -26,7 +26,7 @@ namespace Df.Data.Tests
 
         private readonly string _ConnectionString;
 
-        public IServiceProvider ServiceProvider { get; private set; }
+        public IServiceProvider ServiceProvider { get; }
 
         public DataFixture()
         {

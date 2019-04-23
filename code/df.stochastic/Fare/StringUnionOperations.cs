@@ -157,8 +157,7 @@ namespace Df.Stochastic.Fare
             Debug.Assert(_Register != null, "Automaton already built.");
             Debug.Assert(current.Length > 0, "Input sequences must not be empty.");
             Debug.Assert(
-                _Previous == null ||
-                LexicographicOrderComparer.Compare(_Previous.ToString().ToCharArray(), current) <= 0,
+                _Previous == null || LexicographicOrderComparer.Compare(_Previous.ToString().ToCharArray(), current) <= 0,
                 "Input must be sorted: " + _Previous + " >= " + current);
             Debug.Assert(SetPrevious(current));
 

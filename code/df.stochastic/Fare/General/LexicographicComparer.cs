@@ -16,16 +16,16 @@ namespace Df.Stochastic.Fare
 
     internal sealed class LexicographicComparer : IComparer<char[]>
     {
-        public int Compare(char[] s1, char[] s2)
+        public int Compare(char[] x, char[] y)
         {
-            var lens1 = s1.Length;
-            var lens2 = s2.Length;
+            var lens1 = x.Length;
+            var lens2 = y.Length;
             var max = Math.Min(lens1, lens2);
 
             for (var i = 0; i < max; i++)
             {
-                var c1 = s1[i];
-                var c2 = s2[i];
+                var c1 = x[i];
+                var c2 = y[i];
                 if (c1 != c2)
                 {
                     return c1 - c2;

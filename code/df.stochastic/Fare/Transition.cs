@@ -180,8 +180,7 @@ namespace Df.Stochastic.Fare
             {
                 var result = Min.GetHashCode();
                 result = (result * 397) ^ Max.GetHashCode();
-                result = (result * 397) ^ (To != null ? To.GetHashCode() : 0);
-                return result;
+                return (result * 397) ^ (To?.GetHashCode() ?? 0);
             }
         }
 

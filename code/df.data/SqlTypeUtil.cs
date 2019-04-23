@@ -99,8 +99,6 @@ namespace Df.Data
 
                 case SQL_TYPE_GEOGRAPHY:
                     return typeof(Microsoft.SqlServer.Types.SqlGeography);
-
-                case SQL_TYPE_SQL_VARIANT:
                 default:
                     return typeof(object);
             }
