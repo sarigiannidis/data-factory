@@ -51,7 +51,6 @@ namespace Df.ValueFactories.Spatial
         }
 
         public RandomSqlGeometryConfiguration()
-            : base()
         {
         }
     }

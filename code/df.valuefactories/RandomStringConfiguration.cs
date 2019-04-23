@@ -29,7 +29,6 @@ namespace Df.ValueFactories
         }
 
         public RandomStringConfiguration()
-            : base()
         {
         }
     }
