@@ -15,7 +15,7 @@ This solution has been created using [Visual Studio 2019 Enterprise Edition](htt
 ## Dependencies
 
 ### LocalDB
-The application depends on [LocalDB 2017](https://www.mssqltips.com/sqlservertip/5612/getting-started-with-sql-server-2017-express-localdb/).
+The application depends on [LocalDB 2017](https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SqlLocalDB.msi).
 
 ### Github repositories
 The Xeger code in ```Df.Stochastic.Fare``` has been copied from [Fare](https://github.com/moodmosaic/Fare).
