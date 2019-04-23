@@ -31,6 +31,10 @@ namespace Df.ValueFactories
 
         public const decimal DECIMAL_STEP = 1000m;
 
+        public const string DEFAULT_CHAR_PATTERN = "[a-zA-Z0-9]{1}";
+
+        public const string DEFAULT_RANDOM_STRING_PATTERN_FORMAT = "[a-zA-Z0-9]{{{0}}}";
+
         public const double DOUBLE_MAX = 10000d;
 
         public const double DOUBLE_MIN = -10000d;
