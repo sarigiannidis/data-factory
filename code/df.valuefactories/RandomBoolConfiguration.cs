@@ -36,7 +36,6 @@ namespace Df.ValueFactories
         }
 
         public RandomBoolConfiguration()
-            : base()
         {
         }
     }

@@ -64,9 +64,8 @@ namespace Df.Data.Security
                 case SqlAuthentication.ActiveDirectoryIntegrated:
                     return SQL_AUTHENTICATION_AD_INTEGRATED;
 
-                case SqlAuthentication.None:
                 default:
-                    throw new NotImplementedException();
+                    throw new InvalidOperationException();
             }
         }
     }

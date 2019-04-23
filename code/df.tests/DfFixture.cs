@@ -21,9 +21,9 @@ namespace Df.Tests
 
         private const string SECTION_EXTENSIBILITY = "ValueFactoryManagerOptions";
 
-        public string ConnectionString { get; private set; }
+        public string ConnectionString { get; }
 
-        public IServiceProvider ServiceProvider { get; private set; }
+        public IServiceProvider ServiceProvider { get; }
 
         public DfFixture()
         {

@@ -64,7 +64,7 @@ namespace Df
 
             void HandleNotParsed(IEnumerable<Error> errors)
             {
-                var helpText = HelpText.AutoBuild(parserResult, _ => _, _ => _, maxDisplayWidth: 100, verbsIndex: true);
+                var helpText = HelpText.AutoBuild(parserResult, _ => _, _ => _, true, 100);
                 Console.WriteLine(helpText);
             }
 

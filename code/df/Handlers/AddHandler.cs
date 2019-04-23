@@ -13,6 +13,7 @@ namespace Df.OptionHandlers
     using Df.Io.Descriptive;
     using Df.Io.Prescriptive;
     using Df.Options;
+    using System;
     using System.Diagnostics;
     using System.Linq;
 
@@ -116,7 +117,7 @@ namespace Df.OptionHandlers
                 0 => throw null,
                 1 => valueFactoryInfos[0],
                 _ when columnDescription.Identity != null => valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom),
-                _ => valueFactoryInfos.FirstOrDefault(_ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
+                _ => Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
             };
 
             return project.CreateValueFactoryPrescription(valueFactoryInfo, _ => _.ConfigureForColumn(columnDescription));

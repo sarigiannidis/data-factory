@@ -50,64 +50,64 @@ namespace Df.Stochastic.Fare
         /// <summary>
         /// Compares by (min, reverse max, to) or (to, min, reverse max).
         /// </summary>
-        /// <param name="t1">
+        /// <param name="x">
         /// The first Transition.
         /// </param>
-        /// <param name="t2">
+        /// <param name="y">
         /// The second Transition.
         /// </param>
-        public int Compare(Transition t1, Transition t2)
+        public int Compare(Transition x, Transition y)
         {
-            if (_ToFirst && t1.To != t2.To)
+            if (_ToFirst && x.To != y.To)
             {
-                if (t1.To == null)
+                if (x.To == null)
                 {
                     return -1;
                 }
-                else if (t2.To == null)
+                else if (y.To == null)
                 {
                     return 1;
                 }
-                else if (t1.To.Number < t2.To.Number)
+                else if (x.To.Number < y.To.Number)
                 {
                     return -1;
                 }
-                else if (t1.To.Number > t2.To.Number)
+                else if (x.To.Number > y.To.Number)
                 {
                     return 1;
                 }
             }
-            else if (t1.Min < t2.Min)
+            else if (x.Min < y.Min)
             {
                 return -1;
             }
-            else if (t1.Min > t2.Min)
+            else if (x.Min > y.Min)
             {
                 return 1;
             }
-            else if (t1.Max > t2.Max)
+            else if (x.Max > y.Max)
             {
                 return -1;
             }
-            else if (t1.Max < t2.Max)
+            else if (x.Max < y.Max)
             {
                 return 1;
             }
-            else if (!_ToFirst && t1.To != t2.To)
+            else if (!_ToFirst && x.To != y.To)
             {
-                if (t1.To == null)
+                if (x.To == null)
                 {
                     return -1;
                 }
-                else if (t2.To == null)
+                else if (y.To == null)
                 {
                     return 1;
                 }
-                else if (t1.To.Number < t2.To.Number)
+                else if (x.To.Number < y.To.Number)
                 {
                     return -1;
                 }
-                else if (t1.To.Number > t2.To.Number)
+                else if (x.To.Number > y.To.Number)
                 {
                     return 1;
                 }

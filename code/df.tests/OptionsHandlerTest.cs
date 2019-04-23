@@ -26,7 +26,7 @@ namespace Df.Tests
 
         internal IHandler<TOptions> Handler { get; }
 
-        public OptionsHandlerTest(ITestOutputHelper output, DfFixture fixture)
+        protected OptionsHandlerTest(ITestOutputHelper output, DfFixture fixture)
                     : base(output, fixture) =>
             Handler = Check.NotNull(nameof(Handler), Fixture.ServiceProvider.GetService<IHandler<TOptions>>());
 

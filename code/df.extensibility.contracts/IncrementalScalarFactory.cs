@@ -20,7 +20,7 @@ namespace Df.Extensibility
 
         public override bool IsRandom => false;
 
-        public IncrementalScalarFactory() =>
+        protected IncrementalScalarFactory() =>
             ConfigurationChanged += Reset;
 
         public override TValue CreateValue()

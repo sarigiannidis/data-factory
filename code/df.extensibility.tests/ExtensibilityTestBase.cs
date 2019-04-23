@@ -17,7 +17,7 @@ namespace Df.Extensibility.Tests
 
         public ITestOutputHelper Output { get; }
 
-        public ExtensibilityTestBase(ITestOutputHelper output, ExtensibilityFixture fixture)
+        protected ExtensibilityTestBase(ITestOutputHelper output, ExtensibilityFixture fixture)
         {
             Output = output;
             Fixture = fixture;

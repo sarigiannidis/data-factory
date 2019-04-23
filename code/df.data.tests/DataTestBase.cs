@@ -17,7 +17,7 @@ namespace Df.Data.Tests
 
         public ITestOutputHelper Output { get; }
 
-        public DataTestBase(ITestOutputHelper output, DataFixture fixture)
+        protected DataTestBase(ITestOutputHelper output, DataFixture fixture)
         {
             Output = output;
             Fixture = fixture;

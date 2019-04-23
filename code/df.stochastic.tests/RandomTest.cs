@@ -22,7 +22,7 @@ namespace Df.Stochastic.Tests
 
         public ITestOutputHelper Output { get; }
 
-        public RandomTest(ITestOutputHelper output, RandomFixture<T> fixture)
+        protected RandomTest(ITestOutputHelper output, RandomFixture<T> fixture)
         {
             Output = output;
             Fixture = fixture;

@@ -15,7 +15,6 @@ namespace Df.Extensibility
         : ValueFactoryConfiguration
     {
         public EmptyConfiguration()
-            : base()
         {
         }
 

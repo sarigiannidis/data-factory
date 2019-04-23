@@ -1044,10 +1044,7 @@ namespace Df.Stochastic.Fare
 
                 case Kind.RegexpAutomaton:
                     Automaton aa = null;
-                    if (automata != null)
-                    {
-                        automata.TryGetValue(_S, out aa);
-                    }
+                    automata?.TryGetValue(_S, out aa);
 
                     if (aa == null && automatonProvider != null)
                     {
