@@ -12,12 +12,16 @@
   </PropertyGroup>
   
   <PropertyGroup>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
     <Version>0.6.1</Version>
     <Authors>Michalis Sarigiannidis</Authors>
     <Product>Data Factory</Product>
-    <Description>SQL Data Factory</Description>
-    <Copyright>Copyright 2019 © Michalis Sarigiannidis. All rights reserved.</Copyright>
+    <Description>df is a data factory tool: it can be used to produce random data to insert into SQL Server tables.</Description>
+    <Copyright>Copyright $(CurrentYear) © Michalis Sarigiannidis. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://sarigiannidis.github.io/data-factory/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/sarigiannidis/data-factory</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/sarigiannidis/data-factory/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <PackageTags>sql, csharp, core</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
