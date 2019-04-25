@@ -1,24 +1,62 @@
-# README
+![total downloads](https://img.shields.io/github/downloads/sarigiannidis/data-factory/total.svg)
+![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
+![release date](https://img.shields.io/github/release-date-pre/sarigiannidis/data-factory.svg)
+![MIT license](https://img.shields.io/github/license/sarigiannidis/data-factory.svg)
 
-```df``` is a data factory tool: it can be used to produce random data to insert into SQL Server tables.
+# Data Factory
 
-This application targets SQL Server 2017, as it was the latest version of SQL Server available at the time of development.
+```data-factory``` fills MS SQL databases with random data according to your configuration.
+It respects foreign key relationships and primary keys, it can handle all value types, and it is very extensible.
 
-```df``` is extensible. Developers may create their own configurable value factories if the ones provided do not meet their needs. Please see the projects ```df.valuefactories``` and ```df.valuefactories.spatial``` for examples.
+This tool **WILL** overwrite data in your database, so backup your data!
 
-## Development
-This solution has been created using [Visual Studio 2019 Enterprise Edition](https://visualstudio.com). The projects are built with [dotnet core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) and the code has been written in [C# 8.0](https://github.com/dotnet/csharplang).
+## Downloads
 
-### Visual Studio extensions
-* [Intellicode](https://prod.intellicode.vsengsaas.visualstudio.com/get?m=3F21C15928EE4133BC0355CA68388B50) has been used.
+The binaries are only published for win-x64. Please check the [releases](https://github.com/sarigiannidis/data-factory/releases) for the latest version.
 
-## Dependencies
+## Usage
 
-### LocalDB
-The application depends on [LocalDB 2017](https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SqlLocalDB.msi).
+To create a new project file given a connection string:
+```batchfile
+df new --name demo.json -c "Data Source=(localdb)\demo_server;Initial Catalog=demo_db;"
+```
 
-### Github repositories
-The Xeger code in ```Df.Stochastic.Fare``` has been copied from [Fare](https://github.com/moodmosaic/Fare).
+To auto-configure your project file:
+```batchfile
+df add alltables --project demo.json
+```
 
-### NuGet Packages
-Please run the command ```Get-Package``` in the Package Manager Console in Visual Studio to view and extensive and current list of referenced packages.
+To generate a file with all the SQL INSERT statements:
+```batchfile
+df generate file -n demo.json -o demo.sql
+```
+
+To write directly to the database named in the above connection string:
+```batchfile
+df generate database -n demo.json
+```
+
+## Extensibility
+
+Developers may create their own configurable value factories if the ones provided do not meet their needs. Please see the projects ```df.valuefactories``` and ```df.valuefactories.spatial``` for examples.
+
+## Compatibility
+
+This tool will configure all MS SQL databases including, of course, those on SQLLocalDB and Express servers, as long as their compatibility level is 2017 or higher.
+While it may work with previous versions, this has not been tested.
+
+This tool has been tested on Windows 10, and depends on the 2017 version of SQLLocalDB. You can download this [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads-free-trial). If you click on "Download Media" you will be given the option to only download SQLLocalDB.
+
+## Licensing
+
+The ```data-factory``` project is open source. The code is published on [github](https://github.com/sarigiannidis/data-factory) under the [MIT license](https://github.com/sarigiannidis/data-factory/blob/master/LICENSE).
+
+The Xeger code in ```Df.Stochastic.Fare``` has been copied from [Fare](https://github.com/moodmosaic/Fare) by [moodmosaic](https://github.com/moodmosaic/) - many thanks to [moodmosaic](https://github.com/moodmosaic/) for maintaining such a great port. Most -but not all!- of [Fare](https://github.com/moodmosaic/Fare) is covered by an MIT license. Please review the licenses there if you are considering incorporating any impacted part of the ```data-factory``` code into your project.
+
+The ```data-factory``` project also depends on numerous NuGet packages which all come with their own licenses. Please visit the project's [dependencies](https://github.com/sarigiannidis/data-factory/network/dependencies) to view an extensive and current list of all referenced packages.
+
+A good developer always reviews their licenses.
+
+## Contributing
+
+If you would like to contribute, submit a bug, or suggest a feature, please see [CONTRIBUTING.md](CONTRIBUTING.md).
