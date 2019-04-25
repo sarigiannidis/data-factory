@@ -1,5 +1,4 @@
 # TODO
-* Remove UTF32 preamble character from inserts stream that is copied to file.
 * Allow nullable columns to be configured when adding all tables.
 * Records per table, not per prescriptor.
 * Use extensibility for foreign keys.
@@ -10,3 +9,4 @@
 * The settings.json from df (application) overwrites the settings.json in df.tests. fix this.
 * GenerateHandlerTest::GenerateDatabase depends on DF_TESTS_DB (as referenced in the connection string in TESTDB.json) having been attached to MSSQLLocalDB by another test. fix this.
 * The df.tests generate files in the debug directory and these are not cleanup up after.
+* Give Generator, IGenerator specific names so that they are consistent with other generator in the same namespace ie RecordGenerator.
