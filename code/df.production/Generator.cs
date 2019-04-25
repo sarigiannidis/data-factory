@@ -209,10 +209,14 @@ namespace Df.Production
                     FileName = tempFileName,
                     ScriptData = true,
                     ScriptSchema = false,
+                    Encoding = DEFAULT_ENCODING,
+                    NoCommandTerminator = true,
                 };
                 table.EnumScript(options);
                 using (var tempFileStream = File.OpenRead(tempFileName))
                 {
+                    // Skipping encoding preamble bytes.
+                    tempFileStream.Position = DEFAULT_ENCODING.GetPreamble().Length;
                     tempFileStream.CopyTo(stream);
                 }
             }
