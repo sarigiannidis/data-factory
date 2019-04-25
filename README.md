@@ -1,3 +1,8 @@
+![total downloads](https://img.shields.io/github/downloads/sarigiannidis/data-factory/total.svg)
+![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
+![release date](https://img.shields.io/github/release-date-pre/sarigiannidis/data-factory.svg)
+![MIT license](https://img.shields.io/github/license/sarigiannidis/data-factory.svg)
+
 # Data Factory
 
 ```data-factory``` fills MS SQL databases with random data according to your configuration.
