@@ -33,7 +33,7 @@ df generate database -n demo.json
 
 ## Extensibility
 
-```df``` is extensible. Developers may create their own configurable value factories if the ones provided do not meet their needs. Please see the projects ```df.valuefactories``` and ```df.valuefactories.spatial``` for examples.
+Developers may create their own configurable value factories if the ones provided do not meet their needs. Please see the projects ```df.valuefactories``` and ```df.valuefactories.spatial``` for examples.
 
 ## Compatibility
 
