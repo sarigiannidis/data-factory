@@ -1,4 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/4tbifcrsurjod4x7/branch/master?svg=true)](https://ci.appveyor.com/project/sarigiannidis/sarigiannidis/branch/master)
 ![total downloads](https://img.shields.io/github/downloads/sarigiannidis/data-factory/total.svg)
 ![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
 ![release date](https://img.shields.io/github/release-date-pre/sarigiannidis/data-factory.svg)
