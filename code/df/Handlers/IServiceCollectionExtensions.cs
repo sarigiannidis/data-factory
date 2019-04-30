@@ -19,7 +19,6 @@ namespace Microsoft.Extensions.DependencyInjection
             .AddTransient<IHandler<GenerateOptions>, GenerateHandler>()
             .AddTransient<IHandler<ListOptions>, ListHandler>()
             .AddTransient<IHandler<NewOptions>, NewHandler>()
-            .AddTransient<IHandler<TestOptions>, TestHandler>()
-            ;
+            .AddTransient<IHandler<TestOptions>, TestHandler>();
     }
 }
