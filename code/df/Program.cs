@@ -45,8 +45,7 @@ namespace Df
             .AddDfExtensibility(configurationRoot.GetSection(SECTION_EXTENSIBILITY))
             .AddDfIo()
             .AddDfProduction()
-            .AddDfOptionHandlers()
-            ;
+            .AddDfOptionHandlers();
 
         private static IConfigurationRoot CreateConfiguration() =>
             new ConfigurationBuilder()

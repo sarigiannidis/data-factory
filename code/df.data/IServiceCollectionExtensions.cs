@@ -16,7 +16,6 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddDfData(this IServiceCollection services) =>
             Check.NotNull(nameof(services), services)
             .AddTransient<IMetaDbContextFactory, MetaDbContextFactory>()
-            .AddTransient<ISqlFactory, SqlFactory>()
-            ;
+            .AddTransient<ISqlFactory, SqlFactory>();
     }
 }
