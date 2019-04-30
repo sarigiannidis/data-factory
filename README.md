@@ -1,6 +1,5 @@
-![total downloads](https://img.shields.io/github/downloads/sarigiannidis/data-factory/total.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/sarigiannidis/data-factory/badge)](https://www.codefactor.io/repository/github/sarigiannidis/data-factory)
 ![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
-![release date](https://img.shields.io/github/release-date-pre/sarigiannidis/data-factory.svg)
 ![MIT license](https://img.shields.io/github/license/sarigiannidis/data-factory.svg)
 
 # Data Factory
