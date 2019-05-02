@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>M1</RootNamespace>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Packaging">
+    <Authors>Michalis Sarigiannidis</Authors>
+    <Company />
+    <Copyright>Copyright © 2019 Michalis Sarigiannidis</Copyright>
+    <Description>A .NET Core CLI Global Tool to generate EF-compatible entities and fluent configurations for views.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en-NL</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/sarigiannidis/gv/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageOutputPath>../../Packages</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sarigiannidis/gv</PackageProjectUrl>
+    <PackageTags>dotnet, cli, ef</PackageTags>
+    <PackAsTool>true</PackAsTool>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/sarigiannidis/gv</RepositoryUrl>
+    <ToolCommandName>m1-gv</ToolCommandName>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\M1.Core\M1.Core.csproj" />
+    <ProjectReference Include="..\M1.Data\M1.Data.csproj" />
+  </ItemGroup>
+</Project>
