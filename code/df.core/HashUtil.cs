@@ -30,19 +30,17 @@ namespace Df
 
         private static string ComputeHash(Stream stream, Func<HashAlgorithm> hashAlgorithmFactory)
         {
-            using (var hashAlgorithm = hashAlgorithmFactory())
+            using var hashAlgorithm = hashAlgorithmFactory();
+            var bytes = hashAlgorithm.ComputeHash(stream);
+            var chars = new char[bytes.Length * 2];
+            for (var i = 0; i < bytes.Length; i++)
             {
-                var bytes = hashAlgorithm.ComputeHash(stream);
-                var chars = new char[bytes.Length * 2];
-                for (var i = 0; i < bytes.Length; i++)
-                {
-                    var b = bytes[i];
-                    chars[i * 2] = GetHexValue(b / 16);
-                    chars[(i * 2) + 1] = GetHexValue(b % 16);
-                }
-
-                return new string(chars, 0, chars.Length);
+                var b = bytes[i];
+                chars[i * 2] = GetHexValue(b / 16);
+                chars[(i * 2) + 1] = GetHexValue(b % 16);
             }
+
+            return new string(chars, 0, chars.Length);
         }
 
         private static char GetHexValue(int i) =>

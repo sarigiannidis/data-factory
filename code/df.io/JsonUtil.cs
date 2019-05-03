@@ -18,37 +18,27 @@ namespace Df.Io
         {
             var serializer = CreateJsonSerializer();
 
-            using (var file = File.OpenText(path))
-            using (var reader = new JsonTextReader(file))
-            {
-                return serializer.Deserialize<T>(reader);
-            }
+            using var file = File.OpenText(path);
+            using var reader = new JsonTextReader(file);
+            return serializer.Deserialize<T>(reader);
         }
 
         public static string Serialize<T>(T t)
         {
             Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
-            using (var stringWriter = new StringWriter())
-            {
-                using (var writer = new JsonTextWriter(stringWriter))
-                {
-                    serializer.Serialize(writer, t);
-                }
-
-                return stringWriter.ToString();
-            }
+            using var stringWriter = new StringWriter();
+            using var writer = new JsonTextWriter(stringWriter);
+            serializer.Serialize(writer, t);
+            return stringWriter.ToString();
         }
 
         public static void Write<T>(T t, string path)
         {
             Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
-
-            using (var file = File.CreateText(path))
-            {
-                serializer.Serialize(file, t);
-            }
+            using var file = File.CreateText(path);
+            serializer.Serialize(file, t);
         }
 
         private static JsonSerializerSettings CreateDefaultJsonSerializerSettings() =>

@@ -19,10 +19,8 @@ namespace System.IO
 
         public static void WriteLine(this Stream stream, string line, Encoding encoding)
         {
-            using (var writer = new StreamWriter(stream, encoding, 4096, true))
-            {
-                writer.WriteLine(line);
-            }
+            using var writer = new StreamWriter(stream, encoding, 4096, true);
+            writer.WriteLine(line);
         }
 
         public static void WriteLines(this Stream stream, IEnumerable<string> lines) =>
@@ -30,12 +28,10 @@ namespace System.IO
 
         public static void WriteLines(this Stream stream, IEnumerable<string> lines, Encoding encoding)
         {
-            using (var writer = new StreamWriter(stream, encoding, 4096, true))
+            using var writer = new StreamWriter(stream, encoding, 4096, true);
+            foreach (var line in lines)
             {
-                foreach (var line in lines)
-                {
-                    writer.WriteLine(line);
-                }
+                writer.WriteLine(line);
             }
         }
     }

@@ -28,13 +28,10 @@ namespace Df.OptionHandlers
         {
             try
             {
-                using (var sql = _SqlFactory.Open(options.ConnectionString))
-                using (var result = sql.Query(SQL_COUNT_TABLES, dataRecord => (int)dataRecord[0]))
-                {
-                    var databaseName = new SqlConnectionStringBuilder(options.ConnectionString).InitialCatalog;
-                    Console.WriteLine("{0} contains {1} tables.".FormatInvariant(databaseName, result.Single()));
-                }
-
+                using var sql = _SqlFactory.Open(options.ConnectionString);
+                using var result = sql.Query(SQL_COUNT_TABLES, dataRecord => (int)dataRecord[0]);
+                var databaseName = new SqlConnectionStringBuilder(options.ConnectionString).InitialCatalog;
+                Console.WriteLine("{0} contains {1} tables.".FormatInvariant(databaseName, result.Single()));
                 Console.WriteLine("Good connection.");
             }
             catch

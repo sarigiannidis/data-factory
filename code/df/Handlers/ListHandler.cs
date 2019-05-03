@@ -52,11 +52,9 @@ namespace Df.OptionHandlers
 
         private void ListDatabases(string connectionString)
         {
-            using (var sql = _SqlFactory.Open(connectionString))
-            using (var databases = sql.Query(SQL_LIST_DATABASES, _ => (string)_[0]))
-            {
-                Console.WriteLine(ConsoleUtil.ToConsoleTable(databases, (_ => _, "Database", 64)));
-            }
+            using var sql = _SqlFactory.Open(connectionString);
+            using var databases = sql.Query(SQL_LIST_DATABASES, _ => (string)_[0]);
+            Console.WriteLine(ConsoleUtil.ToConsoleTable(databases, (_ => _, "Database", 64)));
         }
 
         private void ListFactories()
@@ -69,11 +67,9 @@ namespace Df.OptionHandlers
         {
             try
             {
-                using (var sql = _SqlFactory.Open(connectionString))
-                using (var tables = sql.Query(SQL_LIST_TABLES, _ => (string)_[0]))
-                {
-                    Console.WriteLine(ConsoleUtil.ToConsoleTable(tables, (_ => _, "Table", 64)));
-                }
+                using var sql = _SqlFactory.Open(connectionString);
+                using var tables = sql.Query(SQL_LIST_TABLES, _ => (string)_[0]);
+                Console.WriteLine(ConsoleUtil.ToConsoleTable(tables, (_ => _, "Table", 64)));
             }
             catch
             {

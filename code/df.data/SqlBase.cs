@@ -77,24 +77,20 @@ namespace Df.Data
 
         private void ExecuteNonQuery(SqlTransaction transaction, string query)
         {
-            using (var connection = CreateConnection())
-            {
-                connection.Open();
-                ExecuteNonQuery(connection, transaction, query);
-            }
+            using var connection = CreateConnection();
+            connection.Open();
+            ExecuteNonQuery(connection, transaction, query);
         }
 
         private void ExecuteNonQuery(SqlConnection connection, SqlTransaction transaction, string commandText)
         {
-            using (var command = CreateCommand(connection, commandText))
+            using var command = CreateCommand(connection, commandText);
+            if (transaction != null)
             {
-                if (transaction != null)
-                {
-                    command.Transaction = transaction;
-                }
-
-                _ = command.ExecuteNonQuery();
+                command.Transaction = transaction;
             }
+
+            _ = command.ExecuteNonQuery();
         }
 
         private ISqlQueryResultCollection<TResult> ExecuteQuery<TResult>(string query, Func<IDataRecord, TResult> convert)

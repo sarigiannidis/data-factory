@@ -52,59 +52,49 @@ namespace Df.Production
                 .Select(_ => _Project.Prescriptor.TablePrescriptions.SingleOrDefault(tablePrescription => tablePrescription.TableDescription == _))
                 .ToArray();
 
-            using (var source = new InternalGenerator(this).Generate())
-            using (var destination = _SqlFactory.Open(_Project.Descriptor.ConnectionString))
-            using (var sourceConnection = source.CreateConnection())
-            using (var destinationConnection = destination.CreateConnection())
+            using var source = new InternalGenerator(this).Generate();
+            using var destination = _SqlFactory.Open(_Project.Descriptor.ConnectionString);
+            using var sourceConnection = source.CreateConnection();
+            using var destinationConnection = destination.CreateConnection();
+            sourceConnection.Open();
+            destinationConnection.Open();
+            using var transaction = destinationConnection.BeginTransaction("DATAFACTORY");
+            using var deleteCommand = destinationConnection.CreateCommand();
+            var deletions = tablePrescriptions
+                .Select(t => t.TableName())
+                .Reverse()
+                .Select(tableName => "DELETE FROM {0};".FormatInvariant(tableName));
+            deleteCommand.CommandText = string.Concat(deletions);
+            deleteCommand.Transaction = transaction;
+            deleteCommand.ExecuteNonQuery();
+            var copyOptions = CreateCopyOptions(disableTriggers);
+            foreach (var tablePrescription in tablePrescriptions)
             {
-                sourceConnection.Open();
-                destinationConnection.Open();
+                var tableName = tablePrescription.TableName();
+                var columnNames = tablePrescription.ColumnPrescriptions.Select(c => c.ColumnDescription.Name);
+                ExecuteSqlBulkCopy(transaction, sourceConnection, destinationConnection, copyOptions, tableName, columnNames);
+            }
 
-                using (var transaction = destinationConnection.BeginTransaction("DATAFACTORY"))
-                {
-                    using (var deleteCommand = destinationConnection.CreateCommand())
-                    {
-                        var deletions = tablePrescriptions
-                            .Select(t => t.TableName())
-                            .Reverse()
-                            .Select(tableName => "DELETE FROM {0};".FormatInvariant(tableName));
-                        deleteCommand.CommandText = string.Concat(deletions);
-                        deleteCommand.Transaction = transaction;
-                        deleteCommand.ExecuteNonQuery();
-                    }
-
-                    var copyOptions = CreateCopyOptions(disableTriggers);
-                    foreach (var tablePrescription in tablePrescriptions)
-                    {
-                        var tableName = tablePrescription.TableName();
-                        var columnNames = tablePrescription.ColumnPrescriptions.Select(c => c.ColumnDescription.Name);
-                        ExecuteSqlBulkCopy(transaction, sourceConnection, destinationConnection, copyOptions, tableName, columnNames);
-                    }
-
-                    if (dryRun)
-                    {
-                        transaction.Rollback();
-                    }
-                    else
-                    {
-                        transaction.Commit();
-                    }
-                }
+            if (dryRun)
+            {
+                transaction.Rollback();
+            }
+            else
+            {
+                transaction.Commit();
             }
         }
 
         public void GenerateStream(Stream stream, bool disableTriggers, bool dryRun)
         {
             Check.NotNull(nameof(stream), stream);
-            using (var sql = new InternalGenerator(this).Generate())
-            {
-                var tableDescriptions = GetOrderedTableDescriptions().ToArray();
-                WriteStartTransaction(stream);
-                WriteDisableTriggers(stream, disableTriggers);
-                WriteDeletions(stream, tableDescriptions);
-                WriteInsertions(stream, sql, tableDescriptions);
-                WriteFinishTranscation(stream, dryRun);
-            }
+            using var sql = new InternalGenerator(this).Generate();
+            var tableDescriptions = GetOrderedTableDescriptions().ToArray();
+            WriteStartTransaction(stream);
+            WriteDisableTriggers(stream, disableTriggers);
+            WriteDeletions(stream, tableDescriptions);
+            WriteInsertions(stream, sql, tableDescriptions);
+            WriteFinishTranscation(stream, dryRun);
         }
 
         private static SqlBulkCopyOptions CreateCopyOptions(bool disableTriggers)
@@ -121,28 +111,23 @@ namespace Df.Production
 
         private static void ExecuteSqlBulkCopy(SqlTransaction transaction, SqlConnection sourceConnection, SqlConnection destinationConnection, SqlBulkCopyOptions copyOptions, string tableName, IEnumerable<string> columnNames)
         {
-            using (var sourceCommand = sourceConnection.CreateCommand())
+            using var sourceCommand = sourceConnection.CreateCommand();
+            sourceCommand.CommandText = SQL_SELECT.FormatInvariant(tableName);
+            var sourceTableReader = sourceCommand.ExecuteReader();
+            using var sqlBulkCopy = new SqlBulkCopy(destinationConnection, copyOptions, transaction)
             {
-                sourceCommand.CommandText = SQL_SELECT.FormatInvariant(tableName);
-                var sourceTableReader = sourceCommand.ExecuteReader();
-                using (var sqlBulkCopy = new SqlBulkCopy(destinationConnection, copyOptions, transaction)
-                {
-                    BatchSize = BULKCOPY_BATCHSIZE,
-                    BulkCopyTimeout = 0,
-                    DestinationTableName = tableName,
-                    EnableStreaming = true,
-                })
-                {
-                    foreach (var columnName in columnNames)
-                    {
-                        sqlBulkCopy.ColumnMappings.Add(columnName, columnName);
-                    }
-
-                    sqlBulkCopy.WriteToServer(sourceTableReader);
-                }
-
-                sourceTableReader.Close();
+                BatchSize = BULKCOPY_BATCHSIZE,
+                BulkCopyTimeout = 0,
+                DestinationTableName = tableName,
+                EnableStreaming = true,
+            };
+            foreach (var columnName in columnNames)
+            {
+                sqlBulkCopy.ColumnMappings.Add(columnName, columnName);
             }
+
+            sqlBulkCopy.WriteToServer(sourceTableReader);
+            sourceTableReader.Close();
         }
 
         private static void WriteDeletions(Stream stream, TableDescription[] tableDescriptions)
@@ -173,27 +158,24 @@ namespace Df.Production
 
         private static void WriteInsertions(Stream stream, ISql sql, TableDescription[] tableDescriptions)
         {
-            using (var connection = sql.CreateConnection())
+            using var connection = sql.CreateConnection();
+            var server = new Server(new ServerConnection(connection));
+            var database = server.Databases[DEFAULT_DATABASENAME];
+            foreach (var tableDescription in tableDescriptions)
             {
-                var server = new Server(new ServerConnection(connection));
-                var database = server.Databases[DEFAULT_DATABASENAME];
+                bool Match(Table table) =>
+                    table.Schema == tableDescription.Schema
+                    && table.Name == tableDescription.Name;
 
-                foreach (var tableDescription in tableDescriptions)
-                {
-                    bool Match(Table table) =>
-                        table.Schema == tableDescription.Schema
-                        && table.Name == tableDescription.Name;
+                var table = database
+                    .Tables
+                    .Cast<Table>()
+                    .First(Match);
 
-                    var table = database
-                        .Tables
-                        .Cast<Table>()
-                        .First(Match);
-
-                    var tableName = tableDescription.TableName();
-                    stream.WriteLine("SET IDENTITY_INSERT {0} ON;".FormatInvariant(tableName));
-                    WriteInsertions(stream, table);
-                    stream.WriteLine("SET IDENTITY_INSERT {0} OFF;".FormatInvariant(tableName));
-                }
+                var tableName = tableDescription.TableName();
+                stream.WriteLine("SET IDENTITY_INSERT {0} ON;".FormatInvariant(tableName));
+                WriteInsertions(stream, table);
+                stream.WriteLine("SET IDENTITY_INSERT {0} OFF;".FormatInvariant(tableName));
             }
         }
 
@@ -213,12 +195,11 @@ namespace Df.Production
                     NoCommandTerminator = true,
                 };
                 table.EnumScript(options);
-                using (var tempFileStream = File.OpenRead(tempFileName))
-                {
-                    // Skipping encoding preamble bytes.
-                    tempFileStream.Position = DEFAULT_ENCODING.GetPreamble().Length;
-                    tempFileStream.CopyTo(stream);
-                }
+                using var tempFileStream = File.OpenRead(tempFileName);
+
+                // Skipping encoding preamble bytes.
+                tempFileStream.Position = DEFAULT_ENCODING.GetPreamble().Length;
+                tempFileStream.CopyTo(stream);
             }
             finally
             {

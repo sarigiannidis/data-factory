@@ -41,15 +41,11 @@ namespace Df.Data
             _SqlLocalDbApi = new SqlLocalDbApi { AutomaticallyDeleteInstanceFiles = true };
             _Instance = _SqlLocalDbApi.CreateTemporaryInstance(true);
 
-            using (var connection = _Instance.GetInstanceInfo().CreateConnection())
-            {
-                connection.Open();
-                using (var createDbComand = connection.CreateCommand())
-                {
-                    createDbComand.CommandText = sqlCreateDb;
-                    _ = createDbComand.ExecuteNonQuery();
-                }
-            }
+            using var connection = _Instance.GetInstanceInfo().CreateConnection();
+            connection.Open();
+            using var createDbComand = connection.CreateCommand();
+            createDbComand.CommandText = sqlCreateDb;
+            _ = createDbComand.ExecuteNonQuery();
         }
 
         // TODO: Make this protected.

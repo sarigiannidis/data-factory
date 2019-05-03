@@ -143,51 +143,49 @@ namespace Df.Extensibility
 
         private IValueFactoryInfo Selector_LoadValueFactory(Type type)
         {
-            using (Logger.BeginScope("{0}({1})", nameof(Selector_LoadValueFactory), type.FullName))
+            using var scope = Logger.BeginScope("{0}({1})", nameof(Selector_LoadValueFactory), type.FullName);
+            var attribute = type.CustomAttributes.FirstOrDefault(Predicate_IsValueFactoryAttribute);
+            if (attribute == null)
             {
-                var attribute = type.CustomAttributes.FirstOrDefault(Predicate_IsValueFactoryAttribute);
-                if (attribute == null)
-                {
-                    return null;
-                }
-
-                Logger.LogInformation("The type {0} has the attribute {1}.", type.FullName, nameof(ValueFactoryAttribute));
-                var args = ReflectionUtil.GetConstructorArguments(attribute);
-                if (args == null)
-                {
-                    Logger.LogError("Failed to get the constructor arguments on {0}", nameof(ValueFactoryAttribute));
-                    throw new ValueFactoryAttributeException("Failed to get the constructor arguments on {0}".FormatInvariant(nameof(ValueFactoryAttribute)));
-                }
-
-                var name = ReadArgument<string>(args, ARG_NAME);
-                var description = ReadArgument<string>(args, ARG_DESCRIPTION);
-                var valueType = ReadArgument<Type>(args, ARG_VALUETYPE);
-                var defaultConfigurationFactoryType = ReadArgument<Type>(args, ARG_DEFAULTCONFIGURATIONFACTORY);
-
-                var invalid = false;
-                invalid |= string.IsNullOrWhiteSpace(name);
-                invalid |= string.IsNullOrWhiteSpace(description);
-                invalid |= defaultConfigurationFactoryType == null;
-                if (invalid)
-                {
-                    return null;
-                }
-
-                var valueFactoryActivator = CreateActivator<IValueFactory>(type);
-                invalid |= valueFactoryActivator == null;
-                var configuratorActivator = CreateActivator<IConfigurator>(defaultConfigurationFactoryType);
-                invalid |= configuratorActivator == null;
-
-                return invalid
-                    ? null
-                    : new ValueFactoryInfo(
-                    name,
-                    description,
-                    Path.GetFileName(type.Assembly.Location),
-                    valueType,
-                    valueFactoryActivator,
-                    configuratorActivator);
+                return null;
             }
+
+            Logger.LogInformation("The type {0} has the attribute {1}.", type.FullName, nameof(ValueFactoryAttribute));
+            var args = ReflectionUtil.GetConstructorArguments(attribute);
+            if (args == null)
+            {
+                Logger.LogError("Failed to get the constructor arguments on {0}", nameof(ValueFactoryAttribute));
+                throw new ValueFactoryAttributeException("Failed to get the constructor arguments on {0}".FormatInvariant(nameof(ValueFactoryAttribute)));
+            }
+
+            var name = ReadArgument<string>(args, ARG_NAME);
+            var description = ReadArgument<string>(args, ARG_DESCRIPTION);
+            var valueType = ReadArgument<Type>(args, ARG_VALUETYPE);
+            var defaultConfigurationFactoryType = ReadArgument<Type>(args, ARG_DEFAULTCONFIGURATIONFACTORY);
+
+            var invalid = false;
+            invalid |= string.IsNullOrWhiteSpace(name);
+            invalid |= string.IsNullOrWhiteSpace(description);
+            invalid |= defaultConfigurationFactoryType == null;
+            if (invalid)
+            {
+                return null;
+            }
+
+            var valueFactoryActivator = CreateActivator<IValueFactory>(type);
+            invalid |= valueFactoryActivator == null;
+            var configuratorActivator = CreateActivator<IConfigurator>(defaultConfigurationFactoryType);
+            invalid |= configuratorActivator == null;
+
+            return invalid
+                ? null
+                : new ValueFactoryInfo(
+                name,
+                description,
+                Path.GetFileName(type.Assembly.Location),
+                valueType,
+                valueFactoryActivator,
+                configuratorActivator);
         }
 
         private IEnumerable<IValueFactoryInfo> Selector_LoadValueFactoryInfos(Assembly assembly)

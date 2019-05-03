@@ -14,10 +14,8 @@ namespace Df.Io
     {
         public static T Deserialize<T>(this JsonSerializer serializer, JToken jToken)
         {
-            using (var reader = jToken.CreateReader())
-            {
-                return serializer.Deserialize<T>(reader);
-            }
+            using var reader = jToken.CreateReader();
+            return serializer.Deserialize<T>(reader);
         }
     }
 }

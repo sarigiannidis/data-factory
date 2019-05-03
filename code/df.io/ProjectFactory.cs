@@ -37,16 +37,12 @@ namespace Df.Io
 
         private static string CalculateChecksum(IReadOnlyList<TableDescription> tableDescriptions)
         {
-            using (var stream = new MemoryStream())
-            {
-                using (var streamWriter = new StreamWriter(stream, Encoding.Unicode, 1024, true))
-                {
-                    var str = JsonUtil.Serialize(tableDescriptions);
-                }
-
-                stream.Seek(0, SeekOrigin.Begin);
-                return HashUtil.ComputeHash(stream);
-            }
+            using var stream = new MemoryStream();
+            using var streamWriter = new StreamWriter(stream, Encoding.Unicode, 1024, true);
+            var str = JsonUtil.Serialize(tableDescriptions);
+            streamWriter.WriteLine(str);
+            stream.Seek(0, SeekOrigin.Begin);
+            return HashUtil.ComputeHash(stream);
         }
 
         private static void ReadAllForeignKeys(MetaDbContext context, IReadOnlyList<TableDescription> tableDescriptions)
@@ -163,13 +159,9 @@ namespace Df.Io
 
         private IReadOnlyList<TableDescription> CreateTableDescriptions(string connectionString)
         {
-            List<TableDescription> tables;
-            using (var context = MetaDbContextFactory.Create(connectionString))
-            {
-                tables = ReadTableDescriptions(context).ToList();
-                ReadAllForeignKeys(context, tables);
-            }
-
+            using var context = MetaDbContextFactory.Create(connectionString);
+            var tables = ReadTableDescriptions(context).ToList();
+            ReadAllForeignKeys(context, tables);
             return tables;
         }
     }

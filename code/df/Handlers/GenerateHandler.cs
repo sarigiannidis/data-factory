@@ -51,19 +51,15 @@ namespace Df.OptionHandlers
 
         private void GenerateFile(Project project, bool disableTriggers, bool dryRun, string path)
         {
-            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None, BUFFERSIZE))
+            using var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None, BUFFERSIZE);
+            if (path.EndsWith(".gz", StringComparison.InvariantCultureIgnoreCase))
             {
-                if (path.EndsWith(".gz", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    using (var compressionStream = new GZipStream(stream, CompressionMode.Compress))
-                    {
-                        _GeneratorFactory.Create(project).GenerateStream(compressionStream, disableTriggers, dryRun);
-                    }
-                }
-                else
-                {
-                    _GeneratorFactory.Create(project).GenerateStream(stream, disableTriggers, dryRun);
-                }
+                using var compressionStream = new GZipStream(stream, CompressionMode.Compress);
+                _GeneratorFactory.Create(project).GenerateStream(compressionStream, disableTriggers, dryRun);
+            }
+            else
+            {
+                _GeneratorFactory.Create(project).GenerateStream(stream, disableTriggers, dryRun);
             }
         }
     }
