@@ -12,61 +12,35 @@ namespace Df.Data.Security
 
     public static class SqlAuthenticationUtil
     {
-        public static SqlAuthentication FromString(string str)
+        public static SqlAuthentication FromString(string str) =>
+        str switch
         {
-            switch (str)
-            {
-                case SQL_AUTHENTICATION_WINDOWS:
-                    return SqlAuthentication.Windows;
-
-                case SQL_AUTHENTICATION_SQL_SERVER:
-                    return SqlAuthentication.SqlServer;
-
-                case SQL_AUTHENTICATION_AD_UNIVERSAL:
-                    return SqlAuthentication.ActiveDirectoryUniversal;
-
-                case SQL_AUTHENTICATION_AD_PASSWORD:
-                    return SqlAuthentication.ActiveDirectoryPassword;
-
-                case SQL_AUTHENTICATION_AD_INTEGRATED:
-                    return SqlAuthentication.ActiveDirectoryIntegrated;
-
-                default:
-                    return SqlAuthentication.None;
-            }
-        }
+            SQL_AUTHENTICATION_WINDOWS => SqlAuthentication.Windows,
+            SQL_AUTHENTICATION_SQL_SERVER => SqlAuthentication.SqlServer,
+            SQL_AUTHENTICATION_AD_UNIVERSAL => SqlAuthentication.ActiveDirectoryUniversal,
+            SQL_AUTHENTICATION_AD_PASSWORD => SqlAuthentication.ActiveDirectoryPassword,
+            SQL_AUTHENTICATION_AD_INTEGRATED => SqlAuthentication.ActiveDirectoryIntegrated,
+            _ => SqlAuthentication.None,
+        };
 
         public static bool NeedsPassword(SqlAuthentication sqlAuthentication) =>
-                    sqlAuthentication == SqlAuthentication.SqlServer
+            sqlAuthentication == SqlAuthentication.SqlServer
             || sqlAuthentication == SqlAuthentication.ActiveDirectoryPassword;
 
         public static bool NeedsUserName(SqlAuthentication sqlAuthentication) =>
             sqlAuthentication == SqlAuthentication.SqlServer
-                    || sqlAuthentication == SqlAuthentication.ActiveDirectoryUniversal
-                    || sqlAuthentication == SqlAuthentication.ActiveDirectoryPassword;
+            || sqlAuthentication == SqlAuthentication.ActiveDirectoryUniversal
+            || sqlAuthentication == SqlAuthentication.ActiveDirectoryPassword;
 
-        public static string ToString(SqlAuthentication sqlAuthentication)
+        public static string ToString(SqlAuthentication sqlAuthentication) =>
+        sqlAuthentication switch
         {
-            switch (sqlAuthentication)
-            {
-                case SqlAuthentication.Windows:
-                    return SQL_AUTHENTICATION_WINDOWS;
-
-                case SqlAuthentication.SqlServer:
-                    return SQL_AUTHENTICATION_SQL_SERVER;
-
-                case SqlAuthentication.ActiveDirectoryUniversal:
-                    return SQL_AUTHENTICATION_AD_UNIVERSAL;
-
-                case SqlAuthentication.ActiveDirectoryPassword:
-                    return SQL_AUTHENTICATION_AD_PASSWORD;
-
-                case SqlAuthentication.ActiveDirectoryIntegrated:
-                    return SQL_AUTHENTICATION_AD_INTEGRATED;
-
-                default:
-                    throw new InvalidOperationException();
-            }
-        }
+            SqlAuthentication.Windows => SQL_AUTHENTICATION_WINDOWS,
+            SqlAuthentication.SqlServer => SQL_AUTHENTICATION_SQL_SERVER,
+            SqlAuthentication.ActiveDirectoryUniversal => SQL_AUTHENTICATION_AD_UNIVERSAL,
+            SqlAuthentication.ActiveDirectoryPassword => SQL_AUTHENTICATION_AD_PASSWORD,
+            SqlAuthentication.ActiveDirectoryIntegrated => SQL_AUTHENTICATION_AD_INTEGRATED,
+            _ => throw new InvalidOperationException(),
+        };
     }
 }

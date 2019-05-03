@@ -36,22 +36,13 @@ namespace Df.Io
         public object ResolveReference(object context, string reference) =>
             _Referenced.TryGetValue(reference, out var value) ? value : null;
 
-        private static string ObjectReference(object value)
+        private static string ObjectReference(object value) =>
+        value switch
         {
-            switch (value)
-            {
-                case ColumnDescription columnDescription:
-                    return "{0}.[{1}]".FormatInvariant(ObjectReference(columnDescription.Parent), columnDescription.Name);
-
-                case TableDescription tableDescription:
-                    return "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name);
-
-                case ValueFactoryPrescription valueFactoryPrescription:
-                    return "{0}".FormatInvariant(valueFactoryPrescription.Name);
-
-                default:
-                    return "{0}".FormatInvariant(value);
-            }
-        }
+            ColumnDescription columnDescription => "{0}.[{1}]".FormatInvariant(ObjectReference(columnDescription.Parent), columnDescription.Name),
+            TableDescription tableDescription => "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name),
+            ValueFactoryPrescription valueFactoryPrescription => "{0}".FormatInvariant(valueFactoryPrescription.Name),
+            _ => "{0}".FormatInvariant(value),
+        };
     }
 }
