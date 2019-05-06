@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="Generator.InternalGenerator.cs" company="Michalis Sarigiannidis">
+// <copyright file="DatasetGenerator.InternalGenerator.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -21,14 +21,14 @@ namespace Df.Production
     using static Constants;
     using Index = Microsoft.SqlServer.Management.Smo.Index;
 
-    internal sealed partial class Generator
+    internal sealed partial class DatasetGenerator
     {
         internal sealed class InternalGenerator
         {
             [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-            private readonly Generator _Owner;
+            private readonly DatasetGenerator _Owner;
 
-            internal InternalGenerator(Generator generator) =>
+            internal InternalGenerator(DatasetGenerator generator) =>
                 _Owner = generator;
 
             public ISql Generate()
