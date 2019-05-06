@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70E2D340
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.contracts", "Framework\df.extensibility.contracts\df.extensibility.contracts.csproj", "{285391FF-7462-4559-844D-F7F2603C949B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Value factories", "Value factories", "{137505BB-A467-4104-B5E6-1D1245A7A320}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Factories", "Factories", "{137505BB-A467-4104-B5E6-1D1245A7A320}"
 	ProjectSection(SolutionItems) = preProject
 		Factories\artifacts_write.targets = Factories\artifacts_write.targets
 	EndProjectSection
