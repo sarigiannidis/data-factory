@@ -133,25 +133,19 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override bool Equals(object obj)
-        {
-            return obj is null
-                ? false
-                : ReferenceEquals(this, obj) ? true : obj.GetType() != typeof(Transition) ? false : Equals((Transition)obj);
-        }
+        public override bool Equals(object obj) =>
+            !(obj is null)
+            && (ReferenceEquals(this, obj)
+                || (obj.GetType() == typeof(Transition) && Equals((Transition)obj)));
 
         /// <inheritdoc/>
         ///
-        public bool Equals(Transition other)
-        {
-            return other is null
-                ? false
-                : ReferenceEquals(this, other)
-                ? true
-                : other.Min == Min
+        public bool Equals(Transition other) =>
+            !(other is null)
+                && (ReferenceEquals(this, other)
+                || (other.Min == Min
                    && other.Max == Max
-                   && Equals(other.To, To);
-        }
+                   && Equals(other.To, To)));
 
         /// <inheritdoc/>
         ///

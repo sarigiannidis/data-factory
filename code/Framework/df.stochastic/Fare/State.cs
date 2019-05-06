@@ -125,23 +125,19 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override bool Equals(object obj)
-        {
-            return obj is null ? false : ReferenceEquals(this, obj) ? true : obj.GetType() != typeof(State) ? false : Equals((State)obj);
-        }
+        public override bool Equals(object obj) =>
+            !(obj is null)
+            && (ReferenceEquals(this, obj)
+                || (obj.GetType() == typeof(State) && Equals((State)obj)));
 
         /// <inheritdoc/>
         ///
-        public bool Equals(State other)
-        {
-            return other is null
-                ? false
-                : ReferenceEquals(this, other)
-                ? true
-                : other.Id == Id
+        public bool Equals(State other) =>
+            !(other is null)
+                && (ReferenceEquals(this, other)
+                || (other.Id == Id
                 && other.Accept.Equals(Accept)
-                && other.Number == Number;
-        }
+                && other.Number == Number));
 
         /// <inheritdoc/>
         ///

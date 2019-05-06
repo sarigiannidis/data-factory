@@ -44,20 +44,17 @@ namespace Df.Stochastic.Fare
 
             public char[] TransitionLabels { get; private set; } = Array.Empty<char>();
 
-            public override bool Equals(object obj)
-            {
-                return !(obj is State other)
-                    ? false
-                    : IsFinal == other.IsFinal
+            public override bool Equals(object obj) =>
+                obj is State other
+                    && IsFinal == other.IsFinal
                     && ReferenceEquals(_States, other._States)
                     && Equals(TransitionLabels, other.TransitionLabels);
-            }
 
             public override int GetHashCode()
             {
                 var hash = IsFinal ? 1 : 0;
                 hash ^= (hash * 31) + TransitionLabels.Length;
-                hash = TransitionLabels.Aggregate(hash, (current, c) => current ^ (current * 31) + c);
+                hash = TransitionLabels.Aggregate(hash, (current, c) => current ^ ((current * 31) + c));
 
                 // Compare the right-language of this state using reference-identity of outgoing
                 // states. This is possible because states are interned (stored in registry) and
@@ -112,10 +109,8 @@ namespace Df.Stochastic.Fare
                 return copy;
             }
 
-            private static bool ReferenceEquals(object[] a1, object[] a2)
-            {
-                return a1.Length != a2.Length ? false : !a1.Where((t, i) => t != a2[i]).Any();
-            }
+            private static bool ReferenceEquals(object[] a1, object[] a2) =>
+                a1.Length == a2.Length && !a1.Where((t, i) => t != a2[i]).Any();
 
             private State GetState(char label)
             {

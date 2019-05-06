@@ -676,10 +676,10 @@ namespace Df.Stochastic.Fare
             return Next();
         }
 
-        private RegExp ParseComplExp()
-        {
-            return Check(RegExpSyntaxOptions.Complement) && Match('~') ? MakeComplement(ParseComplExp()) : ParseCharClassExp();
-        }
+        private RegExp ParseComplExp() =>
+            Check(RegExpSyntaxOptions.Complement) && Match('~')
+                ? MakeComplement(ParseComplExp())
+                : ParseCharClassExp();
 
         private RegExp ParseConcatExp()
         {

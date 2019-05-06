@@ -458,10 +458,10 @@ namespace Df.Stochastic.Fare
         /// <returns>
         /// <c>true</c> if the given automaton accepts the empty string and nothing else; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsEmptyString(Automaton a)
-        {
-            return a.IsSingleton ? a.Singleton.Length == 0 : a.Initial.Accept && a.Initial.Transitions.Count == 0;
-        }
+        public static bool IsEmptyString(Automaton a) =>
+            a.IsSingleton
+                ? a.Singleton.Length == 0
+                : a.Initial.Accept && a.Initial.Transitions.Count == 0;
 
         /// <summary>
         /// Returns an automaton that accepts the union of the empty string and the language of the
@@ -778,7 +778,6 @@ namespace Df.Stochastic.Fare
 
                 var bb = b;
                 bb = hasAliases ? bb.CloneExpanded() : bb.CloneExpandedIfRequired();
-
                 s.AddEpsilon(bb.Initial);
             }
 

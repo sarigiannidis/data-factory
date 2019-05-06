@@ -41,6 +41,24 @@ namespace Df.Stochastic.Fare
     internal class StatePair : IEquatable<StatePair>
     {
         /// <summary>
+        /// Gets or sets the first component of this pair.
+        /// </summary>
+        /// <value>
+        /// The first state.
+        /// </value>
+        public State FirstState { get; set; }
+
+        public State S { get; set; }
+
+        /// <summary>
+        /// Gets or sets the second component of this pair.
+        /// </summary>
+        /// <value>
+        /// The second state.
+        /// </value>
+        public State SecondState { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="StatePair"/> class.
         /// </summary>
         /// <param name="s">
@@ -74,24 +92,6 @@ namespace Df.Stochastic.Fare
         }
 
         /// <summary>
-        /// Gets or sets the first component of this pair.
-        /// </summary>
-        /// <value>
-        /// The first state.
-        /// </value>
-        public State FirstState { get; set; }
-
-        public State S { get; set; }
-
-        /// <summary>
-        /// Gets or sets the second component of this pair.
-        /// </summary>
-        /// <value>
-        /// The second state.
-        /// </value>
-        public State SecondState { get; set; }
-
-        /// <summary>
         /// Implements the operator !=.
         /// </summary>
         /// <param name="left">
@@ -121,21 +121,16 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public bool Equals(StatePair other)
-        {
-            return other is null
-                ? false
-                : ReferenceEquals(this, other)
-                || Equals(other.FirstState, FirstState)
-                && Equals(other.SecondState, SecondState);
-        }
+        public bool Equals(StatePair other) =>
+            !(other is null)
+                && (ReferenceEquals(this, other)
+                || (Equals(other.FirstState, FirstState)
+                && Equals(other.SecondState, SecondState)));
 
         /// <inheritdoc/>
         ///
-        public override bool Equals(object obj)
-        {
-            return obj is null ? false : ReferenceEquals(this, obj) ? true : obj.GetType() != typeof(StatePair) ? false : Equals((StatePair)obj);
-        }
+        public override bool Equals(object obj) =>
+            !(obj is null) && (ReferenceEquals(this, obj) || (obj.GetType() == typeof(StatePair) && Equals((StatePair)obj)));
 
         /// <inheritdoc/>
         ///

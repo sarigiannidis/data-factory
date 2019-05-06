@@ -71,12 +71,12 @@ namespace Df.Extensibility.Tests
                     {
                         dynamic min = configuration["MinValue"];
                         dynamic max = configuration["MaxValue"];
-                        _ = Output.WriteLine("min: {0}, max: {1}, result: {2}", min, max, result);
-                        _ = Assert.InRange(result, min, max);
+                        Output.WriteLine("min: {0}, max: {1}, result: {2}", min, max, result);
+                        Assert.InRange(result, min, max);
                     }
                     else
                     {
-                        _ = Output.WriteLine("{0}", result);
+                        Output.WriteLine("{0}", result);
                     }
                 }
             }
