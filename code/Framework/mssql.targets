@@ -1,0 +1,28 @@
+<!-- See https://github.com/dotnet/corefx/issues/31775 -->
+<Project>
+  <PropertyGroup>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290"/>
+    <PackageReference Include="System.Data.SqlClient">
+      <Version>4.7.0-preview3.19128.7</Version>
+    </PackageReference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(USERPROFILE)\.nuget\packages\microsoft.sqlserver.types\14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <Content Include="$(USERPROFILE)\.nuget\packages\microsoft.sqlserver.types\14.0.1016.290\nativeBinaries\x64\*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x86'">
+    <Content Include="$(USERPROFILE)\.nuget\packages\microsoft.sqlserver.types\14.0.1016.290\nativeBinaries\x86\*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

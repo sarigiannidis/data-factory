@@ -1,5 +1,0 @@
-﻿{
-  "ConnectionStrings": {
-    "TestDb": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_DATA_TESTS_DB;AttachDbFilename=|DataDirectory|TESTDB.mdf"
-  }
-}

@@ -1,0 +1,41 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	var types = new []{ "byte", "DateTime", "DateTimeOffset", "decimal", "double", "float", "int", "long", "short", "TimeSpan" };
+#>
+// --------------------------------------------------------------------------------
+// <copyright file="Random.cs" company="Michalis Sarigiannidis">
+// Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the solution root for full license information.
+// </copyright>
+// --------------------------------------------------------------------------------
+
+#pragma warning disable SA1402 // File may only contain a single type
+#pragma warning disable SA1649 // File name should match first type name
+namespace Df.ValueFactories
+{
+    using System;
+    using Df.Extensibility;
+    using static Constants;
+<# foreach(var type in types)
+   {
+    var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
+    var upper = type.ToUpperInvariant();
+	var lower = type.ToLowerInvariant();
+#>
+
+    [ValueFactory("<#=lower#>-random", "Generates random <#=type#> values", typeof(<#=type#>), typeof(Random<#=title#>Factory))]
+    public sealed partial class Random<#=title#>Factory
+        : RandomScalarFactory<<#=type#>>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<<#=type#>>(<#=upper#>_MIN, <#=upper#>_MAX);
+    }
+<# } #>
+}
+#pragma warning restore SA1402 // File may only contain a single type
+#pragma warning restore SA1649 // File name should match first type name

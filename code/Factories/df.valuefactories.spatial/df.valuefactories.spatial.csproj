@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\artifacts_write.targets" />
+  <Import Project="..\..\Framework\mssql.targets" />
+
+  <PropertyGroup>
+    <RootNamespace>Df.ValueFactories.Spatial</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="..\..\Framework\df.core\df.core.csproj" />
+  </ItemGroup>
+
+</Project>

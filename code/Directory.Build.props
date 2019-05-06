@@ -34,7 +34,7 @@
 
   <PropertyGroup Label="Analysis">
    <GenerateDocumentationFile>false</GenerateDocumentationFile>
-   <CodeAnalysisRuleSet>..\df.ruleset</CodeAnalysisRuleSet>
+   <CodeAnalysisRuleSet>$(SolutionDir)df.ruleset</CodeAnalysisRuleSet>
    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
   </PropertyGroup>
@@ -52,8 +52,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
    </PackageReference>
-   <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
-   <AdditionalFiles Include="..\df.ruleset" Link="df.ruleset" />
+   <AdditionalFiles Include="$(SolutionDir)\stylecop.json" Link="stylecop.json" />
+   <AdditionalFiles Include="$(SolutionDir)\df.ruleset" Link="df.ruleset" />
  </ItemGroup>
 
 </Project>
