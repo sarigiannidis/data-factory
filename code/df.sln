@@ -14,25 +14,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{23565848-5B80-492B-A858-FB48E9A3791B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{2459D188-57CC-4D0D-8ED9-CE83958909D9}"
-	ProjectSection(SolutionItems) = preProject
-		Framework\mssql.targets = Framework\mssql.targets
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70E2D340-195F-4D8E-B60F-82A7AAB6CA41}"
-	ProjectSection(SolutionItems) = preProject
-		Tests\CREATETESTDB.sql = Tests\CREATETESTDB.sql
-		Tests\Directory.Build.props = Tests\Directory.Build.props
-		Tests\TESTDB.mdf = Tests\TESTDB.mdf
-		Tests\testdb.targets = Tests\testdb.targets
-		Tests\TESTDB_log.ldf = Tests\TESTDB_log.ldf
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.contracts", "Framework\df.extensibility.contracts\df.extensibility.contracts.csproj", "{285391FF-7462-4559-844D-F7F2603C949B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Factories", "Factories", "{137505BB-A467-4104-B5E6-1D1245A7A320}"
-	ProjectSection(SolutionItems) = preProject
-		Factories\artifacts_write.targets = Factories\artifacts_write.targets
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.valuefactories", "Factories\df.valuefactories\df.valuefactories.csproj", "{584EFBDC-FE86-4D48-B024-25B2E694A88B}"
 EndProject
@@ -42,16 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.tests", "T
 	ProjectSection(ProjectDependencies) = postProject
 		{95F1798E-076F-4DF5-B58F-DEF742B225EF} = {95F1798E-076F-4DF5-B58F-DEF742B225EF}
 		{584EFBDC-FE86-4D48-B024-25B2E694A88B} = {584EFBDC-FE86-4D48-B024-25B2E694A88B}
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEB72D84-CD92-41B7-85F4-65EFDD80DFB5}"
-	ProjectSection(SolutionItems) = preProject
-		artifacts_read.targets = artifacts_read.targets
-		df.ruleset = df.ruleset
-		Directory.Build.props = Directory.Build.props
-		..\README.md = ..\README.md
-		stylecop.json = stylecop.json
-		TODO.md = TODO.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.stochastic", "Framework\df.stochastic\df.stochastic.csproj", "{E6732801-F0E7-4090-ADC9-8ADD93CA7347}"

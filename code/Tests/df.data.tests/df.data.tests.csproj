@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="$(TESTSDIR)testdb.targets" />
+  <Import Project="$(TARGETSDIR)testdb.targets" />
  
   <PropertyGroup>
     <RootNamespace>Df.Data.Tests</RootNamespace>

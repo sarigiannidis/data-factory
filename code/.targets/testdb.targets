@@ -1,11 +1,11 @@
 <Project>
   
   <ItemGroup>
-    <Content Include="$(TESTSDIR)TESTDB.mdf" Link="TESTDB.mdf">
+    <Content Include="$(TESTDATADIR)TESTDB.mdf" Link="TESTDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(TESTSDIR)TESTDB_log.ldf" Link="TESTDB_log.ldf">
-      <DependentUpon>$(TESTSDIR)TESTDB.mdf</DependentUpon>
+    <Content Include="$(TESTDATADIR)TESTDB_log.ldf" Link="TESTDB_log.ldf">
+      <DependentUpon>$(TESTDATADIR)TESTDB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
