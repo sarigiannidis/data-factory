@@ -373,22 +373,12 @@ namespace Df.Stochastic.Fare
         {
             if (a1.IsSingleton)
             {
-                if (a2.Run(a1.Singleton))
-                {
-                    return a1.CloneIfRequired();
-                }
-
-                return BasicAutomata.MakeEmpty();
+                return a2.Run(a1.Singleton) ? a1.CloneIfRequired() : BasicAutomata.MakeEmpty();
             }
 
             if (a2.IsSingleton)
             {
-                if (a1.Run(a2.Singleton))
-                {
-                    return a2.CloneIfRequired();
-                }
-
-                return BasicAutomata.MakeEmpty();
+                return a1.Run(a2.Singleton) ? a2.CloneIfRequired() : BasicAutomata.MakeEmpty();
             }
 
             if (a1 == a2)
@@ -454,15 +444,10 @@ namespace Df.Stochastic.Fare
         /// <returns>
         /// <c>true</c> if the given automaton accepts no strings; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsEmpty(Automaton a)
-        {
-            if (a.IsSingleton)
-            {
-                return false;
-            }
-
-            return !a.Initial.Accept && a.Initial.Transitions.Count == 0;
-        }
+        public static bool IsEmpty(Automaton a) =>
+            !a.IsSingleton
+                && !a.Initial.Accept
+                && a.Initial.Transitions.Count == 0;
 
         /// <summary>
         /// Determines whether the given automaton accepts the empty string and nothing else.
@@ -475,12 +460,7 @@ namespace Df.Stochastic.Fare
         /// </returns>
         public static bool IsEmptyString(Automaton a)
         {
-            if (a.IsSingleton)
-            {
-                return a.Singleton.Length == 0;
-            }
-
-            return a.Initial.Accept && a.Initial.Transitions.Count == 0;
+            return a.IsSingleton ? a.Singleton.Length == 0 : a.Initial.Accept && a.Initial.Transitions.Count == 0;
         }
 
         /// <summary>

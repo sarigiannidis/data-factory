@@ -46,12 +46,9 @@ namespace Df.Stochastic.Fare
 
             public override bool Equals(object obj)
             {
-                if (!(obj is State other))
-                {
-                    return false;
-                }
-
-                return IsFinal == other.IsFinal
+                return !(obj is State other)
+                    ? false
+                    : IsFinal == other.IsFinal
                     && ReferenceEquals(_States, other._States)
                     && Equals(TransitionLabels, other.TransitionLabels);
             }
@@ -117,12 +114,7 @@ namespace Df.Stochastic.Fare
 
             private static bool ReferenceEquals(object[] a1, object[] a2)
             {
-                if (a1.Length != a2.Length)
-                {
-                    return false;
-                }
-
-                return !a1.Where((t, i) => t != a2[i]).Any();
+                return a1.Length != a2.Length ? false : !a1.Where((t, i) => t != a2[i]).Any();
             }
 
             private State GetState(char label)

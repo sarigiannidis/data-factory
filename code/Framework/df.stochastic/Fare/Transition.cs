@@ -135,39 +135,20 @@ namespace Df.Stochastic.Fare
         ///
         public override bool Equals(object obj)
         {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(Transition))
-            {
-                return false;
-            }
-
-            return Equals((Transition)obj);
+            return obj is null
+                ? false
+                : ReferenceEquals(this, obj) ? true : obj.GetType() != typeof(Transition) ? false : Equals((Transition)obj);
         }
 
         /// <inheritdoc/>
         ///
         public bool Equals(Transition other)
         {
-            if (other is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return other.Min == Min
+            return other is null
+                ? false
+                : ReferenceEquals(this, other)
+                ? true
+                : other.Min == Min
                    && other.Max == Max
                    && Equals(other.To, To);
         }
@@ -210,22 +191,9 @@ namespace Df.Stochastic.Fare
             {
                 _ = sb.Append("\\u");
                 var s = ((int)c).ToString("x");
-                if (c < 0x10)
-                {
-                    _ = sb.Append("000").Append(s);
-                }
-                else if (c < 0x100)
-                {
-                    _ = sb.Append("00").Append(s);
-                }
-                else if (c < 0x1000)
-                {
-                    _ = sb.Append("0").Append(s);
-                }
-                else
-                {
-                    _ = sb.Append(s);
-                }
+                _ = c < 0x10
+                    ? sb.Append("000").Append(s)
+                    : c < 0x100 ? sb.Append("00").Append(s) : c < 0x1000 ? sb.Append("0").Append(s) : sb.Append(s);
             }
         }
     }

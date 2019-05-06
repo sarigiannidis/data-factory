@@ -123,17 +123,10 @@ namespace Df.Stochastic.Fare
         ///
         public bool Equals(StatePair other)
         {
-            if (other is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return Equals(other.FirstState, FirstState)
+            return other is null
+                ? false
+                : ReferenceEquals(this, other)
+                || Equals(other.FirstState, FirstState)
                 && Equals(other.SecondState, SecondState);
         }
 
@@ -141,22 +134,7 @@ namespace Df.Stochastic.Fare
         ///
         public override bool Equals(object obj)
         {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(StatePair))
-            {
-                return false;
-            }
-
-            return Equals((StatePair)obj);
+            return obj is null ? false : ReferenceEquals(this, obj) ? true : obj.GetType() != typeof(StatePair) ? false : Equals((StatePair)obj);
         }
 
         /// <inheritdoc/>

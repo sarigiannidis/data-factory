@@ -9,12 +9,7 @@
     {
         public bool Equals(List<T> x, List<T> y)
         {
-            if (x.Count != y.Count)
-            {
-                return false;
-            }
-
-            return x.SequenceEqual(y);
+            return x.Count != y.Count ? false : x.SequenceEqual(y);
         }
 
         // http://stackoverflow.com/questions/1079192/is-it-possible-to-combine-hash-codes-for-private-members-to-generate-a-new-hash

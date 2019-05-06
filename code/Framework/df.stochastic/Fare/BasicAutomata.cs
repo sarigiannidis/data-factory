@@ -217,19 +217,12 @@ namespace Df.Stochastic.Fare
             }
 
             var s = minus ? Automaton.MakeChar('-') : Automaton.MakeChar('+').Optional();
-            Automaton d;
-            if (b2.Length == 0)
-            {
-                d = Automaton.MakeChar('.').Concatenate(Automaton.MakeChar('0').Repeat(1)).Optional();
-            }
-            else
-            {
-                d = Automaton.MakeChar('.')
+            var d = b2.Length == 0
+                ? Automaton.MakeChar('.').Concatenate(Automaton.MakeChar('0').Repeat(1)).Optional()
+                : Automaton.MakeChar('.')
                     .Concatenate(Automaton.MakeString(b2.ToString()))
                     .Concatenate(Automaton.MakeChar('0')
                                      .Repeat());
-            }
-
             return Automaton.Minimize(
                 WhitespaceAutomaton.Concatenate(
                     s.Concatenate(Automaton.MakeChar('0').Repeat())

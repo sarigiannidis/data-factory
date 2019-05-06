@@ -534,23 +534,9 @@ namespace Df.Stochastic.Fare
         private static RegExp MakeString(RegExp exp1, RegExp exp2)
         {
             var sb = new StringBuilder();
-            if (exp1._Kind == Kind.RegexpString)
-            {
-                _ = sb.Append(exp1._S);
-            }
-            else
-            {
-                _ = sb.Append(exp1._C);
-            }
+            _ = exp1._Kind == Kind.RegexpString ? sb.Append(exp1._S) : sb.Append(exp1._C);
 
-            if (exp2._Kind == Kind.RegexpString)
-            {
-                _ = sb.Append(exp2._S);
-            }
-            else
-            {
-                _ = sb.Append(exp2._C);
-            }
+            _ = exp2._Kind == Kind.RegexpString ? sb.Append(exp2._S) : sb.Append(exp2._C);
 
             return MakeString(sb.ToString());
         }
@@ -643,17 +629,7 @@ namespace Df.Stochastic.Fare
         private RegExp ParseCharClass()
         {
             var @char = ParseCharExp();
-            if (Match('-'))
-            {
-                if (Peek("]"))
-                {
-                    return MakeUnion(MakeChar(@char), MakeChar('-'));
-                }
-
-                return MakeCharRange(@char, ParseCharExp());
-            }
-
-            return MakeChar(@char);
+            return Match('-') ? Peek("]") ? MakeUnion(MakeChar(@char), MakeChar('-')) : MakeCharRange(@char, ParseCharExp()) : MakeChar(@char);
         }
 
         private RegExp ParseCharClasses()
@@ -702,12 +678,7 @@ namespace Df.Stochastic.Fare
 
         private RegExp ParseComplExp()
         {
-            if (Check(RegExpSyntaxOptions.Complement) && Match('~'))
-            {
-                return MakeComplement(ParseComplExp());
-            }
-
-            return ParseCharClassExp();
+            return Check(RegExpSyntaxOptions.Complement) && Match('~') ? MakeComplement(ParseComplExp()) : ParseCharClassExp();
         }
 
         private RegExp ParseConcatExp()
