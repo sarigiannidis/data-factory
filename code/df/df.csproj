@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0-preview3.19153.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0-preview3.19153.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+    <PackageReference Include="CommandLineParser" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>
