@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="JsonUtil.cs" company="Michalis Sarigiannidis">
+// <copyright file="JsonUtility.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -12,7 +12,7 @@ namespace Df.Io
     using System.Collections.Generic;
     using System.IO;
 
-    internal static class JsonUtil
+    internal static class JsonUtility
     {
         public static T Read<T>(string path)
         {

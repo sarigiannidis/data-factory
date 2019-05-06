@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="ReflectionUtil.cs" company="Michalis Sarigiannidis">
+// <copyright file="ReflectionUtility.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -12,7 +12,7 @@ namespace Df
     using System.Linq;
     using System.Reflection;
 
-    internal static class ReflectionUtil
+    internal static class ReflectionUtility
     {
         public static Func<T> CreateDefaultInstance<T>(Type type)
         {

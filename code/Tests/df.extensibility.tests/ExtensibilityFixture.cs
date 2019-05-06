@@ -27,7 +27,7 @@ namespace Df.Extensibility.Tests
         public ExtensibilityFixture()
         {
             var builder = new ConfigurationBuilder()
-            .SetBasePath(PathUtil.CurrentDirectory)
+            .SetBasePath(PathUtility.CurrentDirectory)
             .AddJsonFile(APP_SETTINGS_FILE, false, true);
             Configuration = builder.Build();
 

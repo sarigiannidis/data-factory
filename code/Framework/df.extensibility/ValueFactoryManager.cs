@@ -65,7 +65,7 @@ namespace Df.Extensibility
         {
             try
             {
-                var root = PathUtil.GetFullPath(Options.Path);
+                var root = PathUtility.GetFullPath(Options.Path);
                 var items = Directory.EnumerateFiles(root, SEARCHPATTERN_ASSEMBLIES)
                     .Select(Selector_LoadAssembly)
                     .SelectMany(Selector_LoadValueFactoryInfos);
@@ -82,7 +82,7 @@ namespace Df.Extensibility
 
         private Func<T> CreateActivator<T>(Type type)
         {
-            var func = ReflectionUtil.CreateDefaultInstance<T>(type);
+            var func = ReflectionUtility.CreateDefaultInstance<T>(type);
             if (func == null)
             {
                 Logger.LogWarning("The type {0} does not have a default constructor.", type.FullName);
@@ -151,7 +151,7 @@ namespace Df.Extensibility
             }
 
             Logger.LogInformation("The type {0} has the attribute {1}.", type.FullName, nameof(ValueFactoryAttribute));
-            var args = ReflectionUtil.GetConstructorArguments(attribute);
+            var args = ReflectionUtility.GetConstructorArguments(attribute);
             if (args == null)
             {
                 Logger.LogError("Failed to get the constructor arguments on {0}", nameof(ValueFactoryAttribute));

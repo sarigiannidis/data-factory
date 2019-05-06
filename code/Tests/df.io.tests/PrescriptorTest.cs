@@ -66,7 +66,7 @@ namespace Df.Io.Tests
                     var type = columnDescription.UserType switch
                     {
                         "sql_variant" => typeof(int),
-                        _ => SqlTypeUtil.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
+                        _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
                     };
 
                     var factory = ValueFactoryManager.ValueFactoryInfos.FilterByType(type).FirstOrDefault();

@@ -49,7 +49,7 @@ namespace Df
 
         private static IConfigurationRoot CreateConfiguration() =>
             new ConfigurationBuilder()
-                .SetBasePath(PathUtil.CurrentDirectory)
+                .SetBasePath(PathUtility.CurrentDirectory)
                 .AddJsonFile(APP_SETTINGS_FILE, false, true)
                 .Build();
 

@@ -16,10 +16,10 @@ namespace Df.Io
         {
             _ = Check.NotNull(nameof(path), path);
             Check.IfNotThrow<FileNotFoundException>(() => File.Exists(path), "{0} not found.", nameof(path));
-            return JsonUtil.Read<Project>(path);
+            return JsonUtility.Read<Project>(path);
         }
 
         public void SaveToFile(Project project, string path) =>
-            JsonUtil.Write(Check.NotNull(nameof(project), project), path);
+            JsonUtility.Write(Check.NotNull(nameof(project), project), path);
     }
 }

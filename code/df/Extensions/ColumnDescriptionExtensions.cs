@@ -27,7 +27,7 @@ namespace Df.Io.Descriptive
             Check.NotNull(nameof(columnDescription), columnDescription).UserType switch
         {
             "sql_variant" => typeof(int),
-            _ => SqlTypeUtil.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
+            _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
         };
 
         private static int GetMaxCharLength(ColumnDescription columnDescription) =>

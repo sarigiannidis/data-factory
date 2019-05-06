@@ -42,7 +42,7 @@ namespace Df.OptionHandlers
         }
 
         private static string ToConsoleTable(IReadOnlyCollection<IValueFactoryInfo> valueFactoryInfos) =>
-                    ConsoleUtil.ToConsoleTable(
+                    ConsoleUtility.ToConsoleTable(
                         valueFactoryInfos,
                         (_ => _.Name, "Name", 24),
                         (_ => _.Description, "Description", 64),
@@ -54,7 +54,7 @@ namespace Df.OptionHandlers
         {
             using var sql = _SqlFactory.Open(connectionString);
             using var databases = sql.Query(SQL_LIST_DATABASES, _ => (string)_[0]);
-            Console.WriteLine(ConsoleUtil.ToConsoleTable(databases, (_ => _, "Database", 64)));
+            Console.WriteLine(ConsoleUtility.ToConsoleTable(databases, (_ => _, "Database", 64)));
         }
 
         private void ListFactories()
@@ -69,7 +69,7 @@ namespace Df.OptionHandlers
             {
                 using var sql = _SqlFactory.Open(connectionString);
                 using var tables = sql.Query(SQL_LIST_TABLES, _ => (string)_[0]);
-                Console.WriteLine(ConsoleUtil.ToConsoleTable(tables, (_ => _, "Table", 64)));
+                Console.WriteLine(ConsoleUtility.ToConsoleTable(tables, (_ => _, "Table", 64)));
             }
             catch
             {
