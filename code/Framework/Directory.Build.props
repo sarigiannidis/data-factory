@@ -1,0 +1,9 @@
+<Project>
+
+<Import Project="..\Directory.Build.props" />
+
+  <ItemGroup>
+    <ProjectReference Condition=" '$(ProjectName)' != 'df.core' " Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+  </ItemGroup>
+
+</Project>

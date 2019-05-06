@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
     <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
     <ProjectReference Include="$(FRAMEWORKDIR)df.io\df.io.csproj" />
   </ItemGroup>

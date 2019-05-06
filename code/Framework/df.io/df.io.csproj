@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
     <ProjectReference Include="$(FRAMEWORKDIR)df.data\df.data.csproj" />
   </ItemGroup>
 
