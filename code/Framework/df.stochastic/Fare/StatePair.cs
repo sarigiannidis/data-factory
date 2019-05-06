@@ -134,12 +134,7 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return ((0 ^ (FirstState?.GetHashCode() ?? 0)) * 397) ^ (SecondState?.GetHashCode() ?? 0);
-            }
-        }
+        public override int GetHashCode() =>
+            HashCode.Combine(FirstState, SecondState);
     }
 }

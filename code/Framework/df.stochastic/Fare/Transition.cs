@@ -149,15 +149,8 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var result = Min.GetHashCode();
-                result = (result * 397) ^ Max.GetHashCode();
-                return (result * 397) ^ (To?.GetHashCode() ?? 0);
-            }
-        }
+        public override int GetHashCode() =>
+            HashCode.Combine(Min, Max, To);
 
         /// <inheritdoc/>
         ///

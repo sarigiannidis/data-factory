@@ -141,13 +141,8 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return (((Id * 397) ^ Accept.GetHashCode()) * 397) ^ Number;
-            }
-        }
+        public override int GetHashCode() =>
+            HashCode.Combine(Id, Accept, Number);
 
         /// <summary>
         /// Gets the transitions sorted by (min, reverse max, to) or (to, min, reverse max).
