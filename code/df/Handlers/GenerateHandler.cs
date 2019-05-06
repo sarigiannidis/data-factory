@@ -20,12 +20,12 @@ namespace Df.OptionHandlers
         : IHandler<GenerateOptions>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly IGeneratorFactory _GeneratorFactory;
+        private readonly IDatasetGeneratorFactory _GeneratorFactory;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IProjectManager _ProjectManager;
 
-        public GenerateHandler(IProjectManager projectManager, IGeneratorFactory generatorFactory)
+        public GenerateHandler(IProjectManager projectManager, IDatasetGeneratorFactory generatorFactory)
         {
             _ProjectManager = Check.NotNull(nameof(projectManager), projectManager);
             _GeneratorFactory = Check.NotNull(nameof(generatorFactory), generatorFactory);

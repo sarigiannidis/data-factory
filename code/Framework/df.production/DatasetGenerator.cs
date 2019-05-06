@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="Generator.cs" company="Michalis Sarigiannidis">
+// <copyright file="DatasetGenerator.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -23,11 +23,11 @@ namespace Df.Production
     using static Constants;
     using Check = Df.Check;
 
-    internal sealed partial class Generator
-        : IGenerator
+    internal sealed partial class DatasetGenerator
+        : IDatasetGenerator
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly ILogger<Generator> _Logger;
+        private readonly ILogger<DatasetGenerator> _Logger;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly Project _Project;
@@ -38,7 +38,7 @@ namespace Df.Production
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly ISqlFactory _SqlFactory;
 
-        public Generator(IRecordGeneratorFactory recordGeneratorFactory, ISqlFactory sqlFactory, ILogger<Generator> logger, Project project)
+        public DatasetGenerator(IRecordGeneratorFactory recordGeneratorFactory, ISqlFactory sqlFactory, ILogger<DatasetGenerator> logger, Project project)
         {
             _RecordGeneratorFactory = Check.NotNull(nameof(recordGeneratorFactory), recordGeneratorFactory);
             _SqlFactory = Check.NotNull(nameof(sqlFactory), sqlFactory);
