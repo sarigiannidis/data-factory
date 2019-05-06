@@ -29,22 +29,5 @@ namespace Df.Data.Meta
         public Table Referenced { get; set; }
 
         public int? ReferencedObjectId { get; set; }
-
-        // public bool IsDisabled { get; set; }
-        // public bool IsMsShipped { get; set; }
-        // public bool IsNotForReplication { get; set; }
-        // public bool IsNotTrusted { get; set; }
-        // public bool IsPublished { get; set; }
-        // public bool IsSchemaPublished { get; set; }
-        // public bool IsSystemNamed { get; set; }
-        // public byte? DeleteReferentialAction { get; set; }
-        // public byte? UpdateReferentialAction { get; set; }
-        // public int SchemaId { get; set; }
-        // public int? KeyIndexId { get; set; }
-        // public int? PrincipalId { get; set; }
-        // public string DeleteReferentialActionDesc { get; set; }
-        // public string Type { get; set; }
-        // public string TypeDesc { get; set; }
-        // public string UpdateReferentialActionDesc { get; set; }
     }
 }
