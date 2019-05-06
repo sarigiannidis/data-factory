@@ -22,14 +22,11 @@
     <Version>0.6.1</Version>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
-    <DebugSymbols>false</DebugSymbols>
+  <PropertyGroup Label="Debug symbols">
+    <DebugSymbols Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">true</DebugSymbols>
+    <DebugSymbols Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">false</DebugSymbols>
+    <DebugType Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">full</DebugType>
+    <DebugType Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Label="Locations">
