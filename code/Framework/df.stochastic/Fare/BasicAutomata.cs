@@ -30,9 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma warning disable IDE0057 // Use range operator
-
-namespace Df.Stochastic.Fare
+ namespace Df.Stochastic.Fare
 {
     using System;
     using System.Collections.Generic;
@@ -476,7 +474,7 @@ namespace Df.Stochastic.Fare
                 for (var j = i; j >= 1; j--)
                 {
                     var d = s[j - 1];
-                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s.Substring(i - j + 1, i - (i - j + 1))))
+                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s[i - j + 1..i]))
                     {
                         states[i].Transitions.Add(new Transition(d, states[j]));
                         _ = done.Add(d);
@@ -746,5 +744,3 @@ namespace Df.Stochastic.Fare
         }
     }
 }
-
-#pragma warning restore IDE0057 // Use range operator

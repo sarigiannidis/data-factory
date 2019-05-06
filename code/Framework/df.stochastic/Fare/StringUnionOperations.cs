@@ -9,8 +9,6 @@
 * @author Dawid Weiss
 */
 
-#pragma warning disable IDE0056 // Use index operator
-
 namespace Df.Stochastic.Fare
 {
     using System;
@@ -36,7 +34,7 @@ namespace Df.Stochastic.Fare
                 get
                 {
                     Debug.Assert(HasChildren, "No outgoing transitions.");
-                    return _States[_States.Length - 1];
+                    return _States[^1];
                 }
             }
 
@@ -84,15 +82,15 @@ namespace Df.Stochastic.Fare
                 TransitionLabels = CopyOf(TransitionLabels, TransitionLabels.Length + 1);
                 _States = CopyOf(_States, _States.Length + 1);
 
-                TransitionLabels[TransitionLabels.Length - 1] = label;
+                TransitionLabels[^1] = label;
 
-                return _States[_States.Length - 1] = new State();
+                return _States[^1] = new State();
             }
 
             public void ReplaceLastChild(State state)
             {
                 Debug.Assert(HasChildren, "No outgoing transitions.");
-                _States[_States.Length - 1] = state;
+                _States[^1] = state;
             }
 
             private static char[] CopyOf(char[] original, int newLength)
@@ -251,5 +249,3 @@ namespace Df.Stochastic.Fare
         }
     }
 }
-
-#pragma warning restore IDE0056 // Use index operator

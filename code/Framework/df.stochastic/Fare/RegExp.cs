@@ -30,8 +30,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma warning disable IDE0057 // Use range operator
-
 namespace Df.Stochastic.Fare
 {
     using System;
@@ -733,7 +731,7 @@ namespace Df.Stochastic.Fare
                         throw new ArgumentException("integer expected at position " + _Pos);
                     }
 
-                    var n = int.Parse(_B.Substring(start, _Pos - start));
+                    var n = int.Parse(_B[start.._Pos]);
                     var m = -1;
                     if (Match(','))
                     {
@@ -745,7 +743,7 @@ namespace Df.Stochastic.Fare
 
                         if (start != _Pos)
                         {
-                            m = int.Parse(_B.Substring(start, _Pos - start));
+                            m = int.Parse(_B[start.._Pos]);
                         }
                     }
                     else
@@ -795,7 +793,7 @@ namespace Df.Stochastic.Fare
                     throw new ArgumentException("expected '\"' at position " + _Pos);
                 }
 
-                return MakeString(_B.Substring(start, _Pos - 1 - start));
+                return MakeString(_B[start.._Pos - 1]);
             }
 
             if (Match('('))
@@ -832,7 +830,7 @@ namespace Df.Stochastic.Fare
                     throw new ArgumentException("expected '>' at position " + _Pos);
                 }
 
-                var str = _B.Substring(start, _Pos - 1 - start);
+                var str = _B[start.._Pos - 1];
                 var i = str.IndexOf('-');
                 if (i == -1)
                 {
@@ -856,8 +854,8 @@ namespace Df.Stochastic.Fare
                         throw new FormatException();
                     }
 
-                    var smin = str.Substring(0, i - 0);
-                    var smax = str.Substring(i + 1, str.Length - (i + 1));
+                    var smin = str[..i];
+                    var smax = str[i + 1..];
                     var imin = int.Parse(smin);
                     var imax = int.Parse(smax);
                     var numdigits = smin.Length == smax.Length ? smin.Length : 0;
@@ -1177,5 +1175,3 @@ namespace Df.Stochastic.Fare
         }
     }
 }
-
-#pragma warning restore IDE0057 // Use range operator
