@@ -36,20 +36,12 @@ namespace Df.Io.Prescriptive
 
         public bool Equals(ValueFactoryPrescription other)
         {
-            if (other is null)
-            {
-                return false;
-            }
-            else if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-            else
-            {
-                return Name == other.Name
-                    && Reference == other.Reference
-                    && Configuration == other.Configuration;
-            }
+            return other is null
+                ? false
+                : ReferenceEquals(this, other)
+                    || Name == other.Name
+                                    && Reference == other.Reference
+                                    && Configuration == other.Configuration;
         }
 
         public override int GetHashCode() =>

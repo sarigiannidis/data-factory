@@ -17,12 +17,7 @@ namespace Df
         public static Func<T> CreateDefaultInstance<T>(Type type)
         {
             var defaultConstructor = GetDefaultConstructor(type);
-            if (defaultConstructor == null)
-            {
-                return null;
-            }
-
-            return () => (T)defaultConstructor.Invoke(null);
+            return defaultConstructor == null ? (Func<T>)null : (() => (T)defaultConstructor.Invoke(null));
         }
 
         public static IDictionary<string, object> GetConstructorArguments(CustomAttributeData customAttributeData) =>
