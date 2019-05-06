@@ -12,13 +12,13 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Locations">
-    <FRAMEWORKDIR>$(SolutionDir)Framework\</FRAMEWORKDIR>
-    <FACTORIESDIR>$(SolutionDir)Factories\</FACTORIESDIR>
-    <TESTSDIR>$(SolutionDir)Tests\</TESTSDIR>
-    <ARTIFACTSDIR>$(SolutionDir)..\artifacts\</ARTIFACTSDIR>
     <ANALYZERSDIR>$(SolutionDir)\.analyzers\</ANALYZERSDIR>
+    <ARTIFACTSDIR>$(SolutionDir)..\artifacts\</ARTIFACTSDIR>
+    <FACTORIESDIR>$(SolutionDir)Factories\</FACTORIESDIR>
+    <FRAMEWORKDIR>$(SolutionDir)Framework\</FRAMEWORKDIR>
+    <TARGETSDIR>$(SolutionDir)\.props\</TARGETSDIR>
     <TESTDATADIR>$(SolutionDir)\.testdata\</TESTDATADIR>
-    <TARGETSDIR>$(SolutionDir)\.targets\</TARGETSDIR>
+    <TESTSDIR>$(SolutionDir)Tests\</TESTSDIR>
   </PropertyGroup>
 
   <PropertyGroup>

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="$(TARGETSDIR)artifacts_write.targets" />
+  <Import Project="$(TARGETSDIR)artifacts_write.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.ValueFactories</RootNamespace>
