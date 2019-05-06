@@ -27,7 +27,7 @@ namespace Df.Extensibility
 
         public RangeFactoryConfiguration(TValue min, TValue max)
         {
-            Check.GreaterThanOrEqual(nameof(max), max, min);
+            _ = Check.GreaterThanOrEqual(nameof(max), max, min);
             Set(PROPERTY_MIN, min);
             Set(PROPERTY_MAX, max);
         }

@@ -95,7 +95,7 @@ namespace Df.Stochastic.Fare
         private void AppendChoice(StringBuilder builder, Transition transition)
         {
             var c = (char)GetRandomInt(transition.Min, transition.Max, _Random);
-            builder.Append(c);
+            _ = builder.Append(c);
         }
 
         private void Generate(StringBuilder builder, State state)

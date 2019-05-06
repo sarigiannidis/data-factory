@@ -36,7 +36,7 @@ namespace Df.Io
             Prescriptor = Check.NotNull(nameof(prescriptor), prescriptor);
             Created = Check.InOpenInterval(nameof(created), created, DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
             Modified = Check.InOpenInterval(nameof(modified), modified, DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
-            Check.GreaterThanOrEqual(nameof(modified), modified, created);
+            _ = Check.GreaterThanOrEqual(nameof(modified), modified, created);
         }
     }
 }

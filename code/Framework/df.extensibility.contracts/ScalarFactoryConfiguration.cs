@@ -24,8 +24,8 @@ namespace Df.Extensibility
         public ScalarFactoryConfiguration(TValue min, TValue max, TValue increment)
             : base(min, max)
         {
-            Check.GreaterThanOrEqual(nameof(increment), increment, default);
-            Check.LessThanOrEqual(nameof(increment), increment, (dynamic)max - min);
+            _ = Check.GreaterThanOrEqual(nameof(increment), increment, default);
+            _ = Check.LessThanOrEqual(nameof(increment), increment, (dynamic)max - min);
             Set(PROPERTY_INCREMENT, increment);
         }
 

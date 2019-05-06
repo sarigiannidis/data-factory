@@ -15,15 +15,15 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityColumn> builder)
         {
-            builder.ToTable("identity_columns", "sys");
-            builder.Property(_ => _.ColumnId).HasColumnName("column_id");
-            builder.Property(_ => _.IncrementValue).HasColumnName("increment_value").HasColumnType("sql_variant");
-            builder.Property(_ => _.LastValue).HasColumnName("last_value").HasColumnType("sql_variant");
-            builder.Property(_ => _.ObjectId).HasColumnName("object_id");
-            builder.Property(_ => _.SeedValue).HasColumnName("seed_value").HasColumnType("sql_variant");
-            builder.HasKey(_ => new { _.ObjectId, _.ColumnId });
-            builder.HasOne(_ => _.Table).WithMany(_ => _.IdentityColumns).HasForeignKey(_ => _.ObjectId);
-            builder.HasOne(_ => _.Column).WithOne(_ => _.Identity).HasForeignKey<Column>(_ => new { _.ObjectId, _.ColumnId });
+            _ = builder.ToTable("identity_columns", "sys");
+            _ = builder.Property(_ => _.ColumnId).HasColumnName("column_id");
+            _ = builder.Property(_ => _.IncrementValue).HasColumnName("increment_value").HasColumnType("sql_variant");
+            _ = builder.Property(_ => _.LastValue).HasColumnName("last_value").HasColumnType("sql_variant");
+            _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
+            _ = builder.Property(_ => _.SeedValue).HasColumnName("seed_value").HasColumnType("sql_variant");
+            _ = builder.HasKey(_ => new { _.ObjectId, _.ColumnId });
+            _ = builder.HasOne(_ => _.Table).WithMany(_ => _.IdentityColumns).HasForeignKey(_ => _.ObjectId);
+            _ = builder.HasOne(_ => _.Column).WithOne(_ => _.Identity).HasForeignKey<Column>(_ => new { _.ObjectId, _.ColumnId });
         }
     }
 }

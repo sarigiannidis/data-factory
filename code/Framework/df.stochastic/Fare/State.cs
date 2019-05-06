@@ -217,12 +217,12 @@ namespace Df.Stochastic.Fare
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("state ").Append(Number);
-            sb.Append(Accept ? " [accept]" : " [reject]");
-            sb.Append(":\n");
+            _ = sb.Append("state ").Append(Number);
+            _ = sb.Append(Accept ? " [accept]" : " [reject]");
+            _ = sb.Append(":\n");
             foreach (var t in Transitions)
             {
-                sb.Append("  ").Append(t.ToString()).Append("\n");
+                _ = sb.Append("  ").Append(t.ToString()).Append("\n");
             }
 
             return sb.ToString();

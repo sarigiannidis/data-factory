@@ -113,16 +113,16 @@ namespace Df.Data
 
             if (seedValue != null && incrementValue != null)
             {
-                sb.AppendFormatInvariant(" IDENTITY({0}, {1})", seedValue, incrementValue);
+                _ = sb.AppendFormatInvariant(" IDENTITY({0}, {1})", seedValue, incrementValue);
             }
 
-            sb.Append(' ');
+            _ = sb.Append(' ');
             if (!nullable)
             {
-                sb.Append("NOT ");
+                _ = sb.Append("NOT ");
             }
 
-            sb.Append("NULL");
+            _ = sb.Append("NULL");
             return sb.ToString();
         }
 
@@ -137,11 +137,11 @@ namespace Df.Data
                         maxLength /= 2;
                         if (maxLength > 0)
                         {
-                            sb.AppendFormatInvariant("({0})", maxLength);
+                        _ = sb.AppendFormatInvariant("({0})", maxLength);
                         }
                         else if (maxLength == -1)
                         {
-                            sb.Append("(MAX)");
+                        _ = sb.Append("(MAX)");
                         }
 
                         break;
@@ -154,29 +154,29 @@ namespace Df.Data
                     {
                         if (maxLength > 0)
                         {
-                            sb.AppendFormatInvariant("({0})", maxLength);
+                        _ = sb.AppendFormatInvariant("({0})", maxLength);
                         }
                         else if (maxLength == -1)
                         {
-                            sb.Append("(MAX)");
+                        _ = sb.Append("(MAX)");
                         }
 
                         break;
                     }
 
                 case SQL_TYPE_FLOAT:
-                    sb.AppendFormatInvariant("({0})", precision);
+                    _ = sb.AppendFormatInvariant("({0})", precision);
                     break;
 
                 case SQL_TYPE_DATETIME2:
                 case SQL_TYPE_DATETIMEOFFSET:
                 case SQL_TYPE_TIME:
-                    sb.AppendFormatInvariant("({0})", scale);
+                    _ = sb.AppendFormatInvariant("({0})", scale);
                     break;
 
                 case SQL_TYPE_DECIMAL:
                 case SQL_TYPE_NUMERIC:
-                    sb.AppendFormatInvariant("({0},{1})", precision, scale);
+                    _ = sb.AppendFormatInvariant("({0},{1})", precision, scale);
                     break;
             }
 

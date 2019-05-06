@@ -258,7 +258,7 @@ namespace Df.Stochastic.Fare
             }
 
             _Previous.Length = 0;
-            _Previous.Append(current);
+            _ = _Previous.Append(current);
 
             return true;
         }

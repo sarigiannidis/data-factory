@@ -46,8 +46,8 @@ namespace Df.Io.Tests
 
         private void ConfigureLogging(ILoggingBuilder loggingBuilder)
         {
-            loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
-            loggingBuilder.AddEventSourceLogger();
+            _ = loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
+            _ = loggingBuilder.AddEventSourceLogger();
         }
 
         private IServiceCollection ConfigureServices(IConfiguration configuration) =>

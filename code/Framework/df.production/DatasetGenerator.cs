@@ -66,7 +66,7 @@ namespace Df.Production
                 .Select(tableName => "DELETE FROM {0};".FormatInvariant(tableName));
             deleteCommand.CommandText = string.Concat(deletions);
             deleteCommand.Transaction = transaction;
-            deleteCommand.ExecuteNonQuery();
+            _ = deleteCommand.ExecuteNonQuery();
             var copyOptions = CreateCopyOptions(disableTriggers);
             foreach (var tablePrescription in tablePrescriptions)
             {
@@ -87,7 +87,7 @@ namespace Df.Production
 
         public void GenerateStream(Stream stream, bool disableTriggers, bool dryRun)
         {
-            Check.NotNull(nameof(stream), stream);
+            _ = Check.NotNull(nameof(stream), stream);
             using var sql = new InternalGenerator(this).Generate();
             var tableDescriptions = GetOrderedTableDescriptions().ToArray();
             WriteStartTransaction(stream);
@@ -123,7 +123,7 @@ namespace Df.Production
             };
             foreach (var columnName in columnNames)
             {
-                sqlBulkCopy.ColumnMappings.Add(columnName, columnName);
+                _ = sqlBulkCopy.ColumnMappings.Add(columnName, columnName);
             }
 
             sqlBulkCopy.WriteToServer(sourceTableReader);
@@ -194,7 +194,7 @@ namespace Df.Production
                     Encoding = DEFAULT_ENCODING,
                     NoCommandTerminator = true,
                 };
-                table.EnumScript(options);
+                _ = table.EnumScript(options);
                 using var tempFileStream = File.OpenRead(tempFileName);
 
                 // Skipping encoding preamble bytes.

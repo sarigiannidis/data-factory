@@ -67,7 +67,7 @@ namespace Df
                 Console.WriteLine(helpText);
             }
 
-            parserResult
+            _ = parserResult
                 .WithParsed(GetHandler<AddOptions>())
                 .WithParsed(GetHandler<GenerateOptions>())
                 .WithParsed(GetHandler<ListOptions>())

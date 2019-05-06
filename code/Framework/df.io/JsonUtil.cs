@@ -25,7 +25,7 @@ namespace Df.Io
 
         public static string Serialize<T>(T t)
         {
-            Check.NotNull(nameof(t), t);
+            _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
             using var stringWriter = new StringWriter();
             using var writer = new JsonTextWriter(stringWriter);
@@ -35,7 +35,7 @@ namespace Df.Io
 
         public static void Write<T>(T t, string path)
         {
-            Check.NotNull(nameof(t), t);
+            _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
             using var file = File.CreateText(path);
             serializer.Serialize(file, t);

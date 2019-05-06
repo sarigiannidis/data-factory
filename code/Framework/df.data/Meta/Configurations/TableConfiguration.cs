@@ -15,13 +15,13 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<Table> builder)
         {
-            builder.ToTable("tables", "sys");
-            builder.Property(_ => _.CreateDate).HasColumnName("create_date");
-            builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
-            builder.Property(_ => _.Name).HasColumnName("name");
-            builder.Property(_ => _.ObjectId).HasColumnName("object_id");
-            builder.Property(_ => _.SchemaId).HasColumnName("schema_id");
-            builder.HasKey(_ => _.ObjectId);
+            _ = builder.ToTable("tables", "sys");
+            _ = builder.Property(_ => _.CreateDate).HasColumnName("create_date");
+            _ = builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
+            _ = builder.Property(_ => _.Name).HasColumnName("name");
+            _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
+            _ = builder.Property(_ => _.SchemaId).HasColumnName("schema_id");
+            _ = builder.HasKey(_ => _.ObjectId);
 
             // builder.Property(_ => _.Durability).HasColumnName("durability");
             // builder.Property(_ => _.DurabilityDesc).HasColumnName("durability_desc");

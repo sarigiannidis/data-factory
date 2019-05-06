@@ -73,17 +73,17 @@ namespace Df.Data.Meta
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ColumnConfiguration());
-            modelBuilder.ApplyConfiguration(new ForeignKeyColumnConfiguration());
-            modelBuilder.ApplyConfiguration(new ForeignKeyConfiguration());
-            modelBuilder.ApplyConfiguration(new IdentityColumnConfiguration());
-            modelBuilder.ApplyConfiguration(new TableConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new ColumnConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new ForeignKeyColumnConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new ForeignKeyConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new IdentityColumnConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new TableConfiguration());
 
-            modelBuilder.HasDbFunction(() => ObjectDefinition(default)).HasName("OBJECT_DEFINITION").HasSchema(string.Empty);
-            modelBuilder.HasDbFunction(() => ObjectId(default)).HasName("OBJECT_ID").HasSchema(string.Empty);
-            modelBuilder.HasDbFunction(() => ObjectName(default)).HasName("OBJECT_NAME").HasSchema(string.Empty);
-            modelBuilder.HasDbFunction(() => SchemaName(default)).HasName("SCHEMA_NAME").HasSchema(string.Empty);
-            modelBuilder.HasDbFunction(() => TypeName(default)).HasName("TYPE_NAME").HasSchema(string.Empty);
+            _ = modelBuilder.HasDbFunction(() => ObjectDefinition(default)).HasName("OBJECT_DEFINITION").HasSchema(string.Empty);
+            _ = modelBuilder.HasDbFunction(() => ObjectId(default)).HasName("OBJECT_ID").HasSchema(string.Empty);
+            _ = modelBuilder.HasDbFunction(() => ObjectName(default)).HasName("OBJECT_NAME").HasSchema(string.Empty);
+            _ = modelBuilder.HasDbFunction(() => SchemaName(default)).HasName("SCHEMA_NAME").HasSchema(string.Empty);
+            _ = modelBuilder.HasDbFunction(() => TypeName(default)).HasName("TYPE_NAME").HasSchema(string.Empty);
         }
 
         private static dynamic ThrowLinqOnly() =>

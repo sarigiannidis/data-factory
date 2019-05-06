@@ -15,16 +15,16 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<ForeignKey> builder)
         {
-            builder.ToTable("foreign_keys", "sys");
-            builder.Property(_ => _.Name).HasColumnName("name");
-            builder.Property(_ => _.ObjectId).HasColumnName("object_id");
-            builder.Property(_ => _.ParentObjectId).HasColumnName("parent_object_id");
-            builder.Property(_ => _.CreateDate).HasColumnName("create_date");
-            builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
-            builder.Property(_ => _.ReferencedObjectId).HasColumnName("referenced_object_id");
-            builder.HasKey(_ => _.ObjectId);
-            builder.HasOne(_ => _.Parent).WithMany(_ => _.ForeignKeys).HasForeignKey(_ => _.ParentObjectId);
-            builder.HasOne(_ => _.Referenced).WithMany(_ => _.ReferringForeignKeys).HasForeignKey(_ => _.ReferencedObjectId);
+            _ = builder.ToTable("foreign_keys", "sys");
+            _ = builder.Property(_ => _.Name).HasColumnName("name");
+            _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
+            _ = builder.Property(_ => _.ParentObjectId).HasColumnName("parent_object_id");
+            _ = builder.Property(_ => _.CreateDate).HasColumnName("create_date");
+            _ = builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
+            _ = builder.Property(_ => _.ReferencedObjectId).HasColumnName("referenced_object_id");
+            _ = builder.HasKey(_ => _.ObjectId);
+            _ = builder.HasOne(_ => _.Parent).WithMany(_ => _.ForeignKeys).HasForeignKey(_ => _.ParentObjectId);
+            _ = builder.HasOne(_ => _.Referenced).WithMany(_ => _.ReferringForeignKeys).HasForeignKey(_ => _.ReferencedObjectId);
 
             // builder.Property(_ => _.DeleteReferentialAction).HasColumnName("delete_referential_action");
             // builder.Property(_ => _.DeleteReferentialActionDesc).HasColumnName("delete_referential_action_desc");

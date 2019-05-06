@@ -15,19 +15,19 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<Column> builder)
         {
-            builder.ToTable("columns", "sys");
-            builder.Property(_ => _.ObjectId).HasColumnName("object_id");
-            builder.Property(_ => _.Name).HasColumnName("name");
-            builder.Property(_ => _.ColumnId).HasColumnName("column_id");
-            builder.Property(_ => _.UserTypeId).HasColumnName("user_type_id");
-            builder.Property(_ => _.MaxLength).HasColumnName("max_length");
-            builder.Property(_ => _.Precision).HasColumnName("precision");
-            builder.Property(_ => _.Scale).HasColumnName("scale");
-            builder.Property(_ => _.IsNullable).HasColumnName("is_nullable");
-            builder.Property(_ => _.IsIdentity).HasColumnName("is_identity");
-            builder.Property(_ => _.IsComputed).HasColumnName("is_computed");
-            builder.HasKey(_ => new { _.ObjectId, _.ColumnId });
-            builder.HasOne(_ => _.Table).WithMany(_ => _.Columns).HasForeignKey(_ => _.ObjectId);
+            _ = builder.ToTable("columns", "sys");
+            _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
+            _ = builder.Property(_ => _.Name).HasColumnName("name");
+            _ = builder.Property(_ => _.ColumnId).HasColumnName("column_id");
+            _ = builder.Property(_ => _.UserTypeId).HasColumnName("user_type_id");
+            _ = builder.Property(_ => _.MaxLength).HasColumnName("max_length");
+            _ = builder.Property(_ => _.Precision).HasColumnName("precision");
+            _ = builder.Property(_ => _.Scale).HasColumnName("scale");
+            _ = builder.Property(_ => _.IsNullable).HasColumnName("is_nullable");
+            _ = builder.Property(_ => _.IsIdentity).HasColumnName("is_identity");
+            _ = builder.Property(_ => _.IsComputed).HasColumnName("is_computed");
+            _ = builder.HasKey(_ => new { _.ObjectId, _.ColumnId });
+            _ = builder.HasOne(_ => _.Table).WithMany(_ => _.Columns).HasForeignKey(_ => _.ObjectId);
 
             // builder.Property(_ => _.CollationName).HasColumnName("collation_name");
             // builder.Property(_ => _.ColumnEncryptionKeyDatabaseName).HasColumnName("column_encryption_key_database_name");

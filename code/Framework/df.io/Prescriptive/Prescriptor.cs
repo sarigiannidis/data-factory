@@ -40,7 +40,7 @@ namespace Df.Io.Prescriptive
 
         public void AddValueFactory(ValueFactoryPrescription valueFactoryPrescription)
         {
-            Check.NotNull(nameof(valueFactoryPrescription), valueFactoryPrescription);
+            _ = Check.NotNull(nameof(valueFactoryPrescription), valueFactoryPrescription);
 
             if (_ValueFactoryPrescriptions.Any(_ => _.Name == valueFactoryPrescription.Name))
             {

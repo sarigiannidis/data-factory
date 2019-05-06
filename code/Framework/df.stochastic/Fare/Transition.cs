@@ -192,11 +192,11 @@ namespace Df.Stochastic.Fare
             AppendCharString(Min, sb);
             if (Min != Max)
             {
-                sb.Append("-");
+                _ = sb.Append("-");
                 AppendCharString(Max, sb);
             }
 
-            sb.Append(" -> ").Append(To.Number);
+            _ = sb.Append(" -> ").Append(To.Number);
             return sb.ToString();
         }
 
@@ -204,27 +204,27 @@ namespace Df.Stochastic.Fare
         {
             if (c >= 0x21 && c <= 0x7e && c != '\\' && c != '"')
             {
-                sb.Append(c);
+                _ = sb.Append(c);
             }
             else
             {
-                sb.Append("\\u");
+                _ = sb.Append("\\u");
                 var s = ((int)c).ToString("x");
                 if (c < 0x10)
                 {
-                    sb.Append("000").Append(s);
+                    _ = sb.Append("000").Append(s);
                 }
                 else if (c < 0x100)
                 {
-                    sb.Append("00").Append(s);
+                    _ = sb.Append("00").Append(s);
                 }
                 else if (c < 0x1000)
                 {
-                    sb.Append("0").Append(s);
+                    _ = sb.Append("0").Append(s);
                 }
                 else
                 {
-                    sb.Append(s);
+                    _ = sb.Append(s);
                 }
             }
         }

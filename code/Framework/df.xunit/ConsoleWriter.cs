@@ -31,7 +31,7 @@ namespace Xunit
         public override void Flush()
         {
             _Output.WriteLine(_StringBuilder.ToString());
-            _StringBuilder.Clear();
+            _ = _StringBuilder.Clear();
         }
 
         public override void Write(char value) =>

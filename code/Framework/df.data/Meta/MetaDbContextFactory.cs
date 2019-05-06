@@ -14,7 +14,7 @@ namespace Df.Data.Meta
     {
         public MetaDbContext Create(string connectionString)
         {
-            Check.NotNull(nameof(connectionString), connectionString);
+            _ = Check.NotNull(nameof(connectionString), connectionString);
             var dbContextOptionsBuilder = new DbContextOptionsBuilder()
                 .UseSqlServer(connectionString);
             return new MetaDbContext(dbContextOptionsBuilder.Options);

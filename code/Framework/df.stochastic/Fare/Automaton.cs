@@ -174,35 +174,15 @@ namespace Df.Stochastic.Fare
         /// Gets the number of states in this automaton.
         /// </summary>
         /// Returns the number of states in this automaton.
-        public int NumberOfStates
-        {
-            get
-            {
-                if (IsSingleton)
-                {
-                    return Singleton.Length + 1;
-                }
-
-                return GetStates().Count;
-            }
-        }
+        public int NumberOfStates =>
+            IsSingleton ? Singleton.Length + 1 : GetStates().Count;
 
         /// <summary>
         /// Gets the number of transitions in this automaton. This number is counted as the total
         /// number of edges, where one edge may be a character interval.
         /// </summary>
-        public int NumberOfTransitions
-        {
-            get
-            {
-                if (IsSingleton)
-                {
-                    return Singleton.Length;
-                }
-
-                return GetStates().Sum(_ => _.Transitions.Count);
-            }
-        }
+        public int NumberOfTransitions =>
+            IsSingleton ? Singleton.Length : GetStates().Sum(_ => _.Transitions.Count);
 
         /// <summary>
         /// Gets or sets the singleton string for this automaton. An automaton that accepts exactly
@@ -329,7 +309,7 @@ namespace Df.Stochastic.Fare
 
                     foreach (var t in s.Transitions)
                     {
-                        d.TryGetValue(t.To, out var to);
+                        _ = d.TryGetValue(t.To, out var to);
                         p.Transitions.Add(new Transition(t.Min, t.Max, to));
                     }
                 }
@@ -390,15 +370,8 @@ namespace Df.Stochastic.Fare
         /// </code>
         /// flag is set.
         /// </returns>
-        public Automaton CloneIfRequired()
-        {
-            if (_AllowMutation)
-            {
-                return this;
-            }
-
-            return Clone();
-        }
+        public Automaton CloneIfRequired() =>
+            _AllowMutation ? this : Clone();
 
         public Automaton Complement() => BasicOperations.Complement(this);
 
@@ -444,16 +417,16 @@ namespace Df.Stochastic.Fare
             var visited = new HashSet<State>();
 
             var worklist = new LinkedList<State>();
-            worklist.AddLast(Initial);
+            _ = worklist.AddLast(Initial);
 
-            visited.Add(Initial);
+            _ = visited.Add(Initial);
 
             while (worklist.Count > 0)
             {
                 var s = worklist.RemoveAndReturnFirst();
                 if (s.Accept)
                 {
-                    accepts.Add(s);
+                    _ = accepts.Add(s);
                 }
 
                 foreach (var t in s.Transitions)
@@ -465,8 +438,8 @@ namespace Df.Stochastic.Fare
 
                     if (!visited.Contains(t.To))
                     {
-                        visited.Add(t.To);
-                        worklist.AddLast(t.To);
+                        _ = visited.Add(t.To);
+                        _ = worklist.AddLast(t.To);
                     }
                 }
             }
@@ -506,13 +479,13 @@ namespace Df.Stochastic.Fare
             var pointSet = new HashSet<char>();
             foreach (var s in GetStates())
             {
-                pointSet.Add(char.MinValue);
+                _ = pointSet.Add(char.MinValue);
                 foreach (var t in s.Transitions)
                 {
-                    pointSet.Add(t.Min);
+                    _ = pointSet.Add(t.Min);
                     if (t.Max < char.MaxValue)
                     {
-                        pointSet.Add((char)(t.Max + 1));
+                        _ = pointSet.Add((char)(t.Max + 1));
                     }
                 }
             }
@@ -538,19 +511,10 @@ namespace Df.Stochastic.Fare
         public HashSet<State> GetStates()
         {
             ExpandSingleton();
-            HashSet<State> visited;
-            if (IsDebug)
-            {
-                visited = new HashSet<State>(); // LinkedHashSet
-            }
-            else
-            {
-                visited = new HashSet<State>();
-            }
-
+            var visited = new HashSet<State>();
             var worklist = new LinkedList<State>();
-            worklist.AddLast(Initial);
-            visited.Add(Initial);
+            _ = worklist.AddLast(Initial);
+            _ = visited.Add(Initial);
             while (worklist.Count > 0)
             {
                 var s = worklist.RemoveAndReturnFirst();
@@ -567,8 +531,8 @@ namespace Df.Stochastic.Fare
                 {
                     if (!visited.Contains(t.To))
                     {
-                        visited.Add(t.To);
-                        worklist.AddLast(t.To);
+                        _ = visited.Add(t.To);
+                        _ = worklist.AddLast(t.To);
                     }
                 }
             }
@@ -749,7 +713,7 @@ namespace Df.Stochastic.Fare
                         continue;
                     }
 
-                    dictionary[t.To].Add(s);
+                    _ = dictionary[t.To].Add(s);
                 }
             }
 
@@ -762,8 +726,8 @@ namespace Df.Stochastic.Fare
                 {
                     if (!live.Contains(p))
                     {
-                        live.Add(p);
-                        worklist.AddLast(p);
+                        _ = live.Add(p);
+                        _ = worklist.AddLast(p);
                     }
                 }
             }

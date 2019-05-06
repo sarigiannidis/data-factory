@@ -32,7 +32,7 @@ namespace Df.Extensibility.Tests
             Configuration = builder.Build();
 
             var services = new ServiceCollection();
-            services
+            _ = services
                 .AddDfExtensibility(Configuration.GetSection(SECTION_EXTENSIBILITY))
                 .AddLogging(ConfigureLogging);
             ServiceProvider = services.BuildServiceProvider();
@@ -46,8 +46,8 @@ namespace Df.Extensibility.Tests
 
         private void ConfigureLogging(ILoggingBuilder loggingBuilder)
         {
-            loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
-            loggingBuilder.AddEventSourceLogger();
+            _ = loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
+            _ = loggingBuilder.AddEventSourceLogger();
         }
     }
 }

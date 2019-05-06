@@ -14,8 +14,8 @@ namespace Df.Stochastic
 
         public static bool NextBoolean(this IRandom random, float trueWeight, float falseWeight)
         {
-            Check.GreaterThanOrEqual(nameof(trueWeight), trueWeight, 0);
-            Check.GreaterThanOrEqual(nameof(falseWeight), falseWeight, 0);
+            _ = Check.GreaterThanOrEqual(nameof(trueWeight), trueWeight, 0);
+            _ = Check.GreaterThanOrEqual(nameof(falseWeight), falseWeight, 0);
 
             return random.NextDouble() > CalculateThreshold(trueWeight, falseWeight);
         }

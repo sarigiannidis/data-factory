@@ -30,29 +30,29 @@ namespace Df.Data
 
         public void NonQuery(string commandText)
         {
-            Check.NotNull(nameof(commandText), commandText);
+            _ = Check.NotNull(nameof(commandText), commandText);
             ExecuteNonQuery(null, commandText);
         }
 
         public void NonQuery(SqlConnection connection, string commandText)
         {
-            Check.NotNull(nameof(connection), connection);
-            Check.NotNull(nameof(commandText), commandText);
+            _ = Check.NotNull(nameof(connection), connection);
+            _ = Check.NotNull(nameof(commandText), commandText);
             ExecuteNonQuery(connection, null, commandText);
         }
 
         public void NonQuery(SqlConnection connection, SqlTransaction transaction, string commandText)
         {
-            Check.NotNull(nameof(connection), connection);
-            Check.NotNull(nameof(commandText), commandText);
-            Check.NotNull(nameof(transaction), transaction);
+            _ = Check.NotNull(nameof(connection), connection);
+            _ = Check.NotNull(nameof(commandText), commandText);
+            _ = Check.NotNull(nameof(transaction), transaction);
             ExecuteNonQuery(connection, transaction, commandText);
         }
 
         public ISqlQueryResultCollection<T> Query<T>(string query, Func<IDataRecord, T> convert)
         {
-            Check.NotNull(nameof(query), query);
-            Check.NotNull(nameof(convert), convert);
+            _ = Check.NotNull(nameof(query), query);
+            _ = Check.NotNull(nameof(convert), convert);
             return ExecuteQuery(query, convert);
         }
 

@@ -536,20 +536,20 @@ namespace Df.Stochastic.Fare
             var sb = new StringBuilder();
             if (exp1._Kind == Kind.RegexpString)
             {
-                sb.Append(exp1._S);
+                _ = sb.Append(exp1._S);
             }
             else
             {
-                sb.Append(exp1._C);
+                _ = sb.Append(exp1._C);
             }
 
             if (exp2._Kind == Kind.RegexpString)
             {
-                sb.Append(exp2._S);
+                _ = sb.Append(exp2._S);
             }
             else
             {
-                sb.Append(exp2._C);
+                _ = sb.Append(exp2._C);
             }
 
             return MakeString(sb.ToString());
@@ -607,7 +607,7 @@ namespace Df.Stochastic.Fare
                     break;
 
                 case Kind.RegexpAutomaton:
-                    set.Add(_S);
+                    _ = set.Add(_S);
                     break;
             }
         }
@@ -696,7 +696,7 @@ namespace Df.Stochastic.Fare
 
         private char ParseCharExp()
         {
-            Match('\\');
+            _ = Match('\\');
             return Next();
         }
 
@@ -754,7 +754,7 @@ namespace Df.Stochastic.Fare
                     var start = _Pos;
                     while (Peek("0123456789"))
                     {
-                        Next();
+                        _ = Next();
                     }
 
                     if (start == _Pos)
@@ -769,7 +769,7 @@ namespace Df.Stochastic.Fare
                         start = _Pos;
                         while (Peek("0123456789"))
                         {
-                            Next();
+                            _ = Next();
                         }
 
                         if (start != _Pos)
@@ -816,7 +816,7 @@ namespace Df.Stochastic.Fare
                 var start = _Pos;
                 while (More() && !Peek("\""))
                 {
-                    Next();
+                    _ = Next();
                 }
 
                 if (!Match('"'))
@@ -853,7 +853,7 @@ namespace Df.Stochastic.Fare
                 var start = _Pos;
                 while (More() && !Peek(">"))
                 {
-                    Next();
+                    _ = Next();
                 }
 
                 if (!Match('>'))
@@ -958,8 +958,8 @@ namespace Df.Stochastic.Fare
 
         private void SkipNonCapturingSubpatternExp()
         {
-            RegExpMatchingOptions.Any(Match);
-            Match(':');
+            _ = RegExpMatchingOptions.Any(Match);
+            _ = Match(':');
         }
 
         private Automaton ToAutomaton(
@@ -1044,7 +1044,7 @@ namespace Df.Stochastic.Fare
 
                 case Kind.RegexpAutomaton:
                     Automaton aa = null;
-                    automata?.TryGetValue(_S, out aa);
+                    _ = automata?.TryGetValue(_S, out aa);
 
                     if (aa == null && automatonProvider != null)
                     {
@@ -1088,7 +1088,7 @@ namespace Df.Stochastic.Fare
             var a = ToAutomaton(automata, automatonProvider, minimize);
             if (_AllowMutation)
             {
-                SetAllowMutate(@bool);
+                _ = SetAllowMutate(@bool);
             }
 
             return a;
@@ -1099,106 +1099,106 @@ namespace Df.Stochastic.Fare
             switch (_Kind)
             {
                 case Kind.RegexpUnion:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append("|");
-                    _Exp2.ToStringBuilder(sb);
-                    sb.Append(")");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append("|");
+                    _ = _Exp2.ToStringBuilder(sb);
+                    _ = sb.Append(")");
                     break;
 
                 case Kind.RegexpConcatenation:
-                    _Exp1.ToStringBuilder(sb);
-                    _Exp2.ToStringBuilder(sb);
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = _Exp2.ToStringBuilder(sb);
                     break;
 
                 case Kind.RegexpIntersection:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append("&");
-                    _Exp2.ToStringBuilder(sb);
-                    sb.Append(")");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append("&");
+                    _ = _Exp2.ToStringBuilder(sb);
+                    _ = sb.Append(")");
                     break;
 
                 case Kind.RegexpOptional:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append(")?");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append(")?");
                     break;
 
                 case Kind.RegexpRepeat:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append(")*");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append(")*");
                     break;
 
                 case Kind.RegexpRepeatMin:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append("){").Append(_Min).Append(",}");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append("){").Append(_Min).Append(",}");
                     break;
 
                 case Kind.RegexpRepeatMinMax:
-                    sb.Append("(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append("){").Append(_Min).Append(",").Append(_Max).Append("}");
+                    _ = sb.Append("(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append("){").Append(_Min).Append(",").Append(_Max).Append("}");
                     break;
 
                 case Kind.RegexpComplement:
-                    sb.Append("~(");
-                    _Exp1.ToStringBuilder(sb);
-                    sb.Append(")");
+                    _ = sb.Append("~(");
+                    _ = _Exp1.ToStringBuilder(sb);
+                    _ = sb.Append(")");
                     break;
 
                 case Kind.RegexpChar:
-                    sb.Append("\\").Append(_C);
+                    _ = sb.Append("\\").Append(_C);
                     break;
 
                 case Kind.RegexpCharRange:
-                    sb.Append("[\\").Append(_From).Append("-\\").Append(_To).Append("]");
+                    _ = sb.Append("[\\").Append(_From).Append("-\\").Append(_To).Append("]");
                     break;
 
                 case Kind.RegexpAnyChar:
-                    sb.Append(".");
+                    _ = sb.Append(".");
                     break;
 
                 case Kind.RegexpEmpty:
-                    sb.Append("#");
+                    _ = sb.Append("#");
                     break;
 
                 case Kind.RegexpString:
-                    sb.Append("\"").Append(_S).Append("\"");
+                    _ = sb.Append("\"").Append(_S).Append("\"");
                     break;
 
                 case Kind.RegexpAnyString:
-                    sb.Append("@");
+                    _ = sb.Append("@");
                     break;
 
                 case Kind.RegexpAutomaton:
-                    sb.Append("<").Append(_S).Append(">");
+                    _ = sb.Append("<").Append(_S).Append(">");
                     break;
 
                 case Kind.RegexpInterval:
                     var s1 = Convert.ToDecimal(_Min).ToString();
                     var s2 = Convert.ToDecimal(_Max).ToString();
-                    sb.Append("<");
+                    _ = sb.Append("<");
                     if (_Digits > 0)
                     {
                         for (var i = s1.Length; i < _Digits; i++)
                         {
-                            sb.Append('0');
+                            _ = sb.Append('0');
                         }
                     }
 
-                    sb.Append(s1).Append("-");
+                    _ = sb.Append(s1).Append("-");
                     if (_Digits > 0)
                     {
                         for (var i = s2.Length; i < _Digits; i++)
                         {
-                            sb.Append('0');
+                            _ = sb.Append('0');
                         }
                     }
 
-                    sb.Append(s2).Append(">");
+                    _ = sb.Append(s2).Append(">");
                     break;
             }
 

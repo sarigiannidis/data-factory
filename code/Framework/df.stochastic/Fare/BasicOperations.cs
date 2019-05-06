@@ -66,7 +66,7 @@ namespace Df.Stochastic.Fare
                     forward.Add(p.FirstState, to);
                 }
 
-                to.Add(p.SecondState);
+                _ = to.Add(p.SecondState);
                 var from = back[p.SecondState];
                 if (from == null)
                 {
@@ -74,7 +74,7 @@ namespace Df.Stochastic.Fare
                     back.Add(p.SecondState, from);
                 }
 
-                from.Add(p.FirstState);
+                _ = from.Add(p.FirstState);
             }
 
             var worklist = new LinkedList<StatePair>(pairs);
@@ -82,7 +82,7 @@ namespace Df.Stochastic.Fare
             while (worklist.Count != 0)
             {
                 var p = worklist.RemoveAndReturnFirst();
-                workset.Remove(p);
+                _ = workset.Remove(p);
                 var to = forward[p.SecondState];
                 var from = back[p.FirstState];
                 if (to != null)
@@ -93,10 +93,10 @@ namespace Df.Stochastic.Fare
                         if (!pairs.Contains(pp))
                         {
                             pairs.Add(pp);
-                            forward[p.FirstState].Add(s);
-                            back[s].Add(p.FirstState);
-                            worklist.AddLast(pp);
-                            workset.Add(pp);
+                            _ = forward[p.FirstState].Add(s);
+                            _ = back[s].Add(p.FirstState);
+                            _ = worklist.AddLast(pp);
+                            _ = workset.Add(pp);
                             if (from != null)
                             {
                                 foreach (var q in from)
@@ -104,8 +104,8 @@ namespace Df.Stochastic.Fare
                                     var qq = new StatePair(q, p.FirstState);
                                     if (!workset.Contains(qq))
                                     {
-                                        worklist.AddLast(qq);
-                                        workset.Add(qq);
+                                        _ = worklist.AddLast(qq);
+                                        _ = workset.Add(qq);
                                     }
                                 }
                             }
@@ -202,7 +202,7 @@ namespace Df.Stochastic.Fare
                 var b = new StringBuilder();
                 foreach (var a in l)
                 {
-                    b.Append(a.Singleton);
+                    _ = b.Append(a.Singleton);
                 }
 
                 return BasicAutomata.MakeString(b.ToString());
@@ -217,7 +217,7 @@ namespace Df.Stochastic.Fare
                 var ids = new HashSet<int>();
                 foreach (var a in l)
                 {
-                    ids.Add(RuntimeHelpers.GetHashCode(a));
+                    _ = ids.Add(RuntimeHelpers.GetHashCode(a));
                 }
 
                 var hasAliases = ids.Count != l.Count;
@@ -249,7 +249,7 @@ namespace Df.Stochastic.Fare
                             s.AddEpsilon(aa.Initial);
                             if (s.Accept)
                             {
-                                ns.Add(s);
+                                _ = ns.Add(s);
                             }
                         }
 
@@ -308,14 +308,14 @@ namespace Df.Stochastic.Fare
             var newstate = new Dictionary<List<State>, State>(comparer);
 
             sets.Add(initialset, initialset);
-            worklist.AddLast(initialset);
+            _ = worklist.AddLast(initialset);
             a.Initial = new State();
             newstate.Add(initialset, a.Initial);
 
             while (worklist.Count > 0)
             {
                 var s = worklist.RemoveAndReturnFirst();
-                newstate.TryGetValue(s, out var r);
+                _ = newstate.TryGetValue(s, out var r);
                 foreach (var q in s)
                 {
                     if (q.Accept)
@@ -334,7 +334,7 @@ namespace Df.Stochastic.Fare
                         {
                             if (t.Min <= points[n] && points[n] <= t.Max)
                             {
-                                set.Add(t.To);
+                                _ = set.Add(t.To);
                             }
                         }
                     }
@@ -344,22 +344,13 @@ namespace Df.Stochastic.Fare
                     if (!sets.ContainsKey(p))
                     {
                         sets.Add(p, p);
-                        worklist.AddLast(p);
+                        _ = worklist.AddLast(p);
                         newstate.Add(p, new State());
                     }
 
-                    newstate.TryGetValue(p, out var q);
+                    _ = newstate.TryGetValue(p, out var q);
                     var min = points[n];
-                    char max;
-                    if (n + 1 < points.Length)
-                    {
-                        max = (char)(points[n + 1] - 1);
-                    }
-                    else
-                    {
-                        max = char.MaxValue;
-                    }
-
+                    var max = n + 1 < points.Length ? (char)(points[n + 1] - 1) : char.MaxValue;
                     r.Transitions.Add(new Transition(min, max, q));
                 }
             }
@@ -411,7 +402,7 @@ namespace Df.Stochastic.Fare
             var worklist = new LinkedList<StatePair>();
             var newstates = new Dictionary<StatePair, StatePair>();
             var p = new StatePair(c.Initial, a1.Initial, a2.Initial);
-            worklist.AddLast(p);
+            _ = worklist.AddLast(p);
             newstates.Add(p, p);
             while (worklist.Count > 0)
             {
@@ -431,11 +422,11 @@ namespace Df.Stochastic.Fare
                         if (t2[n2].Max >= t1[n1].Min)
                         {
                             var q = new StatePair(t1[n1].To, t2[n2].To);
-                            newstates.TryGetValue(q, out var r);
+                            _ = newstates.TryGetValue(q, out var r);
                             if (r == null)
                             {
                                 q.S = new State();
-                                worklist.AddLast(q);
+                                _ = worklist.AddLast(q);
                                 newstates.Add(q, q);
                                 r = q;
                             }
@@ -737,7 +728,7 @@ namespace Df.Stochastic.Fare
             var ppOther = new LinkedList<State>();
             var bb = new BitArray(states.Count);
             var bbOther = new BitArray(states.Count);
-            pp.AddLast(a.Initial);
+            _ = pp.AddLast(a.Initial);
             var dest = new List<State>();
             var accept = a.Initial.Accept;
 
@@ -760,7 +751,7 @@ namespace Df.Stochastic.Fare
                         if (!bbOther.Get(q.Number))
                         {
                             bbOther.Set(q.Number, true);
-                            ppOther.AddLast(q);
+                            _ = ppOther.AddLast(q);
                         }
                     }
                 }
@@ -793,7 +784,7 @@ namespace Df.Stochastic.Fare
             var ids = new HashSet<int>();
             foreach (var a in automatons)
             {
-                ids.Add(RuntimeHelpers.GetHashCode(a));
+                _ = ids.Add(RuntimeHelpers.GetHashCode(a));
             }
 
             var hasAliases = ids.Count != automatons.Count;
