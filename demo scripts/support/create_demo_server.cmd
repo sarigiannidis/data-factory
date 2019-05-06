@@ -1,2 +1,0 @@
-sqllocaldb create demo_server
-sqllocaldb start demo_server
