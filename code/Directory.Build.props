@@ -6,7 +6,7 @@
    <TargetFramework>netcoreapp3.0</TargetFramework>
  </PropertyGroup>
 
-  <PropertyGroup>
+  <PropertyGroup Label="Packaging">
     <Authors>Michalis Sarigiannidis</Authors>
     <Copyright>Copyright $(CurrentYear) © Michalis Sarigiannidis. All rights reserved.</Copyright>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
