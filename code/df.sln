@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28516.95
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.core", "df.core\df.core.csproj", "{7140E89F-7325-45B8-B849-AD3D39D2D778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.core", "Framework\df.core\df.core.csproj", "{7140E89F-7325-45B8-B849-AD3D39D2D778}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.production", "df.production\df.production.csproj", "{CD3F3E8E-2A14-4861-9EFE-39FB3BA7C6EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.production", "Framework\df.production\df.production.csproj", "{CD3F3E8E-2A14-4861-9EFE-39FB3BA7C6EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.data", "df.data\df.data.csproj", "{994BD8D0-EB8B-4E96-96A0-917FF62983D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.data", "Framework\df.data\df.data.csproj", "{994BD8D0-EB8B-4E96-96A0-917FF62983D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.data.tests", "df.data.tests\df.data.tests.csproj", "{42BF7936-C933-4BEB-916B-8E477B9983BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.data.tests", "Tests\df.data.tests\df.data.tests.csproj", "{42BF7936-C933-4BEB-916B-8E477B9983BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{23565848-5B80-492B-A858-FB48E9A3791B}"
 EndProject
@@ -17,59 +17,46 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70E2D340-195F-4D8E-B60F-82A7AAB6CA41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.contracts", "df.extensibility.contracts\df.extensibility.contracts.csproj", "{285391FF-7462-4559-844D-F7F2603C949B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.contracts", "Framework\df.extensibility.contracts\df.extensibility.contracts.csproj", "{285391FF-7462-4559-844D-F7F2603C949B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Value factories", "Value factories", "{137505BB-A467-4104-B5E6-1D1245A7A320}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Factories", "Factories", "{137505BB-A467-4104-B5E6-1D1245A7A320}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.valuefactories", "df.valuefactories\df.valuefactories.csproj", "{584EFBDC-FE86-4D48-B024-25B2E694A88B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.valuefactories", "Factories\df.valuefactories\df.valuefactories.csproj", "{584EFBDC-FE86-4D48-B024-25B2E694A88B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility", "df.extensibility\df.extensibility.csproj", "{94F8D447-3163-419B-B015-EF145AA611EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility", "Framework\df.extensibility\df.extensibility.csproj", "{94F8D447-3163-419B-B015-EF145AA611EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.tests", "df.extensibility.tests\df.extensibility.tests.csproj", "{8A55040A-5F8F-4DD7-A6A0-AFF58635291A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.extensibility.tests", "Tests\df.extensibility.tests\df.extensibility.tests.csproj", "{8A55040A-5F8F-4DD7-A6A0-AFF58635291A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{95F1798E-076F-4DF5-B58F-DEF742B225EF} = {95F1798E-076F-4DF5-B58F-DEF742B225EF}
 		{584EFBDC-FE86-4D48-B024-25B2E694A88B} = {584EFBDC-FE86-4D48-B024-25B2E694A88B}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEB72D84-CD92-41B7-85F4-65EFDD80DFB5}"
-	ProjectSection(SolutionItems) = preProject
-		artifacts_read.targets = artifacts_read.targets
-		artifacts_write.targets = artifacts_write.targets
-		CREATETESTDB.sql = CREATETESTDB.sql
-		df.ruleset = df.ruleset
-		Directory.Build.props = Directory.Build.props
-		mssql.targets = mssql.targets
-		..\README.md = ..\README.md
-		stylecop.json = stylecop.json
-		TODO.md = TODO.md
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.stochastic", "Framework\df.stochastic\df.stochastic.csproj", "{E6732801-F0E7-4090-ADC9-8ADD93CA7347}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.stochastic", "df.stochastic\df.stochastic.csproj", "{E6732801-F0E7-4090-ADC9-8ADD93CA7347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.stochastic.tests", "Tests\df.stochastic.tests\df.stochastic.tests.csproj", "{686AB50E-CD42-47E7-813B-9C01DF3C3E74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.stochastic.tests", "df.stochastic.tests\df.stochastic.tests.csproj", "{686AB50E-CD42-47E7-813B-9C01DF3C3E74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.io", "Framework\df.io\df.io.csproj", "{4E7BD0A3-8CFD-4C6D-8C18-05288D24C94A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.io", "df.io\df.io.csproj", "{4E7BD0A3-8CFD-4C6D-8C18-05288D24C94A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.io.tests", "df.io.tests\df.io.tests.csproj", "{FCE13951-9399-42FB-9ED2-7986336F4E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.io.tests", "Tests\df.io.tests\df.io.tests.csproj", "{FCE13951-9399-42FB-9ED2-7986336F4E7E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{95F1798E-076F-4DF5-B58F-DEF742B225EF} = {95F1798E-076F-4DF5-B58F-DEF742B225EF}
 		{584EFBDC-FE86-4D48-B024-25B2E694A88B} = {584EFBDC-FE86-4D48-B024-25B2E694A88B}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.xunit", "df.xunit\df.xunit.csproj", "{976BBEEA-3FAE-4539-B70B-2B0167F2F616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.xunit", "Framework\df.xunit\df.xunit.csproj", "{976BBEEA-3FAE-4539-B70B-2B0167F2F616}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df", "df\df.csproj", "{F0CC1D84-592A-47BE-A0C4-16744A4F8EA0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{584EFBDC-FE86-4D48-B024-25B2E694A88B} = {584EFBDC-FE86-4D48-B024-25B2E694A88B}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.tests", "df.tests\df.tests.csproj", "{8C0DEE70-C16E-4647-9466-FAB2888D33B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.tests", "Tests\df.tests\df.tests.csproj", "{8C0DEE70-C16E-4647-9466-FAB2888D33B6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{95F1798E-076F-4DF5-B58F-DEF742B225EF} = {95F1798E-076F-4DF5-B58F-DEF742B225EF}
 		{584EFBDC-FE86-4D48-B024-25B2E694A88B} = {584EFBDC-FE86-4D48-B024-25B2E694A88B}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.valuefactories.spatial", "df.valuefactories.spatial\df.valuefactories.spatial.csproj", "{95F1798E-076F-4DF5-B58F-DEF742B225EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "df.valuefactories.spatial", "Factories\df.valuefactories.spatial\df.valuefactories.spatial.csproj", "{95F1798E-076F-4DF5-B58F-DEF742B225EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

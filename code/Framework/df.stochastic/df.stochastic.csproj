@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Df.Stochastic</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Df.Extensibility</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.0.0-preview3.19153.1" />
+  </ItemGroup>
+  
+</Project>

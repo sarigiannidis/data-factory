@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(TARGETSDIR)artifacts_write.props" />
+
+  <PropertyGroup>
+    <RootNamespace>Df.ValueFactories</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="T4">
+    <None Update="Incremental.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Incremental.cs</LastGenOutput>
+    </None>
+    <None Update="Random.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Random.cs</LastGenOutput>
+    </None>
+    <Compile Update="Incremental.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Incremental.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Random.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Random.tt</DependentUpon>
+    </Compile>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" Label="T4 translation" />
+  </ItemGroup>
+
+</Project>

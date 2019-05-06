@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="$(TARGETSDIR)mssql.props" />
+  <Import Project="$(TARGETSDIR)artifacts_read.props" />
+
+  <PropertyGroup>
+    <RootNamespace>Df.Extensibility.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.xunit\df.xunit.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview3.19153.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+</Project>

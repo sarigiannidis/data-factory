@@ -1,7 +1,0 @@
-<Project>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Exec Command="xcopy &quot;$(SolutionDir)..\artifacts\$(TargetFramework)\ValueFactories&quot; &quot;$(TargetDir)ValueFactories\&quot; /Y" />
-  </Target>
-
-</Project>

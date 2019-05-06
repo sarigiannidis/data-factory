@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Df.Extensibility</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.stochastic\df.stochastic.csproj" />
+  </ItemGroup>
+
+</Project>

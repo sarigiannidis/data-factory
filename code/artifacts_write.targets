@@ -1,7 +1,0 @@
-<Project>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(TargetPath) &quot;$(SolutionDir)..\artifacts\$(TargetFramework)\ValueFactories\&quot; /Y" />
-  </Target>
-
-</Project>

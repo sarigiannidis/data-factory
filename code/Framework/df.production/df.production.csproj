@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Df.Production</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="150.18118.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.io\df.io.csproj" />
+  </ItemGroup>
+  
+</Project>
