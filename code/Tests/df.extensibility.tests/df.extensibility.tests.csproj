@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
-  <Import Project="$(TARGETSDIR)mssql.props" />
-  <Import Project="$(TARGETSDIR)artifacts_read.props" />
+  <Import Project="$(PROPSDIR)mssql.props" />
+  <Import Project="$(PROPSDIR)artifacts_read.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Extensibility.Tests</RootNamespace>

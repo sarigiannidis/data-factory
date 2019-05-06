@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="$(TARGETSDIR)artifacts_write.props" />
-  <Import Project="$(TARGETSDIR)mssql.props" />
+  <Import Project="$(PROPSDIR)artifacts_write.props" />
+  <Import Project="$(PROPSDIR)mssql.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.ValueFactories.Spatial</RootNamespace>

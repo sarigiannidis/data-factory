@@ -1,0 +1,29 @@
+<Project>
+  <PropertyGroup Label="Analysis">
+    <CodeAnalysisRuleSet>$(ANALYSISDIR)df.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Label="Analysis packages">
+    <AdditionalFiles Include="$(ANALYSISDIR)\stylecop.json" Link="stylecop.json" />
+    <AdditionalFiles Include="$(ANALYSISDIR)\df.ruleset" Link="df.ruleset" />
+  </ItemGroup>
+
+  <ItemGroup Label="Analysis packages">
+    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="2.9.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NetCore.Analyzers" Version="2.9.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
