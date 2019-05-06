@@ -1,17 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
-  <Import Project="..\..\Framework\mssql.targets" />
-  <Import Project="..\..\artifacts_read.targets" />
+  <Import Project="$(FRAMEWORKDIR)mssql.targets" />
+  <Import Project="$(SolutionDir)artifacts_read.targets" />
 
   <PropertyGroup>
     <RootNamespace>Df.Extensibility.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\df.extensibility.contracts\df.extensibility.contracts.csproj" />
-    <ProjectReference Include="..\..\Framework\df.core\df.core.csproj" />
-    <ProjectReference Include="..\..\Framework\df.extensibility\df.extensibility.csproj" />
-    <ProjectReference Include="..\..\Framework\df.xunit\df.xunit.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.xunit\df.xunit.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,12 +19,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview3.19153.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview3.19153.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

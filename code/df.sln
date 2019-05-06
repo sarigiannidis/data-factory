@@ -21,7 +21,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70E2D340-195F-4D8E-B60F-82A7AAB6CA41}"
 	ProjectSection(SolutionItems) = preProject
 		Tests\CREATETESTDB.sql = Tests\CREATETESTDB.sql
+		Tests\Directory.Build.props = Tests\Directory.Build.props
 		Tests\TESTDB.mdf = Tests\TESTDB.mdf
+		Tests\testdb.targets = Tests\testdb.targets
 		Tests\TESTDB_log.ldf = Tests\TESTDB_log.ldf
 	EndProjectSection
 EndProject

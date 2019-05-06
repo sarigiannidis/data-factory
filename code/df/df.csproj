@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\artifacts_read.targets" />
+  <Import Project="$(SolutionDir)artifacts_read.targets" />
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework\df.core\df.core.csproj" />
-    <ProjectReference Include="..\Framework\df.data\df.data.csproj" />
-    <ProjectReference Include="..\Framework\df.extensibility\df.extensibility.csproj" />
-    <ProjectReference Include="..\Framework\df.io\df.io.csproj" />
-    <ProjectReference Include="..\Framework\df.production\df.production.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.data\df.data.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.io\df.io.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.production\df.production.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ValueFactories Include="$(SolutionDir)../artifacts/$(TargetFramework)/ValueFactories/**/*" />
+    <ValueFactories Include="$(ARTIFACTSDIR)/$(TargetFramework)/ValueFactories/**/*" />
     <ResolvedFileToPublish Include="@(ValueFactories)">
       <RelativePath>ValueFactories/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
     </ResolvedFileToPublish>

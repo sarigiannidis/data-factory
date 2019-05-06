@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
-  <Import Project="..\mssql.targets" />
+  <Import Project="$(FRAMEWORKDIR)mssql.targets" />
 
   <PropertyGroup>
     <RootNamespace>Df.Data</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

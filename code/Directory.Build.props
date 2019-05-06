@@ -10,7 +10,14 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  
+
+  <PropertyGroup Label="Locations">
+    <FRAMEWORKDIR>$(SolutionDir)Framework\</FRAMEWORKDIR>
+    <FACTORIESDIR>$(SolutionDir)Factories\</FACTORIESDIR>
+    <TESTSDIR>$(SolutionDir)Tests\</TESTSDIR>
+    <ARTIFACTSDIR>$(SolutionDir)..\artifacts\</ARTIFACTSDIR>
+  </PropertyGroup>
+
   <PropertyGroup>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
     <Version>0.6.1</Version>

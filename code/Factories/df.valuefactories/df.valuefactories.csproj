@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\artifacts_write.targets" />
+  <Import Project="$(FACTORIESDIR)artifacts_write.targets" />
 
   <PropertyGroup>
     <RootNamespace>Df.ValueFactories</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\df.extensibility.contracts\df.extensibility.contracts.csproj" />
-    <ProjectReference Include="..\..\Framework\df.core\df.core.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility.contracts\df.extensibility.contracts.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
   </ItemGroup>
 
   <ItemGroup Label="T4">
