@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="$(TARGETSDIR)artifacts_read.props" />
-  <Import Project="$(TARGETSDIR)testdb.props" />
+  <Import Project="$(PROPSDIR)artifacts_read.props" />
+  <Import Project="$(PROPSDIR)testdb.props" />
   
   <PropertyGroup>
     <RootNamespace>Df.Tests</RootNamespace>

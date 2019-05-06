@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
-  <Import Project="$(TARGETSDIR)mssql.props" />
+  <Import Project="$(PROPSDIR)mssql.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Data</RootNamespace>
