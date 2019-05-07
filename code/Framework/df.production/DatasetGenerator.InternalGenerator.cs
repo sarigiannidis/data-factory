@@ -125,7 +125,7 @@ namespace Df.Production
 
                 var columns = tablePrescription.ColumnPrescriptions.Select(_ => _.ColumnDescription.Name).ToArray();
                 var tableName = tablePrescription.TableName();
-                using var recordGenerator = _Owner._RecordGeneratorFactory.Create(tablePrescription, _Owner._Project.Prescriptor.DefaultRowsPerTable);
+                using var recordGenerator = _Owner._RecordGeneratorFactory.Create(tablePrescription, tablePrescription.Rows);
                 using var connection = sql.CreateConnection();
                 connection.Open();
                 using var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepIdentity, null)

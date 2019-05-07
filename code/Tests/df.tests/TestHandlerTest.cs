@@ -8,8 +8,6 @@
 namespace Df.Tests
 {
     using Df.Options;
-    using System.Data.SqlClient;
-    using System.Globalization;
     using Xunit;
     using Xunit.Abstractions;
 
@@ -20,17 +18,6 @@ namespace Df.Tests
             : base(output, fixture)
         {
         }
-
-        [Fact]
-        public void BadConnection() =>
-            Assert.Throws<SqlException>(() =>
-            {
-                var options = new TestOptions
-                {
-                    ConnectionString = Fixture.ConnectionString.Replace("MSSQLLocalDB", "OTHER", false, CultureInfo.InvariantCulture),
-                };
-                Handler.Handle(options);
-            });
 
         [Fact]
         public void GoodConnection()

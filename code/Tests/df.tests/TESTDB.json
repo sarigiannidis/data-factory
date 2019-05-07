@@ -1,18 +1,18 @@
 {
-  "Created": "2019-04-12T10:29:25.401323+02:00",
-  "Modified": "2019-04-12T10:29:25.401323+02:00",
+  "Created": "2019-05-07T16:04:21.8785509+02:00",
+  "Modified": "2019-05-07T16:04:21.8785509+02:00",
   "Descriptor": {
-    "Checksum": "98C5F56F3DE340690C139E58EB7DAC111979F0D4DFFE9C4B24FF849510F4B6FFA9FD608C0A3DE9AC3C9FD2190F0EFAF715309061490F9755A9BFDF1C54CA0D84",
-    "Created": "2019-04-12T10:29:25.401323+02:00",
-    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;",
+    "Checksum": "9D41BF7782A875DD8AD881A5FEDBC1C07B2F14CC7CFF8676B01FF433B706354138D8942C2F72ABBCA59FB9741F669188B245A26B148CEB5C98924AB67B485438",
+    "Created": "2019-05-07T16:04:21.8785509+02:00",
+    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;AttachDbFilename=B:\\df\\code\\Tests\\df.tests\\bin\\Debug\\netcoreapp3.0\\TESTDB.mdf",
     "TableDescriptions": [
       {
         "$id": "[dbo].[SQLTYPE_TABLE_1]",
-        "ObjectId": 901578250,
+        "ObjectId": 1205579333,
         "Schema": "dbo",
         "Name": "SQLTYPE_TABLE_1",
-        "Created": "2019-04-05T15:21:23.85+02:00",
-        "Modified": "2019-04-05T15:21:23.85+02:00",
+        "Created": "2019-04-22T18:20:16.933+02:00",
+        "Modified": "2019-04-22T18:20:16.933+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[SQLTYPE_TABLE_1].[RECID]",
@@ -396,11 +396,11 @@
       },
       {
         "$id": "[dbo].[SQLTYPE_TABLE_2]",
-        "ObjectId": 933578364,
+        "ObjectId": 1237579447,
         "Schema": "dbo",
         "Name": "SQLTYPE_TABLE_2",
-        "Created": "2019-04-05T15:21:23.853+02:00",
-        "Modified": "2019-04-05T15:21:23.853+02:00",
+        "Created": "2019-04-22T18:20:16.937+02:00",
+        "Modified": "2019-04-22T18:20:16.937+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[SQLTYPE_TABLE_2].[RECID]",
@@ -784,11 +784,11 @@
       },
       {
         "$id": "[dbo].[SQLTYPE_TABLE_3]",
-        "ObjectId": 965578478,
+        "ObjectId": 1269579561,
         "Schema": "dbo",
         "Name": "SQLTYPE_TABLE_3",
-        "Created": "2019-04-05T15:21:23.857+02:00",
-        "Modified": "2019-04-05T15:21:23.857+02:00",
+        "Created": "2019-04-22T18:20:16.94+02:00",
+        "Modified": "2019-04-22T18:20:16.94+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[SQLTYPE_TABLE_3].[RECID]",
@@ -919,11 +919,11 @@
       },
       {
         "$id": "[dbo].[SQLTYPE_TABLE_4]",
-        "ObjectId": 997578592,
+        "ObjectId": 1301579675,
         "Schema": "dbo",
         "Name": "SQLTYPE_TABLE_4",
-        "Created": "2019-04-05T15:21:23.86+02:00",
-        "Modified": "2019-04-05T15:21:23.86+02:00",
+        "Created": "2019-04-22T18:20:16.943+02:00",
+        "Modified": "2019-04-22T18:20:16.943+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[SQLTYPE_TABLE_4].[RECID]",
@@ -966,11 +966,11 @@
       },
       {
         "$id": "[dbo].[TABLE_0]",
-        "ObjectId": 1029578706,
+        "ObjectId": 1333579789,
         "Schema": "dbo",
         "Name": "TABLE_0",
-        "Created": "2019-04-05T15:21:23.86+02:00",
-        "Modified": "2019-04-11T14:07:50.137+02:00",
+        "Created": "2019-04-22T18:20:16.947+02:00",
+        "Modified": "2019-05-07T16:00:10.88+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_0].[RECID]",
@@ -1035,11 +1035,11 @@
       },
       {
         "$id": "[dbo].[TABLE_00]",
-        "ObjectId": 1061578820,
+        "ObjectId": 1365579903,
         "Schema": "dbo",
         "Name": "TABLE_00",
-        "Created": "2019-04-05T15:21:23.863+02:00",
-        "Modified": "2019-04-11T14:07:50.05+02:00",
+        "Created": "2019-04-22T18:20:16.95+02:00",
+        "Modified": "2019-05-07T16:00:10.827+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_00].[RECID]",
@@ -1093,11 +1093,11 @@
       },
       {
         "$id": "[dbo].[TABLE_000]",
-        "ObjectId": 1093578934,
+        "ObjectId": 1397580017,
         "Schema": "dbo",
         "Name": "TABLE_000",
-        "Created": "2019-04-05T15:21:23.867+02:00",
-        "Modified": "2019-04-05T15:21:23.89+02:00",
+        "Created": "2019-04-22T18:20:16.95+02:00",
+        "Modified": "2019-04-22T18:20:16.977+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_000].[RECID]",
@@ -1129,11 +1129,11 @@
       },
       {
         "$id": "[dbo].[TABLE_001]",
-        "ObjectId": 1125579048,
+        "ObjectId": 1429580131,
         "Schema": "dbo",
         "Name": "TABLE_001",
-        "Created": "2019-04-05T15:21:23.867+02:00",
-        "Modified": "2019-04-05T15:21:23.89+02:00",
+        "Created": "2019-04-22T18:20:16.953+02:00",
+        "Modified": "2019-04-22T18:20:16.98+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_001].[RECID]",
@@ -1165,11 +1165,11 @@
       },
       {
         "$id": "[dbo].[TABLE_01]",
-        "ObjectId": 1157579162,
+        "ObjectId": 1461580245,
         "Schema": "dbo",
         "Name": "TABLE_01",
-        "Created": "2019-04-05T15:21:23.87+02:00",
-        "Modified": "2019-04-11T14:07:50.09+02:00",
+        "Created": "2019-04-22T18:20:16.953+02:00",
+        "Modified": "2019-05-07T16:00:10.85+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_01].[RECID]",
@@ -1223,11 +1223,11 @@
       },
       {
         "$id": "[dbo].[TABLE_010]",
-        "ObjectId": 1189579276,
+        "ObjectId": 1493580359,
         "Schema": "dbo",
         "Name": "TABLE_010",
-        "Created": "2019-04-05T15:21:23.873+02:00",
-        "Modified": "2019-04-05T15:21:23.893+02:00",
+        "Created": "2019-04-22T18:20:16.957+02:00",
+        "Modified": "2019-04-22T18:20:16.98+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_010].[RECID]",
@@ -1259,11 +1259,11 @@
       },
       {
         "$id": "[dbo].[TABLE_011]",
-        "ObjectId": 1221579390,
+        "ObjectId": 1525580473,
         "Schema": "dbo",
         "Name": "TABLE_011",
-        "Created": "2019-04-05T15:21:23.873+02:00",
-        "Modified": "2019-04-05T15:21:23.893+02:00",
+        "Created": "2019-04-22T18:20:16.96+02:00",
+        "Modified": "2019-04-22T18:20:16.983+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_011].[RECID]",
@@ -1295,11 +1295,11 @@
       },
       {
         "$id": "[dbo].[TABLE_02]",
-        "ObjectId": 1253579504,
+        "ObjectId": 1557580587,
         "Schema": "dbo",
         "Name": "TABLE_02",
-        "Created": "2019-04-05T15:21:23.877+02:00",
-        "Modified": "2019-04-11T14:07:50.127+02:00",
+        "Created": "2019-04-22T18:20:16.96+02:00",
+        "Modified": "2019-05-07T16:00:10.87+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_02].[RECID]",
@@ -1353,11 +1353,11 @@
       },
       {
         "$id": "[dbo].[TABLE_020]",
-        "ObjectId": 1285579618,
+        "ObjectId": 1589580701,
         "Schema": "dbo",
         "Name": "TABLE_020",
-        "Created": "2019-04-05T15:21:23.877+02:00",
-        "Modified": "2019-04-05T15:21:23.897+02:00",
+        "Created": "2019-04-22T18:20:16.963+02:00",
+        "Modified": "2019-04-22T18:20:16.983+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_020].[RECID]",
@@ -1389,11 +1389,11 @@
       },
       {
         "$id": "[dbo].[TABLE_021]",
-        "ObjectId": 1317579732,
+        "ObjectId": 1621580815,
         "Schema": "dbo",
         "Name": "TABLE_021",
-        "Created": "2019-04-05T15:21:23.88+02:00",
-        "Modified": "2019-04-05T15:21:23.897+02:00",
+        "Created": "2019-04-22T18:20:16.967+02:00",
+        "Modified": "2019-04-22T18:20:16.987+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_021].[RECID]",
@@ -1425,11 +1425,11 @@
       },
       {
         "$id": "[dbo].[TABLE_SOURCE]",
-        "ObjectId": 1349579846,
+        "ObjectId": 1653580929,
         "Schema": "dbo",
         "Name": "TABLE_SOURCE",
-        "Created": "2019-04-05T15:21:23.88+02:00",
-        "Modified": "2019-04-11T14:07:50.163+02:00",
+        "Created": "2019-04-22T18:20:16.967+02:00",
+        "Modified": "2019-05-07T16:00:10.897+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_SOURCE].[RECID]",
@@ -1483,11 +1483,11 @@
       },
       {
         "$id": "[dbo].[TABLE_TARGET]",
-        "ObjectId": 1381579960,
+        "ObjectId": 1685581043,
         "Schema": "dbo",
         "Name": "TABLE_TARGET",
-        "Created": "2019-04-05T15:21:23.883+02:00",
-        "Modified": "2019-04-05T15:21:23.9+02:00",
+        "Created": "2019-04-22T18:20:16.97+02:00",
+        "Modified": "2019-04-22T18:20:16.99+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_TARGET].[RECID1]",
@@ -1532,8 +1532,8 @@
     "ForeignKeyDescriptions": [
       {
         "Name": "FK_TABLE_0_TABLE_00",
-        "Created": "2019-04-05T15:21:23.883+02:00",
-        "Modified": "2019-04-11T14:07:50.137+02:00",
+        "Created": "2019-04-22T18:20:16.97+02:00",
+        "Modified": "2019-05-07T16:00:10.88+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1548,8 +1548,8 @@
       },
       {
         "Name": "FK_TABLE_0_TABLE_01",
-        "Created": "2019-04-05T15:21:23.887+02:00",
-        "Modified": "2019-04-11T14:07:50.137+02:00",
+        "Created": "2019-04-22T18:20:16.973+02:00",
+        "Modified": "2019-05-07T16:00:10.88+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1564,8 +1564,8 @@
       },
       {
         "Name": "FK_TABLE_0_TABLE_02",
-        "Created": "2019-04-05T15:21:23.887+02:00",
-        "Modified": "2019-04-11T14:07:50.137+02:00",
+        "Created": "2019-04-22T18:20:16.973+02:00",
+        "Modified": "2019-05-07T16:00:10.88+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1580,8 +1580,8 @@
       },
       {
         "Name": "FK_TABLE_00_TABLE_000",
-        "Created": "2019-04-05T15:21:23.89+02:00",
-        "Modified": "2019-04-11T14:07:50.05+02:00",
+        "Created": "2019-04-22T18:20:16.977+02:00",
+        "Modified": "2019-05-07T16:00:10.83+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1596,8 +1596,8 @@
       },
       {
         "Name": "FK_TABLE_00_TABLE_001",
-        "Created": "2019-04-05T15:21:23.89+02:00",
-        "Modified": "2019-04-11T14:07:50.05+02:00",
+        "Created": "2019-04-22T18:20:16.98+02:00",
+        "Modified": "2019-05-07T16:00:10.827+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1612,8 +1612,8 @@
       },
       {
         "Name": "FK_TABLE_01_TABLE_010",
-        "Created": "2019-04-05T15:21:23.893+02:00",
-        "Modified": "2019-04-11T14:07:50.09+02:00",
+        "Created": "2019-04-22T18:20:16.98+02:00",
+        "Modified": "2019-05-07T16:00:10.85+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1628,8 +1628,8 @@
       },
       {
         "Name": "FK_TABLE_01_TABLE_011",
-        "Created": "2019-04-05T15:21:23.893+02:00",
-        "Modified": "2019-04-11T14:07:50.09+02:00",
+        "Created": "2019-04-22T18:20:16.983+02:00",
+        "Modified": "2019-05-07T16:00:10.85+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1644,8 +1644,8 @@
       },
       {
         "Name": "FK_TABLE_02_TABLE_020",
-        "Created": "2019-04-05T15:21:23.897+02:00",
-        "Modified": "2019-04-11T14:07:50.127+02:00",
+        "Created": "2019-04-22T18:20:16.983+02:00",
+        "Modified": "2019-05-07T16:00:10.87+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1660,8 +1660,8 @@
       },
       {
         "Name": "FK_TABLE_02_TABLE_021",
-        "Created": "2019-04-05T15:21:23.897+02:00",
-        "Modified": "2019-04-11T14:07:50.127+02:00",
+        "Created": "2019-04-22T18:20:16.987+02:00",
+        "Modified": "2019-05-07T16:00:10.87+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1676,8 +1676,8 @@
       },
       {
         "Name": "FK_TABLE_SOURCE_TABLE_TARGET",
-        "Created": "2019-04-05T15:21:23.9+02:00",
-        "Modified": "2019-04-11T14:07:50.163+02:00",
+        "Created": "2019-04-22T18:20:16.99+02:00",
+        "Modified": "2019-05-07T16:00:10.897+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1716,13 +1716,17 @@
         }
       },
       {
-        "$id": "long-random0",
-        "Name": "long-random0",
-        "Reference": "long-random",
+        "$id": "long-list0",
+        "Name": "long-list0",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -1746,12 +1750,17 @@
         }
       },
       {
-        "$id": "string-random0",
-        "Name": "string-random0",
-        "Reference": "string-random",
+        "$id": "string-list0",
+        "Name": "string-list0",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{10}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -1760,8 +1769,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -1770,8 +1779,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -1780,8 +1789,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -1790,28 +1799,36 @@
         "Reference": "datetimeoffset-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTimeOffset, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "1919-05-07T10:29:42.476737+02:00",
-          "MaxValue": "2119-03-19T10:29:42.4766994+02:00"
+          "MinValue": "1919-06-01T16:04:21.336072+02:00",
+          "MaxValue": "2119-04-13T16:04:21.3360593+02:00"
         }
       },
       {
-        "$id": "decimal-random0",
-        "Name": "decimal-random0",
-        "Reference": "decimal-random",
+        "$id": "decimal-list0",
+        "Name": "decimal-list0",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "double-random0",
-        "Name": "double-random0",
-        "Reference": "double-random",
+        "$id": "double-list0",
+        "Name": "double-list0",
+        "Reference": "double-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Double, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000.0,
-          "MaxValue": 10000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Double, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -1859,70 +1876,96 @@
         }
       },
       {
-        "$id": "int-random0",
-        "Name": "int-random0",
-        "Reference": "int-random",
+        "$id": "int-list0",
+        "Name": "int-list0",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "decimal-random1",
-        "Name": "decimal-random1",
-        "Reference": "decimal-random",
+        "$id": "decimal-list1",
+        "Name": "decimal-list1",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random1",
-        "Name": "string-random1",
-        "Reference": "string-random",
+        "$id": "string-list1",
+        "Name": "string-list1",
+        "Reference": "string-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "decimal-list2",
+        "Name": "decimal-list2",
+        "Reference": "decimal-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "string-list2",
+        "Name": "string-list2",
+        "Reference": "string-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "char-random0",
+        "Name": "char-random0",
+        "Reference": "char-random",
         "Configuration": {
           "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{8}"
+          "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
-        "$id": "decimal-random2",
-        "Name": "decimal-random2",
-        "Reference": "decimal-random",
+        "$id": "float-list0",
+        "Name": "float-list0",
+        "Reference": "float-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
-        }
-      },
-      {
-        "$id": "string-random2",
-        "Name": "string-random2",
-        "Reference": "string-random",
-        "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{50}"
-        }
-      },
-      {
-        "$id": "string-random3",
-        "Name": "string-random3",
-        "Reference": "string-random",
-        "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{0}"
-        }
-      },
-      {
-        "$id": "float-random0",
-        "Name": "float-random0",
-        "Reference": "float-random",
-        "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000.0,
-          "MaxValue": 1000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -1931,27 +1974,36 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
-        "$id": "int-random1",
-        "Name": "int-random1",
-        "Reference": "int-random",
+        "$id": "int-list1",
+        "Name": "int-list1",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random4",
-        "Name": "string-random4",
-        "Reference": "string-random",
+        "$id": "string-list3",
+        "Name": "string-list3",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{16}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -1965,13 +2017,17 @@
         }
       },
       {
-        "$id": "byte-random0",
-        "Name": "byte-random0",
-        "Reference": "byte-random",
+        "$id": "byte-list0",
+        "Name": "byte-list0",
+        "Reference": "byte-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Byte, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": 0,
-          "MaxValue": 255
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Byte, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2003,30 +2059,40 @@
         }
       },
       {
-        "$id": "string-random5",
-        "Name": "string-random5",
-        "Reference": "string-random",
+        "$id": "string-list4",
+        "Name": "string-list4",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{50}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random6",
-        "Name": "string-random6",
-        "Reference": "string-random",
+        "$id": "char-random1",
+        "Name": "char-random1",
+        "Reference": "char-random",
         "Configuration": {
           "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{32}"
+          "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
-        "$id": "string-random7",
-        "Name": "string-random7",
-        "Reference": "string-random",
+        "$id": "string-list5",
+        "Name": "string-list5",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{32}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2041,13 +2107,17 @@
         }
       },
       {
-        "$id": "long-random1",
-        "Name": "long-random1",
-        "Reference": "long-random",
+        "$id": "long-list1",
+        "Name": "long-list1",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2071,12 +2141,17 @@
         }
       },
       {
-        "$id": "string-random8",
-        "Name": "string-random8",
-        "Reference": "string-random",
+        "$id": "string-list6",
+        "Name": "string-list6",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{10}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2085,8 +2160,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -2095,8 +2170,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -2105,8 +2180,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -2115,28 +2190,36 @@
         "Reference": "datetimeoffset-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTimeOffset, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "1919-05-07T10:29:42.476737+02:00",
-          "MaxValue": "2119-03-19T10:29:42.4766994+02:00"
+          "MinValue": "1919-06-01T16:04:21.336072+02:00",
+          "MaxValue": "2119-04-13T16:04:21.3360593+02:00"
         }
       },
       {
-        "$id": "decimal-random3",
-        "Name": "decimal-random3",
-        "Reference": "decimal-random",
+        "$id": "decimal-list3",
+        "Name": "decimal-list3",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "double-random1",
-        "Name": "double-random1",
-        "Reference": "double-random",
+        "$id": "double-list1",
+        "Name": "double-list1",
+        "Reference": "double-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Double, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000.0,
-          "MaxValue": 10000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Double, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2184,70 +2267,96 @@
         }
       },
       {
-        "$id": "int-random2",
-        "Name": "int-random2",
-        "Reference": "int-random",
+        "$id": "int-list2",
+        "Name": "int-list2",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "decimal-random4",
-        "Name": "decimal-random4",
-        "Reference": "decimal-random",
+        "$id": "decimal-list4",
+        "Name": "decimal-list4",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random9",
-        "Name": "string-random9",
-        "Reference": "string-random",
+        "$id": "string-list7",
+        "Name": "string-list7",
+        "Reference": "string-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "decimal-list5",
+        "Name": "decimal-list5",
+        "Reference": "decimal-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "string-list8",
+        "Name": "string-list8",
+        "Reference": "string-list",
+        "Configuration": {
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "char-random2",
+        "Name": "char-random2",
+        "Reference": "char-random",
         "Configuration": {
           "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{8}"
+          "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
-        "$id": "decimal-random5",
-        "Name": "decimal-random5",
-        "Reference": "decimal-random",
+        "$id": "float-list1",
+        "Name": "float-list1",
+        "Reference": "float-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
-        }
-      },
-      {
-        "$id": "string-random10",
-        "Name": "string-random10",
-        "Reference": "string-random",
-        "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{50}"
-        }
-      },
-      {
-        "$id": "string-random11",
-        "Name": "string-random11",
-        "Reference": "string-random",
-        "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{0}"
-        }
-      },
-      {
-        "$id": "float-random1",
-        "Name": "float-random1",
-        "Reference": "float-random",
-        "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000.0,
-          "MaxValue": 1000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2256,27 +2365,36 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
-        "$id": "int-random3",
-        "Name": "int-random3",
-        "Reference": "int-random",
+        "$id": "int-list3",
+        "Name": "int-list3",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random12",
-        "Name": "string-random12",
-        "Reference": "string-random",
+        "$id": "string-list9",
+        "Name": "string-list9",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{16}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2290,13 +2408,17 @@
         }
       },
       {
-        "$id": "byte-random1",
-        "Name": "byte-random1",
-        "Reference": "byte-random",
+        "$id": "byte-list1",
+        "Name": "byte-list1",
+        "Reference": "byte-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Byte, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": 0,
-          "MaxValue": 255
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Byte, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2328,30 +2450,40 @@
         }
       },
       {
-        "$id": "string-random13",
-        "Name": "string-random13",
-        "Reference": "string-random",
+        "$id": "string-list10",
+        "Name": "string-list10",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{50}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random14",
-        "Name": "string-random14",
-        "Reference": "string-random",
+        "$id": "char-random3",
+        "Name": "char-random3",
+        "Reference": "char-random",
         "Configuration": {
           "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{32}"
+          "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
-        "$id": "string-random15",
-        "Name": "string-random15",
-        "Reference": "string-random",
+        "$id": "string-list11",
+        "Name": "string-list11",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{32}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2376,12 +2508,17 @@
         }
       },
       {
-        "$id": "string-random16",
-        "Name": "string-random16",
-        "Reference": "string-random",
+        "$id": "string-list12",
+        "Name": "string-list12",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{10}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2390,8 +2527,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -2400,37 +2537,50 @@
         "Reference": "datetimeoffset-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTimeOffset, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "1919-05-07T10:29:42.476737+02:00",
-          "MaxValue": "2119-03-19T10:29:42.4766994+02:00"
+          "MinValue": "1919-06-01T16:04:21.336072+02:00",
+          "MaxValue": "2119-04-13T16:04:21.3360593+02:00"
         }
       },
       {
-        "$id": "decimal-random6",
-        "Name": "decimal-random6",
-        "Reference": "decimal-random",
+        "$id": "decimal-list6",
+        "Name": "decimal-list6",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "decimal-random7",
-        "Name": "decimal-random7",
-        "Reference": "decimal-random",
+        "$id": "decimal-list7",
+        "Name": "decimal-list7",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "string-random17",
-        "Name": "string-random17",
-        "Reference": "string-random",
+        "$id": "string-list13",
+        "Name": "string-list13",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{50}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2454,12 +2604,12 @@
         }
       },
       {
-        "$id": "string-random18",
-        "Name": "string-random18",
-        "Reference": "string-random",
+        "$id": "char-random4",
+        "Name": "char-random4",
+        "Reference": "char-random",
         "Configuration": {
           "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{32}"
+          "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
@@ -2474,13 +2624,17 @@
         }
       },
       {
-        "$id": "int-random4",
-        "Name": "int-random4",
-        "Reference": "int-random",
+        "$id": "int-list4",
+        "Name": "int-list4",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2495,12 +2649,17 @@
         }
       },
       {
-        "$id": "string-random19",
-        "Name": "string-random19",
-        "Reference": "string-random",
+        "$id": "string-list14",
+        "Name": "string-list14",
+        "Reference": "string-list",
         "Configuration": {
-          "$type": "Df.ValueFactories.RandomStringConfiguration, df.valuefactories",
-          "Regex": "[a-zA-Z0-9]{8}"
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.String, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": "",
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2520,8 +2679,8 @@
         "Reference": "datetime-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTime, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "2009-04-14T10:29:42.4766836+02:00",
-          "MaxValue": "2029-04-09T10:29:42.4760736+02:00"
+          "MinValue": "2009-05-09T16:04:21.3360583+02:00",
+          "MaxValue": "2029-05-04T16:04:21.3360482+02:00"
         }
       },
       {
@@ -2536,33 +2695,45 @@
         }
       },
       {
-        "$id": "decimal-random8",
-        "Name": "decimal-random8",
-        "Reference": "decimal-random",
+        "$id": "decimal-list8",
+        "Name": "decimal-list8",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random2",
-        "Name": "long-random2",
-        "Reference": "long-random",
+        "$id": "long-list2",
+        "Name": "long-list2",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random3",
-        "Name": "long-random3",
-        "Reference": "long-random",
+        "$id": "long-list3",
+        "Name": "long-list3",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2577,13 +2748,17 @@
         }
       },
       {
-        "$id": "int-random5",
-        "Name": "int-random5",
-        "Reference": "int-random",
+        "$id": "int-list5",
+        "Name": "int-list5",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2624,28 +2799,36 @@
         "Reference": "datetimeoffset-random",
         "Configuration": {
           "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.DateTimeOffset, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": "1919-05-07T10:29:42.476737+02:00",
-          "MaxValue": "2119-03-19T10:29:42.4766994+02:00"
+          "MinValue": "1919-06-01T16:04:21.336072+02:00",
+          "MaxValue": "2119-04-13T16:04:21.3360593+02:00"
         }
       },
       {
-        "$id": "long-random4",
-        "Name": "long-random4",
-        "Reference": "long-random",
+        "$id": "long-list4",
+        "Name": "long-list4",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random5",
-        "Name": "long-random5",
-        "Reference": "long-random",
+        "$id": "long-list5",
+        "Name": "long-list5",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2660,13 +2843,17 @@
         }
       },
       {
-        "$id": "float-random2",
-        "Name": "float-random2",
-        "Reference": "float-random",
+        "$id": "float-list2",
+        "Name": "float-list2",
+        "Reference": "float-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000.0,
-          "MaxValue": 1000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Single, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2681,13 +2868,17 @@
         }
       },
       {
-        "$id": "decimal-random9",
-        "Name": "decimal-random9",
-        "Reference": "decimal-random",
+        "$id": "decimal-list9",
+        "Name": "decimal-list9",
+        "Reference": "decimal-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -100000.0,
-          "MaxValue": 100000.0
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Decimal, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0.0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2702,33 +2893,45 @@
         }
       },
       {
-        "$id": "long-random6",
-        "Name": "long-random6",
-        "Reference": "long-random",
+        "$id": "long-list6",
+        "Name": "long-list6",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random7",
-        "Name": "long-random7",
-        "Reference": "long-random",
+        "$id": "long-list7",
+        "Name": "long-list7",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random8",
-        "Name": "long-random8",
-        "Reference": "long-random",
+        "$id": "long-list8",
+        "Name": "long-list8",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2751,33 +2954,45 @@
         }
       },
       {
-        "$id": "long-random9",
-        "Name": "long-random9",
-        "Reference": "long-random",
+        "$id": "long-list9",
+        "Name": "long-list9",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random10",
-        "Name": "long-random10",
-        "Reference": "long-random",
+        "$id": "long-list10",
+        "Name": "long-list10",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "long-random11",
-        "Name": "long-random11",
-        "Reference": "long-random",
+        "$id": "long-list11",
+        "Name": "long-list11",
+        "Reference": "long-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -10000,
-          "MaxValue": 10000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int64, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2792,23 +3007,31 @@
         }
       },
       {
-        "$id": "int-random6",
-        "Name": "int-random6",
-        "Reference": "int-random",
+        "$id": "int-list6",
+        "Name": "int-list6",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "int-random7",
-        "Name": "int-random7",
-        "Reference": "int-random",
+        "$id": "int-list7",
+        "Name": "int-list7",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
@@ -2823,33 +3046,45 @@
         }
       },
       {
-        "$id": "int-random8",
-        "Name": "int-random8",
-        "Reference": "int-random",
+        "$id": "int-list8",
+        "Name": "int-list8",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "int-random9",
-        "Name": "int-random9",
-        "Reference": "int-random",
+        "$id": "int-list9",
+        "Name": "int-list9",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       },
       {
-        "$id": "int-random10",
-        "Name": "int-random10",
-        "Reference": "int-random",
+        "$id": "int-list10",
+        "Name": "int-list10",
+        "Reference": "int-list",
         "Configuration": {
-          "$type": "Df.Extensibility.RangeFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
-          "MinValue": -1000,
-          "MaxValue": 1000
+          "$type": "Df.Extensibility.ListFactoryConfiguration`1[[System.Int32, System.Private.CoreLib]], df.extensibility.contracts",
+          "Values": [
+            {
+              "Value": 0,
+              "Weight": 0.1
+            }
+          ]
         }
       }
     ],
@@ -2858,6 +3093,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_1]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -2872,7 +3108,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE001]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random0"
+              "$ref": "long-list0"
             },
             "NullPercentage": 0.25
           },
@@ -2899,7 +3135,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE004]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random0"
+              "$ref": "string-list0"
             },
             "NullPercentage": 0.25
           },
@@ -2944,7 +3180,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE009]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random0"
+              "$ref": "decimal-list0"
             },
             "NullPercentage": 0.25
           },
@@ -2953,7 +3189,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE010]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "double-random0"
+              "$ref": "double-list0"
             },
             "NullPercentage": 0.25
           },
@@ -2998,7 +3234,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE015]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random0"
+              "$ref": "int-list0"
             },
             "NullPercentage": 0.25
           },
@@ -3007,7 +3243,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE016]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random1"
+              "$ref": "decimal-list1"
             },
             "NullPercentage": 0.25
           },
@@ -3016,7 +3252,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE017]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random1"
+              "$ref": "string-list1"
             },
             "NullPercentage": 0.25
           },
@@ -3025,7 +3261,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE018]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random2"
+              "$ref": "decimal-list2"
             },
             "NullPercentage": 0.25
           },
@@ -3034,7 +3270,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE019]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random2"
+              "$ref": "string-list2"
             },
             "NullPercentage": 0.25
           },
@@ -3043,7 +3279,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE020]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random3"
+              "$ref": "char-random0"
             },
             "NullPercentage": 0.25
           },
@@ -3052,7 +3288,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE021]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "float-random0"
+              "$ref": "float-list0"
             },
             "NullPercentage": 0.25
           },
@@ -3070,7 +3306,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE023]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random1"
+              "$ref": "int-list1"
             },
             "NullPercentage": 0.25
           },
@@ -3079,7 +3315,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE024]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random4"
+              "$ref": "string-list3"
             },
             "NullPercentage": 0.25
           },
@@ -3097,7 +3333,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE027]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "byte-random0"
+              "$ref": "byte-list0"
             },
             "NullPercentage": 0.25
           },
@@ -3133,7 +3369,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE031]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random5"
+              "$ref": "string-list4"
             },
             "NullPercentage": 0.25
           },
@@ -3142,7 +3378,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE032]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random6"
+              "$ref": "char-random1"
             },
             "NullPercentage": 0.25
           },
@@ -3151,7 +3387,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_1].[VALUE033]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random7"
+              "$ref": "string-list5"
             },
             "NullPercentage": 0.25
           }
@@ -3161,6 +3397,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_2]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3175,7 +3412,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE001]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random1"
+              "$ref": "long-list1"
             }
           },
           {
@@ -3199,7 +3436,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE004]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random8"
+              "$ref": "string-list6"
             }
           },
           {
@@ -3239,7 +3476,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE009]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random3"
+              "$ref": "decimal-list3"
             }
           },
           {
@@ -3247,7 +3484,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE010]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "double-random1"
+              "$ref": "double-list1"
             }
           },
           {
@@ -3287,7 +3524,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE015]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random2"
+              "$ref": "int-list2"
             }
           },
           {
@@ -3295,7 +3532,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE016]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random4"
+              "$ref": "decimal-list4"
             }
           },
           {
@@ -3303,7 +3540,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE017]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random9"
+              "$ref": "string-list7"
             }
           },
           {
@@ -3311,7 +3548,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE018]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random5"
+              "$ref": "decimal-list5"
             }
           },
           {
@@ -3319,7 +3556,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE019]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random10"
+              "$ref": "string-list8"
             }
           },
           {
@@ -3327,7 +3564,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE020]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random11"
+              "$ref": "char-random2"
             }
           },
           {
@@ -3335,7 +3572,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE021]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "float-random1"
+              "$ref": "float-list1"
             }
           },
           {
@@ -3351,7 +3588,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE023]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random3"
+              "$ref": "int-list3"
             }
           },
           {
@@ -3359,7 +3596,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE024]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random12"
+              "$ref": "string-list9"
             }
           },
           {
@@ -3375,7 +3612,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE027]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "byte-random1"
+              "$ref": "byte-list1"
             }
           },
           {
@@ -3407,7 +3644,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE031]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random13"
+              "$ref": "string-list10"
             }
           },
           {
@@ -3415,7 +3652,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE032]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random14"
+              "$ref": "char-random3"
             }
           },
           {
@@ -3423,7 +3660,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_2].[VALUE033]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random15"
+              "$ref": "string-list11"
             }
           }
         ]
@@ -3432,6 +3669,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_3]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3454,7 +3692,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_3].[VALUE004]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random16"
+              "$ref": "string-list12"
             }
           },
           {
@@ -3478,7 +3716,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_3].[VALUE009]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random6"
+              "$ref": "decimal-list6"
             }
           },
           {
@@ -3486,7 +3724,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_3].[VALUE018]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random7"
+              "$ref": "decimal-list7"
             }
           },
           {
@@ -3494,7 +3732,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_3].[VALUE019]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random17"
+              "$ref": "string-list13"
             }
           },
           {
@@ -3518,7 +3756,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_3].[VALUE032]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random18"
+              "$ref": "char-random4"
             }
           }
         ]
@@ -3527,6 +3765,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_4]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3541,7 +3780,7 @@
               "$ref": "[dbo].[SQLTYPE_TABLE_4].[VAL2]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random4"
+              "$ref": "int-list4"
             },
             "NullPercentage": 0.25
           }
@@ -3551,6 +3790,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_000]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3565,7 +3805,7 @@
               "$ref": "[dbo].[TABLE_000].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "string-random19"
+              "$ref": "string-list14"
             },
             "NullPercentage": 0.25
           }
@@ -3575,6 +3815,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_001]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3599,6 +3840,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_00]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3613,7 +3855,7 @@
               "$ref": "[dbo].[TABLE_00].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random8"
+              "$ref": "decimal-list8"
             },
             "NullPercentage": 0.25
           },
@@ -3622,7 +3864,7 @@
               "$ref": "[dbo].[TABLE_00].[FK_TABLE_000]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random2"
+              "$ref": "long-list2"
             },
             "NullPercentage": 0.25
           },
@@ -3631,7 +3873,7 @@
               "$ref": "[dbo].[TABLE_00].[FK_TABLE_001]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random3"
+              "$ref": "long-list3"
             },
             "NullPercentage": 0.25
           }
@@ -3641,6 +3883,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_010]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3655,7 +3898,7 @@
               "$ref": "[dbo].[TABLE_010].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random5"
+              "$ref": "int-list5"
             },
             "NullPercentage": 0.25
           }
@@ -3665,6 +3908,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_011]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3689,6 +3933,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_01]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3712,7 +3957,7 @@
               "$ref": "[dbo].[TABLE_01].[FK_TABLE_010]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random4"
+              "$ref": "long-list4"
             },
             "NullPercentage": 0.25
           },
@@ -3721,7 +3966,7 @@
               "$ref": "[dbo].[TABLE_01].[FK_TABLE_011]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random5"
+              "$ref": "long-list5"
             },
             "NullPercentage": 0.25
           }
@@ -3731,6 +3976,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_020]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3745,7 +3991,7 @@
               "$ref": "[dbo].[TABLE_020].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "float-random2"
+              "$ref": "float-list2"
             },
             "NullPercentage": 0.25
           }
@@ -3755,6 +4001,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_021]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3769,7 +4016,7 @@
               "$ref": "[dbo].[TABLE_021].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "decimal-random9"
+              "$ref": "decimal-list9"
             },
             "NullPercentage": 0.25
           }
@@ -3779,6 +4026,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_02]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3793,7 +4041,7 @@
               "$ref": "[dbo].[TABLE_02].[Value1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random6"
+              "$ref": "long-list6"
             },
             "NullPercentage": 0.25
           },
@@ -3802,7 +4050,7 @@
               "$ref": "[dbo].[TABLE_02].[FK_TABLE_020]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random7"
+              "$ref": "long-list7"
             },
             "NullPercentage": 0.25
           },
@@ -3811,7 +4059,7 @@
               "$ref": "[dbo].[TABLE_02].[FK_TABLE_021]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random8"
+              "$ref": "long-list8"
             },
             "NullPercentage": 0.25
           }
@@ -3821,6 +4069,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_0]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3844,7 +4093,7 @@
               "$ref": "[dbo].[TABLE_0].[FK_TABLE_00]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random9"
+              "$ref": "long-list9"
             },
             "NullPercentage": 0.25
           },
@@ -3853,7 +4102,7 @@
               "$ref": "[dbo].[TABLE_0].[FK_TABLE_01]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random10"
+              "$ref": "long-list10"
             },
             "NullPercentage": 0.25
           },
@@ -3862,7 +4111,7 @@
               "$ref": "[dbo].[TABLE_0].[FK_TABLE_02]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "long-random11"
+              "$ref": "long-list11"
             },
             "NullPercentage": 0.25
           }
@@ -3872,6 +4121,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_TARGET]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3886,7 +4136,7 @@
               "$ref": "[dbo].[TABLE_TARGET].[RECID2]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random6"
+              "$ref": "int-list6"
             }
           },
           {
@@ -3894,7 +4144,7 @@
               "$ref": "[dbo].[TABLE_TARGET].[VALUE]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random7"
+              "$ref": "int-list7"
             }
           }
         ]
@@ -3903,6 +4153,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_SOURCE]"
         },
+        "Rows": 100,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3917,7 +4168,7 @@
               "$ref": "[dbo].[TABLE_SOURCE].[TRECID1]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random8"
+              "$ref": "int-list8"
             }
           },
           {
@@ -3925,7 +4176,7 @@
               "$ref": "[dbo].[TABLE_SOURCE].[TRECID2]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random9"
+              "$ref": "int-list9"
             }
           },
           {
@@ -3933,7 +4184,7 @@
               "$ref": "[dbo].[TABLE_SOURCE].[VALUE]"
             },
             "ValueFactoryPrescription": {
-              "$ref": "int-random10"
+              "$ref": "int-list10"
             }
           }
         ]
