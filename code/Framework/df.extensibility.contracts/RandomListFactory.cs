@@ -33,7 +33,7 @@ namespace Df.Extensibility
                 value -= weightedValue.Weight;
             }
 
-            throw null;
+            throw new InvalidOperationException("If you are seeing this message then an error has occured in the algorithm.");
         }
     }
 }
