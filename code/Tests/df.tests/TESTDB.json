@@ -3092,7 +3092,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_1]"
         },
-        "Rows": 100,
+        "Rows": 10,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3396,7 +3396,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_2]"
         },
-        "Rows": 100,
+        "Rows": 5,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3668,7 +3668,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_3]"
         },
-        "Rows": 100,
+        "Rows": 20,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3764,7 +3764,7 @@
         "TableDescription": {
           "$ref": "[dbo].[SQLTYPE_TABLE_4]"
         },
-        "Rows": 100,
+        "Rows": 15,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3789,7 +3789,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_000]"
         },
-        "Rows": 100,
+        "Rows": 25,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3814,7 +3814,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_001]"
         },
-        "Rows": 100,
+        "Rows": 15,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3839,7 +3839,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_00]"
         },
-        "Rows": 100,
+        "Rows": 30,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3907,7 +3907,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_011]"
         },
-        "Rows": 100,
+        "Rows": 25,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3932,7 +3932,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_01]"
         },
-        "Rows": 100,
+        "Rows": 20,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -3975,7 +3975,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_020]"
         },
-        "Rows": 100,
+        "Rows": 35,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -4000,7 +4000,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_021]"
         },
-        "Rows": 100,
+        "Rows": 40,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -4068,7 +4068,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_0]"
         },
-        "Rows": 100,
+        "Rows": 10,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -4120,7 +4120,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_TARGET]"
         },
-        "Rows": 100,
+        "Rows": 5,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
@@ -4152,7 +4152,7 @@
         "TableDescription": {
           "$ref": "[dbo].[TABLE_SOURCE]"
         },
-        "Rows": 100,
+        "Rows": 15,
         "ColumnPrescriptions": [
           {
             "ColumnDescription": {
