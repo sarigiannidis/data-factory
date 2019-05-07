@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Michalis Sarigiannidis">
+// <copyright file="IListFactoryConfiguration.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -7,16 +7,13 @@
 
 namespace Df.Extensibility
 {
-    internal static class Constants
+    using System;
+    using System.Collections.Generic;
+
+    public interface IListFactoryConfiguration<TValue>
+       : IValueFactoryConfiguration
+   where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
     {
-        public const float DEFAULT_WEIGHT = 1.0f;
-
-        public const string PROPERTY_INCREMENT = "Increment";
-
-        public const string PROPERTY_MAX = "MaxValue";
-
-        public const string PROPERTY_MIN = "MinValue";
-
-        public const string PROPERTY_VALUES = "Values";
+        IEnumerable<WeightedValue<TValue>> WeightedValues { get; }
     }
 }
