@@ -237,11 +237,7 @@ namespace Df.Stochastic.Fare
 
         private bool SetPrevious(char[] current)
         {
-            if (_Previous == null)
-            {
-                _Previous = new StringBuilder();
-            }
-
+            _Previous ??= new StringBuilder();
             _Previous.Length = 0;
             _ = _Previous.Append(current);
 

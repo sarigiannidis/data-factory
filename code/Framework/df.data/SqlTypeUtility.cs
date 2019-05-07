@@ -74,8 +74,7 @@ namespace Df.Data
         public static string GetSqlColumnDefinition(string name, string userType, bool nullable, short maxLength, short precision, short scale, object seedValue, object incrementValue)
         {
             var sb = new StringBuilder()
-                .AppendFormatInvariant("[{0}]", name)
-                .Append(' ')
+                .AppendFormatInvariant("[{0}] ", name)
                 .Append(GetSqlType(userType, maxLength, precision, scale));
 
             if (seedValue != null && incrementValue != null)
@@ -94,7 +93,7 @@ namespace Df.Data
         }
 
         private static Type GetBaseType(string dataTypeName) =>
-                    _Types.TryGetValue(dataTypeName, out var value) ? value : typeof(object);
+            _Types.TryGetValue(dataTypeName, out var value) ? value : typeof(object);
 
         private static string GetSqlType(string userType, short maxLength, short precision, short scale)
         {
