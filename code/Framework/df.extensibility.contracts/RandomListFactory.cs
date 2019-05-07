@@ -13,9 +13,7 @@ namespace Df.Extensibility
                 : RandomFactory<TValue, IListFactoryConfiguration<TValue>>
             where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
     {
-        public override TValue CreateValue()
-        {
-            throw new NotImplementedException();
-        }
+        public override TValue CreateValue() =>
+            throw null;
     }
 }
