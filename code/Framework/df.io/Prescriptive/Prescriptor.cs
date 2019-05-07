@@ -12,7 +12,6 @@ namespace Df.Io.Prescriptive
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-    using static Constants;
 
     [JsonObject(IsReference = false)]
     [DebuggerDisplay("{TablePrescriptions.Count} tables, {ValueFactoryPrescriptions.Count} value factories")]
@@ -25,9 +24,6 @@ namespace Df.Io.Prescriptive
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         [JsonProperty(nameof(ValueFactoryPrescriptions), Order = 2)]
         private readonly List<ValueFactoryPrescription> _ValueFactoryPrescriptions = new List<ValueFactoryPrescription>();
-
-        [JsonProperty(Order = 1)]
-        public int DefaultRowsPerTable { get; set; } = DEFAULTROWSPERTABLE;
 
         [JsonIgnore]
         public IReadOnlyList<TablePrescription> TablePrescriptions => _TablePrescriptions;
