@@ -59,8 +59,6 @@ namespace Df.Extensibility
             }
         }
 
-#pragma warning disable CA1031 // Do not catch general exception types
-
         public void Refresh()
         {
             try
@@ -75,10 +73,9 @@ namespace Df.Extensibility
             catch (Exception exception)
             {
                 Logger.LogError(exception, "Refresh failed.");
+                throw;
             }
         }
-
-#pragma warning restore CA1031 // Do not catch general exception types
 
         private Func<T> CreateActivator<T>(Type type)
         {

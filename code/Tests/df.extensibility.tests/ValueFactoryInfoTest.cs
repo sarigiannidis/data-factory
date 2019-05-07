@@ -74,6 +74,10 @@ namespace Df.Extensibility.Tests
                         Output.WriteLine("min: {0}, max: {1}, result: {2}", min, max, result);
                         Assert.InRange(result, min, max);
                     }
+                    else if (result is null)
+                    {
+                        Output.WriteLine("<NULL>");
+                    }
                     else
                     {
                         Output.WriteLine("{0}", result);
