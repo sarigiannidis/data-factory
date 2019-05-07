@@ -7,7 +7,6 @@
 
 namespace Df.Extensibility
 {
-    using Newtonsoft.Json.Linq;
     using System;
     using System.Collections;
     using System.Collections.Generic;
@@ -95,17 +94,16 @@ namespace Df.Extensibility
             _Properties.TryGetValue(key, out value);
 
         // Serialization may return a type other than the original.
-        protected T Get<T>(string key) =>
+        protected virtual T GetValue<T>(string key) =>
             _Properties[key] switch
         {
-            JArray j when typeof(IEnumerable).IsAssignableFrom(typeof(T)) => (dynamic)j.Values(),
             T t => t,
             DateTimeOffset d when typeof(T) == typeof(DateTime) => (T)(object)d.DateTime,
             string s when typeof(T) == typeof(TimeSpan) => (T)(object)TimeSpan.Parse(s, CultureInfo.InvariantCulture),
             _ => (T)Convert.ChangeType(_Properties[key], typeof(T), CultureInfo.InvariantCulture)
         };
 
-        protected void Set(string key, object value) =>
+        protected void SetValue(string key, object value) =>
             _Properties[key] = value;
     }
 }

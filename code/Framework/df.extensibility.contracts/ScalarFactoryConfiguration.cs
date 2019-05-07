@@ -19,14 +19,14 @@ namespace Df.Extensibility
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue Increment =>
-            Get<TValue>(PROPERTY_INCREMENT);
+            GetValue<TValue>(PROPERTY_INCREMENT);
 
         public ScalarFactoryConfiguration(TValue min, TValue max, TValue increment)
             : base(min, max)
         {
             _ = Check.GreaterThanOrEqual(nameof(increment), increment, default);
             _ = Check.LessThanOrEqual(nameof(increment), increment, (dynamic)max - min);
-            Set(PROPERTY_INCREMENT, increment);
+            SetValue(PROPERTY_INCREMENT, increment);
         }
 
         public ScalarFactoryConfiguration(IDictionary<string, object> properties)

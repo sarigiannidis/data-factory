@@ -8,6 +8,7 @@
 namespace Df.ValueFactories
 {
     using Df.Extensibility;
+    using Df.Numeric;
 
     [ValueFactory("int-list", "Picks randomly from a weighted list of integers", typeof(int), typeof(RandomIntListFactory))]
     public sealed class RandomIntListFactory
@@ -15,7 +16,7 @@ namespace Df.ValueFactories
         IConfigurator
     {
         IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<int>(new[]
+            new ListFactoryConfiguration<int>(new WeightedValueCollection<int>
             {
                 new WeightedValue<int>(5, 0.1f),
                 new WeightedValue<int>(10, 0.2f),

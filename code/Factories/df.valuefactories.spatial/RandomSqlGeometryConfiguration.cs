@@ -18,31 +18,31 @@ namespace Df.ValueFactories.Spatial
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MaxX =>
-            Get<double>(PROPERTY_MAXX);
+            GetValue<double>(PROPERTY_MAXX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MaxY =>
-            Get<double>(PROPERTY_MAXY);
+            GetValue<double>(PROPERTY_MAXY);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MinX =>
-            Get<double>(PROPERTY_MINX);
+            GetValue<double>(PROPERTY_MINX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MinY =>
-            Get<double>(PROPERTY_MINY);
+            GetValue<double>(PROPERTY_MINY);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public int Srid =>
-            Get<int>(PROPERTY_SRID);
+            GetValue<int>(PROPERTY_SRID);
 
         public RandomSqlGeometryConfiguration(double minX, double maxX, double minY, double maxY, int srid)
         {
-            Set(PROPERTY_MINX, minX);
-            Set(PROPERTY_MAXX, Check.GreaterThanOrEqual(nameof(maxX), maxX, minX));
-            Set(PROPERTY_MINY, minY);
-            Set(PROPERTY_MAXY, Check.GreaterThanOrEqual(nameof(maxY), maxY, minY));
-            Set(PROPERTY_SRID, srid);
+            SetValue(PROPERTY_MINX, minX);
+            SetValue(PROPERTY_MAXX, Check.GreaterThanOrEqual(nameof(maxX), maxX, minX));
+            SetValue(PROPERTY_MINY, minY);
+            SetValue(PROPERTY_MAXY, Check.GreaterThanOrEqual(nameof(maxY), maxY, minY));
+            SetValue(PROPERTY_SRID, srid);
         }
 
         public RandomSqlGeometryConfiguration(IDictionary<string, object> properties)

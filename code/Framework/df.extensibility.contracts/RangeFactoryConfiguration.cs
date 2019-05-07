@@ -19,17 +19,17 @@ namespace Df.Extensibility
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue MaxValue =>
-            Get<TValue>(PROPERTY_MAX);
+            GetValue<TValue>(PROPERTY_MAX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue MinValue =>
-            Get<TValue>(PROPERTY_MIN);
+            GetValue<TValue>(PROPERTY_MIN);
 
         public RangeFactoryConfiguration(TValue min, TValue max)
         {
             _ = Check.GreaterThanOrEqual(nameof(max), max, min);
-            Set(PROPERTY_MIN, min);
-            Set(PROPERTY_MAX, max);
+            SetValue(PROPERTY_MIN, min);
+            SetValue(PROPERTY_MAX, max);
         }
 
         public RangeFactoryConfiguration(IDictionary<string, object> properties)

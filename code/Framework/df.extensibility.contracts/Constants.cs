@@ -9,8 +9,6 @@ namespace Df.Extensibility
 {
     internal static class Constants
     {
-        public const float DEFAULT_WEIGHT = 1.0f;
-
         public const string PROPERTY_INCREMENT = "Increment";
 
         public const string PROPERTY_MAX = "MaxValue";

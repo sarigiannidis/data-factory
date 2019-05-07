@@ -18,16 +18,16 @@ namespace Df.ValueFactories
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float FalseWeight =>
-            Get<float>(PROPERTY_FALSE);
+            GetValue<float>(PROPERTY_FALSE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float TrueWeight =>
-            Get<float>(PROPERTY_TRUE);
+            GetValue<float>(PROPERTY_TRUE);
 
         public RandomBoolConfiguration(float trueWeight, float falseWeight)
         {
-            Set(PROPERTY_TRUE, Check.GreaterThanOrEqual(nameof(trueWeight), trueWeight, 0));
-            Set(PROPERTY_FALSE, Check.GreaterThanOrEqual(nameof(falseWeight), falseWeight, 0));
+            SetValue(PROPERTY_TRUE, Check.GreaterThanOrEqual(nameof(trueWeight), trueWeight, 0));
+            SetValue(PROPERTY_FALSE, Check.GreaterThanOrEqual(nameof(falseWeight), falseWeight, 0));
         }
 
         public RandomBoolConfiguration(IDictionary<string, object> properties)

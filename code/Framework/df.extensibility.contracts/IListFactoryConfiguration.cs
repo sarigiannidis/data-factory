@@ -7,13 +7,13 @@
 
 namespace Df.Extensibility
 {
+    using Df.Numeric;
     using System;
-    using System.Collections.Generic;
 
     public interface IListFactoryConfiguration<TValue>
        : IValueFactoryConfiguration
    where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
     {
-        IEnumerable<WeightedValue<TValue>> WeightedValues { get; }
+        WeightedValueCollection<TValue> WeightedValues { get; }
     }
 }

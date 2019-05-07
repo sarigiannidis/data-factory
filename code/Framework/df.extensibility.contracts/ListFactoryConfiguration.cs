@@ -7,6 +7,8 @@
 
 namespace Df.Extensibility
 {
+    using Df.Numeric;
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
@@ -18,11 +20,11 @@ namespace Df.Extensibility
         where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public IEnumerable<WeightedValue<TValue>> WeightedValues =>
-            Get<IEnumerable<WeightedValue<TValue>>>(PROPERTY_VALUES);
+        public WeightedValueCollection<TValue> WeightedValues =>
+            GetValue<WeightedValueCollection<TValue>>(PROPERTY_VALUES);
 
-        public ListFactoryConfiguration(IEnumerable<WeightedValue<TValue>> weightedValues) =>
-            Set(PROPERTY_VALUES, Check.NotNull(nameof(weightedValues), weightedValues));
+        public ListFactoryConfiguration(WeightedValueCollection<TValue> weightedValues) =>
+            SetValue(PROPERTY_VALUES, Check.NotNull(nameof(weightedValues), weightedValues));
 
         public ListFactoryConfiguration(IDictionary<string, object> properties)
             : base(properties)
@@ -31,6 +33,14 @@ namespace Df.Extensibility
 
         public ListFactoryConfiguration()
         {
+        }
+
+        protected override T GetValue<T>(string key)
+        {
+            var value = ((IReadOnlyDictionary<string, object>)this)[key];
+            return typeof(T) == typeof(WeightedValueCollection<TValue>) && value.GetType() == typeof(JArray)
+                ? (T)(dynamic)(WeightedValueCollection<TValue>)(JArray)value
+                : base.GetValue<T>(key);
         }
     }
 }
