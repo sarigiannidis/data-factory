@@ -139,7 +139,7 @@ namespace Df.Production
                 // skipping DF1, DF2.
                 for (var i = 0; i < recordGenerator.FieldCount; i++)
                 {
-                    bulkCopy.ColumnMappings.Add(i, i + 2);
+                    _ = bulkCopy.ColumnMappings.Add(i, i + 2);
                 }
 
                 bulkCopy.WriteToServer(recordGenerator);

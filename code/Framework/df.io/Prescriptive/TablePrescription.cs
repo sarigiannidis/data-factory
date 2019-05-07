@@ -42,7 +42,7 @@ namespace Df.Io.Prescriptive
 
         public void AddColumn(ColumnPrescription columnPrescription)
         {
-            Check.NotNull(nameof(columnPrescription), columnPrescription);
+            _ = Check.NotNull(nameof(columnPrescription), columnPrescription);
             Check.IfNotThrow<ArgumentException>(() => columnPrescription.ColumnDescription.Parent == TableDescription, "The column does not belong to this table.");
             _ColumnPrescriptions.Add(columnPrescription);
         }

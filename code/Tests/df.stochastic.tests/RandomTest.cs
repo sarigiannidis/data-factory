@@ -16,7 +16,7 @@ namespace Df.Stochastic.Tests
         : IClassFixture<RandomFixture<T>>
         where T : IRandom, new()
     {
-        private const double REPETITIONS = 1e6;
+        private const double REPETITIONS = 1e5;
 
         public RandomFixture<T> Fixture { get; }
 

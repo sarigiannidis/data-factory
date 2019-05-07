@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="JsonUtil.cs" company="Michalis Sarigiannidis">
+// <copyright file="JsonUtility.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -12,7 +12,7 @@ namespace Df.Io
     using System.Collections.Generic;
     using System.IO;
 
-    internal static class JsonUtil
+    internal static class JsonUtility
     {
         public static T Read<T>(string path)
         {
@@ -25,7 +25,7 @@ namespace Df.Io
 
         public static string Serialize<T>(T t)
         {
-            Check.NotNull(nameof(t), t);
+            _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
             using var stringWriter = new StringWriter();
             using var writer = new JsonTextWriter(stringWriter);
@@ -35,7 +35,7 @@ namespace Df.Io
 
         public static void Write<T>(T t, string path)
         {
-            Check.NotNull(nameof(t), t);
+            _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
             using var file = File.CreateText(path);
             serializer.Serialize(file, t);

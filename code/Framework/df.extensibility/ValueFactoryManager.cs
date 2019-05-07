@@ -59,13 +59,11 @@ namespace Df.Extensibility
             }
         }
 
-#pragma warning disable CA1031 // Do not catch general exception types
-
         public void Refresh()
         {
             try
             {
-                var root = PathUtil.GetFullPath(Options.Path);
+                var root = PathUtility.GetFullPath(Options.Path);
                 var items = Directory.EnumerateFiles(root, SEARCHPATTERN_ASSEMBLIES)
                     .Select(Selector_LoadAssembly)
                     .SelectMany(Selector_LoadValueFactoryInfos);
@@ -75,14 +73,13 @@ namespace Df.Extensibility
             catch (Exception exception)
             {
                 Logger.LogError(exception, "Refresh failed.");
+                throw;
             }
         }
 
-#pragma warning restore CA1031 // Do not catch general exception types
-
         private Func<T> CreateActivator<T>(Type type)
         {
-            var func = ReflectionUtil.CreateDefaultInstance<T>(type);
+            var func = ReflectionUtility.CreateDefaultInstance<T>(type);
             if (func == null)
             {
                 Logger.LogWarning("The type {0} does not have a default constructor.", type.FullName);
@@ -101,8 +98,7 @@ namespace Df.Extensibility
 
             if (customAttributeData.AttributeType.FullName == type.FullName)
             {
-                var warning = new StringBuilder()
-                    .AppendFormatInvariant("A type ambiguity has occured.")
+                var warning = new StringBuilder("A type ambiguity has occured.")
                     .AppendFormatInvariant("The expected type {0} is defined in the assembly at {1}.", type.AssemblyQualifiedName, type.AssemblyQualifiedName)
                     .AppendFormatInvariant("The actual type {0} is defined in the assembly at {1}.", customAttributeData.AttributeType.AssemblyQualifiedName, customAttributeData.AttributeType.Assembly.Location)
                     .ToString();
@@ -151,7 +147,7 @@ namespace Df.Extensibility
             }
 
             Logger.LogInformation("The type {0} has the attribute {1}.", type.FullName, nameof(ValueFactoryAttribute));
-            var args = ReflectionUtil.GetConstructorArguments(attribute);
+            var args = ReflectionUtility.GetConstructorArguments(attribute);
             if (args == null)
             {
                 Logger.LogError("Failed to get the constructor arguments on {0}", nameof(ValueFactoryAttribute));

@@ -214,13 +214,13 @@ namespace Df.Stochastic.Fare
             {
                 var j = qq.Accept ? 0 : 1;
 
-                partition[j].AddLast(qq);
+                _ = partition[j].AddLast(qq);
                 block[qq.Number] = j;
                 for (var x = 0; x < sigma.Length; x++)
                 {
                     var y = sigma[x];
                     var p = qq.Step(y);
-                    reverse[p.Number][x].AddLast(qq);
+                    _ = reverse[p.Number][x].AddLast(qq);
                     reverseNonempty[p.Number, x] = true;
                 }
             }
@@ -244,7 +244,7 @@ namespace Df.Stochastic.Fare
             for (var x = 0; x < sigma.Length; x++)
             {
                 var j = active[0, x].Size <= active[1, x].Size ? 0 : 1;
-                pending.AddLast((j, x));
+                _ = pending.AddLast((j, x));
                 pending2[x, j] = true;
             }
 
@@ -284,8 +284,8 @@ namespace Df.Stochastic.Fare
                         var b2 = partition[k];
                         foreach (var s in splitblock[j])
                         {
-                            b1.Remove(s);
-                            b2.AddLast(s);
+                            _ = b1.Remove(s);
+                            _ = b2.AddLast(s);
                             block[s.Number] = k;
                             for (var c = 0; c < sigma.Length; c++)
                             {
@@ -306,12 +306,12 @@ namespace Df.Stochastic.Fare
                             if (!pending2[c, j] && aj > 0 && aj <= ak)
                             {
                                 pending2[c, j] = true;
-                                pending.AddLast((j, c));
+                                _ = pending.AddLast((j, c));
                             }
                             else
                             {
                                 pending2[c, k] = true;
-                                pending.AddLast((k, c));
+                                _ = pending.AddLast((k, c));
                             }
                         }
 
@@ -506,7 +506,7 @@ namespace Df.Stochastic.Fare
                             triggers[m1].Insert(m2, new HashSet<(int, int)>());
                         }
 
-                        triggers[m1][m2].Add((n1, n2));
+                        _ = triggers[m1][m2].Add((n1, n2));
                     }
 
                     if (t1[k1].Max < t2[k2].Max)
@@ -576,7 +576,7 @@ namespace Df.Stochastic.Fare
             {
                 foreach (var t in r.Transitions)
                 {
-                    m[t.To].Add(new Transition(t.Min, t.Max, r));
+                    _ = m[t.To].Add(new Transition(t.Min, t.Max, r));
                 }
             }
 

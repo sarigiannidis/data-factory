@@ -125,54 +125,24 @@ namespace Df.Stochastic.Fare
 
         /// <inheritdoc/>
         ///
-        public override bool Equals(object obj)
-        {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(State))
-            {
-                return false;
-            }
-
-            return Equals((State)obj);
-        }
+        public override bool Equals(object obj) =>
+            !(obj is null)
+            && (ReferenceEquals(this, obj)
+                || (obj.GetType() == typeof(State) && Equals((State)obj)));
 
         /// <inheritdoc/>
         ///
-        public bool Equals(State other)
-        {
-            if (other is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return other.Id == Id
+        public bool Equals(State other) =>
+            !(other is null)
+                && (ReferenceEquals(this, other)
+                || (other.Id == Id
                 && other.Accept.Equals(Accept)
-                && other.Number == Number;
-        }
+                && other.Number == Number));
 
         /// <inheritdoc/>
         ///
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return (((Id * 397) ^ Accept.GetHashCode()) * 397) ^ Number;
-            }
-        }
+        public override int GetHashCode() =>
+            HashCode.Combine(Id, Accept, Number);
 
         /// <summary>
         /// Gets the transitions sorted by (min, reverse max, to) or (to, min, reverse max).
@@ -217,12 +187,12 @@ namespace Df.Stochastic.Fare
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("state ").Append(Number);
-            sb.Append(Accept ? " [accept]" : " [reject]");
-            sb.Append(":\n");
+            _ = sb.Append("state ").Append(Number);
+            _ = sb.Append(Accept ? " [accept]" : " [reject]");
+            _ = sb.Append(":\n");
             foreach (var t in Transitions)
             {
-                sb.Append("  ").Append(t.ToString()).Append("\n");
+                _ = sb.Append("  ").Append(t.ToString()).Append("\n");
             }
 
             return sb.ToString();

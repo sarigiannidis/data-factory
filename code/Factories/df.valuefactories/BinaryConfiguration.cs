@@ -18,16 +18,16 @@ namespace Df.ValueFactories
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public int MaxLength =>
-            Get<int>(PROPERTY_MAXLENGTH);
+            GetValue<int>(PROPERTY_MAXLENGTH);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public int MinLength =>
-            Get<int>(PROPERTY_MINLENGTH);
+            GetValue<int>(PROPERTY_MINLENGTH);
 
         public BinaryConfiguration(int minLength, int maxLength)
         {
-            Set(PROPERTY_MINLENGTH, Check.GreaterThanOrEqual(nameof(minLength), minLength, 0));
-            Set(PROPERTY_MAXLENGTH, Check.GreaterThanOrEqual(nameof(maxLength), maxLength, 0));
+            SetValue(PROPERTY_MINLENGTH, Check.GreaterThanOrEqual(nameof(minLength), minLength, 0));
+            SetValue(PROPERTY_MAXLENGTH, Check.GreaterThanOrEqual(nameof(maxLength), maxLength, 0));
         }
 
         public BinaryConfiguration(IDictionary<string, object> properties)

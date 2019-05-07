@@ -49,7 +49,7 @@ namespace Df
 
         private static IConfigurationRoot CreateConfiguration() =>
             new ConfigurationBuilder()
-                .SetBasePath(PathUtil.CurrentDirectory)
+                .SetBasePath(PathUtility.CurrentDirectory)
                 .AddJsonFile(APP_SETTINGS_FILE, false, true)
                 .Build();
 
@@ -67,7 +67,7 @@ namespace Df
                 Console.WriteLine(helpText);
             }
 
-            parserResult
+            _ = parserResult
                 .WithParsed(GetHandler<AddOptions>())
                 .WithParsed(GetHandler<GenerateOptions>())
                 .WithParsed(GetHandler<ListOptions>())

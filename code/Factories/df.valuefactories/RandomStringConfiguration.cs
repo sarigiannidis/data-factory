@@ -18,10 +18,10 @@ namespace Df.ValueFactories
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public string RegexPattern =>
-            Get<string>(PROPERTY_REGEX);
+            GetValue<string>(PROPERTY_REGEX);
 
         public RandomStringConfiguration(string regexPattern) =>
-            Set(PROPERTY_REGEX, regexPattern);
+            SetValue(PROPERTY_REGEX, regexPattern);
 
         public RandomStringConfiguration(IDictionary<string, object> properties)
             : base(properties)

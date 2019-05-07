@@ -94,7 +94,7 @@ namespace Df.Extensibility
             _Properties.TryGetValue(key, out value);
 
         // Serialization may return a type other than the original.
-        protected T Get<T>(string key) =>
+        protected virtual T GetValue<T>(string key) =>
             _Properties[key] switch
         {
             T t => t,
@@ -103,7 +103,7 @@ namespace Df.Extensibility
             _ => (T)Convert.ChangeType(_Properties[key], typeof(T), CultureInfo.InvariantCulture)
         };
 
-        protected void Set(string key, object value) =>
+        protected void SetValue(string key, object value) =>
             _Properties[key] = value;
     }
 }

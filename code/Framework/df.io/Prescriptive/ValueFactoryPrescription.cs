@@ -34,23 +34,12 @@ namespace Df.Io.Prescriptive
         public override bool Equals(object obj) =>
             obj is ValueFactoryPrescription o && Equals(o);
 
-        public bool Equals(ValueFactoryPrescription other)
-        {
-            if (other is null)
-            {
-                return false;
-            }
-            else if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-            else
-            {
-                return Name == other.Name
+        public bool Equals(ValueFactoryPrescription other) =>
+            !(other is null)
+                && (ReferenceEquals(this, other)
+                    || (Name == other.Name
                     && Reference == other.Reference
-                    && Configuration == other.Configuration;
-            }
-        }
+                    && Configuration == other.Configuration));
 
         public override int GetHashCode() =>
                     HashCode.Combine(Name, Reference, Configuration);

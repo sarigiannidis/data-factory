@@ -47,7 +47,9 @@ namespace Df.Stochastic
             var num3 = 1;
             for (var i = 1; i < 55; i++)
             {
+#pragma warning disable IDE0047 // Remove unnecessary parentheses
                 var num4 = (21 * i) % 55;
+#pragma warning restore IDE0047 // Remove unnecessary parentheses
                 seedArray[num4] = num3;
                 num3 = num2 - num3;
                 if (num3 < 0)

@@ -14,5 +14,7 @@ namespace Df.Extensibility
         public const string PROPERTY_MAX = "MaxValue";
 
         public const string PROPERTY_MIN = "MinValue";
+
+        public const string PROPERTY_VALUES = "Values";
     }
 }

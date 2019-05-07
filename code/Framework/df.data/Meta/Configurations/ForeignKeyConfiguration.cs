@@ -15,33 +15,16 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<ForeignKey> builder)
         {
-            builder.ToTable("foreign_keys", "sys");
-            builder.Property(_ => _.Name).HasColumnName("name");
-            builder.Property(_ => _.ObjectId).HasColumnName("object_id");
-            builder.Property(_ => _.ParentObjectId).HasColumnName("parent_object_id");
-            builder.Property(_ => _.CreateDate).HasColumnName("create_date");
-            builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
-            builder.Property(_ => _.ReferencedObjectId).HasColumnName("referenced_object_id");
-            builder.HasKey(_ => _.ObjectId);
-            builder.HasOne(_ => _.Parent).WithMany(_ => _.ForeignKeys).HasForeignKey(_ => _.ParentObjectId);
-            builder.HasOne(_ => _.Referenced).WithMany(_ => _.ReferringForeignKeys).HasForeignKey(_ => _.ReferencedObjectId);
-
-            // builder.Property(_ => _.DeleteReferentialAction).HasColumnName("delete_referential_action");
-            // builder.Property(_ => _.DeleteReferentialActionDesc).HasColumnName("delete_referential_action_desc");
-            // builder.Property(_ => _.IsDisabled).HasColumnName("is_disabled");
-            // builder.Property(_ => _.IsMsShipped).HasColumnName("is_ms_shipped");
-            // builder.Property(_ => _.IsNotForReplication).HasColumnName("is_not_for_replication");
-            // builder.Property(_ => _.IsNotTrusted).HasColumnName("is_not_trusted");
-            // builder.Property(_ => _.IsPublished).HasColumnName("is_published");
-            // builder.Property(_ => _.IsSchemaPublished).HasColumnName("is_schema_published");
-            // builder.Property(_ => _.IsSystemNamed).HasColumnName("is_system_named");
-            // builder.Property(_ => _.KeyIndexId).HasColumnName("key_index_id");
-            // builder.Property(_ => _.PrincipalId).HasColumnName("principal_id");
-            // builder.Property(_ => _.SchemaId).HasColumnName("schema_id");
-            // builder.Property(_ => _.Type).HasColumnName("type");
-            // builder.Property(_ => _.TypeDesc).HasColumnName("type_desc");
-            // builder.Property(_ => _.UpdateReferentialAction).HasColumnName("update_referential_action");
-            // builder.Property(_ => _.UpdateReferentialActionDesc).HasColumnName("update_referential_action_desc");
+            _ = builder.ToTable("foreign_keys", "sys");
+            _ = builder.Property(_ => _.Name).HasColumnName("name");
+            _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
+            _ = builder.Property(_ => _.ParentObjectId).HasColumnName("parent_object_id");
+            _ = builder.Property(_ => _.CreateDate).HasColumnName("create_date");
+            _ = builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");
+            _ = builder.Property(_ => _.ReferencedObjectId).HasColumnName("referenced_object_id");
+            _ = builder.HasKey(_ => _.ObjectId);
+            _ = builder.HasOne(_ => _.Parent).WithMany(_ => _.ForeignKeys).HasForeignKey(_ => _.ParentObjectId);
+            _ = builder.HasOne(_ => _.Referenced).WithMany(_ => _.ReferringForeignKeys).HasForeignKey(_ => _.ReferencedObjectId);
         }
     }
 }

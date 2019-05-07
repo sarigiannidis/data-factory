@@ -30,9 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma warning disable IDE0057 // Use range operator
-
-namespace Df.Stochastic.Fare
+ namespace Df.Stochastic.Fare
 {
     using System;
     using System.Collections.Generic;
@@ -191,11 +189,11 @@ namespace Df.Stochastic.Fare
             var p = value.IndexOf('.', i);
             if (p == -1)
             {
-                b1.Append(value.Substring(i));
+                _ = b1.Append(value.Substring(i));
             }
             else
             {
-                b1.Append(value, i, p - i);
+                _ = b1.Append(value, i, p - i);
                 i = value.Length - 1;
                 while (i > p)
                 {
@@ -208,28 +206,21 @@ namespace Df.Stochastic.Fare
                     i--;
                 }
 
-                b2.Append(value, p + 1, i + 1 - (p + 1));
+                _ = b2.Append(value, p + 1, i + 1 - (p + 1));
             }
 
             if (b1.Length == 0)
             {
-                b1.Append("0");
+                _ = b1.Append("0");
             }
 
             var s = minus ? Automaton.MakeChar('-') : Automaton.MakeChar('+').Optional();
-            Automaton d;
-            if (b2.Length == 0)
-            {
-                d = Automaton.MakeChar('.').Concatenate(Automaton.MakeChar('0').Repeat(1)).Optional();
-            }
-            else
-            {
-                d = Automaton.MakeChar('.')
+            var d = b2.Length == 0
+                ? Automaton.MakeChar('.').Concatenate(Automaton.MakeChar('0').Repeat(1)).Optional()
+                : Automaton.MakeChar('.')
                     .Concatenate(Automaton.MakeString(b2.ToString()))
                     .Concatenate(Automaton.MakeChar('0')
                                      .Repeat());
-            }
-
             return Automaton.Minimize(
                 WhitespaceAutomaton.Concatenate(
                     s.Concatenate(Automaton.MakeChar('0').Repeat())
@@ -308,10 +299,10 @@ namespace Df.Stochastic.Fare
             }
 
             var b = new StringBuilder();
-            b.Append(value.Substring(i));
+            _ = b.Append(value.Substring(i));
             if (b.Length == 0)
             {
-                b.Append("0");
+                _ = b.Append("0");
             }
 
             var s = minus ? Automaton.MakeChar('-') : Automaton.MakeChar('+').Optional();
@@ -354,18 +345,18 @@ namespace Df.Stochastic.Fare
             var bx = new StringBuilder();
             for (var i = x.Length; i < d; i++)
             {
-                bx.Append('0');
+                _ = bx.Append('0');
             }
 
-            bx.Append(x);
+            _ = bx.Append(x);
             x = bx.ToString();
             var by = new StringBuilder();
             for (var i = y.Length; i < d; i++)
             {
-                by.Append('0');
+                _ = by.Append('0');
             }
 
-            by.Append(y);
+            _ = by.Append(y);
             y = by.ToString();
             ICollection<State> initials = new List<State>();
             a.Initial = Between(x, y, 0, initials, digits <= 0);
@@ -403,14 +394,14 @@ namespace Df.Stochastic.Fare
             }
 
             var b = new StringBuilder();
-            b.Append("0*(0|");
+            _ = b.Append("0*(0|");
             if (i < n.Length)
             {
-                b.Append("[0-9]{1,").Append(n.Length - i - 1).Append("}|");
+                _ = b.Append("[0-9]{1,").Append(n.Length - i - 1).Append("}|");
             }
 
             MaxInteger(n.Substring(i), 0, b);
-            b.Append(")");
+            _ = b.Append(")");
             return Automaton.Minimize(new RegExp(b.ToString()).ToAutomaton());
         }
 
@@ -430,9 +421,9 @@ namespace Df.Stochastic.Fare
             }
 
             var b = new StringBuilder();
-            b.Append("0*");
+            _ = b.Append("0*");
             MinInteger(n.Substring(i), 0, b);
-            b.Append("[0-9]*");
+            _ = b.Append("[0-9]*");
             return Automaton.Minimize(new RegExp(b.ToString()).ToAutomaton());
         }
 
@@ -479,14 +470,14 @@ namespace Df.Stochastic.Fare
                 var done = new HashSet<char?>();
                 var c = s[i];
                 states[i].Transitions.Add(new Transition(c, states[i + 1]));
-                done.Add(c);
+                _ = done.Add(c);
                 for (var j = i; j >= 1; j--)
                 {
                     var d = s[j - 1];
-                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s.Substring(i - j + 1, i - (i - j + 1))))
+                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s[i - j + 1..i]))
                     {
                         states[i].Transitions.Add(new Transition(d, states[j]));
-                        done.Add(d);
+                        _ = done.Add(d);
                     }
                 }
 
@@ -718,40 +709,38 @@ namespace Df.Stochastic.Fare
 
         private static void MaxInteger(string n, int i, StringBuilder b)
         {
-            b.Append('(');
+            _ = b.Append('(');
             if (i < n.Length)
             {
                 var c = n[i];
                 if (c != '0')
                 {
-                    b.Append("[0-").Append((char)(c - 1)).Append("][0-9]{").Append(n.Length - i - 1).Append("}|");
+                    _ = b.Append("[0-").Append((char)(c - 1)).Append("][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
-                b.Append(c);
+                _ = b.Append(c);
                 MaxInteger(n, i + 1, b);
             }
 
-            b.Append(')');
+            _ = b.Append(')');
         }
 
         private static void MinInteger(string n, int i, StringBuilder b)
         {
-            b.Append('(');
+            _ = b.Append('(');
             if (i < n.Length)
             {
                 var c = n[i];
                 if (c != '9')
                 {
-                    b.Append('[').Append((char)(c + 1)).Append("-9][0-9]{").Append(n.Length - i - 1).Append("}|");
+                    _ = b.Append('[').Append((char)(c + 1)).Append("-9][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
-                b.Append(c);
+                _ = b.Append(c);
                 MinInteger(n, i + 1, b);
             }
 
-            b.Append(')');
+            _ = b.Append(')');
         }
     }
 }
-
-#pragma warning restore IDE0057 // Use range operator

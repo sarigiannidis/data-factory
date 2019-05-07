@@ -67,9 +67,10 @@ namespace Df.Io.Descriptive
             MaxLength = Check.GreaterThanOrEqual(nameof(maxLength), maxLength, (short)-1);
             Precision = Check.GreaterThanOrEqual(nameof(precision), precision, (short)0);
             Scale = Check.GreaterThanOrEqual(nameof(scale), scale, (short)0);
-            Check.LessThanOrEqual(nameof(scale), scale, precision);
+            _ = Check.LessThanOrEqual(nameof(scale), scale, precision);
         }
 
+        // TODO: Also Identity == null.
         public bool IsWritable() =>
             !(Computed || UserType == Data.Constants.SQL_TYPE_TIMESTAMP);
     }

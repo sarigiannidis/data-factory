@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------
-// <copyright file="HashUtil.cs" company="Michalis Sarigiannidis">
+// <copyright file="HashUtility.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -11,7 +11,7 @@ namespace Df
     using System.IO;
     using System.Security.Cryptography;
 
-    internal static class HashUtil
+    internal static class HashUtility
     {
         public static string ComputeHash(Stream stream) =>
             ComputeSHA512Hash(stream);

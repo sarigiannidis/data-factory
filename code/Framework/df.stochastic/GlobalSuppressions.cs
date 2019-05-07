@@ -23,3 +23,4 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1405:Debug.Assert should provide message text", Justification = "This is forked code.", Scope = "type", Target = "~T:Df.Stochastic.Fare.StringUnionOperations")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:Elements should be ordered by access", Justification = "This is forked code.", Scope = "type", Target = "~T:Df.Stochastic.Fare.BasicAutomata")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2208:Instantiate argument exceptions correctly", Justification = "This is forked code.", Scope = "type", Target = "~T:Df.Stochastic.Fare.BasicAutomata")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0047:Remove unnecessary parentheses", Justification = "This is forked code.", Scope = "namespace", Target = "~N:Df.Stochastic.Fare")]

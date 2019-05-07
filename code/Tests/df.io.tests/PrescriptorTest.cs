@@ -58,6 +58,7 @@ namespace Df.Io.Tests
 
                 foreach (var columnDescription in tableDescription.ColumnDescriptions)
                 {
+                    // TODO: Use columnDescription.IsWritable
                     if (columnDescription.Identity != null || columnDescription.Computed)
                     {
                         continue;
@@ -66,7 +67,7 @@ namespace Df.Io.Tests
                     var type = columnDescription.UserType switch
                     {
                         "sql_variant" => typeof(int),
-                        _ => SqlTypeUtil.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
+                        _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
                     };
 
                     var factory = ValueFactoryManager.ValueFactoryInfos.FilterByType(type).FirstOrDefault();

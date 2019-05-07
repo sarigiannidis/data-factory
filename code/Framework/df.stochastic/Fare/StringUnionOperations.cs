@@ -9,8 +9,6 @@
 * @author Dawid Weiss
 */
 
-#pragma warning disable IDE0056 // Use index operator
-
 namespace Df.Stochastic.Fare
 {
     using System;
@@ -36,7 +34,7 @@ namespace Df.Stochastic.Fare
                 get
                 {
                     Debug.Assert(HasChildren, "No outgoing transitions.");
-                    return _States[_States.Length - 1];
+                    return _States[^1];
                 }
             }
 
@@ -44,23 +42,17 @@ namespace Df.Stochastic.Fare
 
             public char[] TransitionLabels { get; private set; } = Array.Empty<char>();
 
-            public override bool Equals(object obj)
-            {
-                if (!(obj is State other))
-                {
-                    return false;
-                }
-
-                return IsFinal == other.IsFinal
+            public override bool Equals(object obj) =>
+                obj is State other
+                    && IsFinal == other.IsFinal
                     && ReferenceEquals(_States, other._States)
                     && Equals(TransitionLabels, other.TransitionLabels);
-            }
 
             public override int GetHashCode()
             {
                 var hash = IsFinal ? 1 : 0;
                 hash ^= (hash * 31) + TransitionLabels.Length;
-                hash = TransitionLabels.Aggregate(hash, (current, c) => current ^ (current * 31) + c);
+                hash = TransitionLabels.Aggregate(hash, (current, c) => current ^ ((current * 31) + c));
 
                 // Compare the right-language of this state using reference-identity of outgoing
                 // states. This is possible because states are interned (stored in registry) and
@@ -90,15 +82,15 @@ namespace Df.Stochastic.Fare
                 TransitionLabels = CopyOf(TransitionLabels, TransitionLabels.Length + 1);
                 _States = CopyOf(_States, _States.Length + 1);
 
-                TransitionLabels[TransitionLabels.Length - 1] = label;
+                TransitionLabels[^1] = label;
 
-                return _States[_States.Length - 1] = new State();
+                return _States[^1] = new State();
             }
 
             public void ReplaceLastChild(State state)
             {
                 Debug.Assert(HasChildren, "No outgoing transitions.");
-                _States[_States.Length - 1] = state;
+                _States[^1] = state;
             }
 
             private static char[] CopyOf(char[] original, int newLength)
@@ -115,15 +107,8 @@ namespace Df.Stochastic.Fare
                 return copy;
             }
 
-            private static bool ReferenceEquals(object[] a1, object[] a2)
-            {
-                if (a1.Length != a2.Length)
-                {
-                    return false;
-                }
-
-                return !a1.Where((t, i) => t != a2[i]).Any();
-            }
+            private static bool ReferenceEquals(object[] a1, object[] a2) =>
+                a1.Length == a2.Length && !a1.Where((t, i) => t != a2[i]).Any();
 
             private State GetState(char label)
             {
@@ -252,17 +237,11 @@ namespace Df.Stochastic.Fare
 
         private bool SetPrevious(char[] current)
         {
-            if (_Previous == null)
-            {
-                _Previous = new StringBuilder();
-            }
-
+            _Previous ??= new StringBuilder();
             _Previous.Length = 0;
-            _Previous.Append(current);
+            _ = _Previous.Append(current);
 
             return true;
         }
     }
 }
-
-#pragma warning restore IDE0056 // Use index operator

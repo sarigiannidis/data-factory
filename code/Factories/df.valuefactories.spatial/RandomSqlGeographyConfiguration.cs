@@ -18,31 +18,31 @@ namespace Df.ValueFactories.Spatial
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MaxLatitude =>
-            Get<double>(PROPERTY_MAXLATITUDE);
+            GetValue<double>(PROPERTY_MAXLATITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MaxLongitude =>
-            Get<double>(PROPERTY_MAXLONGITUDE);
+            GetValue<double>(PROPERTY_MAXLONGITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MinLatitude =>
-            Get<double>(PROPERTY_MINLATITUDE);
+            GetValue<double>(PROPERTY_MINLATITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double MinLongitude =>
-            Get<double>(PROPERTY_MINLONGITUDE);
+            GetValue<double>(PROPERTY_MINLONGITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public int Srid =>
-            Get<int>(PROPERTY_SRID);
+            GetValue<int>(PROPERTY_SRID);
 
         public RandomSqlGeographyConfiguration(double minLatitude, double maxLatitude, double minLongitude, double maxLongitude, int srid)
         {
-            Set(PROPERTY_MINLATITUDE, minLatitude);
-            Set(PROPERTY_MAXLATITUDE, Check.GreaterThanOrEqual(nameof(maxLatitude), maxLatitude, minLatitude));
-            Set(PROPERTY_MINLONGITUDE, minLongitude);
-            Set(PROPERTY_MAXLONGITUDE, Check.GreaterThanOrEqual(nameof(maxLongitude), maxLongitude, minLongitude));
-            Set(PROPERTY_SRID, srid);
+            SetValue(PROPERTY_MINLATITUDE, minLatitude);
+            SetValue(PROPERTY_MAXLATITUDE, Check.GreaterThanOrEqual(nameof(maxLatitude), maxLatitude, minLatitude));
+            SetValue(PROPERTY_MINLONGITUDE, minLongitude);
+            SetValue(PROPERTY_MAXLONGITUDE, Check.GreaterThanOrEqual(nameof(maxLongitude), maxLongitude, minLongitude));
+            SetValue(PROPERTY_SRID, srid);
         }
 
         public RandomSqlGeographyConfiguration(IDictionary<string, object> properties)

@@ -17,8 +17,6 @@
  * limitations under the License.
  */
 
-#pragma warning disable IDE0057 // Use range operator
-
 namespace Df.Stochastic.Fare
 {
     using System;
@@ -95,7 +93,7 @@ namespace Df.Stochastic.Fare
         private void AppendChoice(StringBuilder builder, Transition transition)
         {
             var c = (char)GetRandomInt(transition.Min, transition.Max, _Random);
-            builder.Append(c);
+            _ = builder.Append(c);
         }
 
         private void Generate(StringBuilder builder, State state)
@@ -134,12 +132,10 @@ namespace Df.Stochastic.Fare
 
             if (regExp.EndsWith("$"))
             {
-                regExp = regExp.Substring(0, regExp.Length - 1);
+                regExp = regExp[0..^1];
             }
 
             return regExp;
         }
     }
 }
-
-#pragma warning restore IDE0057 // Use range operator

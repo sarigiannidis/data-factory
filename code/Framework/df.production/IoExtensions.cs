@@ -15,7 +15,7 @@ namespace Df.Production
     internal static class IoExtensions
     {
         public static string SqlDefinition(this ColumnDescription columnDescription) =>
-            SqlTypeUtil.GetSqlColumnDefinition(
+            SqlTypeUtility.GetSqlColumnDefinition(
                     columnDescription.Name,
                     columnDescription.UserType,
                     columnDescription.Nullable,

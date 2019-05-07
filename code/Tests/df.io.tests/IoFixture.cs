@@ -28,12 +28,12 @@ namespace Df.Io.Tests
         public IoFixture()
         {
             var builder = new ConfigurationBuilder()
-            .SetBasePath(PathUtil.CurrentDirectory)
+            .SetBasePath(PathUtility.CurrentDirectory)
             .AddJsonFile(APP_SETTINGS_FILE, false, true);
             var configuration = builder.Build();
             ConnectionString = configuration
                 .GetConnectionString("TestDb")
-                .Replace("|DataDirectory|", PathUtil.CurrentDirectory + "\\", false, CultureInfo.InvariantCulture);
+                .Replace("|DataDirectory|", PathUtility.CurrentDirectory + "\\", false, CultureInfo.InvariantCulture);
             ServiceProvider = ConfigureServices(configuration)
                 .BuildServiceProvider();
         }
@@ -46,8 +46,8 @@ namespace Df.Io.Tests
 
         private void ConfigureLogging(ILoggingBuilder loggingBuilder)
         {
-            loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
-            loggingBuilder.AddEventSourceLogger();
+            _ = loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
+            _ = loggingBuilder.AddEventSourceLogger();
         }
 
         private IServiceCollection ConfigureServices(IConfiguration configuration) =>

@@ -28,12 +28,12 @@ namespace Df.Tests
         public DfFixture()
         {
             var builder = new ConfigurationBuilder()
-            .SetBasePath(PathUtil.CurrentDirectory)
+            .SetBasePath(PathUtility.CurrentDirectory)
             .AddJsonFile(APP_SETTINGS_FILE, false, true);
             var configuration = builder.Build();
             ConnectionString = configuration
                 .GetConnectionString("TestDb")
-                .Replace("|DataDirectory|", PathUtil.CurrentDirectory + "\\", false, CultureInfo.InvariantCulture);
+                .Replace("|DataDirectory|", PathUtility.CurrentDirectory + "\\", false, CultureInfo.InvariantCulture);
             ServiceProvider = ConfigureServices(configuration).BuildServiceProvider();
         }
 

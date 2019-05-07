@@ -33,7 +33,7 @@ namespace Df.Data
         public LocalDbServer(string databaseName)
         {
             DatabaseName = Check.NotNull(nameof(databaseName), databaseName);
-            var tmp = PathUtil.GetTempFileName();
+            var tmp = PathUtility.GetTempFileName();
             MdfFileName = Path.ChangeExtension(tmp, EXTENSION_TMP_MDF);
             LdfFileName = Path.ChangeExtension(tmp, EXTENSION_TMP_LDF);
             var sqlCreateDb = SQL_CREATE_DATABASE_FORMAT.FormatInvariant(databaseName, MdfFileName, LdfFileName);

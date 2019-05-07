@@ -29,7 +29,7 @@ namespace Df.Io
 
         public Project CreateNew(string connectionString)
         {
-            Check.NotNull(nameof(connectionString), connectionString);
+            _ = Check.NotNull(nameof(connectionString), connectionString);
             var descriptor = CreateDescriptor(connectionString);
             var prescriptor = new Prescriptor();
             return new Project(descriptor, prescriptor, CreationTime, CreationTime);
@@ -39,10 +39,10 @@ namespace Df.Io
         {
             using var stream = new MemoryStream();
             using var streamWriter = new StreamWriter(stream, Encoding.Unicode, 1024, true);
-            var str = JsonUtil.Serialize(tableDescriptions);
+            var str = JsonUtility.Serialize(tableDescriptions);
             streamWriter.WriteLine(str);
-            stream.Seek(0, SeekOrigin.Begin);
-            return HashUtil.ComputeHash(stream);
+            _ = stream.Seek(0, SeekOrigin.Begin);
+            return HashUtility.ComputeHash(stream);
         }
 
         private static void ReadAllForeignKeys(MetaDbContext context, IReadOnlyList<TableDescription> tableDescriptions)
