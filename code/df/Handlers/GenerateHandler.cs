@@ -20,7 +20,7 @@ namespace Df.OptionHandlers
         : IHandler<GenerateOptions>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly IDatasetGeneratorFactory _GeneratorFactory;
+        private readonly IDatasetGeneratorFactory _DatasetGeneratorFactory;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IProjectManager _ProjectManager;
@@ -28,7 +28,7 @@ namespace Df.OptionHandlers
         public GenerateHandler(IProjectManager projectManager, IDatasetGeneratorFactory generatorFactory)
         {
             _ProjectManager = Check.NotNull(nameof(projectManager), projectManager);
-            _GeneratorFactory = Check.NotNull(nameof(generatorFactory), generatorFactory);
+            _DatasetGeneratorFactory = Check.NotNull(nameof(generatorFactory), generatorFactory);
         }
 
         public void Handle(GenerateOptions options)
@@ -47,19 +47,20 @@ namespace Df.OptionHandlers
         }
 
         private void GenerateDatabase(Project project, bool disableTriggers, bool dryRun) =>
-            _GeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
+            _DatasetGeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
 
         private void GenerateFile(Project project, bool disableTriggers, bool dryRun, string path)
         {
             using var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None, BUFFERSIZE);
+            var datasetGenerator = _DatasetGeneratorFactory.Create(project);
             if (path.EndsWith(".gz", StringComparison.InvariantCultureIgnoreCase))
             {
                 using var compressionStream = new GZipStream(stream, CompressionMode.Compress);
-                _GeneratorFactory.Create(project).GenerateStream(compressionStream, disableTriggers, dryRun);
+                datasetGenerator.GenerateStream(compressionStream, disableTriggers, dryRun);
             }
             else
             {
-                _GeneratorFactory.Create(project).GenerateStream(stream, disableTriggers, dryRun);
+                datasetGenerator.GenerateStream(stream, disableTriggers, dryRun);
             }
         }
     }

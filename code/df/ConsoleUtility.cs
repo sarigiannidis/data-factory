@@ -19,9 +19,6 @@ namespace Df
             object[] GetValues(TEntity entity) =>
                 columns.Select(_ => _.property(entity)).ToArray();
 
-            string ColumnFormat(int index, int length) =>
-                "{{{0},-{1}}}".FormatInvariant(index, length);
-
             var entityFormatBuilder = new StringBuilder();
             var sb = new StringBuilder();
             for (var index = 0; index < columns.Length; index++)
@@ -42,6 +39,9 @@ namespace Df
             }
 
             return sb.ToString();
+
+            static string ColumnFormat(int index, int length) =>
+                "{{{0},-{1}}}".FormatInvariant(index, length);
         }
     }
 }
