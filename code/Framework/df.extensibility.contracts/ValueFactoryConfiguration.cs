@@ -7,6 +7,7 @@
 
 namespace Df.Extensibility
 {
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Collections;
     using System.Collections.Generic;
@@ -97,6 +98,7 @@ namespace Df.Extensibility
         protected T Get<T>(string key) =>
             _Properties[key] switch
         {
+            JArray j when typeof(IEnumerable).IsAssignableFrom(typeof(T)) => (dynamic)j.Values(),
             T t => t,
             DateTimeOffset d when typeof(T) == typeof(DateTime) => (T)(object)d.DateTime,
             string s when typeof(T) == typeof(TimeSpan) => (T)(object)TimeSpan.Parse(s, CultureInfo.InvariantCulture),

@@ -70,6 +70,7 @@ namespace Df.Io.Descriptive
             _ = Check.LessThanOrEqual(nameof(scale), scale, precision);
         }
 
+        // TODO: Also Identity == null.
         public bool IsWritable() =>
             !(Computed || UserType == Data.Constants.SQL_TYPE_TIMESTAMP);
     }

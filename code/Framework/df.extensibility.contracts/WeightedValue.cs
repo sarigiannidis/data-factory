@@ -8,6 +8,7 @@
 namespace Df.Extensibility
 {
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Diagnostics;
     using static Constants;
@@ -40,6 +41,9 @@ namespace Df.Extensibility
         public static implicit operator TValue(WeightedValue<TValue> weightedValue) => FromWeightedValue(weightedValue);
 
         public static implicit operator WeightedValue<TValue>(TValue value) => ToWeightedValue(value);
+
+        public static implicit operator WeightedValue<TValue>(JToken jToken) =>
+            new WeightedValue<TValue>(jToken.Value<TValue>(nameof(Value)), jToken.Value<float>(nameof(Weight)));
 
         public static bool operator !=(WeightedValue<TValue> left, WeightedValue<TValue> right) => !(left == right);
 
