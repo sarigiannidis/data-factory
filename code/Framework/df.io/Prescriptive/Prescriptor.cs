@@ -27,7 +27,7 @@ namespace Df.Io.Prescriptive
         private readonly List<ValueFactoryPrescription> _ValueFactoryPrescriptions = new List<ValueFactoryPrescription>();
 
         [JsonProperty(Order = 1)]
-        public int RowsPerTable { get; set; } = DEFAULTROWSPERTABLE;
+        public int DefaultRowsPerTable { get; set; } = DEFAULTROWSPERTABLE;
 
         [JsonIgnore]
         public IReadOnlyList<TablePrescription> TablePrescriptions => _TablePrescriptions;

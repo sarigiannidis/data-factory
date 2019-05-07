@@ -1702,7 +1702,7 @@
     ]
   },
   "Prescriptor": {
-    "RowsPerTable": 100,
+    "DefaultRowsPerTable": 100,
     "ValueFactoryPrescriptions": [
       {
         "$id": "int-incremental0",
