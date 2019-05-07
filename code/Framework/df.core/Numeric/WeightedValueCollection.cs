@@ -18,7 +18,7 @@ namespace Df.Numeric
     [JsonArray(IsReference = false)]
     public sealed class WeightedValueCollection<TValue>
         : IList<WeightedValue<TValue>>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         [JsonIgnore]

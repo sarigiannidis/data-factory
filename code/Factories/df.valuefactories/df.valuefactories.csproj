@@ -12,25 +12,37 @@
   </ItemGroup>
 
   <ItemGroup Label="T4">
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" Label="T4 translation" />
+
     <None Update="Incremental.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Incremental.cs</LastGenOutput>
-    </None>
-    <None Update="Random.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Random.cs</LastGenOutput>
     </None>
     <Compile Update="Incremental.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Incremental.tt</DependentUpon>
     </Compile>
+
+    <None Update="List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>List.cs</LastGenOutput>
+    </None>
+    <Compile Update="List.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>List.tt</DependentUpon>
+    </Compile>
+
+    <None Update="Random.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Random.cs</LastGenOutput>
+    </None>
     <Compile Update="Random.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Random.tt</DependentUpon>
     </Compile>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" Label="T4 translation" />
   </ItemGroup>
 
 </Project>

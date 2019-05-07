@@ -13,7 +13,7 @@ namespace Df.Extensibility
 
     public abstract class RandomListFactory<TValue>
         : RandomFactory<TValue, IListFactoryConfiguration<TValue>>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         protected float SumOfWeights { get; private set; }
 

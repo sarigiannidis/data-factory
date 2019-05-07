@@ -17,7 +17,7 @@ namespace Df.Extensibility
     [DebuggerDisplay("[{MinValue}, {MaxValue}]")]
     public class ListFactoryConfiguration<TValue>
         : ValueFactoryConfiguration, IListFactoryConfiguration<TValue>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public WeightedValueCollection<TValue> WeightedValues =>

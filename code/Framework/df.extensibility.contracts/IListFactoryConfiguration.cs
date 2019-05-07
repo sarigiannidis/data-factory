@@ -12,7 +12,7 @@ namespace Df.Extensibility
 
     public interface IListFactoryConfiguration<TValue>
        : IValueFactoryConfiguration
-   where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+   where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         WeightedValueCollection<TValue> WeightedValues { get; }
     }

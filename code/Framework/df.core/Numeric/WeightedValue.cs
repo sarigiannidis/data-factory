@@ -16,7 +16,7 @@ namespace Df.Numeric
     public readonly struct WeightedValue<TValue>
         : IEquatable<WeightedValue<TValue>>,
         IComparable<WeightedValue<TValue>>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public const float DEFAULTWEIGHT = 1.0f;
