@@ -12,13 +12,14 @@ namespace Df.Io.Prescriptive
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using static Constants;
 
     [JsonObject(IsReference = false)]
     [DebuggerDisplay("{ColumnPrescriptions.Count} columns")]
     public sealed class TablePrescription
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        [JsonProperty(nameof(ColumnPrescriptions), Order = 2, ItemIsReference = false)]
+        [JsonProperty(nameof(ColumnPrescriptions), Order = 3, ItemIsReference = false)]
         private readonly List<ColumnPrescription> _ColumnPrescriptions = new List<ColumnPrescription>();
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -35,6 +36,9 @@ namespace Df.Io.Prescriptive
 
             internal set => _TableDescription = new WeakReference<TableDescription>(Check.NotNull(nameof(value), value));
         }
+
+        [JsonProperty(Order = 2)]
+        public int Rows { get; set; } = DEFAULTROWSPERTABLE;
 
         [JsonConstructor]
         public TablePrescription(TableDescription tableDescription) =>

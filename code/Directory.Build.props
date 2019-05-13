@@ -6,29 +6,6 @@
    <TargetFramework>netcoreapp3.0</TargetFramework>
  </PropertyGroup>
 
-  <PropertyGroup Label="Packaging">
-    <Authors>Michalis Sarigiannidis</Authors>
-    <Copyright>Copyright $(CurrentYear) © Michalis Sarigiannidis. All rights reserved.</Copyright>
-    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
-    <Description>df is a data factory tool: it can be used to produce random data to insert into SQL Server tables.</Description>
-    <NeutralLanguage>en</NeutralLanguage>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://sarigiannidis.github.io/data-factory/</PackageProjectUrl>
-    <PackageReleaseNotes>https://github.com/sarigiannidis/data-factory/releases</PackageReleaseNotes>
-    <PackageTags>sql, csharp, core</PackageTags>
-    <Product>Data Factory</Product>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/sarigiannidis/data-factory</RepositoryUrl>
-    <Version>0.7.1</Version>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Debug symbols">
-    <DebugSymbols Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">true</DebugSymbols>
-    <DebugSymbols Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">false</DebugSymbols>
-    <DebugType Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">full</DebugType>
-    <DebugType Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">none</DebugType>
-  </PropertyGroup>
-
   <PropertyGroup Label="Locations">
     <ANALYSISDIR>$(SolutionDir)\.analysis\</ANALYSISDIR>
     <ARTIFACTSDIR>$(SolutionDir)..\artifacts\</ARTIFACTSDIR>
@@ -40,5 +17,7 @@
   </PropertyGroup>
 
   <Import Project="$(PROPSDIR)analysis.props" />
+  <Import Project="$(PROPSDIR)dbp.props"/>
+  <Import Project="$(PROPSDIR)package.props"/>
 
 </Project>

@@ -36,7 +36,7 @@ namespace Df.OptionHandlers
         }
 
         private static string EnsureExtension(string path) =>
-            string.Compare(EXTENSION, Path.GetExtension(path), StringComparison.InvariantCultureIgnoreCase) == 0
+            string.Equals(EXTENSION, Path.GetExtension(path), StringComparison.InvariantCultureIgnoreCase)
                 ? path
                 : Path.ChangeExtension(path, EXTENSION);
     }
