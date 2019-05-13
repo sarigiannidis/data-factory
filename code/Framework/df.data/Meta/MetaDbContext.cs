@@ -5,10 +5,14 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
+#pragma warning disable CA1801 // Review unused parameters
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Df.Data.Meta
 {
     using Df.Data.Meta.Configurations;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Diagnostics;
 
     public sealed class MetaDbContext
         : DbContext
@@ -27,9 +31,6 @@ namespace Df.Data.Meta
             : base(options)
         {
         }
-
-#pragma warning disable CA1801 // Review unused parameters
-#pragma warning disable IDE0060 // Remove unused parameter
 
         /// <summary>
         /// Stand-in for OBJECT_DEFINITION.
@@ -71,6 +72,9 @@ namespace Df.Data.Meta
         public static string TypeName(int id) =>
             ThrowLinqOnly();
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+            _ = optionsBuilder.ConfigureWarnings(ConfigureWarnings);
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             _ = modelBuilder.ApplyConfiguration(new ColumnConfiguration());
@@ -89,7 +93,10 @@ namespace Df.Data.Meta
         private static dynamic ThrowLinqOnly() =>
             throw new DbFunctionException("Please use this function only in LINQ statements.");
 
-#pragma warning restore IDE0060 // Remove unused parameter
-#pragma warning restore CA1801 // Review unused parameters
+        private void ConfigureWarnings(WarningsConfigurationBuilder warningsConfigurationBuilder) =>
+            _ = warningsConfigurationBuilder.Ignore(RelationalEventId.QueryClientEvaluationWarning);
     }
 }
+
+#pragma warning restore IDE0060 // Remove unused parameter
+#pragma warning restore CA1801 // Review unused parameters

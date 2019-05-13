@@ -189,7 +189,7 @@
             var p = value.IndexOf('.', i);
             if (p == -1)
             {
-                _ = b1.Append(value.Substring(i));
+                _ = b1.Append(value, i, value.Length - i);
             }
             else
             {
@@ -299,7 +299,7 @@
             }
 
             var b = new StringBuilder();
-            _ = b.Append(value.Substring(i));
+            _ = b.Append(value, i, value.Length - i);
             if (b.Length == 0)
             {
                 _ = b.Append("0");
