@@ -1,0 +1,20 @@
+<Project>
+
+
+  <PropertyGroup>
+    <Authors>Michalis Sarigiannidis</Authors>
+    <Copyright>Copyright $(CurrentYear) © Michalis Sarigiannidis. All rights reserved.</Copyright>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <Description>df is a data factory tool: it can be used to produce random data to insert into SQL Server tables.</Description>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://sarigiannidis.github.io/data-factory/</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/sarigiannidis/data-factory/releases</PackageReleaseNotes>
+    <PackageTags>sql, csharp, core</PackageTags>
+    <Product>Data Factory</Product>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/sarigiannidis/data-factory</RepositoryUrl>
+    <Version>0.7.1</Version>
+  </PropertyGroup>
+
+</Project>
