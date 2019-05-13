@@ -31,6 +31,16 @@ namespace Df.Production
             internal InternalGenerator(DatasetGenerator generator) =>
                 _Owner = generator;
 
+            /// <summary>
+            /// Generate the data.
+            /// </summary>
+            /// <remarks>
+            /// 1. Add columns @DF1 and @DF2 to the table.
+            ///      @DF1 is a primary key.
+            ///      @DF2 contains the same values as @DF1, but scrambled.
+            /// 2. For each primary key relationship, update the fk by binding @DF2 of the parent table to the @DF1 of the referenced table.
+            /// 3. Drop the primary keys.
+            /// </remarks>
             public ISql Generate()
             {
                 ISql sql = null;
@@ -101,7 +111,7 @@ namespace Df.Production
                 using var connection = sql.CreateConnection();
                 connection.Open();
                 var tableName = tableDescription.TableName();
-                var command = SQL_UPDATE_DF2.FormatInvariant(tableName);
+                var command = "WITH CTE AS (SELECT ROW_NUMBER() OVER(ORDER BY newid() ASC) AS ROWNUMBER, [@DF1] FROM {0}) UPDATE T2 SET T2.[@DF2] = T1.[@DF1] FROM {0} T2, CTE T1 WHERE T1.ROWNUMBER = T2.[@DF1]".FormatInvariant(tableName);
                 sql.NonQuery(connection, command);
             }
 
@@ -109,8 +119,9 @@ namespace Df.Production
             {
                 var parentTableName = foreignKeyDescription.Parent.TableName();
                 var referencedTableName = foreignKeyDescription.Referenced.TableName();
-                var referencedColumnNames = foreignKeyDescription.ColumnRelationshipDescriptions.Select(_ => _.Referenced.Name);
-                var parentColumnNames = foreignKeyDescription.ColumnRelationshipDescriptions.Select(_ => _.Parent.Name);
+                var columnRelationshipDescriptions = foreignKeyDescription.ColumnRelationshipDescriptions;
+                var referencedColumnNames = columnRelationshipDescriptions.Select(_ => _.Referenced.Name);
+                var parentColumnNames = columnRelationshipDescriptions.Select(_ => _.Parent.Name);
                 var updatePairs = parentColumnNames.Zip(referencedColumnNames, (p, r) => $"T1.{p} = T2.{r}");
                 var commandText = new StringBuilder("UPDATE T1 SET ")
                     .AppendJoin(", ", updatePairs)
