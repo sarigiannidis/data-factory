@@ -38,19 +38,18 @@ namespace Df.Extensibility.Tests
         {
             var manager = Fixture.ServiceProvider.GetService<IValueFactoryManager>();
             manager.Initialize();
-            void Evaluate(IValueFactoryInfo valueFactoryInfo)
+            Assert.NotEmpty(manager.ValueFactoryInfos);
+            Assert.True(manager.ValueFactoryInfos.Count > 0);
+            Assert.All(manager.ValueFactoryInfos, Evaluate);
+
+            static void Evaluate(IValueFactoryInfo valueFactoryInfo)
             {
                 Assert.NotNull(valueFactoryInfo);
-
                 Assert.NotNull(valueFactoryInfo.Configurator);
                 Assert.NotNull(valueFactoryInfo.ValueFactory);
                 Assert.NotNull(valueFactoryInfo.Description);
                 Assert.NotNull(valueFactoryInfo.Name);
             }
-
-            Assert.NotEmpty(manager.ValueFactoryInfos);
-            Assert.True(manager.ValueFactoryInfos.Count > 0);
-            Assert.All(manager.ValueFactoryInfos, Evaluate);
         }
     }
 }
