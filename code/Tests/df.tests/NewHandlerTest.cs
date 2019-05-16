@@ -20,11 +20,8 @@ namespace Df.Tests
         }
 
         [Fact]
-        [TemporaryFiles(Extension = ".json")]
-        public void NewProjectTest()
-        {
-            var fileName = Temporary.GetTempFilePath();
-            CreateProjectFile(fileName);
-        }
+        [TemporaryFiles]
+        public void NewProjectTest() =>
+            CreateProjectFile(Temporary.GetTempFilePath(".json"));
     }
 }

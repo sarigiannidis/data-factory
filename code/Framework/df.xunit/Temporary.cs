@@ -11,15 +11,15 @@ namespace Xunit
 
     public static class Temporary
     {
-        public static string GetTempFilePath()
+        public static string GetTempFilePath(string extension = null)
         {
-            var mi = new StackTrace()
+            var memberInfo = new StackTrace()
                 .GetFrame(1)
                 .GetMethod();
 
             return TemporaryFileContext
-                .GetContext(mi)
-                .GetFilePath();
+                .GetContext(memberInfo)
+                .GetFilePath(extension);
         }
     }
 }

@@ -53,9 +53,9 @@ namespace Xunit
             GC.SuppressFinalize(this);
         }
 
-        public string GetFilePath()
+        public string GetFilePath(string extension)
         {
-            var path = GenerateFilePath();
+            var path = GenerateFilePath(extension ?? _Extension);
             _Paths.Enqueue(path);
             return path;
         }
@@ -117,9 +117,9 @@ namespace Xunit
             }
         }
 
-        private string GenerateFilePath() =>
+        private string GenerateFilePath(string extension) =>
             (from str in _Random.NextStrings(FILENAMEREGEX)
-             let path = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), $"{_Prefix}-{str}"), _Extension)
+             let path = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), $"{_Prefix}-{str}"), extension)
              where !File.Exists(path)
              select path).First();
     }
