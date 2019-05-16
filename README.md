@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/sarigiannidis/data-factory/badge)](https://www.codefactor.io/repository/github/sarigiannidis/data-factory)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/94ee25fee96c478fa3e6670c5f1ebc3b)](https://www.codacy.com/app/sarigiannidis/data-factory?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sarigiannidis/data-factory&amp;utm_campaign=Badge_Grade)
 ![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
 ![MIT license](https://img.shields.io/github/license/sarigiannidis/data-factory.svg)
 
