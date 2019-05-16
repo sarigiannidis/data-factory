@@ -26,7 +26,7 @@ namespace Df.Tests
             {
                 ConnectionString = Fixture.ConnectionString,
             };
-            Handler.Handle(options);
+            Handle(options);
         }
     }
 }

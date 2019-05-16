@@ -10,5 +10,9 @@ namespace Xunit
     internal static class Constants
     {
         public const string KEY_ORDER = "order";
+
+        public const string FILENAMEREGEX = "[a-zA-Z0-9]{32}";
+
+        public const string DEFAULTEXTENSION = ".tmp";
     }
 }

@@ -21,9 +21,10 @@ namespace Df.Tests
         }
 
         [Fact]
+        [TemporaryFiles(Extension = ".json")]
         public void AddAllFactories()
         {
-            var fileName = CreateFileName("add_");
+            var fileName = Temporary.GetTempFilePath();
             CreateProjectFile(fileName);
 
             var options = new AddOptions
@@ -31,14 +32,15 @@ namespace Df.Tests
                 Project = fileName,
                 Subject = AddSubject.AllFactories,
             };
-            Handler.Handle(options);
+            Handle(options);
             Output.WriteLine(File.ReadAllText(fileName));
         }
 
         [Fact]
+        [TemporaryFiles(Extension = ".json")]
         public void AddAllTables()
         {
-            var fileName = CreateFileName("add_");
+            var fileName = Temporary.GetTempFilePath();
             CreateProjectFile(fileName);
 
             var options = new AddOptions
@@ -46,14 +48,15 @@ namespace Df.Tests
                 Project = fileName,
                 Subject = AddSubject.AllTables,
             };
-            Handler.Handle(options);
+            Handle(options);
             Output.WriteLine(File.ReadAllText(fileName));
         }
 
         [Fact]
+        [TemporaryFiles(Extension = ".json")]
         public void AddFactory()
         {
-            var fileName = CreateFileName("add_");
+            var fileName = Temporary.GetTempFilePath();
             CreateProjectFile(fileName);
 
             var options = new AddOptions
@@ -62,14 +65,15 @@ namespace Df.Tests
                 Project = fileName,
                 Subject = AddSubject.Factory,
             };
-            Handler.Handle(options);
+            Handle(options);
             Output.WriteLine(File.ReadAllText(fileName));
         }
 
         [Fact]
+        [TemporaryFiles(Extension = ".json")]
         public void AddTable()
         {
-            var fileName = CreateFileName("add_");
+            var fileName = Temporary.GetTempFilePath();
             CreateProjectFile(fileName);
 
             var options = new AddOptions
@@ -78,7 +82,7 @@ namespace Df.Tests
                 Project = fileName,
                 Subject = AddSubject.Table,
             };
-            Handler.Handle(options);
+            Handle(options);
             Output.WriteLine(File.ReadAllText(fileName));
         }
     }

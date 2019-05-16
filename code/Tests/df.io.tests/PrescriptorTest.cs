@@ -24,9 +24,10 @@ namespace Df.Io.Tests
         }
 
         [Fact]
+        [TemporaryFiles]
         public void AddAllValueFactories()
         {
-            var fileName = CreateFileName("addallvaluefactories_");
+            var fileName = Temporary.GetTempFilePath();
             var project = CreateProject();
             ValueFactoryManager.Initialize();
 
@@ -45,9 +46,10 @@ namespace Df.Io.Tests
         }
 
         [Fact]
+        [TemporaryFiles]
         public void AddColumnPrescriptions()
         {
-            var fileName = CreateFileName("addColumnprescriptions_");
+            var fileName = Temporary.GetTempFilePath();
             var project = CreateProject();
             ValueFactoryManager.Initialize();
 

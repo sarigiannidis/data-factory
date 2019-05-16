@@ -15,7 +15,6 @@ namespace Df.Tests
     using System.Globalization;
 
     public sealed class DfFixture
-        : IDisposable
     {
         private const string APP_SETTINGS_FILE = "settings.json";
 
@@ -35,10 +34,6 @@ namespace Df.Tests
                 .GetConnectionString("TestDb")
                 .Replace("|DataDirectory|", PathUtility.CurrentDirectory + "\\", false, CultureInfo.InvariantCulture);
             ServiceProvider = ConfigureServices(configuration).BuildServiceProvider();
-        }
-
-        public void Dispose()
-        {
         }
 
         private IServiceCollection ConfigureServices(IConfiguration configuration) =>

@@ -30,20 +30,21 @@ namespace Df.Tests
                 DryRun = false,
                 DisableTriggers = true,
             };
-            Handler.Handle(options);
+            Handle(options);
         }
 
         [Fact]
+        [TemporaryFiles]
         public void GenerateFile()
         {
-            var outputFileName = CreateFileName("_generatefile");
+            var outputFileName = Temporary.GetTempFilePath();
             var options = new GenerateOptions
             {
                 Subject = GenerateSubject.File,
                 Project = "TESTDB.json",
                 Output = outputFileName,
             };
-            Handler.Handle(options);
+            Handle(options);
             Output.WriteLine(File.ReadAllText(outputFileName));
         }
     }
