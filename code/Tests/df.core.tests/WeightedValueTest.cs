@@ -11,6 +11,7 @@
 namespace Df.Tests
 {
     using Df.Numeric;
+    using Df.Stochastic;
     using System;
     using System.Collections.Generic;
     using Xunit;
@@ -126,6 +127,32 @@ namespace Df.Tests
                     Assert.True(weightedValue1.Equals(weightedValue2) || !equalValues);
                     Assert.True(weightedValue1 != weightedValue2 || equalValues);
                     Assert.True(!weightedValue1.Equals(weightedValue2) || equalValues);
+                }
+            }
+        }
+
+        [Fact]
+        public void ComparisonTest()
+        {
+            var random = new HardRandom();
+            var weightComparer = Comparer<float>.Default;
+            var comparer = Comparer<TValue>.Default;
+            foreach (var value1 in Range())
+            {
+                var weight1 = random.NextSingle();
+                var weightedValue1 = new WeightedValue<TValue>(value1, weight1);
+                foreach (var value2 in Range())
+                {
+                    var weight2 = random.NextSingle();
+                    var weightedValue2 = new WeightedValue<TValue>(value2, weight2);
+                    if (Equals(value1, value2))
+                    {
+                        Assert.True(weightedValue1.CompareTo(weightedValue2) == weightComparer.Compare(weight1, weight2));
+                    }
+                    else
+                    {
+                        Assert.True(weightedValue1.CompareTo(weightedValue2) == comparer.Compare(value1, value2));
+                    }
                 }
             }
         }

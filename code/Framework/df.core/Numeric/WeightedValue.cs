@@ -74,7 +74,8 @@ namespace Df.Numeric
 
         public int CompareTo(WeightedValue<TValue> other)
         {
-            var result = Value.CompareTo(other.Value);
+            var valueComparer = Comparer<TValue>.Default;
+            var result = valueComparer.Compare(Value, other.Value);
             return result == 0 ? Weight.CompareTo(other.Weight) : result;
         }
 
