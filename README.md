@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/df13f97acabb4dc2b5d94a4ac4c63a73)](https://app.codacy.com/app/sarigiannidis/data-factory?utm_source=github.com&utm_medium=referral&utm_content=sarigiannidis/data-factory&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/sarigiannidis/data-factory/badge)](https://www.codefactor.io/repository/github/sarigiannidis/data-factory)
 ![latest release](https://img.shields.io/github/release-pre/sarigiannidis/data-factory.svg)
 ![MIT license](https://img.shields.io/github/license/sarigiannidis/data-factory.svg)
