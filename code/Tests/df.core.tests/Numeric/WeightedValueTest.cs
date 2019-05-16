@@ -8,9 +8,8 @@
 #pragma warning disable SA1402 // File may only contain a single type
 #pragma warning disable SA1649 // File name should match first type name
 
-namespace Df.Tests
+namespace Df.Numeric.Tests
 {
-    using Df.Numeric;
     using Df.Stochastic;
     using System;
     using System.Collections.Generic;
