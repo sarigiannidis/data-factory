@@ -15,6 +15,7 @@ namespace Df.Stochastic
         : IRandom,
         IDisposable
     {
+        // @TODO: Make this a singleton of sorts - it's thread-safe, there's no need for more than one of these.
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private RNGCryptoServiceProvider _CryptoServiceProvider = new RNGCryptoServiceProvider();
 
