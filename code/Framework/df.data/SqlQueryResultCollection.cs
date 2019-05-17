@@ -57,18 +57,20 @@ namespace Df.Data
 
         private void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    _Command?.Dispose();
-                    _Command = null;
-                    _Connection?.Dispose();
-                    _Connection = null;
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+                _Command?.Dispose();
+                _Command = null;
+                _Connection?.Dispose();
+                _Connection = null;
+            }
+
+            _Disposed = true;
         }
     }
 }

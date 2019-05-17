@@ -81,39 +81,41 @@ namespace Xunit
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                var exceptions = new List<Exception>();
-                if (disposing)
-                {
-                    _Random.Dispose();
-                    _Random = null;
+                return;
+            }
 
-                    while (_Paths.TryDequeue(out var path))
+            var exceptions = new List<Exception>();
+            if (disposing)
+            {
+                _Random.Dispose();
+                _Random = null;
+
+                while (_Paths.TryDequeue(out var path))
+                {
+                    try
                     {
-                        try
+                        if (File.Exists(path))
                         {
-                            if (File.Exists(path))
-                            {
-                                File.Delete(path);
-                            }
-                        }
-                        catch (Exception exception)
-                        {
-                            exceptions.Add(exception);
+                            File.Delete(path);
                         }
                     }
+                    catch (Exception exception)
+                    {
+                        exceptions.Add(exception);
+                    }
                 }
+            }
 
-                _Disposed = true;
-                if (exceptions.Count == 1)
-                {
-                    throw exceptions[0];
-                }
-                else if (exceptions.Count > 1)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            _Disposed = true;
+            if (exceptions.Count == 1)
+            {
+                throw exceptions[0];
+            }
+            else if (exceptions.Count > 1)
+            {
+                throw new AggregateException(exceptions);
             }
         }
 

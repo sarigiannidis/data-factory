@@ -29,16 +29,18 @@ namespace Df.Stochastic
 
         private void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    _CryptoServiceProvider?.Dispose();
-                    _CryptoServiceProvider = null;
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+                _CryptoServiceProvider?.Dispose();
+                _CryptoServiceProvider = null;
+            }
+
+            _Disposed = true;
         }
     }
 }

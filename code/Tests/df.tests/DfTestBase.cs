@@ -43,16 +43,18 @@ namespace Df.Tests
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    _ConsoleWriter?.Dispose();
-                    _ConsoleWriter = null;
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+                _ConsoleWriter?.Dispose();
+                _ConsoleWriter = null;
+            }
+
+            _Disposed = true;
         }
     }
 }

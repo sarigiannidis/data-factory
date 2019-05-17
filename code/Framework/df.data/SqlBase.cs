@@ -65,14 +65,16 @@ namespace Df.Data
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+            }
+
+            _Disposed = true;
         }
 
         private void ExecuteNonQuery(SqlTransaction transaction, string query)
