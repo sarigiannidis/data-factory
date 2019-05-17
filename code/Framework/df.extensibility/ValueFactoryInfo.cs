@@ -13,9 +13,11 @@ namespace Df.Extensibility
     internal sealed class ValueFactoryInfo
         : IValueFactoryInfo
     {
+        // @TODO: Are the IConfigurator instances disposed properly?
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly Func<IConfigurator> _ConfiguratorFactory;
 
+        // @TODO: Are the IValueFactory instances disposed properly?
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly Func<IValueFactory> _ValueFactoryFactory;
 
