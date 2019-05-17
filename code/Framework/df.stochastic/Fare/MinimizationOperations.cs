@@ -113,19 +113,15 @@ namespace Df.Stochastic.Fare
             var sigma = a.GetStartPoints();
 
             // Initialize data structures.
-            var reverse = new List<List<LinkedList<State>>>();
-            foreach (var s in states)
+            var v = Enumerable.Repeat<LinkedList<State>>(default, sigma.Length);
+            var reverse = new LinkedList<State>[states.Length][];
+            for (var i = 0; i < states.Length; i++)
             {
-                var v = new List<LinkedList<State>>();
-                Initialize(ref v, sigma.Length);
-                reverse.Add(v);
+                reverse[i] = v.ToArray();
             }
 
             var reverseNonempty = new bool[states.Length, sigma.Length];
-
-            var partition = new List<LinkedList<State>>();
-            Initialize(ref partition, states.Length);
-
+            var partition = Enumerable.Repeat<LinkedList<State>>(default, states.Length).ToArray();
             var block = new int[states.Length];
             var active = new StateList[states.Length, sigma.Length];
             var active2 = new StateListNode[states.Length, sigma.Length];
@@ -135,10 +131,7 @@ namespace Df.Stochastic.Fare
             var split2 = new bool[states.Length];
             var refine = new List<int>();
             var refine2 = new bool[states.Length];
-
-            var splitblock = new List<List<State>>();
-            Initialize(ref splitblock, states.Length);
-
+            var splitblock = Enumerable.Repeat<List<State>>(default, states.Length).ToArray();
             for (var q = 0; q < states.Length; q++)
             {
                 splitblock[q] = new List<State>();
@@ -154,7 +147,6 @@ namespace Df.Stochastic.Fare
             foreach (var qq in states)
             {
                 var j = qq.Accept ? 0 : 1;
-
                 _ = partition[j].AddLast(qq);
                 block[qq.Number] = j;
                 for (var x = 0; x < sigma.Length; x++)
@@ -318,13 +310,12 @@ namespace Df.Stochastic.Fare
             var transitions = new Transition[ss.Count][];
             var states = ss.ToArray();
 
-            var mark = new List<List<bool>>();
-            var triggers = new List<List<HashSet<(int, int)>>>();
-            foreach (var t in states)
+            var mark = new bool[states.Length, states.Length];
+            var triggers = new List<HashSet<(int, int)>>[states.Length];
+            var v = Enumerable.Repeat<HashSet<(int, int)>>(default, states.Length);
+            for (var i = 0; i < states.Length; i++)
             {
-                var v = new List<HashSet<(int, int)>>();
-                Initialize(ref v, states.Length);
-                triggers.Add(v);
+                triggers[i] = v.ToList();
             }
 
             // Initialize marks based on acceptance status and find transition arrays.
@@ -336,7 +327,7 @@ namespace Df.Stochastic.Fare
                 {
                     if (states[n1].Accept != states[n2].Accept)
                     {
-                        mark[n1][n2] = true;
+                        mark[n1, n2] = true;
                     }
                 }
             }
@@ -346,16 +337,18 @@ namespace Df.Stochastic.Fare
             {
                 for (var n2 = n1 + 1; n2 < states.Length; n2++)
                 {
-                    if (!mark[n1][n2])
+                    if (mark[n1, n2])
                     {
-                        if (StatesAgree(transitions, mark, n1, n2))
-                        {
-                            AddTriggers(transitions, triggers, n1, n2);
-                        }
-                        else
-                        {
-                            MarkPair(mark, triggers, n1, n2);
-                        }
+                        continue;
+                    }
+
+                    if (StatesAgree(transitions, mark, n1, n2))
+                    {
+                        AddTriggers(transitions, triggers, n1, n2);
+                    }
+                    else
+                    {
+                        MarkPair(mark, triggers, n1, n2);
                     }
                 }
             }
@@ -369,19 +362,21 @@ namespace Df.Stochastic.Fare
 
             for (var n1 = 0; n1 < states.Length; n1++)
             {
-                if (states[n1].Number == -1)
+                if (states[n1].Number != -1)
                 {
-                    states[n1].Number = numclasses;
-                    for (var n2 = n1 + 1; n2 < states.Length; n2++)
-                    {
-                        if (!mark[n1][n2])
-                        {
-                            states[n2].Number = numclasses;
-                        }
-                    }
-
-                    numclasses++;
+                    continue;
                 }
+
+                states[n1].Number = numclasses;
+                for (var n2 = n1 + 1; n2 < states.Length; n2++)
+                {
+                    if (!mark[n1, n2])
+                    {
+                        states[n2].Number = numclasses;
+                    }
+                }
+
+                numclasses++;
             }
 
             // Make a new state for each equivalence class.
@@ -415,7 +410,7 @@ namespace Df.Stochastic.Fare
             a.RemoveDeadTransitions();
         }
 
-        private static void AddTriggers(Transition[][] transitions, IList<List<HashSet<(int, int)>>> triggers, int n1, int n2)
+        private static void AddTriggers(Transition[][] transitions, List<HashSet<(int, int)>>[] triggers, int n1, int n2)
         {
             var t1 = transitions[n1];
             var t2 = transitions[n2];
@@ -462,34 +457,28 @@ namespace Df.Stochastic.Fare
             }
         }
 
-        private static void Initialize<T>(ref List<T> list, int size)
+        private static void MarkPair(bool[,] mark, List<HashSet<(int, int)>>[] triggers, int n1, int n2)
         {
-            for (var i = 0; i < size; i++)
+            mark[n1, n2] = true;
+            if (triggers[n1][n2] == null)
             {
-                list.Add(default);
+                return;
             }
-        }
 
-        private static void MarkPair(List<List<bool>> mark, IList<List<HashSet<(int, int)>>> triggers, int n1, int n2)
-        {
-            mark[n1][n2] = true;
-            if (triggers[n1][n2] != null)
+            foreach (var p in triggers[n1][n2])
             {
-                foreach (var p in triggers[n1][n2])
+                var m1 = p.Item1;
+                var m2 = p.Item2;
+                if (m1 > m2)
                 {
-                    var m1 = p.Item1;
-                    var m2 = p.Item2;
-                    if (m1 > m2)
-                    {
-                        var t = m1;
-                        m1 = m2;
-                        m2 = t;
-                    }
+                    var t = m1;
+                    m1 = m2;
+                    m2 = t;
+                }
 
-                    if (!mark[m1][m2])
-                    {
-                        MarkPair(mark, triggers, m1, m2);
-                    }
+                if (!mark[m1, m2])
+                {
+                    MarkPair(mark, triggers, m1, m2);
                 }
             }
         }
@@ -539,7 +528,7 @@ namespace Df.Stochastic.Fare
             return accept;
         }
 
-        private static bool StatesAgree(Transition[][] transitions, List<List<bool>> mark, int n1, int n2)
+        private static bool StatesAgree(Transition[][] transitions, bool[,] mark, int n1, int n2)
         {
             var t1 = transitions[n1];
             var t2 = transitions[n2];
@@ -564,7 +553,7 @@ namespace Df.Stochastic.Fare
                         m2 = t;
                     }
 
-                    if (mark[m1][m2])
+                    if (mark[m1, m2])
                     {
                         return false;
                     }
