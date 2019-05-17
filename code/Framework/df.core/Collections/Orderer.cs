@@ -54,9 +54,9 @@ namespace Df.Collections
                 }
 
                 var i = _Nodes.IndexOf(node);
-                foreach (var item in _Parent._Dependencies(node))
+                foreach (var dependency in _Parent._Dependencies(node))
                 {
-                    i = Math.Max(i, Index(item, depth + 1, origin) + 1);
+                    i = Math.Max(i, Index(dependency, depth + 1, origin) + 1);
                 }
 
                 return i;

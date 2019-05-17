@@ -20,7 +20,7 @@ namespace Df.ValueFactories
     using Df.Extensibility;
     using Df.Numeric;
     using System.CodeDom.Compiler;
-<# foreach(var type in types)
+<# foreach (var type in types)
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
     var upper = type.ToUpperInvariant();

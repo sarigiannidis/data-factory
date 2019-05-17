@@ -21,11 +21,11 @@ namespace Df
 
             var sb1 = new StringBuilder();
             var sb2 = new StringBuilder();
-            for (var index = 0; index < columns.Length; index++)
+            for (var i = 0; i < columns.Length; i++)
             {
-                var (_, name, length) = columns[index];
+                var (_, name, length) = columns[i];
                 _ = sb2.AppendFormatInvariant(ColumnFormat(0, length), name);
-                _ = sb1.Append(ColumnFormat(index, length));
+                _ = sb1.Append(ColumnFormat(i, length));
             }
 
             _ = sb2.AppendLine();

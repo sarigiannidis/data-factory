@@ -21,7 +21,7 @@ namespace Df.ValueFactories
     using System;
     using System.CodeDom.Compiler;
     using static Constants;
-<# foreach(var type in types)
+<# foreach (var type in types)
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
     var upper = type.ToUpperInvariant();

@@ -47,7 +47,7 @@ namespace Df.Stochastic.Tests
             for (var i = min; i < max; i++)
             {
                 var found = false;
-                for (var expirement = 0; expirement < REPETITIONS; expirement++)
+                for (var j = 0; j < REPETITIONS; j++)
                 {
                     var result = random.NextInt32(min, max);
                     Output.WriteLine($"[{min}, {max}): expecting {i}, received {result}.");
