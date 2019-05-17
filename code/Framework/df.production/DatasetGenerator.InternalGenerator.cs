@@ -79,7 +79,7 @@ namespace Df.Production
                 sql.NonQuery(CreateTableDefinition(tablePrescription));
 
             private static string CreateTableDefinition(TablePrescription tablePrescription) =>
-                        new StringBuilder()
+                new StringBuilder()
                 .AppendFormatInvariant("CREATE TABLE {0} (", tablePrescription.TableName())
                 .AppendFormatInvariant("[@DF1] [BIGINT] IDENTITY(1, 1) NOT NULL PRIMARY KEY, ")
                 .AppendFormatInvariant("[@DF2] [BIGINT] NULL, ")
@@ -123,11 +123,11 @@ namespace Df.Production
                 var referencedColumnNames = columnRelationshipDescriptions.Select(_ => _.Referenced.Name);
                 var parentColumnNames = columnRelationshipDescriptions.Select(_ => _.Parent.Name);
                 var updatePairs = parentColumnNames.Zip(referencedColumnNames, (p, r) => $"T1.{p} = T2.{r}");
-                var commandText = new StringBuilder("UPDATE T1 SET ")
+                var sb = new StringBuilder("UPDATE T1 SET ")
                     .AppendJoin(", ", updatePairs)
                     .AppendFormatInvariant(" FROM {0} T1, {1} T2 WHERE T2.[@DF1] = T1.[@DF2];", parentTableName, referencedTableName)
                     .ToString();
-                sql.NonQuery(commandText);
+                sql.NonQuery(sb);
             }
 
             private void FillTable(ISql sql, TablePrescription tablePrescription)

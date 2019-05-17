@@ -64,9 +64,9 @@ namespace Df.Stochastic.Fare
         /// <returns>A xeger value.</returns>
         public string Generate()
         {
-            var builder = new StringBuilder();
-            Generate(builder, _Automaton.Initial);
-            return builder.ToString();
+            var sb = new StringBuilder();
+            Generate(sb, _Automaton.Initial);
+            return sb.ToString();
         }
 
         /// <summary>
@@ -90,13 +90,13 @@ namespace Df.Stochastic.Fare
             return random.NextInt32(0, maxForRandom) + min;
         }
 
-        private void AppendChoice(StringBuilder builder, Transition transition)
+        private void AppendChoice(StringBuilder sb, Transition transition)
         {
             var c = (char)GetRandomInt(transition.Min, transition.Max, _Random);
-            _ = builder.Append(c);
+            _ = sb.Append(c);
         }
 
-        private void Generate(StringBuilder builder, State state)
+        private void Generate(StringBuilder sb, State state)
         {
             var transitions = state.GetSortedTransitions(true);
             if (transitions.Count == 0)
@@ -119,8 +119,8 @@ namespace Df.Stochastic.Fare
 
             // Moving on to next transition.
             var transition = transitions[option - (state.Accept ? 1 : 0)];
-            AppendChoice(builder, transition);
-            Generate(builder, transition.To);
+            AppendChoice(sb, transition);
+            Generate(sb, transition.To);
         }
 
         private string RemoveStartEndMarkers(string regExp)

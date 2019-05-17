@@ -19,26 +19,26 @@ namespace Df
             object[] GetValues(TEntity entity) =>
                 columns.Select(_ => _.property(entity)).ToArray();
 
-            var entityFormatBuilder = new StringBuilder();
-            var sb = new StringBuilder();
+            var sb1 = new StringBuilder();
+            var sb2 = new StringBuilder();
             for (var index = 0; index < columns.Length; index++)
             {
                 var (_, name, length) = columns[index];
-                _ = sb.AppendFormatInvariant(ColumnFormat(0, length), name);
-                _ = entityFormatBuilder.Append(ColumnFormat(index, length));
+                _ = sb2.AppendFormatInvariant(ColumnFormat(0, length), name);
+                _ = sb1.Append(ColumnFormat(index, length));
             }
 
-            _ = sb.AppendLine();
-            _ = sb.AppendLine(new string('-', columns.Sum(_ => _.length)));
-            var entityFormat = entityFormatBuilder.ToString();
+            _ = sb2.AppendLine();
+            _ = sb2.AppendLine(new string('-', columns.Sum(_ => _.length)));
+            var entityFormat = sb1.ToString();
 
             foreach (var entity in entities)
             {
-                _ = sb.AppendFormatInvariant(entityFormat, GetValues(entity));
-                _ = sb.AppendLine();
+                _ = sb2.AppendFormatInvariant(entityFormat, GetValues(entity));
+                _ = sb2.AppendLine();
             }
 
-            return sb.ToString();
+            return sb2.ToString();
 
             static string ColumnFormat(int index, int length) =>
                 "{{{0},-{1}}}".FormatInvariant(index, length);

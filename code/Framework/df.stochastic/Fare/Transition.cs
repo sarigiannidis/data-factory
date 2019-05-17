@@ -157,18 +157,18 @@ namespace Df.Stochastic.Fare
         public override string ToString()
         {
             var sb = new StringBuilder();
-            AppendCharString(Min, sb);
+            AppendCharString(sb, Min);
             if (Min != Max)
             {
                 _ = sb.Append("-");
-                AppendCharString(Max, sb);
+                AppendCharString(sb, Max);
             }
 
             _ = sb.Append(" -> ").Append(To.Number);
             return sb.ToString();
         }
 
-        private static void AppendCharString(char c, StringBuilder sb)
+        private static void AppendCharString(StringBuilder sb, char c)
         {
             if (c >= 0x21 && c <= 0x7e && c != '\\' && c != '"')
             {

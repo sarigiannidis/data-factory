@@ -98,11 +98,11 @@ namespace Df.Extensibility
 
             if (customAttributeData.AttributeType.FullName == type.FullName)
             {
-                var warning = new StringBuilder("A type ambiguity has occured.")
+                var sb = new StringBuilder("A type ambiguity has occured.")
                     .AppendFormatInvariant("The expected type {0} is defined in the assembly at {1}.", type.AssemblyQualifiedName, type.AssemblyQualifiedName)
                     .AppendFormatInvariant("The actual type {0} is defined in the assembly at {1}.", customAttributeData.AttributeType.AssemblyQualifiedName, customAttributeData.AttributeType.Assembly.Location)
                     .ToString();
-                Logger.LogWarning(warning);
+                Logger.LogWarning(sb);
             }
 
             return false;

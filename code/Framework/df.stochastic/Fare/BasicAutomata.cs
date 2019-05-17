@@ -184,16 +184,16 @@
                 i++;
             }
 
-            var b1 = new StringBuilder();
-            var b2 = new StringBuilder();
+            var sb1 = new StringBuilder();
+            var sb2 = new StringBuilder();
             var p = value.IndexOf('.', i);
             if (p == -1)
             {
-                _ = b1.Append(value, i, value.Length - i);
+                _ = sb1.Append(value, i, value.Length - i);
             }
             else
             {
-                _ = b1.Append(value, i, p - i);
+                _ = sb1.Append(value, i, p - i);
                 i = value.Length - 1;
                 while (i > p)
                 {
@@ -206,25 +206,25 @@
                     i--;
                 }
 
-                _ = b2.Append(value, p + 1, i + 1 - (p + 1));
+                _ = sb2.Append(value, p + 1, i + 1 - (p + 1));
             }
 
-            if (b1.Length == 0)
+            if (sb1.Length == 0)
             {
-                _ = b1.Append("0");
+                _ = sb1.Append("0");
             }
 
             var s = minus ? Automaton.MakeChar('-') : Automaton.MakeChar('+').Optional();
-            var d = b2.Length == 0
+            var d = sb2.Length == 0
                 ? Automaton.MakeChar('.').Concatenate(Automaton.MakeChar('0').Repeat(1)).Optional()
                 : Automaton.MakeChar('.')
-                    .Concatenate(Automaton.MakeString(b2.ToString()))
+                    .Concatenate(Automaton.MakeString(sb2.ToString()))
                     .Concatenate(Automaton.MakeChar('0')
                                      .Repeat());
             return Automaton.Minimize(
                 WhitespaceAutomaton.Concatenate(
                     s.Concatenate(Automaton.MakeChar('0').Repeat())
-                        .Concatenate(Automaton.MakeString(b1.ToString()))
+                        .Concatenate(Automaton.MakeString(sb1.ToString()))
                         .Concatenate(d))
                     .Concatenate(WhitespaceAutomaton));
         }
@@ -298,18 +298,18 @@
                 i++;
             }
 
-            var b = new StringBuilder();
-            _ = b.Append(value, i, value.Length - i);
-            if (b.Length == 0)
+            var sb = new StringBuilder();
+            _ = sb.Append(value, i, value.Length - i);
+            if (sb.Length == 0)
             {
-                _ = b.Append("0");
+                _ = sb.Append("0");
             }
 
             var s = minus ? Automaton.MakeChar('-') : Automaton.MakeChar('+').Optional();
             return Automaton.Minimize(
                 WhitespaceAutomaton.Concatenate(
                     s.Concatenate(Automaton.MakeChar('0').Repeat())
-                        .Concatenate(Automaton.MakeString(b.ToString())))
+                        .Concatenate(Automaton.MakeString(sb.ToString())))
                     .Concatenate(WhitespaceAutomaton));
         }
 
@@ -342,22 +342,22 @@
             }
 
             var d = digits > 0 ? digits : y.Length;
-            var bx = new StringBuilder();
+            var sb1 = new StringBuilder();
             for (var i = x.Length; i < d; i++)
             {
-                _ = bx.Append('0');
+                _ = sb1.Append('0');
             }
 
-            _ = bx.Append(x);
-            x = bx.ToString();
-            var by = new StringBuilder();
+            _ = sb1.Append(x);
+            x = sb1.ToString();
+            var sb2 = new StringBuilder();
             for (var i = y.Length; i < d; i++)
             {
-                _ = by.Append('0');
+                _ = sb2.Append('0');
             }
 
-            _ = by.Append(y);
-            y = by.ToString();
+            _ = sb2.Append(y);
+            y = sb2.ToString();
             ICollection<State> initials = new List<State>();
             a.Initial = Between(x, y, 0, initials, digits <= 0);
             if (digits <= 0)
@@ -393,16 +393,16 @@
                 i++;
             }
 
-            var b = new StringBuilder();
-            _ = b.Append("0*(0|");
+            var sb = new StringBuilder();
+            _ = sb.Append("0*(0|");
             if (i < n.Length)
             {
-                _ = b.Append("[0-9]{1,").Append(n.Length - i - 1).Append("}|");
+                _ = sb.Append("[0-9]{1,").Append(n.Length - i - 1).Append("}|");
             }
 
-            MaxInteger(n.Substring(i), 0, b);
-            _ = b.Append(")");
-            return Automaton.Minimize(new RegExp(b.ToString()).ToAutomaton());
+            MaxInteger(sb, n.Substring(i), 0);
+            _ = sb.Append(")");
+            return Automaton.Minimize(new RegExp(sb.ToString()).ToAutomaton());
         }
 
         /// <summary>
@@ -420,11 +420,11 @@
                 i++;
             }
 
-            var b = new StringBuilder();
-            _ = b.Append("0*");
-            MinInteger(n.Substring(i), 0, b);
-            _ = b.Append("[0-9]*");
-            return Automaton.Minimize(new RegExp(b.ToString()).ToAutomaton());
+            var sb = new StringBuilder();
+            _ = sb.Append("0*");
+            MinInteger(sb, n.Substring(i), 0);
+            _ = sb.Append("[0-9]*");
+            return Automaton.Minimize(new RegExp(sb.ToString()).ToAutomaton());
         }
 
         /// <summary>
@@ -707,40 +707,40 @@
             return s;
         }
 
-        private static void MaxInteger(string n, int i, StringBuilder b)
+        private static void MaxInteger(StringBuilder sb, string n, int i)
         {
-            _ = b.Append('(');
+            _ = sb.Append('(');
             if (i < n.Length)
             {
                 var c = n[i];
                 if (c != '0')
                 {
-                    _ = b.Append("[0-").Append((char)(c - 1)).Append("][0-9]{").Append(n.Length - i - 1).Append("}|");
+                    _ = sb.Append("[0-").Append((char)(c - 1)).Append("][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
-                _ = b.Append(c);
-                MaxInteger(n, i + 1, b);
+                _ = sb.Append(c);
+                MaxInteger(sb, n, i + 1);
             }
 
-            _ = b.Append(')');
+            _ = sb.Append(')');
         }
 
-        private static void MinInteger(string n, int i, StringBuilder b)
+        private static void MinInteger(StringBuilder sb, string n, int i)
         {
-            _ = b.Append('(');
+            _ = sb.Append('(');
             if (i < n.Length)
             {
                 var c = n[i];
                 if (c != '9')
                 {
-                    _ = b.Append('[').Append((char)(c + 1)).Append("-9][0-9]{").Append(n.Length - i - 1).Append("}|");
+                    _ = sb.Append('[').Append((char)(c + 1)).Append("-9][0-9]{").Append(n.Length - i - 1).Append("}|");
                 }
 
-                _ = b.Append(c);
-                MinInteger(n, i + 1, b);
+                _ = sb.Append(c);
+                MinInteger(sb, n, i + 1);
             }
 
-            _ = b.Append(')');
+            _ = sb.Append(')');
         }
     }
 }
