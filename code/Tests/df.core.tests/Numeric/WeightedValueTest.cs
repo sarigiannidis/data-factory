@@ -5,87 +5,12 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-#pragma warning disable SA1402 // File may only contain a single type
-#pragma warning disable SA1649 // File name should match first type name
-
 namespace Df.Numeric.Tests
 {
     using Df.Stochastic;
     using System;
     using System.Collections.Generic;
     using Xunit;
-
-    public class BoolWeightedValueTest
-        : WeightedValueTest<bool>
-    {
-        public override IEnumerable<bool> Range() => new[] { true, false };
-    }
-
-    public class ByteWeightedValueTest
-        : WeightedValueTest<byte>
-    {
-        public override IEnumerable<byte> Range() => new byte[] { byte.MinValue, byte.MaxValue, 0 };
-    }
-
-    public class CharWeightedValueTest
-        : WeightedValueTest<char>
-    {
-        public override IEnumerable<char> Range() => new char[] { char.MinValue, char.MaxValue };
-    }
-
-    public class DoubleWeightedValueTest
-        : WeightedValueTest<double>
-    {
-        public override IEnumerable<double> Range() => new[] { double.NaN, double.PositiveInfinity, double.NegativeInfinity, double.Epsilon, double.MinValue, double.MaxValue, 0 };
-    }
-
-    public class DecimalWeightedValueTest
-        : WeightedValueTest<decimal>
-    {
-        public override IEnumerable<decimal> Range() => new[] { decimal.Zero, decimal.MinValue, decimal.MaxValue, decimal.One, decimal.MinusOne };
-    }
-
-    public class Int32WeightedValueTest
-        : WeightedValueTest<int>
-    {
-        public override IEnumerable<int> Range() => new[] { int.MinValue, 0, int.MaxValue };
-    }
-
-    public class Int64WeightedValueTest
-        : WeightedValueTest<long>
-    {
-        public override IEnumerable<long> Range() => new[] { long.MinValue, 0L, long.MaxValue };
-    }
-
-    public class SByteWeightedValueTest
-        : WeightedValueTest<sbyte>
-    {
-        public override IEnumerable<sbyte> Range() => new sbyte[] { sbyte.MinValue, sbyte.MaxValue, 0 };
-    }
-
-    public class SingleWeightedValueTest
-        : WeightedValueTest<float>
-    {
-        public override IEnumerable<float> Range() => new[] { float.NaN, float.MinValue, float.MaxValue, float.PositiveInfinity, float.NegativeInfinity, 0 };
-    }
-
-    public class StringWeightedValueTest
-        : WeightedValueTest<string>
-    {
-        public override IEnumerable<string> Range() => new[] { string.Empty, null, "aa", "zz", "AA", "ZZ" };
-    }
-
-    public class UInt32WeightedValueTest
-        : WeightedValueTest<uint>
-    {
-        public override IEnumerable<uint> Range() => new[] { uint.MinValue, uint.MaxValue, 0U };
-    }
-
-    public class UInt64WeightedValueTest
-        : WeightedValueTest<ulong>
-    {
-        public override IEnumerable<ulong> Range() => new[] { ulong.MinValue, 0UL, ulong.MaxValue };
-    }
 
     public abstract class WeightedValueTest<TValue>
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
@@ -159,6 +84,3 @@ namespace Df.Numeric.Tests
         public abstract IEnumerable<TValue> Range();
     }
 }
-
-#pragma warning restore SA1649 // File name should match first type name
-#pragma warning restore SA1402 // File may only contain a single type
