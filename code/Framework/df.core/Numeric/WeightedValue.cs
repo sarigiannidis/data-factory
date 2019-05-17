@@ -10,6 +10,7 @@ namespace Df.Numeric
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
 
     [JsonObject(IsReference = false)]
@@ -30,7 +31,7 @@ namespace Df.Numeric
         public WeightedValue(TValue value, float weight)
         {
             Value = value;
-            Weight = Check.GreaterThan(nameof(weight), weight, 0);
+            Weight = Check.GreaterThanOrEqual(nameof(weight), weight, 0);
         }
 
         public WeightedValue(TValue value)
@@ -73,7 +74,8 @@ namespace Df.Numeric
 
         public int CompareTo(WeightedValue<TValue> other)
         {
-            var result = Value.CompareTo(other.Value);
+            var valueComparer = Comparer<TValue>.Default;
+            var result = valueComparer.Compare(Value, other.Value);
             return result == 0 ? Weight.CompareTo(other.Weight) : result;
         }
 
@@ -87,7 +89,7 @@ namespace Df.Numeric
             obj is WeightedValue<TValue> o && Equals(o);
 
         public bool Equals(WeightedValue<TValue> other) =>
-            other.Value.Equals(Value) && other.Weight == Weight;
+            EqualityComparer<TValue>.Default.Equals(Value, other.Value) && other.Weight == Weight;
 
         public override int GetHashCode() =>
             HashCode.Combine(Value, Weight);

@@ -31,17 +31,19 @@ namespace Df.Stochastic.Tests
 
         private void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    var disposable = _Random as IDisposable;
-                    disposable?.Dispose();
-                    _Random = default;
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+                var disposable = _Random as IDisposable;
+                disposable?.Dispose();
+                _Random = default;
+            }
+
+            _Disposed = true;
         }
     }
 }

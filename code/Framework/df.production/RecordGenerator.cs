@@ -157,25 +157,27 @@ namespace Df.Production
 
         private void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    foreach (var (factory, _, _) in _Factories)
-                    {
-                        if (factory is IDisposable d)
-                        {
-                            d.Dispose();
-                        }
-                    }
+                return;
+            }
 
-                    _Factories.Clear();
-                    _Random?.Dispose();
-                    _Random = null;
+            if (disposing)
+            {
+                foreach (var (factory, _, _) in _Factories)
+                {
+                    if (factory is IDisposable d)
+                    {
+                        d.Dispose();
+                    }
                 }
 
-                _Disposed = true;
+                _Factories.Clear();
+                _Random?.Dispose();
+                _Random = null;
             }
+
+            _Disposed = true;
         }
     }
 }

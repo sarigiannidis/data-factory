@@ -19,13 +19,14 @@ namespace Df.ValueFactories
 {
     using Df.Extensibility;
     using Df.Numeric;
+    using System.CodeDom.Compiler;
 <# foreach(var type in types)
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
     var upper = type.ToUpperInvariant();
 	var lower = type.ToLowerInvariant();
 #>
-
+    [GeneratedCode("df", "")]
     [ValueFactory("<#=lower#>-list", "Picks randomly from a weighted list of <#=type#> values.", typeof(<#=type#>), typeof(<#=title#>ListFactory))]
     public sealed class <#=title#>ListFactory
         : RandomListFactory<<#=type#>>,

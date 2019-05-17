@@ -18,7 +18,6 @@ namespace Df.Data.Tests
     using System.Globalization;
 
     public sealed class DataFixture
-        : IDisposable
     {
         private const string APP_SETTINGS_FILE = "settings.json";
 
@@ -47,10 +46,6 @@ namespace Df.Data.Tests
                 .UseLoggerFactory(LoggerFactory)
                 .UseSqlServer(_ConnectionString);
             return new MetaDbContext(dbContextOptionsBuilder.Options);
-        }
-
-        public void Dispose()
-        {
         }
 
         private IServiceCollection ConfigureServices() =>

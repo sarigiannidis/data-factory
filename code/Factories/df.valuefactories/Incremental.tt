@@ -17,9 +17,10 @@
 #pragma warning disable SA1649 // File name should match first type name
 namespace Df.ValueFactories
 {
-    using System;
-    using System.Globalization;
     using Df.Extensibility;
+    using System;
+    using System.CodeDom.Compiler;
+    using System.Globalization;
     using static Constants;
 <# foreach(var type in types)
    {
@@ -28,6 +29,7 @@ namespace Df.ValueFactories
 	var lower = type.ToLowerInvariant();
 #>
 
+    [GeneratedCode("df", "")]
     [ValueFactory("<#=lower#>-incremental", "Generates incremental <#=type#> values", typeof(<#=type#>), typeof(Incremental<#=title#>Factory))]
     public sealed class Incremental<#=title#>Factory
         : IncrementalScalarFactory<<#=type#>>,

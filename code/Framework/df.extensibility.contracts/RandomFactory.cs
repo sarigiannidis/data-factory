@@ -37,16 +37,18 @@ namespace Df.Extensibility
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_Disposed)
+            if (_Disposed)
             {
-                if (disposing)
-                {
-                    _Random?.Dispose();
-                    _Random = null;
-                }
-
-                _Disposed = true;
+                return;
             }
+
+            if (disposing)
+            {
+                _Random?.Dispose();
+                _Random = null;
+            }
+
+            _Disposed = true;
         }
     }
 }

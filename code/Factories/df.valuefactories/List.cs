@@ -11,7 +11,8 @@ namespace Df.ValueFactories
 {
     using Df.Extensibility;
     using Df.Numeric;
-
+    using System.CodeDom.Compiler;
+    [GeneratedCode("df", "")]
     [ValueFactory("byte-list", "Picks randomly from a weighted list of byte values.", typeof(byte), typeof(ByteListFactory))]
     public sealed class ByteListFactory
         : RandomListFactory<byte>,
@@ -23,7 +24,7 @@ namespace Df.ValueFactories
                 new WeightedValue<byte>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("decimal-list", "Picks randomly from a weighted list of decimal values.", typeof(decimal), typeof(DecimalListFactory))]
     public sealed class DecimalListFactory
         : RandomListFactory<decimal>,
@@ -35,7 +36,7 @@ namespace Df.ValueFactories
                 new WeightedValue<decimal>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("double-list", "Picks randomly from a weighted list of double values.", typeof(double), typeof(DoubleListFactory))]
     public sealed class DoubleListFactory
         : RandomListFactory<double>,
@@ -47,7 +48,7 @@ namespace Df.ValueFactories
                 new WeightedValue<double>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("float-list", "Picks randomly from a weighted list of float values.", typeof(float), typeof(FloatListFactory))]
     public sealed class FloatListFactory
         : RandomListFactory<float>,
@@ -59,7 +60,7 @@ namespace Df.ValueFactories
                 new WeightedValue<float>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("int-list", "Picks randomly from a weighted list of int values.", typeof(int), typeof(IntListFactory))]
     public sealed class IntListFactory
         : RandomListFactory<int>,
@@ -71,7 +72,7 @@ namespace Df.ValueFactories
                 new WeightedValue<int>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("long-list", "Picks randomly from a weighted list of long values.", typeof(long), typeof(LongListFactory))]
     public sealed class LongListFactory
         : RandomListFactory<long>,
@@ -83,7 +84,7 @@ namespace Df.ValueFactories
                 new WeightedValue<long>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("short-list", "Picks randomly from a weighted list of short values.", typeof(short), typeof(ShortListFactory))]
     public sealed class ShortListFactory
         : RandomListFactory<short>,
@@ -95,7 +96,7 @@ namespace Df.ValueFactories
                 new WeightedValue<short>(default, 0.1f),
             });
     }
-
+    [GeneratedCode("df", "")]
     [ValueFactory("string-list", "Picks randomly from a weighted list of string values.", typeof(string), typeof(StringListFactory))]
     public sealed class StringListFactory
         : RandomListFactory<string>,

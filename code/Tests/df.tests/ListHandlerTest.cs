@@ -27,12 +27,12 @@ namespace Df.Tests
                 ConnectionString = Fixture.ConnectionString,
                 Subject = ListSubject.Databases,
             };
-            Handler.Handle(options);
+            Handle(options);
         }
 
         [Fact]
         public void ListFactories() =>
-            Handler.Handle(new ListOptions { Subject = ListSubject.Factories });
+            Handle(new ListOptions { Subject = ListSubject.Factories });
 
         [Fact]
         public void ListTables()
@@ -42,7 +42,7 @@ namespace Df.Tests
                 ConnectionString = Fixture.ConnectionString,
                 Subject = ListSubject.Tables,
             };
-            Handler.Handle(options);
+            Handle(options);
         }
     }
 }

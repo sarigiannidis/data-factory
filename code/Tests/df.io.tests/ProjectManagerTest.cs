@@ -20,16 +20,17 @@ namespace Df.Io.Tests
         }
 
         [Fact]
+        [TemporaryFiles]
         public void LoadProject()
         {
             var project1 = CreateProject();
-            var path1 = CreateFileName("load_");
+            var path1 = Temporary.GetTempFilePath();
             ProjectManager.SaveToFile(project1, path1);
 
             var project2 = ProjectManager.LoadFromFile(path1);
             IoAssert.AsExpected(project2);
 
-            var path2 = CreateFileName("load_");
+            var path2 = Temporary.GetTempFilePath();
             ProjectManager.SaveToFile(project2, path2);
 
             var str1 = File.ReadAllText(path1);
@@ -38,10 +39,11 @@ namespace Df.Io.Tests
         }
 
         [Fact]
+        [TemporaryFiles]
         public void SaveProject()
         {
             var project = CreateProject();
-            var path = CreateFileName("save_");
+            var path = Temporary.GetTempFilePath();
             try
             {
                 ProjectManager.SaveToFile(project, path);

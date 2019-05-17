@@ -20,10 +20,8 @@ namespace Df.Tests
         }
 
         [Fact]
-        public void NewProject()
-        {
-            var fileName = CreateFileName("new_");
-            CreateProjectFile(fileName);
-        }
+        [TemporaryFiles]
+        public void NewProjectTest() =>
+            CreateProjectFile(Temporary.GetTempFilePath(".json"));
     }
 }

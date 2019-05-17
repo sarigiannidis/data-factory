@@ -11,9 +11,11 @@ namespace Df.ValueFactories
 {
     using Df.Extensibility;
     using System;
+    using System.CodeDom.Compiler;
     using System.Globalization;
     using static Constants;
 
+    [GeneratedCode("df", "")]
     [ValueFactory("byte-incremental", "Generates incremental byte values", typeof(byte), typeof(IncrementalByteFactory))]
     public sealed class IncrementalByteFactory
         : IncrementalScalarFactory<byte>,
@@ -37,6 +39,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("decimal-incremental", "Generates incremental decimal values", typeof(decimal), typeof(IncrementalDecimalFactory))]
     public sealed class IncrementalDecimalFactory
         : IncrementalScalarFactory<decimal>,
@@ -60,6 +63,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("double-incremental", "Generates incremental double values", typeof(double), typeof(IncrementalDoubleFactory))]
     public sealed class IncrementalDoubleFactory
         : IncrementalScalarFactory<double>,
@@ -83,6 +87,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("float-incremental", "Generates incremental float values", typeof(float), typeof(IncrementalFloatFactory))]
     public sealed class IncrementalFloatFactory
         : IncrementalScalarFactory<float>,
@@ -106,6 +111,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("int-incremental", "Generates incremental int values", typeof(int), typeof(IncrementalIntFactory))]
     public sealed class IncrementalIntFactory
         : IncrementalScalarFactory<int>,
@@ -129,6 +135,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("long-incremental", "Generates incremental long values", typeof(long), typeof(IncrementalLongFactory))]
     public sealed class IncrementalLongFactory
         : IncrementalScalarFactory<long>,
@@ -152,6 +159,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("short-incremental", "Generates incremental short values", typeof(short), typeof(IncrementalShortFactory))]
     public sealed class IncrementalShortFactory
         : IncrementalScalarFactory<short>,
@@ -175,6 +183,7 @@ namespace Df.ValueFactories
         }
     }
 
+    [GeneratedCode("df", "")]
     [ValueFactory("timespan-incremental", "Generates incremental TimeSpan values", typeof(TimeSpan), typeof(IncrementalTimeSpanFactory))]
     public sealed class IncrementalTimeSpanFactory
         : IncrementalScalarFactory<TimeSpan>,

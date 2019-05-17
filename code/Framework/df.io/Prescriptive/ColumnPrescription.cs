@@ -40,7 +40,11 @@ namespace Df.Io.Prescriptive
         public float? NullPercentage
         {
             get => _NullPercentage;
-            set => _NullPercentage = ((value ?? 0) == 0) ? null : value;
+            set => _NullPercentage = value switch
+            {
+                _ when value is null || value == 0 => null,
+                _ => Check.GreaterThan(nameof(value), value, 0),
+            };
         }
 
         [JsonProperty(Order = 2)]
