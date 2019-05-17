@@ -34,10 +34,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Text;
 
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [ExcludeFromCodeCoverage]
     internal static class BasicAutomata
     {
         private static Automaton WhitespaceAutomaton { get; } = Automaton.Minimize(Automaton.MakeCharSet(" \t\n\r").Repeat());
@@ -533,7 +534,7 @@
                 return MakeEmpty();
             }
 
-            Array.Sort(strings, StringUnionOperations.LexicographicOrderComparer);
+            Array.Sort(strings, new LexicographicComparer());
             var a = new Automaton
             {
                 Initial = StringUnionOperations.Build(strings),

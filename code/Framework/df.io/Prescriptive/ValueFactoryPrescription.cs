@@ -42,6 +42,6 @@ namespace Df.Io.Prescriptive
                     && Configuration == other.Configuration));
 
         public override int GetHashCode() =>
-                    HashCode.Combine(Name, Reference, Configuration);
+            HashCode.Combine(Name, Reference, Configuration);
     }
 }

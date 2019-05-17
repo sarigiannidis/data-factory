@@ -33,12 +33,14 @@
 namespace Df.Stochastic.Fare
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Pair of states.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal class StatePair : IEquatable<StatePair>
+    [ExcludeFromCodeCoverage]
+    internal class StatePair
+        : IEquatable<StatePair>
     {
         /// <summary>
         /// Gets or sets the first component of this pair.

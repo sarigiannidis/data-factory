@@ -34,6 +34,7 @@ namespace Df.Stochastic.Fare
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Text;
     using System.Threading;
@@ -41,8 +42,11 @@ namespace Df.Stochastic.Fare
     /// <summary>
     /// <tt>Automaton</tt> state.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal class State : IEquatable<State>, IComparable<State>, IComparable
+    [ExcludeFromCodeCoverage]
+    internal class State
+        : IEquatable<State>,
+        IComparable<State>,
+        IComparable
     {
         private static int _NextId;
 

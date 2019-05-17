@@ -33,71 +33,12 @@
 namespace Df.Stochastic.Fare
 {
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal static class MinimizationOperations
+    [ExcludeFromCodeCoverage]
+    internal static partial class MinimizationOperations
     {
-        private sealed class StateList
-        {
-            public StateListNode First { get; set; }
-
-            public StateListNode Last { get; set; }
-
-            public int Size { get; set; }
-
-            public StateListNode Add(State q) => new StateListNode(q, this);
-        }
-
-        private sealed class StateListNode
-        {
-            public StateListNode Next { get; private set; }
-
-            public State State { get; }
-
-            public StateList StateList { get; }
-
-            private StateListNode Prev { get; set; }
-
-            public StateListNode(State q, StateList sl)
-            {
-                State = q;
-                StateList = sl;
-                if (sl.Size++ == 0)
-                {
-                    sl.First = sl.Last = this;
-                }
-                else
-                {
-                    sl.Last.Next = this;
-                    Prev = sl.Last;
-                    sl.Last = this;
-                }
-            }
-
-            public void Remove()
-            {
-                StateList.Size--;
-                if (StateList.First == this)
-                {
-                    StateList.First = Next;
-                }
-                else
-                {
-                    Prev.Next = Next;
-                }
-
-                if (StateList.Last == this)
-                {
-                    StateList.Last = Prev;
-                }
-                else
-                {
-                    Next.Prev = Prev;
-                }
-            }
-        }
-
         /// <summary>
         /// Minimizes (and determinizes if not already deterministic) the given automaton.
         /// </summary>

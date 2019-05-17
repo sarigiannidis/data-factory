@@ -14,7 +14,8 @@ namespace Df.Stochastic.Fare
     using System;
     using System.Collections.Generic;
 
-    internal sealed class LexicographicComparer : IComparer<char[]>
+    internal sealed class LexicographicComparer
+        : IComparer<char[]>
     {
         public int Compare(char[] x, char[] y)
         {

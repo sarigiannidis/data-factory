@@ -7,11 +7,18 @@
     internal sealed class ListEqualityComparer<T>
         : IEqualityComparer<List<T>>
     {
-        public bool Equals(List<T> x, List<T> y) =>
-            x.Count == y.Count && x.SequenceEqual(y);
+        public bool Equals(List<T> first, List<T> second) =>
+            first.Count == second.Count && first.SequenceEqual(second);
 
-        // http://stackoverflow.com/questions/1079192/is-it-possible-to-combine-hash-codes-for-private-members-to-generate-a-new-hash
-        public int GetHashCode(List<T> obj) =>
-            obj.Aggregate(17, (current, item) => (current * 31) + item.GetHashCode());
+        public int GetHashCode(List<T> list)
+        {
+            var hashCode = default(HashCode);
+            foreach (var item in list)
+            {
+                hashCode.Add(item);
+            }
+
+            return hashCode.ToHashCode();
+        }
     }
 }

@@ -33,6 +33,7 @@
 namespace Df.Stochastic.Fare
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Text;
 
     /// <summary>
@@ -42,8 +43,9 @@ namespace Df.Stochastic.Fare
     ///    and a destination state.
     ///  </p>
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal class Transition : IEquatable<Transition>
+    [ExcludeFromCodeCoverage]
+    internal class Transition
+        : IEquatable<Transition>
     {
         /// <summary>
         /// Gets the maximum of this transition interval.
@@ -115,7 +117,8 @@ namespace Df.Stochastic.Fare
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator !=(Transition left, Transition right) => !Equals(left, right);
+        public static bool operator !=(Transition left, Transition right) =>
+            !Equals(left, right);
 
         /// <summary>
         /// Implements the operator ==.
@@ -129,7 +132,8 @@ namespace Df.Stochastic.Fare
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator ==(Transition left, Transition right) => Equals(left, right);
+        public static bool operator ==(Transition left, Transition right) =>
+            Equals(left, right);
 
         /// <inheritdoc/>
         ///

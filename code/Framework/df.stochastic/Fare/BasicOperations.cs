@@ -34,11 +34,12 @@ namespace Df.Stochastic.Fare
 {
     using System.Collections;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Runtime.CompilerServices;
     using System.Text;
 
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [ExcludeFromCodeCoverage]
     internal static class BasicOperations
     {
         /// <summary>
@@ -299,7 +300,6 @@ namespace Df.Stochastic.Fare
         public static void Determinize(Automaton a, List<State> initialset)
         {
             var points = a.GetStartPoints();
-
             var comparer = new ListEqualityComparer<State>();
 
             // Subset construction.

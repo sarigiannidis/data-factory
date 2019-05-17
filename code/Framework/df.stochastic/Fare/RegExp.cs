@@ -34,6 +34,7 @@ namespace Df.Stochastic.Fare
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -41,44 +42,9 @@ namespace Df.Stochastic.Fare
     /// <summary>
     /// Regular Expression extension to Automaton.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal class RegExp
+    [ExcludeFromCodeCoverage]
+    internal partial class RegExp
     {
-        private enum Kind
-        {
-            RegexpUnion,
-
-            RegexpConcatenation,
-
-            RegexpIntersection,
-
-            RegexpOptional,
-
-            RegexpRepeat,
-
-            RegexpRepeatMin,
-
-            RegexpRepeatMinMax,
-
-            RegexpComplement,
-
-            RegexpChar,
-
-            RegexpCharRange,
-
-            RegexpAnyChar,
-
-            RegexpEmpty,
-
-            RegexpString,
-
-            RegexpAnyString,
-
-            RegexpAutomaton,
-
-            RegexpInterval,
-        }
-
         // Do not capture unnamed groups.
         private const char ExplicitCapture = 'n';
 

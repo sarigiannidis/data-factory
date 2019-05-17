@@ -33,9 +33,11 @@
 namespace Df.Stochastic.Fare
 {
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
 
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    internal sealed class TransitionComparer : IComparer<Transition>
+    [ExcludeFromCodeCoverage]
+    internal sealed class TransitionComparer
+        : IComparer<Transition>
     {
         private readonly bool _ToFirst;
 

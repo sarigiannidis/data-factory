@@ -20,6 +20,7 @@
 namespace Df.Stochastic.Fare
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Text;
 
     /// <summary>
@@ -27,7 +28,7 @@ namespace Df.Stochastic.Fare
     /// regular expression matcher: an instance of this class will produce text that is guaranteed to
     /// match the regular expression passed in.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [ExcludeFromCodeCoverage]
     public class Xeger
     {
         private const RegExpSyntaxOptions _AllExceptAnyString = RegExpSyntaxOptions.All & ~RegExpSyntaxOptions.Anystring;
@@ -52,8 +53,7 @@ namespace Df.Stochastic.Fare
                 throw new ArgumentNullException(nameof(regex));
             }
 
-            regex = RemoveStartEndMarkers(regex);
-            _Automaton = new RegExp(regex, _AllExceptAnyString).ToAutomaton();
+            _Automaton = new RegExp(RemoveStartEndMarkers(regex), _AllExceptAnyString).ToAutomaton();
             _Random = random ?? throw new ArgumentNullException(nameof(random));
         }
 
