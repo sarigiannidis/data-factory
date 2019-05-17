@@ -32,6 +32,7 @@
 
 namespace Df.Stochastic.Fare
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -120,26 +121,26 @@ namespace Df.Stochastic.Fare
                 reverse[i] = v.ToArray();
             }
 
-            var reverseNonempty = new bool[states.Length, sigma.Length];
-            var partition = Enumerable.Repeat<LinkedList<State>>(default, states.Length).ToArray();
-            var block = new int[states.Length];
-            var active = new StateList[states.Length, sigma.Length];
+            var active1 = new StateList[states.Length, sigma.Length];
             var active2 = new StateListNode[states.Length, sigma.Length];
-            var pending = new LinkedList<(int, int)>();
+            var block = new int[states.Length];
+            var partition = Enumerable.Repeat<LinkedList<State>>(default, states.Length).ToArray();
+            var pending1 = new LinkedList<(int, int)>();
             var pending2 = new bool[sigma.Length, states.Length];
-            var split = new List<State>();
-            var split2 = new bool[states.Length];
-            var refine = new List<int>();
+            var refine1 = new List<int>();
             var refine2 = new bool[states.Length];
-            var splitblock = Enumerable.Repeat<List<State>>(default, states.Length).ToArray();
+            var reverseNonEmpty = new bool[states.Length, sigma.Length];
+            var split1 = new List<State>();
+            var split2 = new bool[states.Length];
+            var splitBlock = Enumerable.Repeat<List<State>>(default, states.Length).ToArray();
             for (var q = 0; q < states.Length; q++)
             {
-                splitblock[q] = new List<State>();
+                splitBlock[q] = new List<State>();
                 partition[q] = new LinkedList<State>();
                 for (var x = 0; x < sigma.Length; x++)
                 {
                     reverse[q][x] = new LinkedList<State>();
-                    active[q, x] = new StateList();
+                    active1[q, x] = new StateList();
                 }
             }
 
@@ -154,7 +155,7 @@ namespace Df.Stochastic.Fare
                     var y = sigma[x];
                     var p = qq.Step(y);
                     _ = reverse[p.Number][x].AddLast(qq);
-                    reverseNonempty[p.Number, x] = true;
+                    reverseNonEmpty[p.Number, x] = true;
                 }
             }
 
@@ -165,9 +166,9 @@ namespace Df.Stochastic.Fare
                 {
                     foreach (var qq in partition[j])
                     {
-                        if (reverseNonempty[qq.Number, x])
+                        if (reverseNonEmpty[qq.Number, x])
                         {
-                            active2[qq.Number, x] = active[j, x].Add(qq);
+                            active2[qq.Number, x] = active1[j, x].Add(qq);
                         }
                     }
                 }
@@ -176,46 +177,46 @@ namespace Df.Stochastic.Fare
             // Initialize pending.
             for (var x = 0; x < sigma.Length; x++)
             {
-                var j = active[0, x].Size <= active[1, x].Size ? 0 : 1;
-                _ = pending.AddLast((j, x));
+                var j = active1[0, x].Size <= active1[1, x].Size ? 0 : 1;
+                _ = pending1.AddLast((j, x));
                 pending2[x, j] = true;
             }
 
             // Process pending until fixed point.
             var k = 2;
-            while (pending.Count > 0)
+            while (pending1.Count > 0)
             {
-                var ip = pending.RemoveAndReturnFirst();
+                var ip = pending1.RemoveAndReturnFirst();
                 pending2[ip.Item2, ip.Item1] = false;
 
                 // Find states that need to be split off their blocks.
-                for (var m = active[ip.Item1, ip.Item2].First; m != null; m = m.Next)
+                for (var m = active1[ip.Item1, ip.Item2].First; m != null; m = m.Next)
                 {
                     foreach (var s in reverse[m.State.Number][ip.Item2])
                     {
                         if (!split2[s.Number])
                         {
                             split2[s.Number] = true;
-                            split.Add(s);
+                            split1.Add(s);
                             var j = block[s.Number];
-                            splitblock[j].Add(s);
+                            splitBlock[j].Add(s);
                             if (!refine2[j])
                             {
                                 refine2[j] = true;
-                                refine.Add(j);
+                                refine1.Add(j);
                             }
                         }
                     }
                 }
 
                 // Refine blocks.
-                foreach (var j in refine)
+                foreach (var j in refine1)
                 {
-                    if (splitblock[j].Count < partition[j].Count)
+                    if (splitBlock[j].Count < partition[j].Count)
                     {
                         var b1 = partition[j];
                         var b2 = partition[k];
-                        foreach (var s in splitblock[j])
+                        foreach (var s in splitBlock[j])
                         {
                             _ = b1.Remove(s);
                             _ = b2.AddLast(s);
@@ -223,10 +224,10 @@ namespace Df.Stochastic.Fare
                             for (var c = 0; c < sigma.Length; c++)
                             {
                                 var sn = active2[s.Number, c];
-                                if (sn != null && sn.StateList == active[j, c])
+                                if (sn != null && sn.StateList == active1[j, c])
                                 {
                                     sn.Remove();
-                                    active2[s.Number, c] = active[k, c].Add(s);
+                                    active2[s.Number, c] = active1[k, c].Add(s);
                                 }
                             }
                         }
@@ -234,34 +235,34 @@ namespace Df.Stochastic.Fare
                         // Update pending.
                         for (var c = 0; c < sigma.Length; c++)
                         {
-                            var aj = active[j, c].Size;
-                            var ak = active[k, c].Size;
+                            var aj = active1[j, c].Size;
+                            var ak = active1[k, c].Size;
                             if (!pending2[c, j] && aj > 0 && aj <= ak)
                             {
                                 pending2[c, j] = true;
-                                _ = pending.AddLast((j, c));
+                                _ = pending1.AddLast((j, c));
                             }
                             else
                             {
                                 pending2[c, k] = true;
-                                _ = pending.AddLast((k, c));
+                                _ = pending1.AddLast((k, c));
                             }
                         }
 
                         k++;
                     }
 
-                    foreach (var s in splitblock[j])
+                    foreach (var s in splitBlock[j])
                     {
                         split2[s.Number] = false;
                     }
 
                     refine2[j] = false;
-                    splitblock[j].Clear();
+                    splitBlock[j].Clear();
                 }
 
-                split.Clear();
-                refine.Clear();
+                split1.Clear();
+                refine1.Clear();
             }
 
             // Make a new state for each equivalence class, set initial state.
@@ -309,7 +310,6 @@ namespace Df.Stochastic.Fare
             var ss = a.GetStates();
             var transitions = new Transition[ss.Count][];
             var states = ss.ToArray();
-
             var mark = new bool[states.Length, states.Length];
             var triggers = new List<HashSet<(int, int)>>[states.Length];
             var v = Enumerable.Repeat<HashSet<(int, int)>>(default, states.Length);
