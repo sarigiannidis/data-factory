@@ -37,11 +37,11 @@ namespace Df.Io.Prescriptive
             }
             else
             {
-                var reference = obj.Value<string>("Reference");
-                var valueFactoryInfo = ValueFactoryManager.ValueFactoryInfos.First(f => f.Name == reference);
+                var factory = obj.Value<string>("Factory");
+                var valueFactoryInfo = ValueFactoryManager.ValueFactoryInfos.First(f => f.Name == factory);
                 var configuration = valueFactoryInfo.Configurator.CreateConfiguration();
                 serializer.Populate(obj["Configuration"].CreateReader(), configuration);
-                var result = new ValueFactoryPrescription(id, reference, configuration);
+                var result = new ValueFactoryPrescription(id, factory, configuration);
                 serializer.ReferenceResolver.AddReference(serializer, id, result);
                 return result;
             }

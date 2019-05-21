@@ -79,7 +79,7 @@ namespace Df.Io.Tests
         private static void AsExpected(ValueFactoryPrescription valueFactoryPrescription)
         {
             Assert.NotNull(valueFactoryPrescription.Name);
-            Assert.NotNull(valueFactoryPrescription.Reference);
+            Assert.NotNull(valueFactoryPrescription.Factory);
             AsExpected(valueFactoryPrescription.Configuration);
         }
 

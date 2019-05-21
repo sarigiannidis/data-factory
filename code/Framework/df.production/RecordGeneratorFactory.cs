@@ -33,7 +33,7 @@ namespace Df.Production
         {
             foreach (var columnPrescription in tablePrescription.ColumnPrescriptions)
             {
-                var factoryInfo = _ValueFactoryManager.Resolve(columnPrescription.ValueFactoryPrescription.Reference);
+                var factoryInfo = _ValueFactoryManager.Resolve(columnPrescription.ValueFactoryPrescription.Factory);
                 var factory = factoryInfo.ValueFactory;
                 factory.Configuration = columnPrescription.ValueFactoryPrescription.Configuration;
                 yield return (factory, factoryInfo.ValueType, columnPrescription.NullPercentage ?? 0);

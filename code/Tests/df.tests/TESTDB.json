@@ -1,9 +1,9 @@
 {
-  "Created": "2019-05-21T14:35:50.6674419+02:00",
-  "Modified": "2019-05-21T14:35:50.6674419+02:00",
+  "Created": "2019-05-21T14:52:21.6425646+02:00",
+  "Modified": "2019-05-21T14:52:21.6425646+02:00",
   "Descriptor": {
     "Checksum": "3F91929BFFE177CB7232E103986247BA7408825A2E6CE420B867FD771AF9E16DB7781EAC384E56C42A3030FFF375A49515129819907A9CCE7D0613586E23D6AC",
-    "Created": "2019-05-21T14:35:50.6674419+02:00",
+    "Created": "2019-05-21T14:52:21.6425646+02:00",
     "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;AttachDbFilename=B:\\df\\code\\Tests\\df.tests\\bin\\Debug\\netcoreapp3.0\\TESTDB.mdf",
     "TableDescriptions": [
       {
@@ -1705,7 +1705,7 @@
     "ValueFactoryPrescriptions": [
       {
         "$id": "int-incremental0",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -1714,7 +1714,7 @@
       },
       {
         "$id": "long-list0",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -1726,7 +1726,7 @@
       },
       {
         "$id": "binary0",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 50,
           "maxLength": 50
@@ -1734,7 +1734,7 @@
       },
       {
         "$id": "bool0",
-        "Reference": "bool",
+        "Factory": "bool",
         "Configuration": {
           "true": 1.0,
           "false": 1.0
@@ -1742,7 +1742,7 @@
       },
       {
         "$id": "string-list0",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -1754,39 +1754,39 @@
       },
       {
         "$id": "datetime-random0",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetime-random1",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetime-random2",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetimeoffset-random0",
-        "Reference": "datetimeoffset-random",
+        "Factory": "datetimeoffset-random",
         "Configuration": {
-          "MinValue": "1919-06-15T14:36:16.3972987+02:00",
-          "MaxValue": "2119-04-27T14:36:16.3972906+02:00"
+          "MinValue": "1919-06-15T14:52:26.1717744+02:00",
+          "MaxValue": "2119-04-27T14:52:26.1717666+02:00"
         }
       },
       {
         "$id": "decimal-list0",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -1798,7 +1798,7 @@
       },
       {
         "$id": "double-list0",
-        "Reference": "double-list",
+        "Factory": "double-list",
         "Configuration": {
           "Values": [
             {
@@ -1810,7 +1810,7 @@
       },
       {
         "$id": "sqlgeography0",
-        "Reference": "sqlgeography",
+        "Factory": "sqlgeography",
         "Configuration": {
           "minLatitude": -10.0,
           "maxLatitude": 10.0,
@@ -1821,7 +1821,7 @@
       },
       {
         "$id": "sqlgeometry0",
-        "Reference": "sqlgeometry",
+        "Factory": "sqlgeometry",
         "Configuration": {
           "minX": -10.0,
           "maxX": 10.0,
@@ -1832,12 +1832,12 @@
       },
       {
         "$id": "sqlhierarchyid0",
-        "Reference": "sqlhierarchyid",
+        "Factory": "sqlhierarchyid",
         "Configuration": {}
       },
       {
         "$id": "binary1",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 16,
           "maxLength": 16
@@ -1845,7 +1845,7 @@
       },
       {
         "$id": "int-list0",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -1857,7 +1857,7 @@
       },
       {
         "$id": "decimal-list1",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -1869,7 +1869,7 @@
       },
       {
         "$id": "string-list1",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -1881,7 +1881,7 @@
       },
       {
         "$id": "decimal-list2",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -1893,7 +1893,7 @@
       },
       {
         "$id": "string-list2",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -1905,14 +1905,14 @@
       },
       {
         "$id": "char-random0",
-        "Reference": "char-random",
+        "Factory": "char-random",
         "Configuration": {
           "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
         "$id": "float-list0",
-        "Reference": "float-list",
+        "Factory": "float-list",
         "Configuration": {
           "Values": [
             {
@@ -1924,15 +1924,15 @@
       },
       {
         "$id": "datetime-random3",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "int-list1",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -1944,7 +1944,7 @@
       },
       {
         "$id": "string-list3",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -1956,7 +1956,7 @@
       },
       {
         "$id": "timespan-random0",
-        "Reference": "timespan-random",
+        "Factory": "timespan-random",
         "Configuration": {
           "MinValue": "00:00:00",
           "MaxValue": "1.00:00:00"
@@ -1964,7 +1964,7 @@
       },
       {
         "$id": "byte-list0",
-        "Reference": "byte-list",
+        "Factory": "byte-list",
         "Configuration": {
           "Values": [
             {
@@ -1976,12 +1976,12 @@
       },
       {
         "$id": "guid0",
-        "Reference": "guid",
+        "Factory": "guid",
         "Configuration": {}
       },
       {
         "$id": "binary2",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 50,
           "maxLength": 50
@@ -1989,7 +1989,7 @@
       },
       {
         "$id": "binary3",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 32,
           "maxLength": 32
@@ -1997,7 +1997,7 @@
       },
       {
         "$id": "string-list4",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2009,14 +2009,14 @@
       },
       {
         "$id": "char-random1",
-        "Reference": "char-random",
+        "Factory": "char-random",
         "Configuration": {
           "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
         "$id": "string-list5",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2028,7 +2028,7 @@
       },
       {
         "$id": "int-incremental1",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -2037,7 +2037,7 @@
       },
       {
         "$id": "long-list1",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2049,7 +2049,7 @@
       },
       {
         "$id": "binary4",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 50,
           "maxLength": 50
@@ -2057,7 +2057,7 @@
       },
       {
         "$id": "bool1",
-        "Reference": "bool",
+        "Factory": "bool",
         "Configuration": {
           "true": 1.0,
           "false": 1.0
@@ -2065,7 +2065,7 @@
       },
       {
         "$id": "string-list6",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2077,39 +2077,39 @@
       },
       {
         "$id": "datetime-random4",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetime-random5",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetime-random6",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetimeoffset-random1",
-        "Reference": "datetimeoffset-random",
+        "Factory": "datetimeoffset-random",
         "Configuration": {
-          "MinValue": "1919-06-15T14:36:16.3972987+02:00",
-          "MaxValue": "2119-04-27T14:36:16.3972906+02:00"
+          "MinValue": "1919-06-15T14:52:26.1717744+02:00",
+          "MaxValue": "2119-04-27T14:52:26.1717666+02:00"
         }
       },
       {
         "$id": "decimal-list3",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2121,7 +2121,7 @@
       },
       {
         "$id": "double-list1",
-        "Reference": "double-list",
+        "Factory": "double-list",
         "Configuration": {
           "Values": [
             {
@@ -2133,7 +2133,7 @@
       },
       {
         "$id": "sqlgeography1",
-        "Reference": "sqlgeography",
+        "Factory": "sqlgeography",
         "Configuration": {
           "minLatitude": -10.0,
           "maxLatitude": 10.0,
@@ -2144,7 +2144,7 @@
       },
       {
         "$id": "sqlgeometry1",
-        "Reference": "sqlgeometry",
+        "Factory": "sqlgeometry",
         "Configuration": {
           "minX": -10.0,
           "maxX": 10.0,
@@ -2155,12 +2155,12 @@
       },
       {
         "$id": "sqlhierarchyid1",
-        "Reference": "sqlhierarchyid",
+        "Factory": "sqlhierarchyid",
         "Configuration": {}
       },
       {
         "$id": "binary5",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 16,
           "maxLength": 16
@@ -2168,7 +2168,7 @@
       },
       {
         "$id": "int-list2",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2180,7 +2180,7 @@
       },
       {
         "$id": "decimal-list4",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2192,7 +2192,7 @@
       },
       {
         "$id": "string-list7",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2204,7 +2204,7 @@
       },
       {
         "$id": "decimal-list5",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2216,7 +2216,7 @@
       },
       {
         "$id": "string-list8",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2228,14 +2228,14 @@
       },
       {
         "$id": "char-random2",
-        "Reference": "char-random",
+        "Factory": "char-random",
         "Configuration": {
           "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
         "$id": "float-list1",
-        "Reference": "float-list",
+        "Factory": "float-list",
         "Configuration": {
           "Values": [
             {
@@ -2247,15 +2247,15 @@
       },
       {
         "$id": "datetime-random7",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "int-list3",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2267,7 +2267,7 @@
       },
       {
         "$id": "string-list9",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2279,7 +2279,7 @@
       },
       {
         "$id": "timespan-random1",
-        "Reference": "timespan-random",
+        "Factory": "timespan-random",
         "Configuration": {
           "MinValue": "00:00:00",
           "MaxValue": "1.00:00:00"
@@ -2287,7 +2287,7 @@
       },
       {
         "$id": "byte-list1",
-        "Reference": "byte-list",
+        "Factory": "byte-list",
         "Configuration": {
           "Values": [
             {
@@ -2299,12 +2299,12 @@
       },
       {
         "$id": "guid1",
-        "Reference": "guid",
+        "Factory": "guid",
         "Configuration": {}
       },
       {
         "$id": "binary6",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 50,
           "maxLength": 50
@@ -2312,7 +2312,7 @@
       },
       {
         "$id": "binary7",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 32,
           "maxLength": 32
@@ -2320,7 +2320,7 @@
       },
       {
         "$id": "string-list10",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2332,14 +2332,14 @@
       },
       {
         "$id": "char-random3",
-        "Reference": "char-random",
+        "Factory": "char-random",
         "Configuration": {
           "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
         "$id": "string-list11",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2351,7 +2351,7 @@
       },
       {
         "$id": "int-incremental2",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -2360,7 +2360,7 @@
       },
       {
         "$id": "binary8",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 50,
           "maxLength": 50
@@ -2368,7 +2368,7 @@
       },
       {
         "$id": "string-list12",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2380,23 +2380,23 @@
       },
       {
         "$id": "datetime-random8",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "datetimeoffset-random2",
-        "Reference": "datetimeoffset-random",
+        "Factory": "datetimeoffset-random",
         "Configuration": {
-          "MinValue": "1919-06-15T14:36:16.3972987+02:00",
-          "MaxValue": "2119-04-27T14:36:16.3972906+02:00"
+          "MinValue": "1919-06-15T14:52:26.1717744+02:00",
+          "MaxValue": "2119-04-27T14:52:26.1717666+02:00"
         }
       },
       {
         "$id": "decimal-list6",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2408,7 +2408,7 @@
       },
       {
         "$id": "decimal-list7",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2420,7 +2420,7 @@
       },
       {
         "$id": "string-list13",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2432,7 +2432,7 @@
       },
       {
         "$id": "timespan-random2",
-        "Reference": "timespan-random",
+        "Factory": "timespan-random",
         "Configuration": {
           "MinValue": "00:00:00",
           "MaxValue": "1.00:00:00"
@@ -2440,7 +2440,7 @@
       },
       {
         "$id": "binary9",
-        "Reference": "binary",
+        "Factory": "binary",
         "Configuration": {
           "minLength": 32,
           "maxLength": 32
@@ -2448,14 +2448,14 @@
       },
       {
         "$id": "char-random4",
-        "Reference": "char-random",
+        "Factory": "char-random",
         "Configuration": {
           "Regex": "[a-zA-Z0-9]{1}"
         }
       },
       {
         "$id": "int-incremental3",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -2464,7 +2464,7 @@
       },
       {
         "$id": "int-list4",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2476,7 +2476,7 @@
       },
       {
         "$id": "long-incremental0",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2485,7 +2485,7 @@
       },
       {
         "$id": "string-list14",
-        "Reference": "string-list",
+        "Factory": "string-list",
         "Configuration": {
           "Values": [
             {
@@ -2497,7 +2497,7 @@
       },
       {
         "$id": "long-incremental1",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2506,15 +2506,15 @@
       },
       {
         "$id": "datetime-random9",
-        "Reference": "datetime-random",
+        "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-05-23T14:36:16.3972817+02:00",
-          "MaxValue": "2029-05-18T14:36:16.3969362+02:00"
+          "MinValue": "2009-05-23T14:52:26.1717568+02:00",
+          "MaxValue": "2029-05-18T14:52:26.1710642+02:00"
         }
       },
       {
         "$id": "long-incremental2",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2523,7 +2523,7 @@
       },
       {
         "$id": "decimal-list8",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2535,7 +2535,7 @@
       },
       {
         "$id": "long-list2",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2547,7 +2547,7 @@
       },
       {
         "$id": "long-list3",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2559,7 +2559,7 @@
       },
       {
         "$id": "long-incremental3",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2568,7 +2568,7 @@
       },
       {
         "$id": "int-list5",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2580,7 +2580,7 @@
       },
       {
         "$id": "long-incremental4",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2589,7 +2589,7 @@
       },
       {
         "$id": "bool2",
-        "Reference": "bool",
+        "Factory": "bool",
         "Configuration": {
           "true": 1.0,
           "false": 1.0
@@ -2597,7 +2597,7 @@
       },
       {
         "$id": "long-incremental5",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2606,15 +2606,15 @@
       },
       {
         "$id": "datetimeoffset-random3",
-        "Reference": "datetimeoffset-random",
+        "Factory": "datetimeoffset-random",
         "Configuration": {
-          "MinValue": "1919-06-15T14:36:16.3972987+02:00",
-          "MaxValue": "2119-04-27T14:36:16.3972906+02:00"
+          "MinValue": "1919-06-15T14:52:26.1717744+02:00",
+          "MaxValue": "2119-04-27T14:52:26.1717666+02:00"
         }
       },
       {
         "$id": "long-list4",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2626,7 +2626,7 @@
       },
       {
         "$id": "long-list5",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2638,7 +2638,7 @@
       },
       {
         "$id": "long-incremental6",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2647,7 +2647,7 @@
       },
       {
         "$id": "float-list2",
-        "Reference": "float-list",
+        "Factory": "float-list",
         "Configuration": {
           "Values": [
             {
@@ -2659,7 +2659,7 @@
       },
       {
         "$id": "long-incremental7",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2668,7 +2668,7 @@
       },
       {
         "$id": "decimal-list9",
-        "Reference": "decimal-list",
+        "Factory": "decimal-list",
         "Configuration": {
           "Values": [
             {
@@ -2680,7 +2680,7 @@
       },
       {
         "$id": "long-incremental8",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2689,7 +2689,7 @@
       },
       {
         "$id": "long-list6",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2701,7 +2701,7 @@
       },
       {
         "$id": "long-list7",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2713,7 +2713,7 @@
       },
       {
         "$id": "long-list8",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2725,7 +2725,7 @@
       },
       {
         "$id": "long-incremental9",
-        "Reference": "long-incremental",
+        "Factory": "long-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 9223372036854775807,
@@ -2734,12 +2734,12 @@
       },
       {
         "$id": "guid2",
-        "Reference": "guid",
+        "Factory": "guid",
         "Configuration": {}
       },
       {
         "$id": "long-list9",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2751,7 +2751,7 @@
       },
       {
         "$id": "long-list10",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2763,7 +2763,7 @@
       },
       {
         "$id": "long-list11",
-        "Reference": "long-list",
+        "Factory": "long-list",
         "Configuration": {
           "Values": [
             {
@@ -2775,7 +2775,7 @@
       },
       {
         "$id": "int-incremental4",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -2784,7 +2784,7 @@
       },
       {
         "$id": "int-list6",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2796,7 +2796,7 @@
       },
       {
         "$id": "int-list7",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2808,7 +2808,7 @@
       },
       {
         "$id": "int-incremental5",
-        "Reference": "int-incremental",
+        "Factory": "int-incremental",
         "Configuration": {
           "MinValue": 1,
           "MaxValue": 2147483647,
@@ -2817,7 +2817,7 @@
       },
       {
         "$id": "int-list8",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2829,7 +2829,7 @@
       },
       {
         "$id": "int-list9",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2841,7 +2841,7 @@
       },
       {
         "$id": "int-list10",
-        "Reference": "int-list",
+        "Factory": "int-list",
         "Configuration": {
           "Values": [
             {
@@ -2859,166 +2859,166 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "int-incremental0"
+            "Prescription": "int-incremental0"
           },
           {
             "Column": "VALUE001",
-            "Factory": "long-list0",
+            "Prescription": "long-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE002",
-            "Factory": "binary0",
+            "Prescription": "binary0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE003",
-            "Factory": "bool0",
+            "Prescription": "bool0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE004",
-            "Factory": "string-list0",
+            "Prescription": "string-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE005",
-            "Factory": "datetime-random0",
+            "Prescription": "datetime-random0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE006",
-            "Factory": "datetime-random1",
+            "Prescription": "datetime-random1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE007",
-            "Factory": "datetime-random2",
+            "Prescription": "datetime-random2",
             "NULL": 0.25
           },
           {
             "Column": "VALUE008",
-            "Factory": "datetimeoffset-random0",
+            "Prescription": "datetimeoffset-random0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE009",
-            "Factory": "decimal-list0",
+            "Prescription": "decimal-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE010",
-            "Factory": "double-list0",
+            "Prescription": "double-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE011",
-            "Factory": "sqlgeography0",
+            "Prescription": "sqlgeography0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE012",
-            "Factory": "sqlgeometry0",
+            "Prescription": "sqlgeometry0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE013",
-            "Factory": "sqlhierarchyid0",
+            "Prescription": "sqlhierarchyid0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE014",
-            "Factory": "binary1",
+            "Prescription": "binary1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE015",
-            "Factory": "int-list0",
+            "Prescription": "int-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE016",
-            "Factory": "decimal-list1",
+            "Prescription": "decimal-list1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE017",
-            "Factory": "string-list1",
+            "Prescription": "string-list1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE018",
-            "Factory": "decimal-list2",
+            "Prescription": "decimal-list2",
             "NULL": 0.25
           },
           {
             "Column": "VALUE019",
-            "Factory": "string-list2",
+            "Prescription": "string-list2",
             "NULL": 0.25
           },
           {
             "Column": "VALUE020",
-            "Factory": "char-random0",
+            "Prescription": "char-random0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE021",
-            "Factory": "float-list0",
+            "Prescription": "float-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE022",
-            "Factory": "datetime-random3",
+            "Prescription": "datetime-random3",
             "NULL": 0.25
           },
           {
             "Column": "VALUE023",
-            "Factory": "int-list1",
+            "Prescription": "int-list1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE024",
-            "Factory": "string-list3",
+            "Prescription": "string-list3",
             "NULL": 0.25
           },
           {
             "Column": "VALUE025",
-            "Factory": "timespan-random0",
+            "Prescription": "timespan-random0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE027",
-            "Factory": "byte-list0",
+            "Prescription": "byte-list0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE028",
-            "Factory": "guid0",
+            "Prescription": "guid0",
             "NULL": 0.25
           },
           {
             "Column": "VALUE029",
-            "Factory": "binary2",
+            "Prescription": "binary2",
             "NULL": 0.25
           },
           {
             "Column": "VALUE030",
-            "Factory": "binary3",
+            "Prescription": "binary3",
             "NULL": 0.25
           },
           {
             "Column": "VALUE031",
-            "Factory": "string-list4",
+            "Prescription": "string-list4",
             "NULL": 0.25
           },
           {
             "Column": "VALUE032",
-            "Factory": "char-random1",
+            "Prescription": "char-random1",
             "NULL": 0.25
           },
           {
             "Column": "VALUE033",
-            "Factory": "string-list5",
+            "Prescription": "string-list5",
             "NULL": 0.25
           }
         ]
@@ -3029,135 +3029,135 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "int-incremental1"
+            "Prescription": "int-incremental1"
           },
           {
             "Column": "VALUE001",
-            "Factory": "long-list1"
+            "Prescription": "long-list1"
           },
           {
             "Column": "VALUE002",
-            "Factory": "binary4"
+            "Prescription": "binary4"
           },
           {
             "Column": "VALUE003",
-            "Factory": "bool1"
+            "Prescription": "bool1"
           },
           {
             "Column": "VALUE004",
-            "Factory": "string-list6"
+            "Prescription": "string-list6"
           },
           {
             "Column": "VALUE005",
-            "Factory": "datetime-random4"
+            "Prescription": "datetime-random4"
           },
           {
             "Column": "VALUE006",
-            "Factory": "datetime-random5"
+            "Prescription": "datetime-random5"
           },
           {
             "Column": "VALUE007",
-            "Factory": "datetime-random6"
+            "Prescription": "datetime-random6"
           },
           {
             "Column": "VALUE008",
-            "Factory": "datetimeoffset-random1"
+            "Prescription": "datetimeoffset-random1"
           },
           {
             "Column": "VALUE009",
-            "Factory": "decimal-list3"
+            "Prescription": "decimal-list3"
           },
           {
             "Column": "VALUE010",
-            "Factory": "double-list1"
+            "Prescription": "double-list1"
           },
           {
             "Column": "VALUE011",
-            "Factory": "sqlgeography1"
+            "Prescription": "sqlgeography1"
           },
           {
             "Column": "VALUE012",
-            "Factory": "sqlgeometry1"
+            "Prescription": "sqlgeometry1"
           },
           {
             "Column": "VALUE013",
-            "Factory": "sqlhierarchyid1"
+            "Prescription": "sqlhierarchyid1"
           },
           {
             "Column": "VALUE014",
-            "Factory": "binary5"
+            "Prescription": "binary5"
           },
           {
             "Column": "VALUE015",
-            "Factory": "int-list2"
+            "Prescription": "int-list2"
           },
           {
             "Column": "VALUE016",
-            "Factory": "decimal-list4"
+            "Prescription": "decimal-list4"
           },
           {
             "Column": "VALUE017",
-            "Factory": "string-list7"
+            "Prescription": "string-list7"
           },
           {
             "Column": "VALUE018",
-            "Factory": "decimal-list5"
+            "Prescription": "decimal-list5"
           },
           {
             "Column": "VALUE019",
-            "Factory": "string-list8"
+            "Prescription": "string-list8"
           },
           {
             "Column": "VALUE020",
-            "Factory": "char-random2"
+            "Prescription": "char-random2"
           },
           {
             "Column": "VALUE021",
-            "Factory": "float-list1"
+            "Prescription": "float-list1"
           },
           {
             "Column": "VALUE022",
-            "Factory": "datetime-random7"
+            "Prescription": "datetime-random7"
           },
           {
             "Column": "VALUE023",
-            "Factory": "int-list3"
+            "Prescription": "int-list3"
           },
           {
             "Column": "VALUE024",
-            "Factory": "string-list9"
+            "Prescription": "string-list9"
           },
           {
             "Column": "VALUE025",
-            "Factory": "timespan-random1"
+            "Prescription": "timespan-random1"
           },
           {
             "Column": "VALUE027",
-            "Factory": "byte-list1"
+            "Prescription": "byte-list1"
           },
           {
             "Column": "VALUE028",
-            "Factory": "guid1"
+            "Prescription": "guid1"
           },
           {
             "Column": "VALUE029",
-            "Factory": "binary6"
+            "Prescription": "binary6"
           },
           {
             "Column": "VALUE030",
-            "Factory": "binary7"
+            "Prescription": "binary7"
           },
           {
             "Column": "VALUE031",
-            "Factory": "string-list10"
+            "Prescription": "string-list10"
           },
           {
             "Column": "VALUE032",
-            "Factory": "char-random3"
+            "Prescription": "char-random3"
           },
           {
             "Column": "VALUE033",
-            "Factory": "string-list11"
+            "Prescription": "string-list11"
           }
         ]
       },
@@ -3167,47 +3167,47 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "int-incremental2"
+            "Prescription": "int-incremental2"
           },
           {
             "Column": "VALUE002",
-            "Factory": "binary8"
+            "Prescription": "binary8"
           },
           {
             "Column": "VALUE004",
-            "Factory": "string-list12"
+            "Prescription": "string-list12"
           },
           {
             "Column": "VALUE007",
-            "Factory": "datetime-random8"
+            "Prescription": "datetime-random8"
           },
           {
             "Column": "VALUE008",
-            "Factory": "datetimeoffset-random2"
+            "Prescription": "datetimeoffset-random2"
           },
           {
             "Column": "VALUE009",
-            "Factory": "decimal-list6"
+            "Prescription": "decimal-list6"
           },
           {
             "Column": "VALUE018",
-            "Factory": "decimal-list7"
+            "Prescription": "decimal-list7"
           },
           {
             "Column": "VALUE019",
-            "Factory": "string-list13"
+            "Prescription": "string-list13"
           },
           {
             "Column": "VALUE025",
-            "Factory": "timespan-random2"
+            "Prescription": "timespan-random2"
           },
           {
             "Column": "VALUE030",
-            "Factory": "binary9"
+            "Prescription": "binary9"
           },
           {
             "Column": "VALUE032",
-            "Factory": "char-random4"
+            "Prescription": "char-random4"
           }
         ]
       },
@@ -3217,11 +3217,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "int-incremental3"
+            "Prescription": "int-incremental3"
           },
           {
             "Column": "VAL2",
-            "Factory": "int-list4",
+            "Prescription": "int-list4",
             "NULL": 0.25
           }
         ]
@@ -3232,11 +3232,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental0"
+            "Prescription": "long-incremental0"
           },
           {
             "Column": "Value1",
-            "Factory": "string-list14",
+            "Prescription": "string-list14",
             "NULL": 0.25
           }
         ]
@@ -3247,11 +3247,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental1"
+            "Prescription": "long-incremental1"
           },
           {
             "Column": "Value1",
-            "Factory": "datetime-random9",
+            "Prescription": "datetime-random9",
             "NULL": 0.25
           }
         ]
@@ -3262,21 +3262,21 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental2"
+            "Prescription": "long-incremental2"
           },
           {
             "Column": "Value1",
-            "Factory": "decimal-list8",
+            "Prescription": "decimal-list8",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_000",
-            "Factory": "long-list2",
+            "Prescription": "long-list2",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_001",
-            "Factory": "long-list3",
+            "Prescription": "long-list3",
             "NULL": 0.25
           }
         ]
@@ -3287,11 +3287,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental3"
+            "Prescription": "long-incremental3"
           },
           {
             "Column": "Value1",
-            "Factory": "int-list5",
+            "Prescription": "int-list5",
             "NULL": 0.25
           }
         ]
@@ -3302,11 +3302,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental4"
+            "Prescription": "long-incremental4"
           },
           {
             "Column": "Value1",
-            "Factory": "bool2",
+            "Prescription": "bool2",
             "NULL": 0.25
           }
         ]
@@ -3317,21 +3317,21 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental5"
+            "Prescription": "long-incremental5"
           },
           {
             "Column": "Value1",
-            "Factory": "datetimeoffset-random3",
+            "Prescription": "datetimeoffset-random3",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_010",
-            "Factory": "long-list4",
+            "Prescription": "long-list4",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_011",
-            "Factory": "long-list5",
+            "Prescription": "long-list5",
             "NULL": 0.25
           }
         ]
@@ -3342,11 +3342,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental6"
+            "Prescription": "long-incremental6"
           },
           {
             "Column": "Value1",
-            "Factory": "float-list2",
+            "Prescription": "float-list2",
             "NULL": 0.25
           }
         ]
@@ -3357,11 +3357,11 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental7"
+            "Prescription": "long-incremental7"
           },
           {
             "Column": "Value1",
-            "Factory": "decimal-list9",
+            "Prescription": "decimal-list9",
             "NULL": 0.25
           }
         ]
@@ -3372,21 +3372,21 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental8"
+            "Prescription": "long-incremental8"
           },
           {
             "Column": "Value1",
-            "Factory": "long-list6",
+            "Prescription": "long-list6",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_020",
-            "Factory": "long-list7",
+            "Prescription": "long-list7",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_021",
-            "Factory": "long-list8",
+            "Prescription": "long-list8",
             "NULL": 0.25
           }
         ]
@@ -3397,26 +3397,26 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "long-incremental9"
+            "Prescription": "long-incremental9"
           },
           {
             "Column": "Value1",
-            "Factory": "guid2",
+            "Prescription": "guid2",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_00",
-            "Factory": "long-list9",
+            "Prescription": "long-list9",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_01",
-            "Factory": "long-list10",
+            "Prescription": "long-list10",
             "NULL": 0.25
           },
           {
             "Column": "FK_TABLE_02",
-            "Factory": "long-list11",
+            "Prescription": "long-list11",
             "NULL": 0.25
           }
         ]
@@ -3427,15 +3427,15 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID1",
-            "Factory": "int-incremental4"
+            "Prescription": "int-incremental4"
           },
           {
             "Column": "RECID2",
-            "Factory": "int-list6"
+            "Prescription": "int-list6"
           },
           {
             "Column": "VALUE",
-            "Factory": "int-list7"
+            "Prescription": "int-list7"
           }
         ]
       },
@@ -3445,19 +3445,19 @@
         "ColumnPrescriptions": [
           {
             "Column": "RECID",
-            "Factory": "int-incremental5"
+            "Prescription": "int-incremental5"
           },
           {
             "Column": "TRECID1",
-            "Factory": "int-list8"
+            "Prescription": "int-list8"
           },
           {
             "Column": "TRECID2",
-            "Factory": "int-list9"
+            "Prescription": "int-list9"
           },
           {
             "Column": "VALUE",
-            "Factory": "int-list10"
+            "Prescription": "int-list10"
           }
         ]
       }

@@ -22,12 +22,12 @@ namespace Df.Io.Prescriptive
         public string Name { get; set; }
 
         [JsonProperty(Order = 1, IsReference = false)]
-        public string Reference { get; }
+        public string Factory { get; }
 
-        public ValueFactoryPrescription(string name, string reference, IValueFactoryConfiguration configuration)
+        public ValueFactoryPrescription(string name, string factory, IValueFactoryConfiguration configuration)
         {
             Name = Check.NotNull(nameof(name), name);
-            Reference = Check.NotNull(nameof(reference), reference);
+            Factory = Check.NotNull(nameof(factory), factory);
             Configuration = Check.NotNull(nameof(configuration), configuration);
         }
 
@@ -38,10 +38,10 @@ namespace Df.Io.Prescriptive
             !(other is null)
                 && (ReferenceEquals(this, other)
                     || (Name == other.Name
-                    && Reference == other.Reference
+                    && Factory == other.Factory
                     && Configuration == other.Configuration));
 
         public override int GetHashCode() =>
-            HashCode.Combine(Name, Reference, Configuration);
+            HashCode.Combine(Name, Factory, Configuration);
     }
 }

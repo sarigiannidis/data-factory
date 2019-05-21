@@ -31,7 +31,7 @@ namespace Df.Io.Prescriptive
             foreach (var item in obj["ColumnPrescriptions"])
             {
                 var columnDescriptionName = item.Value<string>("Column");
-                var valueFactoryPrescriptionName = item.Value<string>("Factory");
+                var valueFactoryPrescriptionName = item.Value<string>("Prescription");
                 var nullPercentage = item.Value<float?>("NULL");
 
                 var columnDescription = tableDescription.ColumnDescriptions.First(c => c.Name == columnDescriptionName);
@@ -60,7 +60,7 @@ namespace Df.Io.Prescriptive
                 writer.WriteStartObject();
                 writer.WritePropertyName("Column");
                 writer.WriteValue(item.ColumnDescription.Name);
-                writer.WritePropertyName("Factory");
+                writer.WritePropertyName("Prescription");
                 writer.WriteValue(item.ValueFactoryPrescription.Name);
                 if (item.NullPercentage != null)
                 {
