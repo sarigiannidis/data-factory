@@ -12,6 +12,11 @@ namespace Df.Io
     internal sealed class ProjectManager
         : IProjectManager
     {
+        private JsonUtility JsonUtility { get; }
+
+        public ProjectManager(JsonUtility jsonUtility) =>
+            JsonUtility = Check.NotNull(nameof(jsonUtility), jsonUtility);
+
         public Project LoadFromFile(string path)
         {
             _ = Check.NotNull(nameof(path), path);

@@ -15,13 +15,13 @@ namespace Df.Io.Prescriptive
     public sealed class ValueFactoryPrescription
         : IEquatable<ValueFactoryPrescription>
     {
-        [JsonProperty(Order = 3, IsReference = false, TypeNameHandling = TypeNameHandling.All)]
+        [JsonProperty(Order = 2, IsReference = false)]
         public IValueFactoryConfiguration Configuration { get; }
 
-        [JsonProperty(Order = 1)]
+        [JsonIgnore]
         public string Name { get; set; }
 
-        [JsonProperty(Order = 2, IsReference = false)]
+        [JsonProperty(Order = 1, IsReference = false)]
         public string Reference { get; }
 
         public ValueFactoryPrescription(string name, string reference, IValueFactoryConfiguration configuration)

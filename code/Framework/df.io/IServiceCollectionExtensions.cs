@@ -14,6 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddDfIo(this IServiceCollection services) =>
             Check.NotNull(nameof(services), services)
+            .AddTransient<JsonUtility>()
             .AddTransient<IProjectFactory, ProjectFactory>()
             .AddTransient<IProjectManager, ProjectManager>();
     }

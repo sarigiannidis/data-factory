@@ -37,7 +37,7 @@ namespace Df.Extensibility
 
         protected override T GetValue<T>(string key)
         {
-            var value = ((IReadOnlyDictionary<string, object>)this)[key];
+            var value = ((IDictionary<string, object>)this)[key];
             return typeof(T) == typeof(WeightedValueCollection<TValue>) && value.GetType() == typeof(JArray)
                 ? (T)(dynamic)(WeightedValueCollection<TValue>)(JArray)value
                 : base.GetValue<T>(key);

@@ -21,23 +21,17 @@ namespace Df.Extensibility
         private readonly IDictionary<string, object> _Properties;
 
         public static IValueFactoryConfiguration Empty =>
-                    new EmptyConfiguration();
+                new EmptyConfiguration();
 
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        int IReadOnlyCollection<KeyValuePair<string, object>>.Count =>
-            _Properties.Count;
+        public ICollection<string> Keys => _Properties.Keys;
 
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        IEnumerable<string> IReadOnlyDictionary<string, object>.Keys =>
-            _Properties.Keys;
+        public ICollection<object> Values => _Properties.Values;
 
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        object IReadOnlyDictionary<string, object>.this[string key] =>
-            _Properties[key];
+        public int Count => _Properties.Count;
 
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        IEnumerable<object> IReadOnlyDictionary<string, object>.Values =>
-            _Properties.Values;
+        public bool IsReadOnly => _Properties.IsReadOnly;
+
+        public object this[string key] { get => _Properties[key]; set => _Properties[key] = value; }
 
         protected ValueFactoryConfiguration(IDictionary<string, object> properties) =>
             _Properties = new Dictionary<string, object>(properties);
@@ -46,9 +40,6 @@ namespace Df.Extensibility
             : this(new Dictionary<string, object>())
         {
         }
-
-        bool IReadOnlyDictionary<string, object>.ContainsKey(string key) =>
-            _Properties.ContainsKey(key);
 
         public override bool Equals(object obj) =>
             obj is ValueFactoryConfiguration o && Equals(o);
@@ -90,9 +81,6 @@ namespace Df.Extensibility
         public override int GetHashCode() =>
             HashCode.Combine(_Properties);
 
-        bool IReadOnlyDictionary<string, object>.TryGetValue(string key, out object value) =>
-            _Properties.TryGetValue(key, out value);
-
         // Serialization may return a type other than the original.
         protected virtual T GetValue<T>(string key) =>
             _Properties[key] switch
@@ -105,5 +93,14 @@ namespace Df.Extensibility
 
         protected void SetValue(string key, object value) =>
             _Properties[key] = value;
+        public void Add(string key, object value) => _Properties.Add(key, value);
+        public bool ContainsKey(string key) => _Properties.ContainsKey(key);
+        public bool Remove(string key) => _Properties.Remove(key);
+        public bool TryGetValue(string key, out object value) => _Properties.TryGetValue(key, out value);
+        public void Add(KeyValuePair<string, object> item) => _Properties.Add(item);
+        public void Clear() => _Properties.Clear();
+        public bool Contains(KeyValuePair<string, object> item) => _Properties.Contains(item);
+        public void CopyTo(KeyValuePair<string, object>[] array, int arrayIndex) => _Properties.CopyTo(array, arrayIndex);
+        public bool Remove(KeyValuePair<string, object> item) => _Properties.Remove(item);
     }
 }
