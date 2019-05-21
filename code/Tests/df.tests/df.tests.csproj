@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TESTDB.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TESTDB.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

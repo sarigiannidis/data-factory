@@ -24,13 +24,14 @@ namespace Df.Io.Prescriptive
         public ValueFactoryPrescriptionConverter(IValueFactoryManager valueFactoryManager) =>
             ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
 
-        public override bool CanConvert(Type objectType) => typeof(ValueFactoryPrescription).Equals(objectType);
+        public override bool CanConvert(Type objectType) =>
+            typeof(ValueFactoryPrescription).Equals(objectType);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var obj = JObject.Load(reader);
-            var name = obj.Value<string>("$id");
-            if (string.IsNullOrEmpty(name))
+            var id = obj.Value<string>("$id");
+            if (string.IsNullOrEmpty(id))
             {
                 return serializer.ReferenceResolver.ResolveReference(serializer, (string)obj["$ref"]);
             }
@@ -40,8 +41,8 @@ namespace Df.Io.Prescriptive
                 var valueFactoryInfo = ValueFactoryManager.ValueFactoryInfos.First(f => f.Name == reference);
                 var configuration = valueFactoryInfo.Configurator.CreateConfiguration();
                 serializer.Populate(obj["Configuration"].CreateReader(), configuration);
-                var result = new ValueFactoryPrescription(name, reference, configuration);
-                serializer.ReferenceResolver.AddReference(serializer, name, result);
+                var result = new ValueFactoryPrescription(id, reference, configuration);
+                serializer.ReferenceResolver.AddReference(serializer, id, result);
                 return result;
             }
         }

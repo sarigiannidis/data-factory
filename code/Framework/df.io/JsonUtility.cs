@@ -61,11 +61,19 @@ namespace Df.Io
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 ObjectCreationHandling = ObjectCreationHandling.Reuse,
                 ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                Converters = new List<JsonConverter> { new StringEnumConverter(), new ValueFactoryPrescriptionConverter(ValueFactoryManager) },
+                Converters = GetDefaultConverters(),
                 ReferenceResolverProvider = () => new DfReferenceResolver(),
             };
 
         private JsonSerializer CreateJsonSerializer() =>
             JsonSerializer.CreateDefault(CreateDefaultJsonSerializerSettings());
+
+        private List<JsonConverter> GetDefaultConverters() =>
+            new List<JsonConverter>
+            {
+                new StringEnumConverter(),
+                new ValueFactoryPrescriptionConverter(ValueFactoryManager),
+                new TablePrescriptionConverter(),
+            };
     }
 }
