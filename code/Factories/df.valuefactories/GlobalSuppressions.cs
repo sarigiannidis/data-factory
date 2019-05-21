@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Injected.", Scope = "type", Target = "~T:Df.ValueFactories.Random.DoubleRandomConfigurationFactory")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Dependency Injection.", Scope = "type", Target = "~T:Df.ValueFactories.Random.DoubleRandomConfigurationFactory")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "This is unnecessary for configuration types.", Scope = "type", Target = "~T:Df.ValueFactories.RandomStringConfiguration")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "This is unnecessary for configuration types.", Scope = "type", Target = "~T:Df.ValueFactories.RandomBoolConfiguration")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "This is unnecessary for configuration types.", Scope = "type", Target = "~T:Df.ValueFactories.BinaryConfiguration")]
