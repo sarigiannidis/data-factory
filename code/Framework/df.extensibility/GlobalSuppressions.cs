@@ -5,4 +5,4 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Dependency injection", Scope = "type", Target = "~T:Df.Extensibility.ValueFactoryManager")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Dependency Injection.", Scope = "type", Target = "~T:Df.Extensibility.ValueFactoryManager")]

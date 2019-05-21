@@ -7,14 +7,24 @@
 
 namespace Df.Io
 {
+    using Df.Extensibility;
+    using Df.Io.Prescriptive;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using System.Collections.Generic;
     using System.IO;
 
-    internal static class JsonUtility
+    internal sealed class JsonUtility
     {
-        public static T Read<T>(string path)
+        private IValueFactoryManager ValueFactoryManager { get; }
+
+        public JsonUtility(IValueFactoryManager valueFactoryManager)
+        {
+            ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
+            ValueFactoryManager.Refresh();
+        }
+
+        public T Read<T>(string path)
         {
             var serializer = CreateJsonSerializer();
 
@@ -23,7 +33,7 @@ namespace Df.Io
             return serializer.Deserialize<T>(reader);
         }
 
-        public static string Serialize<T>(T t)
+        public string Serialize<T>(T t)
         {
             _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
@@ -33,7 +43,7 @@ namespace Df.Io
             return stringWriter.ToString();
         }
 
-        public static void Write<T>(T t, string path)
+        public void Write<T>(T t, string path)
         {
             _ = Check.NotNull(nameof(t), t);
             var serializer = CreateJsonSerializer();
@@ -41,7 +51,7 @@ namespace Df.Io
             serializer.Serialize(file, t);
         }
 
-        private static JsonSerializerSettings CreateDefaultJsonSerializerSettings() =>
+        private JsonSerializerSettings CreateDefaultJsonSerializerSettings() =>
             new JsonSerializerSettings
             {
                 DateParseHandling = DateParseHandling.DateTimeOffset,
@@ -51,11 +61,19 @@ namespace Df.Io
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 ObjectCreationHandling = ObjectCreationHandling.Reuse,
                 ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                Converters = new List<JsonConverter> { new StringEnumConverter() },
+                Converters = GetDefaultConverters(),
                 ReferenceResolverProvider = () => new DfReferenceResolver(),
             };
 
-        private static JsonSerializer CreateJsonSerializer() =>
+        private JsonSerializer CreateJsonSerializer() =>
             JsonSerializer.CreateDefault(CreateDefaultJsonSerializerSettings());
+
+        private List<JsonConverter> GetDefaultConverters() =>
+            new List<JsonConverter>
+            {
+                new StringEnumConverter(),
+                new ValueFactoryPrescriptionConverter(ValueFactoryManager),
+                new TablePrescriptionConverter(),
+            };
     }
 }

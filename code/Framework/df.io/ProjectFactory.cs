@@ -20,12 +20,17 @@ namespace Df.Io
     internal sealed class ProjectFactory
         : IProjectFactory
     {
-        public IMetaDbContextFactory MetaDbContextFactory { get; }
-
         private DateTimeOffset CreationTime { get; } = DateTimeOffset.Now;
 
-        public ProjectFactory(IMetaDbContextFactory metaDbContextFactory) =>
-                    MetaDbContextFactory = Check.NotNull(nameof(metaDbContextFactory), metaDbContextFactory);
+        private JsonUtility JsonUtility { get; }
+
+        private IMetaDbContextFactory MetaDbContextFactory { get; }
+
+        public ProjectFactory(IMetaDbContextFactory metaDbContextFactory, JsonUtility jsonUtility)
+        {
+            MetaDbContextFactory = Check.NotNull(nameof(metaDbContextFactory), metaDbContextFactory);
+            JsonUtility = Check.NotNull(nameof(jsonUtility), jsonUtility);
+        }
 
         public Project CreateNew(string connectionString)
         {
@@ -33,16 +38,6 @@ namespace Df.Io
             var descriptor = CreateDescriptor(connectionString);
             var prescriptor = new Prescriptor();
             return new Project(descriptor, prescriptor, CreationTime, CreationTime);
-        }
-
-        private static string CalculateChecksum(IReadOnlyList<TableDescription> tableDescriptions)
-        {
-            using var stream = new MemoryStream();
-            using var streamWriter = new StreamWriter(stream, Encoding.Unicode, 1024, true);
-            var str = JsonUtility.Serialize(tableDescriptions);
-            streamWriter.WriteLine(str);
-            _ = stream.Seek(0, SeekOrigin.Begin);
-            return HashUtility.ComputeHash(stream);
         }
 
         private static void ReadAllForeignKeys(MetaDbContext context, IReadOnlyList<TableDescription> tableDescriptions)
@@ -145,6 +140,16 @@ namespace Df.Io
                 tableDescription.ColumnDescriptions = ReadColumnDescriptions(context, tableDescription).ToList();
                 yield return tableDescription;
             }
+        }
+
+        private string CalculateChecksum(IReadOnlyList<TableDescription> tableDescriptions)
+        {
+            using var stream = new MemoryStream();
+            using var streamWriter = new StreamWriter(stream, Encoding.Unicode, 1024, true);
+            var str = JsonUtility.Serialize(tableDescriptions);
+            streamWriter.WriteLine(str);
+            _ = stream.Seek(0, SeekOrigin.Begin);
+            return HashUtility.ComputeHash(stream);
         }
 
         private Descriptor CreateDescriptor(string connectionString)

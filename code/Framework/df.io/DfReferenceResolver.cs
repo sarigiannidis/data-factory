@@ -41,7 +41,7 @@ namespace Df.Io
         {
             ColumnDescription columnDescription => "{0}.[{1}]".FormatInvariant(ObjectReference(columnDescription.Parent), columnDescription.Name),
             TableDescription tableDescription => "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name),
-            ValueFactoryPrescription valueFactoryPrescription => "{0}".FormatInvariant(valueFactoryPrescription.Name),
+            ValueFactoryPrescription valueFactoryPrescription => valueFactoryPrescription.Name,
             _ => "{0}".FormatInvariant(value),
         };
     }

@@ -47,7 +47,7 @@ namespace Df.Io.Prescriptive
             };
         }
 
-        [JsonProperty(Order = 2)]
+        [JsonProperty(Order = 2, IsReference = true)]
         public ValueFactoryPrescription ValueFactoryPrescription
         {
             get => _ValueFactoryPrescription.TryGetTarget(out var target) ? target : null;

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="$(FRAMEWORKDIR)df.data\df.data.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

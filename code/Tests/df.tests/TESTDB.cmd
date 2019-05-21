@@ -1,0 +1,2 @@
+df new -n TESTDB.json -c "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;AttachDbFilename=B:\df\code\Tests\df.tests\bin\Debug\netcoreapp3.0\TESTDB.mdf"
+df add alltables --project TESTDB.json

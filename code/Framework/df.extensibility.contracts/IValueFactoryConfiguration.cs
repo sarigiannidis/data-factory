@@ -10,7 +10,7 @@ namespace Df.Extensibility
     using System.Collections.Generic;
 
     public interface IValueFactoryConfiguration
-        : IReadOnlyDictionary<string, object>
+        : IDictionary<string, object>
     {
     }
 }
