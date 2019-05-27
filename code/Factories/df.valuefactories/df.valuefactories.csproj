@@ -14,44 +14,44 @@
   <ItemGroup Label="T4">
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" Label="T4 translation" />
 
-    <None Update="Constant.tt">
+    <None Update="Generated.Constant.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Constant.cs</LastGenOutput>
+      <LastGenOutput>Generated.Constant.cs</LastGenOutput>
     </None>
-    <Compile Update="Constant.cs">
+    <Compile Update="Generated.Constant.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Constant.tt</DependentUpon>
+      <DependentUpon>Generated.Constant.tt</DependentUpon>
     </Compile>
 
-    <None Update="Incremental.tt">
+    <None Update="Generated.Incremental.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Incremental.cs</LastGenOutput>
+      <LastGenOutput>Generated.Incremental.cs</LastGenOutput>
     </None>
-    <Compile Update="Incremental.cs">
+    <Compile Update="Generated.Incremental.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Incremental.tt</DependentUpon>
+      <DependentUpon>Generated.Incremental.tt</DependentUpon>
     </Compile>
 
-    <None Update="List.tt">
+    <None Update="Generated.List.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>List.cs</LastGenOutput>
+      <LastGenOutput>Generated.List.cs</LastGenOutput>
     </None>
-    <Compile Update="List.cs">
+    <Compile Update="Generated.List.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>List.tt</DependentUpon>
+      <DependentUpon>Generated.List.tt</DependentUpon>
     </Compile>
 
-    <None Update="Random.tt">
+    <None Update="Generated.Random.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Random.cs</LastGenOutput>
+      <LastGenOutput>Generated.Random.cs</LastGenOutput>
     </None>
-    <Compile Update="Random.cs">
+    <Compile Update="Generated.Random.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Random.tt</DependentUpon>
+      <DependentUpon>Generated.Random.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

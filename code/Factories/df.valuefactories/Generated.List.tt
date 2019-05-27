@@ -4,10 +4,10 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-	var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "string" };
+    var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "string" };
 #>
 // --------------------------------------------------------------------------------
-// <copyright file="List.cs" company="Michalis Sarigiannidis">
+// <copyright file="Generated.List.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -24,7 +24,7 @@ namespace Df.ValueFactories
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
     var upper = type.ToUpperInvariant();
-	var lower = type.ToLowerInvariant();
+    var lower = type.ToLowerInvariant();
 #>
     [GeneratedCode("df", "")]
     [ValueFactory("<#=lower#>-list", "Picks randomly from a weighted list of <#=type#> values.", typeof(<#=type#>), typeof(<#=title#>ListFactory))]

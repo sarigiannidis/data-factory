@@ -7,7 +7,7 @@
     var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "TimeSpan" };
 #>
 // --------------------------------------------------------------------------------
-// <copyright file="Constant.cs" company="Michalis Sarigiannidis">
+// <copyright file="Generated.Incremental.cs" company="Michalis Sarigiannidis">
 // Copyright 2019 © Michalis Sarigiannidis. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the solution root for full license information.
 // </copyright>
@@ -20,6 +20,8 @@ namespace Df.ValueFactories
     using Df.Extensibility;
     using System;
     using System.CodeDom.Compiler;
+    using System.Globalization;
+    using static Constants;
 <# foreach (var type in types)
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);
@@ -28,13 +30,27 @@ namespace Df.ValueFactories
 #>
 
     [GeneratedCode("df", "")]
-    [ValueFactory("<#=lower#>-constant", "Generates constant <#=type#> values", typeof(<#=type#>), typeof(Constant<#=title#>Factory))]
-    public sealed class Constant<#=title#>Factory
-        : ConstantFactory<<#=type#>>
-        , IConfigurator
+    [ValueFactory("<#=lower#>-incremental", "Generates incremental <#=type#> values", typeof(<#=type#>), typeof(Incremental<#=title#>Factory))]
+    public sealed class Incremental<#=title#>Factory
+        : IncrementalScalarFactory<<#=type#>>,
+        IConstrainableConfigurator
     {
         IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<<#=type#>>(default(<#=type#>));
+            new ScalarFactoryConfiguration<<#=type#>>(<#=upper#>_MIN, <#=upper#>_MAX, <#=upper#>_STEP);
+
+        IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        {
+            if (configuratorConstraints.SeedValue is null || configuratorConstraints.IncrementValue is null)
+            {
+                return ((IConfigurator)this).CreateConfiguration();
+            }
+            else
+            {
+                var seed = (<#=type#>)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(<#=type#>), CultureInfo.InvariantCulture);
+                var increment = (<#=type#>)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(<#=type#>), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<<#=type#>>(seed, <#=type#>.MaxValue, increment);
+            }
+        }
     }
 <# } #>
 }
