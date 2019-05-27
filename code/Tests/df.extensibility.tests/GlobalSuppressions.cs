@@ -5,4 +5,4 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "Not applicable.", Scope = "member", Target = "~M:Df.Extensibility.Tests.ValueFactoryInfoTest.GenerateValues(System.Type)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "Not applicable.", Scope = "member", Target = "~M:Df.Extensibility.Tests.ValueFactoryInfoTest.GenerateValuesTest(Df.Extensibility.IValueFactoryInfo)")]
