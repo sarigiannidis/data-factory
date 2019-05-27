@@ -14,7 +14,7 @@
     <Product>Data Factory</Product>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/sarigiannidis/data-factory</RepositoryUrl>
-    <Version>0.10.1</Version>
+    <Version>0.11.1</Version>
   </PropertyGroup>
 
 </Project>
