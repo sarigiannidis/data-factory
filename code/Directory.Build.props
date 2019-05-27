@@ -3,6 +3,7 @@
  <PropertyGroup>
    <Deterministic>true</Deterministic>
    <LangVersion>8.0</LangVersion>
+   <SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
    <TargetFramework>netcoreapp3.0</TargetFramework>
    <NoWarn>CA2227</NoWarn>
  </PropertyGroup>
