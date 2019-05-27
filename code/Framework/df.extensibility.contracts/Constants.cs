@@ -9,6 +9,8 @@ namespace Df.Extensibility
 {
     internal static class Constants
     {
+        public const string PROPERTY_CONSTANT = "Constant";
+
         public const string PROPERTY_INCREMENT = "Increment";
 
         public const string PROPERTY_MAX = "MaxValue";

@@ -44,7 +44,7 @@ namespace Df.Extensibility.Tests
             ServiceProvider = null;
         }
 
-        private void ConfigureLogging(ILoggingBuilder loggingBuilder)
+        private static void ConfigureLogging(ILoggingBuilder loggingBuilder)
         {
             _ = loggingBuilder.AddDebug().SetMinimumLevel(LogLevel.Trace);
             _ = loggingBuilder.AddEventSourceLogger();
