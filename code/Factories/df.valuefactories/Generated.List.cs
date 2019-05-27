@@ -11,7 +11,45 @@ namespace Df.ValueFactories
 {
     using Df.Extensibility;
     using Df.Numeric;
+    using System;
     using System.CodeDom.Compiler;
+
+    [GeneratedCode("df", "")]
+    [ValueFactory("datetime-list", "Picks randomly from a weighted list of DateTime values.", typeof(DateTime), typeof(DateTimeListFactory))]
+    public sealed class DateTimeListFactory
+        : RandomListFactory<DateTime>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<DateTime>(new WeightedValueCollection<DateTime>
+            {
+                new WeightedValue<DateTime>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("datetimeoffset-list", "Picks randomly from a weighted list of DateTimeOffset values.", typeof(DateTimeOffset), typeof(DateTimeOffsetListFactory))]
+    public sealed class DateTimeOffsetListFactory
+        : RandomListFactory<DateTimeOffset>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<DateTimeOffset>(new WeightedValueCollection<DateTimeOffset>
+            {
+                new WeightedValue<DateTimeOffset>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("bool-list", "Picks randomly from a weighted list of bool values.", typeof(bool), typeof(BoolListFactory))]
+    public sealed class BoolListFactory
+        : RandomListFactory<bool>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<bool>(new WeightedValueCollection<bool>
+            {
+                new WeightedValue<bool>(default, 0.1f),
+            });
+    }
     [GeneratedCode("df", "")]
     [ValueFactory("byte-list", "Picks randomly from a weighted list of byte values.", typeof(byte), typeof(ByteListFactory))]
     public sealed class ByteListFactory
@@ -22,6 +60,18 @@ namespace Df.ValueFactories
             new ListFactoryConfiguration<byte>(new WeightedValueCollection<byte>
             {
                 new WeightedValue<byte>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("char-list", "Picks randomly from a weighted list of char values.", typeof(char), typeof(CharListFactory))]
+    public sealed class CharListFactory
+        : RandomListFactory<char>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<char>(new WeightedValueCollection<char>
+            {
+                new WeightedValue<char>(default, 0.1f),
             });
     }
     [GeneratedCode("df", "")]
@@ -85,6 +135,18 @@ namespace Df.ValueFactories
             });
     }
     [GeneratedCode("df", "")]
+    [ValueFactory("sbyte-list", "Picks randomly from a weighted list of sbyte values.", typeof(sbyte), typeof(SbyteListFactory))]
+    public sealed class SbyteListFactory
+        : RandomListFactory<sbyte>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<sbyte>(new WeightedValueCollection<sbyte>
+            {
+                new WeightedValue<sbyte>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
     [ValueFactory("short-list", "Picks randomly from a weighted list of short values.", typeof(short), typeof(ShortListFactory))]
     public sealed class ShortListFactory
         : RandomListFactory<short>,
@@ -106,6 +168,42 @@ namespace Df.ValueFactories
             new ListFactoryConfiguration<string>(new WeightedValueCollection<string>
             {
                 new WeightedValue<string>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("uint-list", "Picks randomly from a weighted list of uint values.", typeof(uint), typeof(UintListFactory))]
+    public sealed class UintListFactory
+        : RandomListFactory<uint>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<uint>(new WeightedValueCollection<uint>
+            {
+                new WeightedValue<uint>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("ulong-list", "Picks randomly from a weighted list of ulong values.", typeof(ulong), typeof(UlongListFactory))]
+    public sealed class UlongListFactory
+        : RandomListFactory<ulong>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<ulong>(new WeightedValueCollection<ulong>
+            {
+                new WeightedValue<ulong>(default, 0.1f),
+            });
+    }
+    [GeneratedCode("df", "")]
+    [ValueFactory("ushort-list", "Picks randomly from a weighted list of ushort values.", typeof(ushort), typeof(UshortListFactory))]
+    public sealed class UshortListFactory
+        : RandomListFactory<ushort>,
+        IConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ListFactoryConfiguration<ushort>(new WeightedValueCollection<ushort>
+            {
+                new WeightedValue<ushort>(default, 0.1f),
             });
     }
 }

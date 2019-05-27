@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "string" };
+    var types = new []{ "DateTime", "DateTimeOffset", "bool", "byte", "char", "decimal", "double", "float", "int", "long", "sbyte", "short", "string", "uint", "ulong", "ushort" };
 #>
 // --------------------------------------------------------------------------------
 // <copyright file="Generated.List.cs" company="Michalis Sarigiannidis">
@@ -19,7 +19,9 @@ namespace Df.ValueFactories
 {
     using Df.Extensibility;
     using Df.Numeric;
+    using System;
     using System.CodeDom.Compiler;
+
 <# foreach (var type in types)
    {
     var title = char.ToUpperInvariant(type[0]) + type.Substring(1);

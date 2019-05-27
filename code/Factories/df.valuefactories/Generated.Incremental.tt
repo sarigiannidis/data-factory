@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "TimeSpan" };
+    var types = new []{ "TimeSpan", "byte", "decimal", "double", "float", "int", "long", "sbyte", "short", "uint", "ulong", "ushort" };
 #>
 // --------------------------------------------------------------------------------
 // <copyright file="Generated.Incremental.cs" company="Michalis Sarigiannidis">

@@ -16,6 +16,30 @@ namespace Df.ValueFactories
     using static Constants;
 
     [GeneratedCode("df", "")]
+    [ValueFactory("timespan-incremental", "Generates incremental TimeSpan values", typeof(TimeSpan), typeof(IncrementalTimeSpanFactory))]
+    public sealed class IncrementalTimeSpanFactory
+        : IncrementalScalarFactory<TimeSpan>,
+        IConstrainableConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX, TIMESPAN_STEP);
+
+        IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        {
+            if (configuratorConstraints.SeedValue is null || configuratorConstraints.IncrementValue is null)
+            {
+                return ((IConfigurator)this).CreateConfiguration();
+            }
+            else
+            {
+                var seed = (TimeSpan)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(TimeSpan), CultureInfo.InvariantCulture);
+                var increment = (TimeSpan)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(TimeSpan), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<TimeSpan>(seed, TimeSpan.MaxValue, increment);
+            }
+        }
+    }
+
+    [GeneratedCode("df", "")]
     [ValueFactory("byte-incremental", "Generates incremental byte values", typeof(byte), typeof(IncrementalByteFactory))]
     public sealed class IncrementalByteFactory
         : IncrementalScalarFactory<byte>,
@@ -160,6 +184,30 @@ namespace Df.ValueFactories
     }
 
     [GeneratedCode("df", "")]
+    [ValueFactory("sbyte-incremental", "Generates incremental sbyte values", typeof(sbyte), typeof(IncrementalSbyteFactory))]
+    public sealed class IncrementalSbyteFactory
+        : IncrementalScalarFactory<sbyte>,
+        IConstrainableConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<sbyte>(SBYTE_MIN, SBYTE_MAX, SBYTE_STEP);
+
+        IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        {
+            if (configuratorConstraints.SeedValue is null || configuratorConstraints.IncrementValue is null)
+            {
+                return ((IConfigurator)this).CreateConfiguration();
+            }
+            else
+            {
+                var seed = (sbyte)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(sbyte), CultureInfo.InvariantCulture);
+                var increment = (sbyte)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(sbyte), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<sbyte>(seed, sbyte.MaxValue, increment);
+            }
+        }
+    }
+
+    [GeneratedCode("df", "")]
     [ValueFactory("short-incremental", "Generates incremental short values", typeof(short), typeof(IncrementalShortFactory))]
     public sealed class IncrementalShortFactory
         : IncrementalScalarFactory<short>,
@@ -184,13 +232,13 @@ namespace Df.ValueFactories
     }
 
     [GeneratedCode("df", "")]
-    [ValueFactory("timespan-incremental", "Generates incremental TimeSpan values", typeof(TimeSpan), typeof(IncrementalTimeSpanFactory))]
-    public sealed class IncrementalTimeSpanFactory
-        : IncrementalScalarFactory<TimeSpan>,
+    [ValueFactory("uint-incremental", "Generates incremental uint values", typeof(uint), typeof(IncrementalUintFactory))]
+    public sealed class IncrementalUintFactory
+        : IncrementalScalarFactory<uint>,
         IConstrainableConfigurator
     {
         IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ScalarFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX, TIMESPAN_STEP);
+            new ScalarFactoryConfiguration<uint>(UINT_MIN, UINT_MAX, UINT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -200,9 +248,57 @@ namespace Df.ValueFactories
             }
             else
             {
-                var seed = (TimeSpan)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(TimeSpan), CultureInfo.InvariantCulture);
-                var increment = (TimeSpan)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(TimeSpan), CultureInfo.InvariantCulture);
-                return new ScalarFactoryConfiguration<TimeSpan>(seed, TimeSpan.MaxValue, increment);
+                var seed = (uint)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(uint), CultureInfo.InvariantCulture);
+                var increment = (uint)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(uint), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<uint>(seed, uint.MaxValue, increment);
+            }
+        }
+    }
+
+    [GeneratedCode("df", "")]
+    [ValueFactory("ulong-incremental", "Generates incremental ulong values", typeof(ulong), typeof(IncrementalUlongFactory))]
+    public sealed class IncrementalUlongFactory
+        : IncrementalScalarFactory<ulong>,
+        IConstrainableConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<ulong>(ULONG_MIN, ULONG_MAX, ULONG_STEP);
+
+        IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        {
+            if (configuratorConstraints.SeedValue is null || configuratorConstraints.IncrementValue is null)
+            {
+                return ((IConfigurator)this).CreateConfiguration();
+            }
+            else
+            {
+                var seed = (ulong)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(ulong), CultureInfo.InvariantCulture);
+                var increment = (ulong)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(ulong), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<ulong>(seed, ulong.MaxValue, increment);
+            }
+        }
+    }
+
+    [GeneratedCode("df", "")]
+    [ValueFactory("ushort-incremental", "Generates incremental ushort values", typeof(ushort), typeof(IncrementalUshortFactory))]
+    public sealed class IncrementalUshortFactory
+        : IncrementalScalarFactory<ushort>,
+        IConstrainableConfigurator
+    {
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<ushort>(USHORT_MIN, USHORT_MAX, USHORT_STEP);
+
+        IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
+        {
+            if (configuratorConstraints.SeedValue is null || configuratorConstraints.IncrementValue is null)
+            {
+                return ((IConfigurator)this).CreateConfiguration();
+            }
+            else
+            {
+                var seed = (ushort)Convert.ChangeType(configuratorConstraints.SeedValue, typeof(ushort), CultureInfo.InvariantCulture);
+                var increment = (ushort)Convert.ChangeType(configuratorConstraints.IncrementValue, typeof(ushort), CultureInfo.InvariantCulture);
+                return new ScalarFactoryConfiguration<ushort>(seed, ushort.MaxValue, increment);
             }
         }
     }

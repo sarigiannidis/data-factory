@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var types = new []{ "byte", "decimal", "double", "float", "int", "long", "short", "TimeSpan" };
+    var types = new []{ "DateTime", "DateTimeOffset", "TimeSpan", "bool", "byte", "char", "decimal", "double", "float", "int", "long", "sbyte", "short", "string", "uint", "ulong", "ushort" };
 #>
 // --------------------------------------------------------------------------------
 // <copyright file="Generated.Constant.cs" company="Michalis Sarigiannidis">
