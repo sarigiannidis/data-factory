@@ -22,7 +22,7 @@
             "problemMatcher": "$tsc"
         },
         {
-            "label": "publish",
+            "label": "publish/dotnet",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -35,6 +35,41 @@
                 "--self-contained",
                 "-o",
                 "${workspaceFolder}/publish/df-binaries.win-x64"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "publish/zip",
+            "command": "7z",
+            "type": "process",
+            "args": [
+                "a",
+                "${workspaceFolder}/publish/df-binaries.win-x64.zip",
+                "${workspaceFolder}/publish/df-binaries.win-x64/*"
+            ],
+            "problemMatcher": "$tsc",
+            "dependsOn": [
+                "publish/dotnet"
+            ]
+        },
+        {
+            "label": "publish/rmdir",
+            "command": "rmdir",
+            "type": "shell",
+            "args": [
+                "/Q",
+                "/S",
+                "${workspaceFolder}\\publish\\df-binaries.win-x64"
+            ],
+            "problemMatcher": "$tsc",
+            "dependsOn": [
+                "publish/zip"
+            ]
+        },
+        {
+            "label": "publish",
+            "dependsOn": [
+                "publish/rmdir"
             ],
             "problemMatcher": "$tsc"
         }
