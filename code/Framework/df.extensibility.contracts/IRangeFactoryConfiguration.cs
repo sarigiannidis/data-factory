@@ -11,7 +11,7 @@ namespace Df.Extensibility
 
     public interface IRangeFactoryConfiguration<TValue>
     : IValueFactoryConfiguration
-    where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+    where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         TValue MaxValue { get; }
 

@@ -13,7 +13,7 @@ namespace Df.Extensibility
 
     public abstract class RandomScalarFactory<TValue>
         : RandomFactory<TValue, IRangeFactoryConfiguration<TValue>>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         public override TValue CreateValue()
         {

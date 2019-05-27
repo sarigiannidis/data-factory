@@ -13,7 +13,7 @@ namespace Df.Extensibility
 
     public abstract class IncrementalScalarFactory<TValue>
         : ValueFactory<TValue, IScalarFactoryConfiguration<TValue>>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private TValue _Next = default;

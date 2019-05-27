@@ -11,7 +11,7 @@ namespace Df.Extensibility
 
     public interface IScalarFactoryConfiguration<TValue>
         : IRangeFactoryConfiguration<TValue>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         TValue Increment { get; }
     }

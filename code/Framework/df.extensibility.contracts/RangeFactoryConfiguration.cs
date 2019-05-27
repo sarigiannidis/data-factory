@@ -15,7 +15,7 @@ namespace Df.Extensibility
     [DebuggerDisplay("[{MinValue}, {MaxValue}]")]
     public class RangeFactoryConfiguration<TValue>
         : ValueFactoryConfiguration, IRangeFactoryConfiguration<TValue>
-        where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+        where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue MaxValue =>

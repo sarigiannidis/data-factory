@@ -15,7 +15,7 @@ namespace Df.Extensibility
     [DebuggerDisplay("[{MinValue}, {MaxValue}] + {Increment}")]
     public class ScalarFactoryConfiguration<TValue>
     : RangeFactoryConfiguration<TValue>, IScalarFactoryConfiguration<TValue>
-    where TValue : struct, IComparable, IFormattable, IComparable<TValue>, IEquatable<TValue>
+    where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue Increment =>
