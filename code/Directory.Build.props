@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <Import Project="$(PROPSDIR)analysis.props" />
-  <Import Project="$(PROPSDIR)dbp.props"/>
+  <Import Project="$(PROPSDIR)pdb.props"/>
   <Import Project="$(PROPSDIR)package.props"/>
 
 </Project>

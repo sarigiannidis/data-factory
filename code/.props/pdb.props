@@ -1,0 +1,10 @@
+<Project>
+
+  <PropertyGroup Label="Debug symbols">
+    <DebugSymbols Condition="'$(Configuration)'=='Debug'">true</DebugSymbols>
+    <DebugSymbols Condition="'$(Configuration)'=='Release'">false</DebugSymbols>
+    <DebugType Condition="'$(Configuration)'=='Debug'">full</DebugType>
+    <DebugType Condition="'$(Configuration)'=='Release'">none</DebugType>
+  </PropertyGroup>
+
+</Project>
