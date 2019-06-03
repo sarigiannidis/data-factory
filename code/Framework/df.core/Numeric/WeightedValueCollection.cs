@@ -17,7 +17,8 @@ namespace Df.Numeric
 
     [JsonArray(IsReference = false)]
     public sealed class WeightedValueCollection<TValue>
-        : IList<WeightedValue<TValue>>
+        : IList<WeightedValue<TValue>>,
+        IEquatable<WeightedValueCollection<TValue>>
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -38,13 +39,17 @@ namespace Df.Numeric
         public WeightedValue<TValue> this[int index]
         {
             get => _WeightedValues[index];
-            set => _WeightedValues[index] = value;
+            set
+            {
+                _WeightedValues[index] = value;
+                Reset();
+            }
         }
 
         public WeightedValueCollection(IEnumerable<WeightedValue<TValue>> collection)
         {
             _WeightedValues.AddRange(collection);
-            ResetWeights();
+            Reset();
         }
 
         public WeightedValueCollection()
@@ -60,13 +65,13 @@ namespace Df.Numeric
         public void Add(WeightedValue<TValue> item)
         {
             _WeightedValues.Add(item);
-            ResetWeights();
+            Reset();
         }
 
         public void AddRange(IEnumerable<WeightedValue<TValue>> collection)
         {
             _WeightedValues.AddRange(collection);
-            ResetWeights();
+            Reset();
         }
 
         public void Clear() =>
@@ -78,14 +83,55 @@ namespace Df.Numeric
         public void CopyTo(WeightedValue<TValue>[] array, int arrayIndex) =>
             _WeightedValues.CopyTo(array, arrayIndex);
 
+        public bool Equals(WeightedValueCollection<TValue> other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            else if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (_WeightedValues.Count != other.Count)
+            {
+                return false;
+            }
+
+            foreach (var key in _WeightedValues)
+            {
+                if (!other._WeightedValues.Contains(key))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public override bool Equals(object obj) =>
+            obj is WeightedValueCollection<TValue> o && Equals(o);
+
         public IEnumerator<WeightedValue<TValue>> GetEnumerator() =>
             _WeightedValues.GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator() =>
             _WeightedValues.GetEnumerator();
 
+        public override int GetHashCode()
+        {
+            var hashCode = default(HashCode);
+            foreach (var value in _WeightedValues)
+            {
+                hashCode.Add(value);
+            }
+
+            return hashCode.ToHashCode();
+        }
+
         public int IndexOf(WeightedValue<TValue> item) =>
-            _WeightedValues.IndexOf(item);
+                    _WeightedValues.IndexOf(item);
 
         public void Insert(int index, WeightedValue<TValue> item) =>
             _WeightedValues.Insert(index, item);
@@ -96,7 +142,10 @@ namespace Df.Numeric
         public void RemoveAt(int index) =>
             _WeightedValues.RemoveAt(index);
 
-        private void ResetWeights() =>
+        private void Reset()
+        {
+            _WeightedValues.Sort();
             SumOfWeights = this.Sum(w => w.Weight);
+        }
     }
 }

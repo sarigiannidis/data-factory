@@ -14,8 +14,7 @@ namespace Df.Extensibility
     using System.Globalization;
 
     public abstract class ValueFactoryConfiguration
-        : IValueFactoryConfiguration,
-        IEquatable<ValueFactoryConfiguration>
+        : IValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IDictionary<string, object> _Properties;
@@ -54,9 +53,9 @@ namespace Df.Extensibility
         public void CopyTo(KeyValuePair<string, object>[] array, int arrayIndex) => _Properties.CopyTo(array, arrayIndex);
 
         public override bool Equals(object obj) =>
-                                                            obj is ValueFactoryConfiguration o && Equals(o);
+            obj is IValueFactoryConfiguration o && Equals(o);
 
-        public bool Equals(ValueFactoryConfiguration other)
+        public bool Equals(IValueFactoryConfiguration other)
         {
             if (other is null)
             {
@@ -67,15 +66,15 @@ namespace Df.Extensibility
                 return true;
             }
 
-            if (_Properties.Count != other._Properties.Count)
+            if (_Properties.Count != other.Count)
             {
                 return false;
             }
 
             foreach (var key in _Properties.Keys)
             {
-                if (!other._Properties.TryGetValue(key, out var otherValue)
-                    || _Properties[key] != otherValue)
+                if (!other.TryGetValue(key, out var otherValue)
+                    || !_Properties[key].Equals(otherValue))
                 {
                     return false;
                 }
