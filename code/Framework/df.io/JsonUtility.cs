@@ -27,7 +27,6 @@ namespace Df.Io
         public T Read<T>(string path)
         {
             var serializer = CreateJsonSerializer();
-
             using var file = File.OpenText(path);
             using var reader = new JsonTextReader(file);
             return serializer.Deserialize<T>(reader);

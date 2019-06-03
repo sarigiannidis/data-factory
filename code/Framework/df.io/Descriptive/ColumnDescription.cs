@@ -42,7 +42,6 @@ namespace Df.Io.Descriptive
         public TableDescription Parent
         {
             get => _Parent.TryGetTarget(out var target) ? target : null;
-
             internal set => _Parent = new WeakReference<TableDescription>(Check.NotNull(nameof(value), value));
         }
 
