@@ -13,6 +13,7 @@ namespace Df.Io
     using System;
     using System.Diagnostics;
 
+    // @TODO: Add df version as a property.
     [JsonObject(IsReference = false)]
     [DebuggerDisplay("{Descriptor} Created = {Created}, Modified = {Modified}")]
     public sealed class Project
