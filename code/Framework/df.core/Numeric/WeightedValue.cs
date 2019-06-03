@@ -48,8 +48,14 @@ namespace Df.Numeric
         public static implicit operator WeightedValue<TValue>(TValue value) =>
             ToWeightedValue(value);
 
-        public static implicit operator WeightedValue<TValue>(JToken jToken) =>
-            new WeightedValue<TValue>(jToken.Value<TValue>(nameof(Value)), jToken.Value<float>(nameof(Weight)));
+        public static implicit operator WeightedValue<TValue>(JToken jToken)
+        {
+            var value = typeof(TValue) == typeof(DateTime)
+                ? (TValue)(dynamic)jToken.Value<DateTimeOffset>(nameof(Value)).DateTime
+                : jToken.Value<TValue>(nameof(Value));
+            var weight = jToken.Value<float>(nameof(Weight));
+            return new WeightedValue<TValue>(value, weight);
+        }
 
         public static bool operator !=(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
             !(left == right);
