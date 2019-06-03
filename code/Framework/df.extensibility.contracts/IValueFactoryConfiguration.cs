@@ -7,10 +7,12 @@
 
 namespace Df.Extensibility
 {
+    using System;
     using System.Collections.Generic;
 
     public interface IValueFactoryConfiguration
-        : IDictionary<string, object>
+        : IDictionary<string, object>,
+        IEquatable<IValueFactoryConfiguration>
     {
     }
 }

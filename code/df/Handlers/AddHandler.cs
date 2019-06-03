@@ -126,7 +126,7 @@ namespace Df.OptionHandlers
         private ValueFactoryPrescription GetValueFactoryPrescription(Project project, ColumnDescription columnDescription)
         {
             var tentative = CreateNewValueFactoryPrescription(project, columnDescription);
-            var valueFactoryPrescription = project.Prescriptor.ValueFactoryPrescriptions.FirstOrDefault(_ => _ == tentative);
+            var valueFactoryPrescription = project.Prescriptor.ValueFactoryPrescriptions.FirstOrDefault(_ => _.Equals(tentative));
             if (valueFactoryPrescription is null)
             {
                 project.Prescriptor.AddValueFactory(tentative);

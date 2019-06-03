@@ -18,11 +18,11 @@ namespace Df.Io.Prescriptive
         [JsonProperty(Order = 2, IsReference = false)]
         public IValueFactoryConfiguration Configuration { get; }
 
-        [JsonIgnore]
-        public string Name { get; set; }
-
         [JsonProperty(Order = 1, IsReference = false)]
         public string Factory { get; }
+
+        [JsonIgnore]
+        public string Name { get; set; }
 
         public ValueFactoryPrescription(string name, string factory, IValueFactoryConfiguration configuration)
         {
@@ -37,11 +37,10 @@ namespace Df.Io.Prescriptive
         public bool Equals(ValueFactoryPrescription other) =>
             !(other is null)
                 && (ReferenceEquals(this, other)
-                    || (Name == other.Name
-                    && Factory == other.Factory
-                    && Configuration == other.Configuration));
+                    || (Factory.Equals(other.Factory, StringComparison.InvariantCultureIgnoreCase)
+                    && Configuration.Equals(other.Configuration)));
 
         public override int GetHashCode() =>
-            HashCode.Combine(Name, Factory, Configuration);
+            HashCode.Combine(Factory, Configuration);
     }
 }

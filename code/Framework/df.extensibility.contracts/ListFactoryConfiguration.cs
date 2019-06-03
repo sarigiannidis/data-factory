@@ -14,7 +14,6 @@ namespace Df.Extensibility
     using System.Diagnostics;
     using static Constants;
 
-    [DebuggerDisplay("[{MinValue}, {MaxValue}]")]
     public class ListFactoryConfiguration<TValue>
         : ValueFactoryConfiguration, IListFactoryConfiguration<TValue>
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
@@ -37,7 +36,9 @@ namespace Df.Extensibility
 
         protected override T GetValue<T>(string key)
         {
-            var value = ((IDictionary<string, object>)this)[key];
+            var value = this[key];
+
+            // @TODO: Reconsider json here.
             return typeof(T) == typeof(WeightedValueCollection<TValue>) && value.GetType() == typeof(JArray)
                 ? (T)(dynamic)(WeightedValueCollection<TValue>)(JArray)value
                 : base.GetValue<T>(key);
