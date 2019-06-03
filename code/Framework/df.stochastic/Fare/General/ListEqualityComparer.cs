@@ -13,11 +13,7 @@
         public int GetHashCode(List<T> list)
         {
             var hashCode = default(HashCode);
-            foreach (var item in list)
-            {
-                hashCode.Add(item);
-            }
-
+            hashCode.AddRange(list);
             return hashCode.ToHashCode();
         }
     }

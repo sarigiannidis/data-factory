@@ -49,16 +49,8 @@ namespace Df.Stochastic.Fare
             {
                 var hashCode = default(HashCode);
                 hashCode.Add(IsFinal);
-                foreach (var transitionLabel in TransitionLabels)
-                {
-                    hashCode.Add(transitionLabel);
-                }
-
-                foreach (var state in _States)
-                {
-                    hashCode.Add(state);
-                }
-
+                hashCode.AddRange(TransitionLabels);
+                hashCode.AddRange(_States);
                 return hashCode.ToHashCode();
             }
 

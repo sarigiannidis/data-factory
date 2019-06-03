@@ -122,16 +122,12 @@ namespace Df.Numeric
         public override int GetHashCode()
         {
             var hashCode = default(HashCode);
-            foreach (var value in _WeightedValues)
-            {
-                hashCode.Add(value);
-            }
-
+            hashCode.AddRange(_WeightedValues);
             return hashCode.ToHashCode();
         }
 
         public int IndexOf(WeightedValue<TValue> item) =>
-                    _WeightedValues.IndexOf(item);
+            _WeightedValues.IndexOf(item);
 
         public void Insert(int index, WeightedValue<TValue> item) =>
             _WeightedValues.Insert(index, item);
