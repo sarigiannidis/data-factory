@@ -13,6 +13,7 @@ namespace Df.Handlers
     using Df.Io.Descriptive;
     using Df.Io.Prescriptive;
     using Df.Options;
+    using Microsoft.Extensions.Options;
     using System;
     using System.Diagnostics;
     using System.Linq;
@@ -26,10 +27,14 @@ namespace Df.Handlers
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IValueFactoryManager _ValueFactoryManager;
 
-        public AddHandler(IProjectManager projectManager, IValueFactoryManager valueFactoryManager)
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private readonly Preferences _Preferences;
+
+        public AddHandler(IProjectManager projectManager, IValueFactoryManager valueFactoryManager, IOptions<Preferences> options)
         {
             _ProjectManager = Check.NotNull(nameof(projectManager), projectManager);
             _ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
+            _Preferences = Check.NotNull(nameof(options), options);
         }
 
         public void AddFactory(AddOptions options)
@@ -144,6 +149,8 @@ namespace Df.Handlers
                 .FilterByType(userType)
                 .ToArray();
             Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
+
+            var preferences = _Preferences; //@TODO: Use the preferences to determine the factory to use.
 
             if (isIdentity)
             {
