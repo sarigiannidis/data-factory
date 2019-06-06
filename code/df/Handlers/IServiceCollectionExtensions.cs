@@ -13,8 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
     internal static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddDfOptionHandlers(this IServiceCollection services) =>
-            Check.NotNull(nameof(services), services)
+        public static IServiceCollection AddDfOptionHandlers(this IServiceCollection services) => Check.NotNull(nameof(services), services)
             .AddTransient<IHandler<AddOptions>, AddHandler>()
             .AddTransient<IHandler<GenerateOptions>, GenerateHandler>()
             .AddTransient<IHandler<ListOptions>, ListHandler>()

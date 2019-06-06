@@ -9,8 +9,7 @@ namespace Df.Stochastic
 {
     public static class RandomBooleanExtensions
     {
-        public static bool NextBoolean(this IRandom random) =>
-            NextBoolean(random, 1f, 1f);
+        public static bool NextBoolean(this IRandom random) => NextBoolean(random, 1f, 1f);
 
         public static bool NextBoolean(this IRandom random, float trueWeight, float falseWeight)
         {
@@ -20,8 +19,7 @@ namespace Df.Stochastic
             return random.NextDouble() > CalculateThreshold(trueWeight, falseWeight);
         }
 
-        private static float CalculateThreshold(float trueWeight, float falseWeight) =>
-            falseWeight == trueWeight
+        private static float CalculateThreshold(float trueWeight, float falseWeight) => falseWeight == trueWeight
                 ? 0.5f
                 : falseWeight / (falseWeight + trueWeight);
     }

@@ -74,8 +74,7 @@ namespace Xunit
             }
         }
 
-        internal static TemporaryFileContext GetContext(MemberInfo memberInfo) =>
-            _CreatedTempFilePaths.TryGetValue(memberInfo, out var value)
+        internal static TemporaryFileContext GetContext(MemberInfo memberInfo) => _CreatedTempFilePaths.TryGetValue(memberInfo, out var value)
                 ? value
                 : null;
 
@@ -119,8 +118,7 @@ namespace Xunit
             }
         }
 
-        private string GenerateFilePath(string extension) =>
-            (from str in _Random.NextStrings(FILENAMEREGEX)
+        private string GenerateFilePath(string extension) => (from str in _Random.NextStrings(FILENAMEREGEX)
              let path = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), $"{_Prefix}-{str}"), extension)
              where !File.Exists(path)
              select path).First();

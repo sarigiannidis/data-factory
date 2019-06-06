@@ -20,8 +20,7 @@ namespace Df.Io.Prescriptive
 
         public override bool CanWrite => true;
 
-        public override bool CanConvert(Type objectType) =>
-            typeof(TablePrescription).Equals(objectType);
+        public override bool CanConvert(Type objectType) => typeof(TablePrescription).Equals(objectType);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

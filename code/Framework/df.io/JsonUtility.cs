@@ -50,8 +50,7 @@ namespace Df.Io
             serializer.Serialize(file, t);
         }
 
-        private JsonSerializerSettings CreateDefaultJsonSerializerSettings() =>
-            new JsonSerializerSettings
+        private JsonSerializerSettings CreateDefaultJsonSerializerSettings() => new JsonSerializerSettings
             {
                 DateParseHandling = DateParseHandling.DateTimeOffset,
                 Formatting = Formatting.Indented,
@@ -64,11 +63,9 @@ namespace Df.Io
                 ReferenceResolverProvider = () => new DfReferenceResolver(),
             };
 
-        private JsonSerializer CreateJsonSerializer() =>
-            JsonSerializer.CreateDefault(CreateDefaultJsonSerializerSettings());
+        private JsonSerializer CreateJsonSerializer() => JsonSerializer.CreateDefault(CreateDefaultJsonSerializerSettings());
 
-        private List<JsonConverter> GetDefaultConverters() =>
-            new List<JsonConverter>
+        private List<JsonConverter> GetDefaultConverters() => new List<JsonConverter>
             {
                 new StringEnumConverter(),
                 new ValueFactoryPrescriptionConverter(ValueFactoryManager),

@@ -41,8 +41,7 @@ namespace Df.OptionHandlers
             }
         }
 
-        private static string ToConsoleTable(IReadOnlyCollection<IValueFactoryInfo> valueFactoryInfos) =>
-                    ConsoleUtility.ToConsoleTable(
+        private static string ToConsoleTable(IReadOnlyCollection<IValueFactoryInfo> valueFactoryInfos) => ConsoleUtility.ToConsoleTable(
                         valueFactoryInfos,
                         (_ => _.Name, "Name", 24),
                         (_ => _.Description, "Description", 64),

@@ -420,8 +420,7 @@ namespace Df.Stochastic.Fare
             return Next();
         }
 
-        private RegExp ParseComplExp() =>
-            Check(RegExpSyntaxOptions.Complement) && Match('~')
+        private RegExp ParseComplExp() => Check(RegExpSyntaxOptions.Complement) && Match('~')
                 ? MakeComplement(ParseComplExp())
                 : ParseCharClassExp();
 

@@ -7,8 +7,7 @@
     internal sealed class ListEqualityComparer<T>
         : IEqualityComparer<List<T>>
     {
-        public bool Equals(List<T> first, List<T> second) =>
-            first.Count == second.Count && first.SequenceEqual(second);
+        public bool Equals(List<T> first, List<T> second) => first.Count == second.Count && first.SequenceEqual(second);
 
         public int GetHashCode(List<T> list)
         {

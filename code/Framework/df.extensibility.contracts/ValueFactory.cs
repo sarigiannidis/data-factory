@@ -44,8 +44,7 @@ namespace Df.Extensibility
 
         public abstract TValue CreateValue();
 
-        object IValueFactory.CreateValue() =>
-            CreateValue();
+        object IValueFactory.CreateValue() => CreateValue();
 
         private void OnConfigurationChanged() => ConfigurationChanged?.Invoke(this, EventArgs.Empty);
     }

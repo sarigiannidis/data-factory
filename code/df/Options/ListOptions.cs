@@ -15,8 +15,7 @@ namespace Df.Options
     public sealed class ListOptions
     {
         [Usage]
-        public static IEnumerable<Example> Examples =>
-           new List<Example>
+        public static IEnumerable<Example> Examples => new List<Example>
            {
                 new Example("List the databases on a server.", new ListOptions { Subject = ListSubject.Databases, ConnectionString = "demo_server" }),
                 new Example("List the registered value factories.", new ListOptions { Subject = ListSubject.Factories }),

@@ -11,8 +11,7 @@ namespace Df.Extensibility
 
     public class ConfiguratorConstraints
     {
-        public static ConfiguratorConstraints Empty =>
-            null;
+        public static ConfiguratorConstraints Empty => null;
 
         public object IncrementValue { get; set; }
 

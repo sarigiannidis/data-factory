@@ -22,11 +22,9 @@ namespace Df.Stochastic
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool _Disposed;
 
-        public void Dispose() =>
-            Dispose(true);
+        public void Dispose() => Dispose(true);
 
-        public void NextBytes(byte[] bytes) =>
-            _CryptoServiceProvider.GetBytes(bytes);
+        public void NextBytes(byte[] bytes) => _CryptoServiceProvider.GetBytes(bytes);
 
         private void Dispose(bool disposing)
         {

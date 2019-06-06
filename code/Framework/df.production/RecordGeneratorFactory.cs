@@ -26,8 +26,7 @@ namespace Df.Production
             _ValueFactoryManager.Initialize();
         }
 
-        public IDataReader Create(TablePrescription tablePrescription, int rows) =>
-            new RecordGenerator(rows, GetFactories(tablePrescription));
+        public IDataReader Create(TablePrescription tablePrescription, int rows) => new RecordGenerator(rows, GetFactories(tablePrescription));
 
         private IEnumerable<(IValueFactory factory, Type type, float nullPercentage)> GetFactories(TablePrescription tablePrescription)
         {

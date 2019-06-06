@@ -28,8 +28,7 @@ namespace Df.Stochastic.Tests
             Fixture = fixture;
         }
 
-        public static IEnumerable<object[]> GetRanges() =>
-            new object[][]
+        public static IEnumerable<object[]> GetRanges() => new object[][]
             {
                 new object[] { 0, 1 },
                 new object[] { -1, 1 },

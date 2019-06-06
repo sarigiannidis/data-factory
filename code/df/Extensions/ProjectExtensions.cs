@@ -21,8 +21,7 @@ namespace Df.Io
             return new ValueFactoryPrescription(name, valueFactoryInfo.Name, configurator(valueFactoryInfo));
         }
 
-        private static string GenerateUniqueName(IEnumerable<string> items, string name) =>
-            Sequence(name)
+        private static string GenerateUniqueName(IEnumerable<string> items, string name) => Sequence(name)
             .Except(items)
             .First();
 

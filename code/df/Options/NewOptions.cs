@@ -15,8 +15,7 @@ namespace Df.Options
     public sealed class NewOptions
     {
         [Usage]
-        public static IEnumerable<Example> Examples =>
-          new List<Example>
+        public static IEnumerable<Example> Examples => new List<Example>
           {
                 new Example("Create a new project.", new NewOptions { ConnectionString = "TESTDB" }),
           };

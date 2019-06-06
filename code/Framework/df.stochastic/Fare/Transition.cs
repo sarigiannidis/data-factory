@@ -66,26 +66,21 @@ namespace Df.Stochastic.Fare
             To = to;
         }
 
-        public static bool operator !=(Transition left, Transition right) =>
-            !Equals(left, right);
+        public static bool operator !=(Transition left, Transition right) => !Equals(left, right);
 
-        public static bool operator ==(Transition left, Transition right) =>
-            Equals(left, right);
+        public static bool operator ==(Transition left, Transition right) => Equals(left, right);
 
-        public override bool Equals(object obj) =>
-            !(obj is null)
+        public override bool Equals(object obj) => !(obj is null)
             && (ReferenceEquals(this, obj)
                 || (obj.GetType() == typeof(Transition) && Equals((Transition)obj)));
 
-        public bool Equals(Transition other) =>
-            !(other is null)
+        public bool Equals(Transition other) => !(other is null)
                 && (ReferenceEquals(this, other)
                 || (other.Min == Min
                    && other.Max == Max
                    && Equals(other.To, To)));
 
-        public override int GetHashCode() =>
-            HashCode.Combine(Min, Max, To);
+        public override int GetHashCode() => HashCode.Combine(Min, Max, To);
 
         public override string ToString()
         {

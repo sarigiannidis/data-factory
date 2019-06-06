@@ -163,8 +163,7 @@ namespace Df.Production
             var database = server.Databases[DEFAULT_DATABASENAME];
             foreach (var tableDescription in tableDescriptions)
             {
-                bool Match(Table table) =>
-                    table.Schema == tableDescription.Schema
+                bool Match(Table table) => table.Schema == tableDescription.Schema
                     && table.Name == tableDescription.Name;
 
                 var table = database
@@ -210,11 +209,9 @@ namespace Df.Production
             }
         }
 
-        private static void WriteStartTransaction(Stream stream) =>
-            stream.WriteLine("BEGIN TRANSACTION DATAFACTORY WITH MARK N'DATAFACTORY';");
+        private static void WriteStartTransaction(Stream stream) => stream.WriteLine("BEGIN TRANSACTION DATAFACTORY WITH MARK N'DATAFACTORY';");
 
-        private IEnumerable<TableDescription> GetOrderedTableDescriptions() =>
-            new Orderer<TableDescription>(_ => _.ForeignKeyDescriptions.Select(foreignKeyDescription => foreignKeyDescription.Referenced))
+        private IEnumerable<TableDescription> GetOrderedTableDescriptions() => new Orderer<TableDescription>(_ => _.ForeignKeyDescriptions.Select(foreignKeyDescription => foreignKeyDescription.Referenced))
                 .Order(_Project.Prescriptor.TablePrescriptions.Select(_ => _.TableDescription))
                 .Select(_ => _.Node);
     }

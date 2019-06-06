@@ -22,11 +22,9 @@ namespace Xunit
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly StringBuilder _StringBuilder = new StringBuilder();
 
-        public override Encoding Encoding =>
-            Encoding.Unicode;
+        public override Encoding Encoding => Encoding.Unicode;
 
-        public ConsoleWriter(ITestOutputHelper output) =>
-            _Output = Check.NotNull(nameof(output), output);
+        public ConsoleWriter(ITestOutputHelper output) => _Output = Check.NotNull(nameof(output), output);
 
         public override void Flush()
         {
@@ -34,8 +32,7 @@ namespace Xunit
             _ = _StringBuilder.Clear();
         }
 
-        public override void Write(char value) =>
-                    _StringBuilder.Append(value);
+        public override void Write(char value) => _StringBuilder.Append(value);
 
         protected override void Dispose(bool disposing)
         {

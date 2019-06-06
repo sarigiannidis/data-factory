@@ -61,16 +61,13 @@ namespace Df.Stochastic.Fare
 
         public static bool operator ==(StatePair left, StatePair right) => Equals(left, right);
 
-        public bool Equals(StatePair other) =>
-            !(other is null)
+        public bool Equals(StatePair other) => !(other is null)
                 && (ReferenceEquals(this, other)
                 || (Equals(other.FirstState, FirstState)
                 && Equals(other.SecondState, SecondState)));
 
-        public override bool Equals(object obj) =>
-            !(obj is null) && (ReferenceEquals(this, obj) || (obj.GetType() == typeof(StatePair) && Equals((StatePair)obj)));
+        public override bool Equals(object obj) => !(obj is null) && (ReferenceEquals(this, obj) || (obj.GetType() == typeof(StatePair) && Equals((StatePair)obj)));
 
-        public override int GetHashCode() =>
-            HashCode.Combine(FirstState, SecondState);
+        public override int GetHashCode() => HashCode.Combine(FirstState, SecondState);
     }
 }

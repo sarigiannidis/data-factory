@@ -19,8 +19,7 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IDictionary<string, object> _Properties;
 
-        public static IValueFactoryConfiguration Empty =>
-                new EmptyConfiguration();
+        public static IValueFactoryConfiguration Empty => new EmptyConfiguration();
 
         public int Count => _Properties.Count;
 
@@ -32,8 +31,7 @@ namespace Df.Extensibility
 
         public ICollection<object> Values => _Properties.Values;
 
-        protected ValueFactoryConfiguration(IDictionary<string, object> properties) =>
-            _Properties = new Dictionary<string, object>(properties);
+        protected ValueFactoryConfiguration(IDictionary<string, object> properties) => _Properties = new Dictionary<string, object>(properties);
 
         protected ValueFactoryConfiguration()
             : this(new Dictionary<string, object>())
@@ -52,8 +50,7 @@ namespace Df.Extensibility
 
         public void CopyTo(KeyValuePair<string, object>[] array, int arrayIndex) => _Properties.CopyTo(array, arrayIndex);
 
-        public override bool Equals(object obj) =>
-            obj is IValueFactoryConfiguration o && Equals(o);
+        public override bool Equals(object obj) => obj is IValueFactoryConfiguration o && Equals(o);
 
         public bool Equals(IValueFactoryConfiguration other)
         {
@@ -83,14 +80,11 @@ namespace Df.Extensibility
             return true;
         }
 
-        IEnumerator<KeyValuePair<string, object>> IEnumerable<KeyValuePair<string, object>>.GetEnumerator() =>
-            _Properties.GetEnumerator();
+        IEnumerator<KeyValuePair<string, object>> IEnumerable<KeyValuePair<string, object>>.GetEnumerator() => _Properties.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            _Properties.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => _Properties.GetEnumerator();
 
-        public override int GetHashCode() =>
-            HashCode.Combine(_Properties);
+        public override int GetHashCode() => HashCode.Combine(_Properties);
 
         public bool Remove(string key) => _Properties.Remove(key);
 
@@ -99,8 +93,7 @@ namespace Df.Extensibility
         public bool TryGetValue(string key, out object value) => _Properties.TryGetValue(key, out value);
 
         // Serialization may return a type other than the original.
-        protected virtual T GetValue<T>(string key) =>
-            _Properties[key] switch
+        protected virtual T GetValue<T>(string key) => _Properties[key] switch
             {
                 T t => t,
                 DateTimeOffset d when typeof(T) == typeof(DateTime) => (T)(object)d.DateTime,
@@ -108,7 +101,6 @@ namespace Df.Extensibility
                 _ => (T)Convert.ChangeType(_Properties[key], typeof(T), CultureInfo.InvariantCulture)
             };
 
-        protected void SetValue(string key, object value) =>
-            _Properties[key] = value;
+        protected void SetValue(string key, object value) => _Properties[key] = value;
     }
 }

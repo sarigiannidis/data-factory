@@ -15,8 +15,7 @@ namespace Df.Options
     public sealed class TestOptions
     {
         [Usage]
-        public static IEnumerable<Example> Examples =>
-            new List<Example>
+        public static IEnumerable<Example> Examples => new List<Example>
             {
                 new Example("Test the conection", new TestOptions { ConnectionString = "demo_server" }),
             };

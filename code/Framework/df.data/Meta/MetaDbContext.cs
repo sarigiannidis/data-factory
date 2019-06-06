@@ -37,43 +37,37 @@ namespace Df.Data.Meta
         /// </summary>
         /// <param name="id">The id of an object.</param>
         /// <returns>The definition of the object with the given id.</returns>
-        public static string ObjectDefinition(int id) =>
-            ThrowLinqOnly();
+        public static string ObjectDefinition(int id) => ThrowLinqOnly();
 
         /// <summary>
         /// Stand-in for OBJECT_ID.
         /// </summary>
         /// <param name="name">The name of an object.</param>
         /// <returns>The id of the named object.</returns>
-        public static int ObjectId(string name) =>
-            ThrowLinqOnly();
+        public static int ObjectId(string name) => ThrowLinqOnly();
 
         /// <summary>
         /// Stand-in for OBJECT_NAME.
         /// </summary>
         /// <param name="id">The id of an object.</param>
         /// <returns>The name of the object with the given id.</returns>
-        public static string ObjectName(int id) =>
-            ThrowLinqOnly();
+        public static string ObjectName(int id) => ThrowLinqOnly();
 
         /// <summary>
         /// Stand-in for SCHEMA_NAME.
         /// </summary>
         /// <param name="id">The id of a schema.</param>
         /// <returns>The schema with the given id.</returns>
-        public static string SchemaName(int id) =>
-            ThrowLinqOnly();
+        public static string SchemaName(int id) => ThrowLinqOnly();
 
         /// <summary>
         /// Stand-in for TYPE_NAME.
         /// </summary>
         /// <param name="id">The id of a database type.</param>
         /// <returns>The name of the database type with the given id.</returns>
-        public static string TypeName(int id) =>
-            ThrowLinqOnly();
+        public static string TypeName(int id) => ThrowLinqOnly();
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            _ = optionsBuilder.ConfigureWarnings(ConfigureWarnings);
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => _ = optionsBuilder.ConfigureWarnings(ConfigureWarnings);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -90,11 +84,9 @@ namespace Df.Data.Meta
             _ = modelBuilder.HasDbFunction(() => TypeName(default)).HasName("TYPE_NAME").HasSchema(string.Empty);
         }
 
-        private static dynamic ThrowLinqOnly() =>
-            throw new DbFunctionException("Please use this function only in LINQ statements.");
+        private static dynamic ThrowLinqOnly() => throw new DbFunctionException("Please use this function only in LINQ statements.");
 
-        private void ConfigureWarnings(WarningsConfigurationBuilder warningsConfigurationBuilder) =>
-            _ = warningsConfigurationBuilder.Ignore(RelationalEventId.QueryClientEvaluationWarning);
+        private void ConfigureWarnings(WarningsConfigurationBuilder warningsConfigurationBuilder) => _ = warningsConfigurationBuilder.Ignore(RelationalEventId.QueryClientEvaluationWarning);
     }
 }
 

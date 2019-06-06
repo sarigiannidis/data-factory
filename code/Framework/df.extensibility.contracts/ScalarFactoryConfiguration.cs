@@ -18,8 +18,7 @@ namespace Df.Extensibility
     where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public TValue Increment =>
-            GetValue<TValue>(PROPERTY_INCREMENT);
+        public TValue Increment => GetValue<TValue>(PROPERTY_INCREMENT);
 
         public ScalarFactoryConfiguration(TValue min, TValue max, TValue increment)
             : base(min, max)

@@ -21,8 +21,7 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly Func<IValueFactory> _ValueFactoryFactory;
 
-        public IConfigurator Configurator =>
-            _ConfiguratorFactory();
+        public IConfigurator Configurator => _ConfiguratorFactory();
 
         public string Description { get; }
 
@@ -30,8 +29,7 @@ namespace Df.Extensibility
 
         public string Path { get; }
 
-        public IValueFactory ValueFactory =>
-            _ValueFactoryFactory();
+        public IValueFactory ValueFactory => _ValueFactoryFactory();
 
         public Type ValueType { get; }
 

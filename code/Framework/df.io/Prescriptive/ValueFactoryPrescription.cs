@@ -31,16 +31,13 @@ namespace Df.Io.Prescriptive
             Configuration = Check.NotNull(nameof(configuration), configuration);
         }
 
-        public override bool Equals(object obj) =>
-            obj is ValueFactoryPrescription o && Equals(o);
+        public override bool Equals(object obj) => obj is ValueFactoryPrescription o && Equals(o);
 
-        public bool Equals(ValueFactoryPrescription other) =>
-            !(other is null)
+        public bool Equals(ValueFactoryPrescription other) => !(other is null)
                 && (ReferenceEquals(this, other)
                     || (Factory.Equals(other.Factory, StringComparison.InvariantCultureIgnoreCase)
                     && Configuration.Equals(other.Configuration)));
 
-        public override int GetHashCode() =>
-            HashCode.Combine(Factory, Configuration);
+        public override int GetHashCode() => HashCode.Combine(Factory, Configuration);
     }
 }

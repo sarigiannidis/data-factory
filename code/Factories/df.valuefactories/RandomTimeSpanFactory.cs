@@ -12,7 +12,6 @@ namespace Df.ValueFactories
 
     public sealed partial class RandomTimeSpanFactory
     {
-        public override TimeSpan CreateValue() =>
-            Configuration.MinValue + TimeSpan.FromTicks((long)(Random.NextPercentage() * (Configuration.MaxValue - Configuration.MinValue).Ticks));
+        public override TimeSpan CreateValue() => Configuration.MinValue + TimeSpan.FromTicks((long)(Random.NextPercentage() * (Configuration.MaxValue - Configuration.MinValue).Ticks));
     }
 }

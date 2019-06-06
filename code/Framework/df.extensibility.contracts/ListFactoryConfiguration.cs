@@ -19,11 +19,9 @@ namespace Df.Extensibility
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public WeightedValueCollection<TValue> WeightedValues =>
-            GetValue<WeightedValueCollection<TValue>>(PROPERTY_VALUES);
+        public WeightedValueCollection<TValue> WeightedValues => GetValue<WeightedValueCollection<TValue>>(PROPERTY_VALUES);
 
-        public ListFactoryConfiguration(WeightedValueCollection<TValue> weightedValues) =>
-            SetValue(PROPERTY_VALUES, Check.NotNull(nameof(weightedValues), weightedValues));
+        public ListFactoryConfiguration(WeightedValueCollection<TValue> weightedValues) => SetValue(PROPERTY_VALUES, Check.NotNull(nameof(weightedValues), weightedValues));
 
         public ListFactoryConfiguration(IDictionary<string, object> properties)
             : base(properties)

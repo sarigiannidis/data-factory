@@ -21,11 +21,9 @@ namespace Df.Io.Prescriptive
 
         private IValueFactoryManager ValueFactoryManager { get; }
 
-        public ValueFactoryPrescriptionConverter(IValueFactoryManager valueFactoryManager) =>
-            ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
+        public ValueFactoryPrescriptionConverter(IValueFactoryManager valueFactoryManager) => ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
 
-        public override bool CanConvert(Type objectType) =>
-            typeof(ValueFactoryPrescription).Equals(objectType);
+        public override bool CanConvert(Type objectType) => typeof(ValueFactoryPrescription).Equals(objectType);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

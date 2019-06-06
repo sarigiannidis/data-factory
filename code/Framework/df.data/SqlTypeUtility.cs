@@ -32,8 +32,7 @@ namespace Df.Data
             return dataType;
         }
 
-        public static Type GetDataType(string dataTypeName) =>
-            GetDataType(dataTypeName, 2);
+        public static Type GetDataType(string dataTypeName) => GetDataType(dataTypeName, 2);
 
         public static Type GetDataType(string dataTypeName, short columnSize)
         {
@@ -62,8 +61,7 @@ namespace Df.Data
             return sb.ToString();
         }
 
-        private static Type GetBaseType(string dataTypeName) =>
-            Types.TryGetValue(dataTypeName, out var value) ? value : typeof(object);
+        private static Type GetBaseType(string dataTypeName) => Types.TryGetValue(dataTypeName, out var value) ? value : typeof(object);
 
         private static string GetSqlType(string userType, short maxLength, short precision, short scale)
         {
@@ -122,8 +120,7 @@ namespace Df.Data
             return sb.ToString();
         }
 
-        private static Dictionary<string, Type> InitializeTypes() =>
-            new Dictionary<string, Type>
+        private static Dictionary<string, Type> InitializeTypes() => new Dictionary<string, Type>
             {
                 { SQL_TYPE_DATE, typeof(DateTime) },
                 { SQL_TYPE_DATETIME, typeof(DateTime) },

@@ -381,13 +381,11 @@ namespace Df.Stochastic.Fare
             return c;
         }
 
-        public static bool IsEmpty(Automaton a) =>
-            !a.IsSingleton
+        public static bool IsEmpty(Automaton a) => !a.IsSingleton
                 && !a.Initial.Accept
                 && a.Initial.Transitions.Count == 0;
 
-        public static bool IsEmptyString(Automaton a) =>
-            a.IsSingleton
+        public static bool IsEmptyString(Automaton a) => a.IsSingleton
                 ? a.Singleton.Length == 0
                 : a.Initial.Accept && a.Initial.Transitions.Count == 0;
 

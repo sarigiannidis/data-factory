@@ -24,14 +24,11 @@ namespace Df.Stochastic
         [ThreadStatic]
         private static int[] _SeedArray;
 
-        public static double NextDouble(this IRandom random) =>
-            random.NextPercentage();
+        public static double NextDouble(this IRandom random) => random.NextPercentage();
 
-        public static double NextPercentage(this IRandom random) =>
-            InternalSample(random) * 4.6566128752457969E-10;
+        public static double NextPercentage(this IRandom random) => InternalSample(random) * 4.6566128752457969E-10;
 
-        public static float NextSingle(this IRandom random) =>
-            (float)random.NextPercentage();
+        public static float NextSingle(this IRandom random) => (float)random.NextPercentage();
 
         private static void Initialize(IRandom random)
         {

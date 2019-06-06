@@ -17,8 +17,7 @@ namespace Df.ValueFactories.Spatial
         : RandomFactory<SqlGeography, RandomSqlGeographyConfiguration>,
         IConfigurator
     {
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            new RandomSqlGeographyConfiguration(SQLGEOGRAPHY_MINLATITUDE, SQLGEOGRAPHY_MAXLATITUDE, SQLGEOGRAPHY_MINLONGITUDE, SQLGEOGRAPHY_MAXLONGITUDE, SQLGEOGRAPHY_SRID);
+        public IValueFactoryConfiguration CreateConfiguration() => new RandomSqlGeographyConfiguration(SQLGEOGRAPHY_MINLATITUDE, SQLGEOGRAPHY_MAXLATITUDE, SQLGEOGRAPHY_MINLONGITUDE, SQLGEOGRAPHY_MAXLONGITUDE, SQLGEOGRAPHY_SRID);
 
         public override SqlGeography CreateValue()
         {

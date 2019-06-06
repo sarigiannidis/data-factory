@@ -12,8 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddDfProduction(this IServiceCollection services) =>
-            Check.NotNull(nameof(services), services)
+        public static IServiceCollection AddDfProduction(this IServiceCollection services) => Check.NotNull(nameof(services), services)
             .AddTransient<IDatasetGeneratorFactory, DatasetGeneratorFactory>()
             .AddTransient<IRecordGeneratorFactory, RecordGeneratorFactory>();
     }

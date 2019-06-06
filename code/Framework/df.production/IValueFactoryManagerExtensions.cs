@@ -11,7 +11,6 @@ namespace Df.Extensibility
 
     public static class IValueFactoryManagerExtensions
     {
-        public static IValueFactoryInfo Resolve(this IValueFactoryManager valueFactoryManager, string valueFactoryReference) =>
-            Check.NotNull(nameof(valueFactoryManager), valueFactoryManager).ValueFactoryInfos.FirstOrDefault(_ => _.Name == valueFactoryReference);
+        public static IValueFactoryInfo Resolve(this IValueFactoryManager valueFactoryManager, string valueFactoryReference) => Check.NotNull(nameof(valueFactoryManager), valueFactoryManager).ValueFactoryInfos.FirstOrDefault(_ => _.Name == valueFactoryReference);
     }
 }

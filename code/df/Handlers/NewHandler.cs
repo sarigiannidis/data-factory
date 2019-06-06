@@ -35,8 +35,7 @@ namespace Df.OptionHandlers
             _ProjectManager.SaveToFile(project, EnsureExtension(options.Name));
         }
 
-        private static string EnsureExtension(string path) =>
-            string.Equals(EXTENSION, Path.GetExtension(path), StringComparison.InvariantCultureIgnoreCase)
+        private static string EnsureExtension(string path) => string.Equals(EXTENSION, Path.GetExtension(path), StringComparison.InvariantCultureIgnoreCase)
                 ? path
                 : Path.ChangeExtension(path, EXTENSION);
     }

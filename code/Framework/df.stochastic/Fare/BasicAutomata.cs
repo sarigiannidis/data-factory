@@ -73,11 +73,15 @@ namespace Df.Stochastic.Fare
                 return MakeChar(min);
             }
 
-            var a = new Automaton();
+            var s2 = new State
+            {
+                Accept = true,
+            };
             var s1 = new State();
-            var s2 = new State();
-            a.Initial = s1;
-            s2.Accept = true;
+            var a = new Automaton
+            {
+                Initial = s1,
+            };
             if (min <= max)
             {
                 s1.Transitions.Add(new Transition(min, max, s2));
@@ -94,12 +98,15 @@ namespace Df.Stochastic.Fare
                 return MakeChar(set[0]);
             }
 
-            var a = new Automaton();
             var s1 = new State();
-            var s2 = new State();
-
-            a.Initial = s1;
-            s2.Accept = true;
+            var a = new Automaton
+            {
+                Initial = s1,
+            };
+            var s2 = new State
+            {
+                Accept = true,
+            };
 
             foreach (var t in set)
             {

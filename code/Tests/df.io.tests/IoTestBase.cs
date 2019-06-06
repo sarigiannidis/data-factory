@@ -31,7 +31,6 @@ namespace Df.Io.Tests
             Fixture = fixture;
         }
 
-        protected Project CreateProject() =>
-            ProjectFactory.CreateNew(Fixture.ConnectionString);
+        protected Project CreateProject() => ProjectFactory.CreateNew(Fixture.ConnectionString);
     }
 }

@@ -14,10 +14,8 @@ namespace Df.Stochastic
     {
         private Random Random { get; }
 
-        public FrameworkRandom() =>
-            Random = new Random(); /* defaults to new Random(Environment.TickCount) */
+        public FrameworkRandom() => Random = new Random(); /* defaults to new Random(Environment.TickCount) */
 
-        public void NextBytes(byte[] bytes) =>
-            Random.NextBytes(bytes);
+        public void NextBytes(byte[] bytes) => Random.NextBytes(bytes);
     }
 }

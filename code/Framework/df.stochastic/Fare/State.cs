@@ -78,20 +78,17 @@ namespace Df.Stochastic.Fare
 
         public int CompareTo(State other) => other.Id - Id;
 
-        public override bool Equals(object obj) =>
-            !(obj is null)
+        public override bool Equals(object obj) => !(obj is null)
             && (ReferenceEquals(this, obj)
                 || (obj.GetType() == typeof(State) && Equals((State)obj)));
 
-        public bool Equals(State other) =>
-            !(other is null)
+        public bool Equals(State other) => !(other is null)
                 && (ReferenceEquals(this, other)
                 || (other.Id == Id
                 && other.Accept.Equals(Accept)
                 && other.Number == Number));
 
-        public override int GetHashCode() =>
-            HashCode.Combine(Id, Accept, Number);
+        public override int GetHashCode() => HashCode.Combine(Id, Accept, Number);
 
         public IList<Transition> GetSortedTransitions(bool toFirst)
         {

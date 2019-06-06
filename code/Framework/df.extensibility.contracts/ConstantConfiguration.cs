@@ -18,8 +18,7 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue Value => GetValue<TValue>(PROPERTY_CONSTANT);
 
-        public ConstantConfiguration(TValue value) =>
-            SetValue(PROPERTY_CONSTANT, value);
+        public ConstantConfiguration(TValue value) => SetValue(PROPERTY_CONSTANT, value);
 
         public ConstantConfiguration(IDictionary<string, object> properties)
             : base(properties)

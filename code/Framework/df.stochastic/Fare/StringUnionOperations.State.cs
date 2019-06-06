@@ -39,8 +39,7 @@ namespace Df.Stochastic.Fare
 
             public char[] TransitionLabels { get; private set; } = Array.Empty<char>();
 
-            public override bool Equals(object obj) =>
-                obj is State other
+            public override bool Equals(object obj) => obj is State other
                     && IsFinal == other.IsFinal
                     && ReferenceEquals(_States, other._States)
                     && Equals(TransitionLabels, other.TransitionLabels);
@@ -96,8 +95,7 @@ namespace Df.Stochastic.Fare
                 return copy;
             }
 
-            private static bool ReferenceEquals(object[] a1, object[] a2) =>
-                a1.Length == a2.Length && !a1.Where((t, i) => t != a2[i]).Any();
+            private static bool ReferenceEquals(object[] a1, object[] a2) => a1.Length == a2.Length && !a1.Where((t, i) => t != a2[i]).Any();
 
             private State GetState(char label)
             {

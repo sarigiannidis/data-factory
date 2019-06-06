@@ -17,24 +17,19 @@ namespace Df.ValueFactories.Spatial
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MaxLatitude =>
-            GetValue<double>(PROPERTY_MAXLATITUDE);
+        public double MaxLatitude => GetValue<double>(PROPERTY_MAXLATITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MaxLongitude =>
-            GetValue<double>(PROPERTY_MAXLONGITUDE);
+        public double MaxLongitude => GetValue<double>(PROPERTY_MAXLONGITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MinLatitude =>
-            GetValue<double>(PROPERTY_MINLATITUDE);
+        public double MinLatitude => GetValue<double>(PROPERTY_MINLATITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MinLongitude =>
-            GetValue<double>(PROPERTY_MINLONGITUDE);
+        public double MinLongitude => GetValue<double>(PROPERTY_MINLONGITUDE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public int Srid =>
-            GetValue<int>(PROPERTY_SRID);
+        public int Srid => GetValue<int>(PROPERTY_SRID);
 
         public RandomSqlGeographyConfiguration(double minLatitude, double maxLatitude, double minLongitude, double maxLongitude, int srid)
         {

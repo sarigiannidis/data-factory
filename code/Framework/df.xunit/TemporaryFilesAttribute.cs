@@ -20,8 +20,7 @@ namespace Xunit
 
         public string Prefix { get; set; }
 
-        public override void After(MethodInfo methodUnderTest) =>
-            TemporaryFileContext.GetContext(methodUnderTest)?.Dispose();
+        public override void After(MethodInfo methodUnderTest) => TemporaryFileContext.GetContext(methodUnderTest)?.Dispose();
 
         public override void Before(MethodInfo methodUnderTest)
         {

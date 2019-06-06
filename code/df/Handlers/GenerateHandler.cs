@@ -46,8 +46,7 @@ namespace Df.OptionHandlers
             }
         }
 
-        private void GenerateDatabase(Project project, bool disableTriggers, bool dryRun) =>
-            _DatasetGeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
+        private void GenerateDatabase(Project project, bool disableTriggers, bool dryRun) => _DatasetGeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
 
         private void GenerateFile(Project project, bool disableTriggers, bool dryRun, string path)
         {

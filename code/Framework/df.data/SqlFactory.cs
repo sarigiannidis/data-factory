@@ -15,7 +15,6 @@ namespace Df.Data
         public ISql CreateTemporaryDatabase(string databaseName)
             => new LocalDbServer(Check.NotNull(nameof(databaseName), databaseName));
 
-        public ISql Open(string connectionString) =>
-            new SqlDatabase(connectionString);
+        public ISql Open(string connectionString) => new SqlDatabase(connectionString);
     }
 }

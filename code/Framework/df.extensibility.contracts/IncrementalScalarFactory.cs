@@ -20,8 +20,7 @@ namespace Df.Extensibility
 
         public override bool IsRandom => false;
 
-        protected IncrementalScalarFactory() =>
-            ConfigurationChanged += Reset;
+        protected IncrementalScalarFactory() => ConfigurationChanged += Reset;
 
         public override TValue CreateValue()
         {
@@ -35,7 +34,6 @@ namespace Df.Extensibility
             return result;
         }
 
-        private void Reset(object sender, EventArgs e) =>
-            _Next = Configuration.MinValue;
+        private void Reset(object sender, EventArgs e) => _Next = Configuration.MinValue;
     }
 }

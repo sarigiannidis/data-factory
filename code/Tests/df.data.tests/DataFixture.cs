@@ -48,8 +48,7 @@ namespace Df.Data.Tests
             return new MetaDbContext(dbContextOptionsBuilder.Options);
         }
 
-        private IServiceCollection ConfigureServices() =>
-            new ServiceCollection()
+        private IServiceCollection ConfigureServices() => new ServiceCollection()
             .AddDfData();
     }
 }

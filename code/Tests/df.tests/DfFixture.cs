@@ -36,8 +36,7 @@ namespace Df.Tests
             ServiceProvider = ConfigureServices(configuration).BuildServiceProvider();
         }
 
-        private IServiceCollection ConfigureServices(IConfiguration configuration) =>
-            new ServiceCollection()
+        private IServiceCollection ConfigureServices(IConfiguration configuration) => new ServiceCollection()
             .AddLogging(_ => _.AddDebug().AddEventSourceLogger().SetMinimumLevel(LogLevel.Debug))
             .AddDfData()
             .AddDfExtensibility(configuration.GetSection(SECTION_EXTENSIBILITY))

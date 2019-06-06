@@ -81,11 +81,9 @@ namespace Df.Stochastic.Fare
 
         public bool IsSingleton => Singleton != null;
 
-        public int NumberOfStates =>
-            IsSingleton ? Singleton.Length + 1 : GetStates().Count;
+        public int NumberOfStates => IsSingleton ? Singleton.Length + 1 : GetStates().Count;
 
-        public int NumberOfTransitions =>
-            IsSingleton ? Singleton.Length : GetStates().Sum(_ => _.Transitions.Count);
+        public int NumberOfTransitions => IsSingleton ? Singleton.Length : GetStates().Sum(_ => _.Transitions.Count);
 
         public string Singleton { get; set; }
 
@@ -193,8 +191,7 @@ namespace Df.Stochastic.Fare
             return CloneExpanded();
         }
 
-        public Automaton CloneIfRequired() =>
-            _AllowMutation ? this : Clone();
+        public Automaton CloneIfRequired() => _AllowMutation ? this : Clone();
 
         public Automaton Complement() => BasicOperations.Complement(this);
 

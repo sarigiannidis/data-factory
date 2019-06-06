@@ -22,12 +22,10 @@ namespace Xunit
         : ITestCaseOrderer
     {
         public IEnumerable<TTestCase> OrderTestCases<TTestCase>(IEnumerable<TTestCase> testCases)
-        where TTestCase : ITestCase =>
-           testCases.OrderBy(KeySelector);
+        where TTestCase : ITestCase => testCases.OrderBy(KeySelector);
 
         private int KeySelector<TTestCase>(TTestCase testCase)
-            where TTestCase : ITestCase =>
-            testCase.Traits.TryGetValue(KEY_ORDER, out var orderValues)
+            where TTestCase : ITestCase => testCase.Traits.TryGetValue(KEY_ORDER, out var orderValues)
                 && orderValues.Count == 1
                 && int.TryParse(orderValues[0], out var value)
                     ? value

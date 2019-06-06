@@ -17,8 +17,7 @@ namespace Df.Extensibility
     {
         protected float SumOfWeights { get; private set; }
 
-        protected RandomListFactory() =>
-            ConfigurationChanged += (sender, e) => SumOfWeights = Configuration.WeightedValues.Sum(w => w.Weight);
+        protected RandomListFactory() => ConfigurationChanged += (sender, e) => SumOfWeights = Configuration.WeightedValues.Sum(w => w.Weight);
 
         public override TValue CreateValue()
         {

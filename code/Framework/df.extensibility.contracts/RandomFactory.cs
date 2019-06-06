@@ -22,12 +22,10 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private HardRandom _Random = new HardRandom();
 
-        public override bool IsRandom =>
-            true;
+        public override bool IsRandom => true;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        protected IRandom Random =>
-            _Random;
+        protected IRandom Random => _Random;
 
         public void Dispose()
         {

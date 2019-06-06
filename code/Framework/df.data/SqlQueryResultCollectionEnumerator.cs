@@ -23,11 +23,9 @@ namespace Df.Data
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly DbDataReader _Reader;
 
-        public TResult Current =>
-            _Convert(_Reader);
+        public TResult Current => _Convert(_Reader);
 
-        object IEnumerator.Current =>
-            Current;
+        object IEnumerator.Current => Current;
 
         public SqlQueryResultCollectionEnumerator(DbDataReader reader, Func<IDataRecord, TResult> convert)
         {
@@ -35,13 +33,10 @@ namespace Df.Data
             _Convert = Check.NotNull(nameof(convert), convert);
         }
 
-        public void Dispose() =>
-            _Reader.Close();
+        public void Dispose() => _Reader.Close();
 
-        public bool MoveNext() =>
-            _Reader.Read();
+        public bool MoveNext() => _Reader.Read();
 
-        public void Reset() =>
-            throw new NotSupportedException();
+        public void Reset() => throw new NotSupportedException();
     }
 }

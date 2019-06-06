@@ -39,14 +39,11 @@ namespace Df.Numeric
         {
         }
 
-        public static TValue FromWeightedValue(WeightedValue<TValue> weightedValue) =>
-            weightedValue.Value;
+        public static TValue FromWeightedValue(WeightedValue<TValue> weightedValue) => weightedValue.Value;
 
-        public static implicit operator TValue(WeightedValue<TValue> weightedValue) =>
-            FromWeightedValue(weightedValue);
+        public static implicit operator TValue(WeightedValue<TValue> weightedValue) => FromWeightedValue(weightedValue);
 
-        public static implicit operator WeightedValue<TValue>(TValue value) =>
-            ToWeightedValue(value);
+        public static implicit operator WeightedValue<TValue>(TValue value) => ToWeightedValue(value);
 
         public static implicit operator WeightedValue<TValue>(JToken jToken)
         {
@@ -77,26 +74,19 @@ namespace Df.Numeric
             return new WeightedValue<TValue>(value, weight);
         }
 
-        public static bool operator !=(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            !(left == right);
+        public static bool operator !=(WeightedValue<TValue> left, WeightedValue<TValue> right) => !(left == right);
 
-        public static bool operator <(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            left.CompareTo(right) < 0;
+        public static bool operator <(WeightedValue<TValue> left, WeightedValue<TValue> right) => left.CompareTo(right) < 0;
 
-        public static bool operator <=(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            left.CompareTo(right) <= 0;
+        public static bool operator <=(WeightedValue<TValue> left, WeightedValue<TValue> right) => left.CompareTo(right) <= 0;
 
-        public static bool operator ==(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            left.Equals(right);
+        public static bool operator ==(WeightedValue<TValue> left, WeightedValue<TValue> right) => left.Equals(right);
 
-        public static bool operator >(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            left.CompareTo(right) > 0;
+        public static bool operator >(WeightedValue<TValue> left, WeightedValue<TValue> right) => left.CompareTo(right) > 0;
 
-        public static bool operator >=(WeightedValue<TValue> left, WeightedValue<TValue> right) =>
-            left.CompareTo(right) >= 0;
+        public static bool operator >=(WeightedValue<TValue> left, WeightedValue<TValue> right) => left.CompareTo(right) >= 0;
 
-        public static WeightedValue<TValue> ToWeightedValue(TValue value) =>
-            new WeightedValue<TValue>(value);
+        public static WeightedValue<TValue> ToWeightedValue(TValue value) => new WeightedValue<TValue>(value);
 
         public int CompareTo(WeightedValue<TValue> other)
         {
@@ -111,16 +101,12 @@ namespace Df.Numeric
             weight = Weight;
         }
 
-        public override bool Equals(object obj) =>
-            obj is WeightedValue<TValue> o && Equals(o);
+        public override bool Equals(object obj) => obj is WeightedValue<TValue> o && Equals(o);
 
-        public bool Equals(WeightedValue<TValue> other) =>
-            EqualityComparer<TValue>.Default.Equals(Value, other.Value) && other.Weight == Weight;
+        public bool Equals(WeightedValue<TValue> other) => EqualityComparer<TValue>.Default.Equals(Value, other.Value) && other.Weight == Weight;
 
-        public override int GetHashCode() =>
-            HashCode.Combine(Value, Weight);
+        public override int GetHashCode() => HashCode.Combine(Value, Weight);
 
-        public override string ToString() =>
-            "Value = {0}, Weight = {1}".FormatInvariant(Value, Weight);
+        public override string ToString() => "Value = {0}, Weight = {1}".FormatInvariant(Value, Weight);
     }
 }

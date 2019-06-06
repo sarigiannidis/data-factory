@@ -14,8 +14,7 @@ namespace Df.Io.Descriptive
 
     public static class ColumnDescriptionExtensions
     {
-        public static ConfiguratorConstraints CreateConstraints(this ColumnDescription columnDescription) =>
-            new ConfiguratorConstraints
+        public static ConfiguratorConstraints CreateConstraints(this ColumnDescription columnDescription) => new ConfiguratorConstraints
             {
                 MaxLength = GetMaxCharLength(columnDescription),
                 Type = columnDescription.ResolveUserType(),
@@ -23,15 +22,13 @@ namespace Df.Io.Descriptive
                 SeedValue = columnDescription.Identity?.SeedValue,
             };
 
-        public static Type ResolveUserType(this ColumnDescription columnDescription) =>
-            Check.NotNull(nameof(columnDescription), columnDescription).UserType switch
+        public static Type ResolveUserType(this ColumnDescription columnDescription) => Check.NotNull(nameof(columnDescription), columnDescription).UserType switch
             {
                 "sql_variant" => typeof(int),
                 _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
             };
 
-        private static int GetMaxCharLength(ColumnDescription columnDescription) =>
-            columnDescription.UserType switch
+        private static int GetMaxCharLength(ColumnDescription columnDescription) => columnDescription.UserType switch
             {
                 SQL_TYPE_NCHAR => columnDescription.MaxLength / 2,
                 SQL_TYPE_NTEXT => columnDescription.MaxLength / 2,

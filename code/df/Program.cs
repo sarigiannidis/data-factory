@@ -38,8 +38,7 @@ namespace Df
             s.AutoHelp = true;
         }
 
-        private static IServiceCollection ConfigureServices(IConfigurationRoot configurationRoot) =>
-                    new ServiceCollection()
+        private static IServiceCollection ConfigureServices(IConfigurationRoot configurationRoot) => new ServiceCollection()
             .AddLogging(_ => _.AddDebug().AddEventSourceLogger().SetMinimumLevel(LogLevel.Debug))
             .AddDfData()
             .AddDfExtensibility(configurationRoot.GetSection(SECTION_EXTENSIBILITY))
@@ -47,14 +46,12 @@ namespace Df
             .AddDfProduction()
             .AddDfOptionHandlers();
 
-        private static IConfigurationRoot CreateConfiguration() =>
-            new ConfigurationBuilder()
+        private static IConfigurationRoot CreateConfiguration() => new ConfigurationBuilder()
                 .SetBasePath(PathUtility.CurrentDirectory)
                 .AddJsonFile(APP_SETTINGS_FILE, false, true)
                 .Build();
 
-        private static Action<TOptions> GetHandler<TOptions>() =>
-            ServiceProvider.GetService<IHandler<TOptions>>().Handle;
+        private static Action<TOptions> GetHandler<TOptions>() => ServiceProvider.GetService<IHandler<TOptions>>().Handle;
 
         private static void Main(string[] args)
         {

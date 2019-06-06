@@ -16,10 +16,8 @@ namespace Df.ValueFactories
         : RandomFactory<bool, RandomBoolConfiguration>,
         IConfigurator
     {
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            new RandomBoolConfiguration(BOOL_TRUEWEIGHT, BOOL_FALSEWEIGHT);
+        public IValueFactoryConfiguration CreateConfiguration() => new RandomBoolConfiguration(BOOL_TRUEWEIGHT, BOOL_FALSEWEIGHT);
 
-        public override bool CreateValue() =>
-            Random.NextBoolean(Configuration.TrueWeight, Configuration.FalseWeight);
+        public override bool CreateValue() => Random.NextBoolean(Configuration.TrueWeight, Configuration.FalseWeight);
     }
 }
