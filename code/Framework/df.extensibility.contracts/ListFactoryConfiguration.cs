@@ -14,7 +14,7 @@ namespace Df.Extensibility
     using System.Diagnostics;
     using static Constants;
 
-    public class ListFactoryConfiguration<TValue>
+    public sealed class ListFactoryConfiguration<TValue>
         : ValueFactoryConfiguration, IListFactoryConfiguration<TValue>
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {

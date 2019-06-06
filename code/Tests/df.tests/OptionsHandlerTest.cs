@@ -7,7 +7,7 @@
 
 namespace Df.Tests
 {
-    using Df.OptionHandlers;
+    using Df.Handlers;
     using Df.Options;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit.Abstractions;

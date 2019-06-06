@@ -9,7 +9,7 @@ namespace Df.Extensibility
 {
     using System;
 
-    public class ConfiguratorConstraints
+    public sealed class ConfiguratorConstraints
     {
         public static ConfiguratorConstraints Empty => null;
 

@@ -12,7 +12,7 @@ namespace Df.Extensibility
     using static Constants;
 
     [DebuggerDisplay("[{Value}]")]
-    public class ConstantConfiguration<TValue>
+    public sealed class ConstantConfiguration<TValue>
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

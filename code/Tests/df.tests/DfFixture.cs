@@ -20,6 +20,8 @@ namespace Df.Tests
 
         private const string SECTION_EXTENSIBILITY = "ValueFactoryManagerOptions";
 
+        private const string SECTION_PREFERENCES = "Preferences";
+
         public string ConnectionString { get; }
 
         public IServiceProvider ServiceProvider { get; }
@@ -42,6 +44,6 @@ namespace Df.Tests
             .AddDfExtensibility(configuration.GetSection(SECTION_EXTENSIBILITY))
             .AddDfIo()
             .AddDfProduction()
-            .AddDfOptionHandlers();
+            .AddDfOptionHandlers(configuration.GetSection(SECTION_PREFERENCES));
     }
 }

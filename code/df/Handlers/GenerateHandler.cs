@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     using Df.Io;
     using Df.Options;

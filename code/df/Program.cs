@@ -9,8 +9,8 @@ namespace Df
 {
     using CommandLine;
     using CommandLine.Text;
+    using Df.Handlers;
     using Df.IO;
-    using Df.OptionHandlers;
     using Df.Options;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +21,7 @@ namespace Df
 
     internal static class Program
     {
-        public static IConfigurationRoot Configuration { get; }
+        public static IConfiguration Configuration { get; }
 
         public static IServiceProvider ServiceProvider { get; }
 
@@ -38,15 +38,15 @@ namespace Df
             s.AutoHelp = true;
         }
 
-        private static IServiceCollection ConfigureServices(IConfigurationRoot configurationRoot) => new ServiceCollection()
+        private static IServiceCollection ConfigureServices(IConfiguration configuration) => new ServiceCollection()
             .AddLogging(_ => _.AddDebug().AddEventSourceLogger().SetMinimumLevel(LogLevel.Debug))
             .AddDfData()
-            .AddDfExtensibility(configurationRoot.GetSection(SECTION_EXTENSIBILITY))
+            .AddDfExtensibility(configuration.GetSection(SECTION_EXTENSIBILITY))
             .AddDfIo()
             .AddDfProduction()
-            .AddDfOptionHandlers();
+            .AddDfOptionHandlers(configuration.GetSection(SECTION_PREFERENCES));
 
-        private static IConfigurationRoot CreateConfiguration() => new ConfigurationBuilder()
+        private static IConfiguration CreateConfiguration() => new ConfigurationBuilder()
                 .SetBasePath(PathUtility.CurrentDirectory)
                 .AddJsonFile(APP_SETTINGS_FILE, false, true)
                 .Build();

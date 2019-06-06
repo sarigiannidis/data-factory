@@ -8,12 +8,14 @@
 namespace Microsoft.Extensions.DependencyInjection
 {
     using Df;
-    using Df.OptionHandlers;
+    using Df.Handlers;
     using Df.Options;
+    using Microsoft.Extensions.Configuration;
 
     internal static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddDfOptionHandlers(this IServiceCollection services) => Check.NotNull(nameof(services), services)
+        public static IServiceCollection AddDfOptionHandlers(this IServiceCollection services, IConfigurationSection configurationSection) => Check.NotNull(nameof(services), services)
+            .Configure<Preferences>(configurationSection)
             .AddTransient<IHandler<AddOptions>, AddHandler>()
             .AddTransient<IHandler<GenerateOptions>, GenerateHandler>()
             .AddTransient<IHandler<ListOptions>, ListHandler>()

@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     using Df.Collections;
     using Df.Extensibility;
@@ -139,7 +139,10 @@ namespace Df.OptionHandlers
         /// <remarks>This function picks the preferred <see cref="IValueFactoryInfo"/> for any given <see cref="Type"/>.</remarks>
         private IValueFactoryInfo SelectValueFactoryInfo(Type userType, bool isIdentity)
         {
-            var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(userType).ToArray();
+            var valueFactoryInfos = _ValueFactoryManager
+                .ValueFactoryInfos
+                .FilterByType(userType)
+                .ToArray();
             Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
 
             if (isIdentity)
