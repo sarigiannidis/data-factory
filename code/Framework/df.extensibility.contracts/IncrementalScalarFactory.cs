@@ -18,7 +18,7 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private TValue _Next;
 
-        public override bool IsRandom => false;
+        public override ValueFactoryKinds Kind => ValueFactoryKinds.Incremental;
 
         protected IncrementalScalarFactory() => ConfigurationChanged += Reset;
 

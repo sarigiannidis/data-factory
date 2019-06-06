@@ -17,7 +17,7 @@ namespace Df.ValueFactories
     {
         public IValueFactoryConfiguration Configuration { get; set; }
 
-        public bool IsRandom => true;
+        public ValueFactoryKinds Kind => ValueFactoryKinds.Random;
 
         public IValueFactoryConfiguration CreateConfiguration() => ValueFactoryConfiguration.Empty;
 

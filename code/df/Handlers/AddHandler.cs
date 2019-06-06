@@ -155,11 +155,11 @@ namespace Df.Handlers
 
             if (isIdentity)
             {
-                return valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom);
+                return valueFactoryInfos.First(_ => !_.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
             }
 
             // @TODO: match a preference defined in settings.
-            var match = Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom);
+            var match = Array.Find(valueFactoryInfos, _ => _.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
             return match ?? valueFactoryInfos[0];
         }
     }

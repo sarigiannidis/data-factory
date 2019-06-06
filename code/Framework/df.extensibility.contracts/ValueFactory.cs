@@ -38,7 +38,7 @@ namespace Df.Extensibility
             set => Configuration = (TConfiguration)value;
         }
 
-        public abstract bool IsRandom { get; }
+        public abstract ValueFactoryKinds Kind { get; }
 
         public event EventHandler ConfigurationChanged;
 

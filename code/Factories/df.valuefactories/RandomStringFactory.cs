@@ -24,6 +24,8 @@ namespace Df.ValueFactories
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private Xeger _Xeger;
 
+        public override ValueFactoryKinds Kind => base.Kind | ValueFactoryKinds.Pattern;
+
         public RandomStringFactory() => ConfigurationChanged += Reset;
 
         public IValueFactoryConfiguration CreateConfiguration() => CreateConfiguration(ConfiguratorConstraints.Empty);

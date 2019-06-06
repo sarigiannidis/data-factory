@@ -22,7 +22,7 @@ namespace Df.Extensibility
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private HardRandom _Random = new HardRandom();
 
-        public override bool IsRandom => true;
+        public override ValueFactoryKinds Kind => ValueFactoryKinds.Random;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         protected IRandom Random => _Random;

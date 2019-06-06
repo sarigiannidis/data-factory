@@ -10,7 +10,7 @@ namespace Df.Extensibility
     public abstract class ConstantFactory<TValue>
         : ValueFactory<TValue, ConstantConfiguration<TValue>>
     {
-        public override bool IsRandom => false;
+        public override ValueFactoryKinds Kind => ValueFactoryKinds.Constant;
 
         public override TValue CreateValue() => Configuration.Value;
     }

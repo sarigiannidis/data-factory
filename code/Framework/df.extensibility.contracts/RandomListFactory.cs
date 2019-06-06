@@ -15,6 +15,8 @@ namespace Df.Extensibility
         : RandomFactory<TValue, IListFactoryConfiguration<TValue>>
         where TValue : IComparable, IComparable<TValue>, IEquatable<TValue>
     {
+        public override ValueFactoryKinds Kind => base.Kind | ValueFactoryKinds.List;
+
         protected float SumOfWeights { get; private set; }
 
         protected RandomListFactory() => ConfigurationChanged += (sender, e) => SumOfWeights = Configuration.WeightedValues.Sum(w => w.Weight);
