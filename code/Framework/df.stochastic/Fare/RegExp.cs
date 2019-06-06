@@ -161,55 +161,35 @@ namespace Df.Stochastic.Fare
 
         private static RegExp MakeAnyPrintableASCIIChar() => MakeCharRange(' ', '~');
 
-        private static RegExp MakeAnyString()
+        private static RegExp MakeAnyString() => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpAnyString,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpAnyString,
+        };
 
-        private static RegExp MakeAutomaton(string s)
+        private static RegExp MakeAutomaton(string s) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpAutomaton,
-                _S = s,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpAutomaton,
+            _S = s,
+        };
 
-        private static RegExp MakeChar(char @char)
+        private static RegExp MakeChar(char @char) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpChar,
-                _C = @char,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpChar,
+            _C = @char,
+        };
 
-        private static RegExp MakeCharRange(char from, char to)
+        private static RegExp MakeCharRange(char from, char to) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpCharRange,
-                _From = from,
-                _To = to,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpCharRange,
+            _From = from,
+            _To = to,
+        };
 
-        private static RegExp MakeComplement(RegExp exp)
+        private static RegExp MakeComplement(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpComplement,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpComplement,
+            _Exp1 = exp,
+        };
 
         private static RegExp MakeConcatenation(RegExp exp1, RegExp exp2)
         {
@@ -246,90 +226,58 @@ namespace Df.Stochastic.Fare
             return r;
         }
 
-        private static RegExp MakeEmpty()
+        private static RegExp MakeEmpty() => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpEmpty,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpEmpty,
+        };
 
-        private static RegExp MakeIntersection(RegExp exp1, RegExp exp2)
+        private static RegExp MakeIntersection(RegExp exp1, RegExp exp2) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpIntersection,
-                _Exp1 = exp1,
-                _Exp2 = exp2,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpIntersection,
+            _Exp1 = exp1,
+            _Exp2 = exp2,
+        };
 
-        private static RegExp MakeInterval(int min, int max, int digits)
+        private static RegExp MakeInterval(int min, int max, int digits) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpInterval,
-                _Min = min,
-                _Max = max,
-                _Digits = digits,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpInterval,
+            _Min = min,
+            _Max = max,
+            _Digits = digits,
+        };
 
-        private static RegExp MakeOptional(RegExp exp)
+        private static RegExp MakeOptional(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpOptional,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpOptional,
+            _Exp1 = exp,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp)
+        private static RegExp MakeRepeat(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeat,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeat,
+            _Exp1 = exp,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp, int min)
+        private static RegExp MakeRepeat(RegExp exp, int min) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeatMin,
-                _Exp1 = exp,
-                _Min = min,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeatMin,
+            _Exp1 = exp,
+            _Min = min,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp, int min, int max)
+        private static RegExp MakeRepeat(RegExp exp, int min, int max) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeatMinMax,
-                _Exp1 = exp,
-                _Min = min,
-                _Max = max,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeatMinMax,
+            _Exp1 = exp,
+            _Min = min,
+            _Max = max,
+        };
 
-        private static RegExp MakeString(string @string)
+        private static RegExp MakeString(string @string) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpString,
-                _S = @string,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpString,
+            _S = @string,
+        };
 
         private static RegExp MakeString(RegExp exp1, RegExp exp2)
         {
@@ -341,16 +289,12 @@ namespace Df.Stochastic.Fare
             return MakeString(sb.ToString());
         }
 
-        private static RegExp MakeUnion(RegExp exp1, RegExp exp2)
+        private static RegExp MakeUnion(RegExp exp1, RegExp exp2) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpUnion,
-                _Exp1 = exp1,
-                _Exp2 = exp2,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpUnion,
+            _Exp1 = exp1,
+            _Exp2 = exp2,
+        };
 
         private bool Check(RegExpSyntaxOptions flag) => (_Flags & flag) != 0;
 
@@ -840,10 +784,7 @@ namespace Df.Stochastic.Fare
             return a;
         }
 
-        private Automaton ToAutomatonAllowMutate(
-            IDictionary<string, Automaton> automata,
-            IAutomatonProvider automatonProvider,
-            bool minimize)
+        private Automaton ToAutomatonAllowMutate(IDictionary<string, Automaton> automata, IAutomatonProvider automatonProvider, bool minimize)
         {
             var @bool = false;
             if (_AllowMutation)

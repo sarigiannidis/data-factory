@@ -53,23 +53,18 @@ namespace Df.Stochastic.Fare
             };
             state.Transitions.Add(new Transition(char.MinValue, char.MaxValue, state));
 
-            var a = new Automaton
+            return new Automaton
             {
                 Initial = state,
                 IsDeterministic = true,
             };
-            return a;
         }
 
-        public static Automaton MakeChar(char c)
+        public static Automaton MakeChar(char c) => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = c.ToString(),
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = c.ToString(),
+            IsDeterministic = true,
+        };
 
         public static Automaton MakeCharRange(char min, char max)
         {
@@ -174,32 +169,22 @@ namespace Df.Stochastic.Fare
                     .Concatenate(Automaton.MakeString(sb2.ToString()))
                     .Concatenate(Automaton.MakeChar('0')
                                      .Repeat());
-            return Automaton.Minimize(
-                WhitespaceAutomaton.Concatenate(
-                    s.Concatenate(Automaton.MakeChar('0').Repeat())
-                        .Concatenate(Automaton.MakeString(sb1.ToString()))
-                        .Concatenate(d))
-                    .Concatenate(WhitespaceAutomaton));
+            return Automaton.Minimize(WhitespaceAutomaton
+                .Concatenate(s.Concatenate(Automaton.MakeChar('0').Repeat()).Concatenate(Automaton.MakeString(sb1.ToString())).Concatenate(d))
+                .Concatenate(WhitespaceAutomaton));
         }
 
-        public static Automaton MakeEmpty()
+        public static Automaton MakeEmpty() => new Automaton
         {
-            var a = new Automaton();
-            var s = new State();
-            a.Initial = s;
-            a.IsDeterministic = true;
-            return a;
-        }
+            Initial = new State(),
+            IsDeterministic = true,
+        };
 
-        public static Automaton MakeEmptyString()
+        public static Automaton MakeEmptyString() => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = string.Empty,
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = string.Empty,
+            IsDeterministic = true,
+        };
 
         public static Automaton MakeFractionDigits(int i) => Automaton.Minimize(
                     new RegExp("[ \t\n\r]*[-+]?[0-9]+(\\.[0-9]{0," + i + "}0*)?[ \t\n\r]*")
@@ -322,15 +307,11 @@ namespace Df.Stochastic.Fare
             return Automaton.Minimize(new RegExp(sb.ToString()).ToAutomaton());
         }
 
-        public static Automaton MakeString(string s)
+        public static Automaton MakeString(string s) => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = s,
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = s,
+            IsDeterministic = true,
+        };
 
         public static Automaton MakeStringMatcher(string s)
         {
