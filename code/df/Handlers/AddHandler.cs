@@ -109,6 +109,13 @@ namespace Df.OptionHandlers
             return tablePrescription;
         }
 
+        /// <summary>
+        /// The function CreateNewValueFactoryPrescription creates a new <see cref="ValueFactoryPrescription"/> given a <paramref name="columnDescription"/>.
+        /// </summary>
+        /// <param name="project">The given project.</param>
+        /// <param name="columnDescription">The specific column description.</param>
+        /// <returns>A new instance of <see cref="ValueFactoryPrescription"/>.</returns>
+        /// <remarks>This function picks a default value factory.</remarks>
         private ValueFactoryPrescription CreateNewValueFactoryPrescription(Project project, ColumnDescription columnDescription)
         {
             var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(columnDescription.ResolveUserType()).ToArray();
