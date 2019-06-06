@@ -14,9 +14,9 @@ namespace Df.Extensibility
         public static IValueFactoryConfiguration ConfigureForColumn(this IValueFactoryInfo valueFactoryInfo, ColumnDescription columnDescription)
         =>
             valueFactoryInfo.Configurator switch
-        {
-            IConstrainableConfigurator constrainableConfigurator => constrainableConfigurator.CreateConfiguration(columnDescription.CreateConstraints()),
-            _ => valueFactoryInfo.Configurator.CreateConfiguration(),
-        };
+            {
+                IConstrainableConfigurator constrainableConfigurator => constrainableConfigurator.CreateConfiguration(columnDescription.CreateConstraints()),
+                _ => valueFactoryInfo.Configurator.CreateConfiguration(),
+            };
     }
 }

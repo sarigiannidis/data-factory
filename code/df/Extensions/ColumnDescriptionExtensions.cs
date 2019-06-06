@@ -25,18 +25,18 @@ namespace Df.Io.Descriptive
 
         public static Type ResolveUserType(this ColumnDescription columnDescription) =>
             Check.NotNull(nameof(columnDescription), columnDescription).UserType switch
-        {
-            "sql_variant" => typeof(int),
-            _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
-        };
+            {
+                "sql_variant" => typeof(int),
+                _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
+            };
 
         private static int GetMaxCharLength(ColumnDescription columnDescription) =>
             columnDescription.UserType switch
-        {
-            SQL_TYPE_NCHAR => columnDescription.MaxLength / 2,
-            SQL_TYPE_NTEXT => columnDescription.MaxLength / 2,
-            SQL_TYPE_NVARCHAR => columnDescription.MaxLength / 2,
-            _ => columnDescription.MaxLength
-        };
+            {
+                SQL_TYPE_NCHAR => columnDescription.MaxLength / 2,
+                SQL_TYPE_NTEXT => columnDescription.MaxLength / 2,
+                SQL_TYPE_NVARCHAR => columnDescription.MaxLength / 2,
+                _ => columnDescription.MaxLength
+            };
     }
 }

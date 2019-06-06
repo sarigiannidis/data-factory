@@ -23,11 +23,6 @@ namespace Df.Stochastic.Fare
     using System.Diagnostics.CodeAnalysis;
     using System.Text;
 
-    /// <summary>
-    /// An object that will generate text from a regular expression. In a way, it's the opposite of a
-    /// regular expression matcher: an instance of this class will produce text that is guaranteed to
-    /// match the regular expression passed in.
-    /// </summary>
     [ExcludeFromCodeCoverage]
     public class Xeger
     {
@@ -37,15 +32,6 @@ namespace Df.Stochastic.Fare
 
         private readonly IRandom _Random;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Xeger"/> class.
-        /// </summary>
-        /// <param name="regex">
-        /// The regex.
-        /// </param>
-        /// <param name="random">
-        /// The random.
-        /// </param>
         public Xeger(string regex, IRandom random)
         {
             if (string.IsNullOrEmpty(regex))
@@ -57,11 +43,6 @@ namespace Df.Stochastic.Fare
             _Random = random ?? throw new ArgumentNullException(nameof(random));
         }
 
-        /// <summary>
-        /// Generates a random String that is guaranteed to match the regular expression passed to
-        /// the constructor.
-        /// </summary>
-        /// <returns>A xeger value.</returns>
         public string Generate()
         {
             var sb = new StringBuilder();
@@ -69,21 +50,6 @@ namespace Df.Stochastic.Fare
             return sb.ToString();
         }
 
-        /// <summary>
-        /// Generates a random number within the given bounds.
-        /// </summary>
-        /// <param name="min">
-        /// The minimum number (inclusive).
-        /// </param>
-        /// <param name="max">
-        /// The maximum number (inclusive).
-        /// </param>
-        /// <param name="random">
-        /// The object used as the randomizer.
-        /// </param>
-        /// <returns>
-        /// A random number in the given range.
-        /// </returns>
         private static int GetRandomInt(int min, int max, IRandom random)
         {
             var maxForRandom = max - min + 1;
@@ -113,11 +79,9 @@ namespace Df.Stochastic.Fare
             var option = GetRandomInt(0, nroptions, _Random);
             if (state.Accept && option == 0)
             {
-                // 0 is considered stop.
                 return;
             }
 
-            // Moving on to next transition.
             var transition = transitions[option - (state.Accept ? 1 : 0)];
             AppendChoice(sb, transition);
             Generate(sb, transition.To);

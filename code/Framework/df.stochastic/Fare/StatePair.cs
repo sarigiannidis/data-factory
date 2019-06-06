@@ -35,43 +35,16 @@ namespace Df.Stochastic.Fare
     using System;
     using System.Diagnostics.CodeAnalysis;
 
-    /// <summary>
-    /// Pair of states.
-    /// </summary>
     [ExcludeFromCodeCoverage]
     internal class StatePair
         : IEquatable<StatePair>
     {
-        /// <summary>
-        /// Gets or sets the first component of this pair.
-        /// </summary>
-        /// <value>
-        /// The first state.
-        /// </value>
         public State FirstState { get; set; }
 
         public State S { get; set; }
 
-        /// <summary>
-        /// Gets or sets the second component of this pair.
-        /// </summary>
-        /// <value>
-        /// The second state.
-        /// </value>
         public State SecondState { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StatePair"/> class.
-        /// </summary>
-        /// <param name="s">
-        /// The s.
-        /// </param>
-        /// <param name="s1">
-        /// The s1.
-        /// </param>
-        /// <param name="s2">
-        /// The s2.
-        /// </param>
         public StatePair(State s, State s1, State s2)
         {
             S = s;
@@ -79,63 +52,24 @@ namespace Df.Stochastic.Fare
             SecondState = s2;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StatePair"/> class.
-        /// </summary>
-        /// <param name="s1">
-        /// The first state.
-        /// </param>
-        /// <param name="s2">
-        /// The second state.
-        /// </param>
         public StatePair(State s1, State s2)
             : this(null, s1, s2)
         {
         }
 
-        /// <summary>
-        /// Implements the operator !=.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator !=(StatePair left, StatePair right) => !Equals(left, right);
 
-        /// <summary>
-        /// Implements the operator ==.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator ==(StatePair left, StatePair right) => Equals(left, right);
 
-        /// <inheritdoc/>
-        ///
         public bool Equals(StatePair other) =>
             !(other is null)
                 && (ReferenceEquals(this, other)
                 || (Equals(other.FirstState, FirstState)
                 && Equals(other.SecondState, SecondState)));
 
-        /// <inheritdoc/>
-        ///
         public override bool Equals(object obj) =>
             !(obj is null) && (ReferenceEquals(this, obj) || (obj.GetType() == typeof(StatePair) && Equals((StatePair)obj)));
 
-        /// <inheritdoc/>
-        ///
         public override int GetHashCode() =>
             HashCode.Combine(FirstState, SecondState);
     }

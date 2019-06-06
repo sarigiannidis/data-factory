@@ -39,50 +39,17 @@ namespace Df.Stochastic.Fare
     using System.Linq;
     using System.Text;
 
-    /// <summary>
-    /// Regular Expression extension to Automaton.
-    /// </summary>
     [ExcludeFromCodeCoverage]
     internal partial class RegExp
     {
-        // Do not capture unnamed groups.
         private const char ExplicitCapture = 'n';
 
-        /// <summary>
-        /// Uses case-insensitive matching.
-        /// </summary>
         private const char IgnoreCase = 'i';
 
-        /// <summary>
-        /// Exclude unescaped white space from the pattern and enable comments after a hash sign
-        /// <code>
-        /// #
-        /// </code>
-        /// .
-        /// </summary>
         private const char IgnorePatternWhitespace = 'x';
 
-        /// <summary>
-        /// Use multiline mode, where
-        /// <code>
-        /// ^
-        /// </code>
-        /// and
-        /// <code>
-        /// $
-        /// </code>
-        /// match the beginning and end of each line, instead of the beginning and end of the input string.
-        /// </summary>
         private const char Multiline = 'm';
 
-        /// <summary>
-        /// Use single-line mode, where the period matches every character, instead of every
-        /// character except
-        /// <code>
-        /// \n
-        /// </code>
-        /// .
-        /// </summary>
         private const char Singleline = 's';
 
         private static readonly char[] RegExpMatchingOptions =
@@ -122,26 +89,11 @@ namespace Df.Stochastic.Fare
 
         private char _To;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegExp"/> class from a string.
-        /// </summary>
-        /// <param name="s">
-        /// A string with the regular expression.
-        /// </param>
         public RegExp(string s)
             : this(s, RegExpSyntaxOptions.All)
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegExp"/> class from a string.
-        /// </summary>
-        /// <param name="s">
-        /// A string with the regular expression.
-        /// </param>
-        /// <param name="syntaxFlags">
-        /// Boolean 'or' of optional syntax constructs to be enabled.
-        /// </param>
         public RegExp(string s, RegExpSyntaxOptions syntaxFlags)
         {
             _B = s;
@@ -173,19 +125,10 @@ namespace Df.Stochastic.Fare
             _B = null;
         }
 
-        /// <summary>
-        /// Prevents a default instance of the <see cref="RegExp"/> class from being created.
-        /// </summary>
         private RegExp()
         {
         }
 
-        /// <summary>
-        /// Returns the set of automaton identifiers that occur in this regular expression.
-        /// </summary>
-        /// <returns>
-        /// The set of automaton identifiers that occur in this regular expression.
-        /// </returns>
         public HashSet<string> GetIdentifiers()
         {
             var set = new HashSet<string>();
@@ -193,16 +136,6 @@ namespace Df.Stochastic.Fare
             return set;
         }
 
-        /// <summary>
-        /// Sets or resets allow mutate flag. If this flag is set, then automata construction uses
-        /// mutable automata, which is slightly faster but not thread safe.
-        /// </summary>
-        /// <param name="flag">
-        /// if set to <c>true</c> the flag is set.
-        /// </param>
-        /// <returns>
-        /// The previous value of the flag.
-        /// </returns>
         public bool SetAllowMutate(bool flag)
         {
             var @bool = _AllowMutation;
@@ -210,115 +143,18 @@ namespace Df.Stochastic.Fare
             return @bool;
         }
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . Same as
-        /// <code>
-        /// toAutomaton(null)
-        /// </code>
-        /// (empty automaton map).
-        /// </summary>
         public Automaton ToAutomaton() => ToAutomatonAllowMutate(null, null, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . Same as
-        /// <code>
-        /// toAutomaton(null,minimize)
-        /// </code>
-        /// (empty automaton map).
-        /// </summary>
-        /// <param name="minimize">
-        /// if set to <c>true</c> [minimize].
-        /// </param>
         public Automaton ToAutomaton(bool minimize) => ToAutomatonAllowMutate(null, null, minimize);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton is minimal and deterministic and has no transitions to dead states.
-        /// </summary>
-        /// <param name="automatonProvider">
-        /// The provider of automata for named identifiers.
-        /// </param>
         public Automaton ToAutomaton(IAutomatonProvider automatonProvider) => ToAutomatonAllowMutate(null, automatonProvider, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton has no transitions to dead states.
-        /// </summary>
-        /// <param name="automatonProvider">
-        /// The provider of automata for named identifiers.
-        /// </param>
-        /// <param name="minimize">
-        /// if set to <c>true</c> the automaton is minimized and determinized.
-        /// </param>
         public Automaton ToAutomaton(IAutomatonProvider automatonProvider, bool minimize) => ToAutomatonAllowMutate(null, automatonProvider, minimize);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton is minimal and deterministic and has no transitions to dead states.
-        /// </summary>
-        /// <param name="automata">
-        /// The a map from automaton identifiers to automata.
-        /// </param>
         public Automaton ToAutomaton(IDictionary<string, Automaton> automata) => ToAutomatonAllowMutate(automata, null, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton has no transitions to dead states.
-        /// </summary>
-        /// <param name="automata">
-        /// The map from automaton identifiers to automata.
-        /// </param>
-        /// <param name="minimize">
-        /// if set to <c>true</c> the automaton is minimized and determinized.
-        /// </param>
         public Automaton ToAutomaton(IDictionary<string, Automaton> automata, bool minimize) => ToAutomatonAllowMutate(automata, null, minimize);
 
-        /// <inheritdoc/>
-        ///
         public override string ToString() => ToStringBuilder(new StringBuilder()).ToString();
 
         private static RegExp ExcludeChars(RegExp exclusion, RegExp allChars) => MakeIntersection(allChars, MakeComplement(exclusion));
@@ -842,7 +678,6 @@ namespace Df.Stochastic.Fare
 
             if (Match('\\'))
             {
-                // Escaped '\' character.
                 if (Match('\\'))
                 {
                     return MakeChar('\\');
@@ -850,22 +685,18 @@ namespace Df.Stochastic.Fare
 
                 bool inclusion;
 
-                // Digits.
                 if ((inclusion = Match('d')) || Match('D'))
                 {
                     var digitChars = MakeCharRange('0', '9');
                     return inclusion ? digitChars : ExcludeChars(digitChars, MakeAnyPrintableASCIIChar());
                 }
 
-                // Whitespace chars only.
                 if ((inclusion = Match('s')) || Match('S'))
                 {
-                    // Do not add line breaks, as usually RegExp is single line.
                     var whitespaceChars = MakeUnion(MakeChar(' '), MakeChar('\t'));
                     return inclusion ? whitespaceChars : ExcludeChars(whitespaceChars, MakeAnyPrintableASCIIChar());
                 }
 
-                // Word character. Range is [A-Za-z0-9_]
                 if ((inclusion = Match('w')) || Match('W'))
                 {
                     var ranges = new[] { MakeCharRange('A', 'Z'), MakeCharRange('a', 'z'), MakeCharRange('0', '9') };
@@ -998,7 +829,7 @@ namespace Df.Stochastic.Fare
                         throw new ArgumentException("'" + _S + "' not found");
                     }
 
-                    a = aa.Clone(); // Always clone here (ignore allowMutate).
+                    a = aa.Clone();
                     break;
 
                 case Kind.RegexpInterval:
@@ -1017,7 +848,7 @@ namespace Df.Stochastic.Fare
             var @bool = false;
             if (_AllowMutation)
             {
-                @bool = SetAllowMutate(true); // This is not thead safe.
+                @bool = SetAllowMutate(true);
             }
 
             var a = ToAutomaton(automata, automatonProvider, minimize);

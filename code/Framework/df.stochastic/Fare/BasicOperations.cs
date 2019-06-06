@@ -42,17 +42,6 @@ namespace Df.Stochastic.Fare
     [ExcludeFromCodeCoverage]
     internal static class BasicOperations
     {
-        /// <summary>
-        /// Adds epsilon transitions to the given automaton. This method adds extra character
-        /// interval transitions that are equivalent to the given set of epsilon transitions.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <param name="pairs">
-        /// A collection of <see cref="StatePair"/> objects representing pairs of source/destination
-        /// states where epsilon transitions should be added.
-        /// </param>
         public static void AddEpsilons(Automaton a, ICollection<StatePair> pairs)
         {
             a.ExpandSingleton();
@@ -115,7 +104,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Add transitions.
             foreach (var p in pairs)
             {
                 p.FirstState.AddEpsilon(p.SecondState);
@@ -126,19 +114,6 @@ namespace Df.Stochastic.Fare
             a.CheckMinimizeAlways();
         }
 
-        /// <summary>
-        /// Returns a (deterministic) automaton that accepts the complement of the language of the
-        /// given automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <returns>
-        /// A (deterministic) automaton that accepts the complement of the language of the given automaton.
-        /// </returns>
-        /// <remarks>
-        /// Complexity: linear in number of states (if already deterministic).
-        /// </remarks>
         public static Automaton Complement(Automaton a)
         {
             a = a.CloneExpandedIfRequired();
@@ -265,15 +240,6 @@ namespace Df.Stochastic.Fare
             }
         }
 
-        /// <summary>
-        /// Determinizes the specified automaton.
-        /// </summary>
-        /// <remarks>
-        /// Complexity: exponential in number of states.
-        /// </remarks>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
         public static void Determinize(Automaton a)
         {
             if (a.IsDeterministic || a.IsSingleton)
@@ -288,21 +254,11 @@ namespace Df.Stochastic.Fare
             Determinize(a, initialset.ToList());
         }
 
-        /// <summary>
-        /// Determinizes the given automaton using the given set of initial states.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <param name="initialset">
-        /// The initial states.
-        /// </param>
         public static void Determinize(Automaton a, List<State> initialset)
         {
             var points = a.GetStartPoints();
             var comparer = new ListEqualityComparer<State>();
 
-            // Subset construction.
             var sets = new Dictionary<List<State>, List<State>>(comparer);
             var worklist = new LinkedList<List<State>>();
             var newstate = new Dictionary<List<State>, State>(comparer);
@@ -359,16 +315,6 @@ namespace Df.Stochastic.Fare
             a.RemoveDeadTransitions();
         }
 
-        /// <summary>
-        /// Returns an automaton that accepts the intersection of the languages of the given
-        /// automata. Never modifies the input automata languages.
-        /// </summary>
-        /// <param name="a1">
-        /// The a1.
-        /// </param>
-        /// <param name="a2">
-        /// The a2.
-        /// </param>
         public static Automaton Intersection(Automaton a1, Automaton a2)
         {
             if (a1.IsSingleton)
@@ -435,47 +381,16 @@ namespace Df.Stochastic.Fare
             return c;
         }
 
-        /// <summary>
-        /// Determines whether the given automaton accepts no strings.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <returns>
-        /// <c>true</c> if the given automaton accepts no strings; otherwise, <c>false</c>.
-        /// </returns>
         public static bool IsEmpty(Automaton a) =>
             !a.IsSingleton
                 && !a.Initial.Accept
                 && a.Initial.Transitions.Count == 0;
 
-        /// <summary>
-        /// Determines whether the given automaton accepts the empty string and nothing else.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <returns>
-        /// <c>true</c> if the given automaton accepts the empty string and nothing else; otherwise, <c>false</c>.
-        /// </returns>
         public static bool IsEmptyString(Automaton a) =>
             a.IsSingleton
                 ? a.Singleton.Length == 0
                 : a.Initial.Accept && a.Initial.Transitions.Count == 0;
 
-        /// <summary>
-        /// Returns an automaton that accepts the union of the empty string and the language of the
-        /// given automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <remarks>
-        /// Complexity: linear in number of states.
-        /// </remarks>
-        /// <returns>
-        /// An automaton that accepts the union of the empty string and the language of the given automaton.
-        /// </returns>
         public static Automaton Optional(Automaton a)
         {
             a = a.CloneExpandedIfRequired();
@@ -489,20 +404,6 @@ namespace Df.Stochastic.Fare
             return a;
         }
 
-        /// <summary>
-        /// Accepts the Kleene star (zero or more concatenated repetitions) of the language of the
-        /// given automaton. Never modifies the input automaton language.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <returns>
-        /// An automaton that accepts the Kleene star (zero or more concatenated repetitions) of the
-        /// language of the given automaton. Never modifies the input automaton language.
-        /// </returns>
-        /// <remarks>
-        /// Complexity: linear in number of states.
-        /// </remarks>
         public static Automaton Repeat(Automaton a)
         {
             a = a.CloneExpanded();
@@ -523,33 +424,6 @@ namespace Df.Stochastic.Fare
             return a;
         }
 
-        /// <summary>
-        /// Accepts
-        /// <code>
-        /// min
-        /// </code>
-        /// or more concatenated repetitions of the language of the given automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <param name="min">
-        /// The minimum concatenated repetitions of the language of the given automaton.
-        /// </param>
-        /// <returns>
-        /// Returns an automaton that accepts
-        /// <code>
-        /// min
-        /// </code>
-        /// or more concatenated repetitions of the language of the given automaton.
-        /// </returns>
-        /// <remarks>
-        /// Complexity: linear in number of states and in
-        /// <code>
-        /// min
-        /// </code>
-        /// .
-        /// </remarks>
         public static Automaton Repeat(Automaton a, int min)
         {
             if (min == 0)
@@ -567,48 +441,6 @@ namespace Df.Stochastic.Fare
             return Concatenate(@as);
         }
 
-        /// <summary>
-        /// Accepts between
-        /// <code>
-        /// min
-        /// </code>
-        /// and
-        /// <code>
-        /// max
-        /// </code>
-        /// (including both) concatenated repetitions of the language of the given automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <param name="min">
-        /// The minimum concatenated repetitions of the language of the given automaton.
-        /// </param>
-        /// <param name="max">
-        /// The maximum concatenated repetitions of the language of the given automaton.
-        /// </param>
-        /// <returns>
-        /// Returns an automaton that accepts between
-        /// <code>
-        /// min
-        /// </code>
-        /// and
-        /// <code>
-        /// max
-        /// </code>
-        /// (including both) concatenated repetitions of the language of the given automaton.
-        /// </returns>
-        /// <remarks>
-        /// Complexity: linear in number of states and in
-        /// <code>
-        /// min
-        /// </code>
-        /// and
-        /// <code>
-        /// max
-        /// </code>
-        /// .
-        /// </remarks>
         public static Automaton Repeat(Automaton a, int min, int max)
         {
             if (min > max)
@@ -665,19 +497,6 @@ namespace Df.Stochastic.Fare
             return b;
         }
 
-        /// <summary>
-        /// Returns true if the given string is accepted by the automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
-        /// <param name="s">
-        /// The string.
-        /// </param>
-        /// <remarks>
-        /// Complexity: linear in the length of the string. For full performance, use the
-        /// RunAutomaton class.
-        /// </remarks>
         public static bool Run(Automaton a, string s)
         {
             if (a.IsSingleton)
@@ -747,18 +566,6 @@ namespace Df.Stochastic.Fare
             return accept;
         }
 
-        /// <summary>
-        /// Returns an automaton that accepts the union of the languages of the given automata.
-        /// </summary>
-        /// <param name="automatons">
-        /// The l.
-        /// </param>
-        /// <returns>
-        /// An automaton that accepts the union of the languages of the given automata.
-        /// </returns>
-        /// <remarks>
-        /// Complexity: linear in number of states.
-        /// </remarks>
         public static Automaton Union(IList<Automaton> automatons)
         {
             var ids = new HashSet<int>();

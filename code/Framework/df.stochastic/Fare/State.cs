@@ -39,9 +39,6 @@ namespace Df.Stochastic.Fare
     using System.Text;
     using System.Threading;
 
-    /// <summary>
-    /// <tt>Automaton</tt> state.
-    /// </summary>
     [ExcludeFromCodeCoverage]
     internal class State
         : IEquatable<State>,
@@ -50,64 +47,20 @@ namespace Df.Stochastic.Fare
     {
         private static int _NextId;
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this State is Accept.
-        /// </summary>
         public bool Accept { get; set; }
 
-        /// <summary>
-        /// Gets the id.
-        /// </summary>
         public int Id { get; } = Interlocked.Increment(ref _NextId);
 
-        /// <summary>
-        /// Gets or sets this State Number.
-        /// </summary>
         public int Number { get; set; }
 
-        /// <summary>
-        /// Gets or sets this State Transitions.
-        /// </summary>
         public IList<Transition> Transitions { get; set; } = new List<Transition>();
 
-        /// <summary>
-        /// Implements the operator !=.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator !=(State left, State right) => !Equals(left, right);
 
-        /// <summary>
-        /// Implements the operator ==.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator ==(State left, State right) => Equals(left, right);
 
-        /// <summary>
-        /// Adds an outgoing transition.
-        /// </summary>
-        /// <param name="t">
-        /// The transition.
-        /// </param>
         public void AddTransition(Transition t) => Transitions.Add(t);
 
-        /// <inheritdoc/>
-        ///
         public int CompareTo(object obj)
         {
             if (obj == null)
@@ -123,19 +76,13 @@ namespace Df.Stochastic.Fare
             return CompareTo((State)obj);
         }
 
-        /// <inheritdoc/>
-        ///
         public int CompareTo(State other) => other.Id - Id;
 
-        /// <inheritdoc/>
-        ///
         public override bool Equals(object obj) =>
             !(obj is null)
             && (ReferenceEquals(this, obj)
                 || (obj.GetType() == typeof(State) && Equals((State)obj)));
 
-        /// <inheritdoc/>
-        ///
         public bool Equals(State other) =>
             !(other is null)
                 && (ReferenceEquals(this, other)
@@ -143,20 +90,9 @@ namespace Df.Stochastic.Fare
                 && other.Accept.Equals(Accept)
                 && other.Number == Number));
 
-        /// <inheritdoc/>
-        ///
         public override int GetHashCode() =>
             HashCode.Combine(Id, Accept, Number);
 
-        /// <summary>
-        /// Gets the transitions sorted by (min, reverse max, to) or (to, min, reverse max).
-        /// </summary>
-        /// <param name="toFirst">
-        /// if set to <c>true</c> [to first].
-        /// </param>
-        /// <returns>
-        /// The transitions sorted by (min, reverse max, to) or (to, min, reverse max).
-        /// </returns>
         public IList<Transition> GetSortedTransitions(bool toFirst)
         {
             var e = Transitions.ToArray();
@@ -164,30 +100,10 @@ namespace Df.Stochastic.Fare
             return e.ToList();
         }
 
-        /// <summary>
-        /// Performs lookup in transitions, assuming determinism.
-        /// </summary>
-        /// <param name="c">
-        /// The character to look up.
-        /// </param>
-        /// <returns>
-        /// The destination state, null if no matching outgoing transition.
-        /// </returns>
         public State Step(char c) => (from t in Transitions where t.Min <= c && c <= t.Max select t.To).FirstOrDefault();
 
-        /// <summary>
-        /// Performs lookup in transitions, allowing nondeterminism.
-        /// </summary>
-        /// <param name="c">
-        /// The character to look up.
-        /// </param>
-        /// <param name="dest">
-        /// The collection where destination states are stored.
-        /// </param>
         public void Step(char c, List<State> dest) => dest.AddRange(from t in Transitions where t.Min <= c && c <= t.Max select t.To);
 
-        /// <inheritdoc/>
-        ///
         public override string ToString()
         {
             var sb = new StringBuilder();

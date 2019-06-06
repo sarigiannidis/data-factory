@@ -36,61 +36,22 @@ namespace Df.Stochastic.Fare
     using System.Diagnostics.CodeAnalysis;
     using System.Text;
 
-    /// <summary>
-    ///  <tt>Automaton</tt> transition.
-    ///  <p>
-    ///    A transition, which belongs to a source state, consists of a Unicode character interval
-    ///    and a destination state.
-    ///  </p>
-    /// </summary>
     [ExcludeFromCodeCoverage]
     internal class Transition
         : IEquatable<Transition>
     {
-        /// <summary>
-        /// Gets the maximum of this transition interval.
-        /// </summary>
         public char Max { get; }
 
-        /// <summary>
-        /// Gets the minimum of this transition interval.
-        /// </summary>
         public char Min { get; }
 
-        /// <summary>
-        /// Gets the destination of this transition.
-        /// </summary>
         public State To { get; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Transition"/> class. (Constructs a new
-        /// singleton interval transition).
-        /// </summary>
-        /// <param name="c">
-        /// The transition character.
-        /// </param>
-        /// <param name="to">
-        /// The destination state.
-        /// </param>
         public Transition(char c, State to)
         {
             Min = Max = c;
             To = to;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Transition"/> class. (Both end points are
-        /// included in the interval).
-        /// </summary>
-        /// <param name="min">
-        /// The transition interval minimum.
-        /// </param>
-        /// <param name="max">
-        /// The transition interval maximum.
-        /// </param>
-        /// <param name="to">
-        /// The destination state.
-        /// </param>
         public Transition(char min, char max, State to)
         {
             if (max < min)
@@ -105,45 +66,17 @@ namespace Df.Stochastic.Fare
             To = to;
         }
 
-        /// <summary>
-        /// Implements the operator !=.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator !=(Transition left, Transition right) =>
             !Equals(left, right);
 
-        /// <summary>
-        /// Implements the operator ==.
-        /// </summary>
-        /// <param name="left">
-        /// The left.
-        /// </param>
-        /// <param name="right">
-        /// The right.
-        /// </param>
-        /// <returns>
-        /// The result of the operator.
-        /// </returns>
         public static bool operator ==(Transition left, Transition right) =>
             Equals(left, right);
 
-        /// <inheritdoc/>
-        ///
         public override bool Equals(object obj) =>
             !(obj is null)
             && (ReferenceEquals(this, obj)
                 || (obj.GetType() == typeof(Transition) && Equals((Transition)obj)));
 
-        /// <inheritdoc/>
-        ///
         public bool Equals(Transition other) =>
             !(other is null)
                 && (ReferenceEquals(this, other)
@@ -151,13 +84,9 @@ namespace Df.Stochastic.Fare
                    && other.Max == Max
                    && Equals(other.To, To)));
 
-        /// <inheritdoc/>
-        ///
         public override int GetHashCode() =>
             HashCode.Combine(Min, Max, To);
 
-        /// <inheritdoc/>
-        ///
         public override string ToString()
         {
             var sb = new StringBuilder();
