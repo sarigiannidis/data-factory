@@ -140,13 +140,16 @@ namespace Df.OptionHandlers
         private IValueFactoryInfo SelectValueFactoryInfo(Type userType, bool isIdentity)
         {
             var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(userType).ToArray();
-            return valueFactoryInfos.Length switch
+            Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
+
+            if (isIdentity)
             {
-                0 => throw null,
-                1 => valueFactoryInfos[0],
-                _ when isIdentity => valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom),
-                _ => Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
-            };
+                return valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom);
+            }
+
+            // @TODO: match a preference defined in settings.
+            var match = Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom);
+            return match ?? valueFactoryInfos[0];
         }
     }
 }
