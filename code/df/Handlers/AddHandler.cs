@@ -150,7 +150,7 @@ namespace Df.Handlers
                 .ToArray();
             Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
 
-            //@TODO: Use the preferences to determine the factory to use.
+            // @TODO: Use the preferences to determine the factory to use.
             var preferences = _Preferences;
 
             if (isIdentity)
