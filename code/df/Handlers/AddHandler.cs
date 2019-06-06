@@ -109,24 +109,9 @@ namespace Df.OptionHandlers
             return tablePrescription;
         }
 
-        /// <summary>
-        /// The function CreateNewValueFactoryPrescription creates a new <see cref="ValueFactoryPrescription"/> given a <paramref name="columnDescription"/>.
-        /// </summary>
-        /// <param name="project">The given project.</param>
-        /// <param name="columnDescription">The specific column description.</param>
-        /// <returns>A new instance of <see cref="ValueFactoryPrescription"/>.</returns>
-        /// <remarks>This function picks a default value factory.</remarks>
         private ValueFactoryPrescription CreateNewValueFactoryPrescription(Project project, ColumnDescription columnDescription)
         {
-            var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(columnDescription.ResolveUserType()).ToArray();
-            var valueFactoryInfo = valueFactoryInfos.Length switch
-            {
-                0 => throw null,
-                1 => valueFactoryInfos[0],
-                _ when columnDescription.Identity != null => valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom),
-                _ => Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
-            };
-
+            var valueFactoryInfo = SelectValueFactoryInfo(columnDescription.ResolveUserType(), columnDescription.Identity != null);
             return project.CreateValueFactoryPrescription(valueFactoryInfo, _ => _.ConfigureForColumn(columnDescription));
         }
 
@@ -143,6 +128,25 @@ namespace Df.OptionHandlers
             {
                 return valueFactoryPrescription;
             }
+        }
+
+        /// <summary>
+        /// This function selects a <see cref="IValueFactoryInfo"/> given a <paramref name="userType"/>.
+        /// </summary>
+        /// <param name="userType">The type of the column.</param>
+        /// <param name="isIdentity">Whether the column is an identity.</param>
+        /// <returns>A matching <see cref="IValueFactoryInfo"/>.</returns>
+        /// <remarks>This function picks the preferred <see cref="IValueFactoryInfo"/> for any given <see cref="Type"/>.</remarks>
+        private IValueFactoryInfo SelectValueFactoryInfo(Type userType, bool isIdentity)
+        {
+            var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(userType).ToArray();
+            return valueFactoryInfos.Length switch
+            {
+                0 => throw null,
+                1 => valueFactoryInfos[0],
+                _ when isIdentity => valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom),
+                _ => Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
+            };
         }
     }
 }
