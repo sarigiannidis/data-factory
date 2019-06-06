@@ -16,7 +16,7 @@ namespace Df.Extensibility
         where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private TValue _Next = default;
+        private TValue _Next;
 
         public override bool IsRandom => false;
 

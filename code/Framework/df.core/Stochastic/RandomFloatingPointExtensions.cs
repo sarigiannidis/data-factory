@@ -14,11 +14,11 @@ namespace Df.Stochastic
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         [ThreadStatic]
-        private static int _Inext = 0;
+        private static int _Inext;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         [ThreadStatic]
-        private static int _Inextp = 0;
+        private static int _Inextp;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         [ThreadStatic]
