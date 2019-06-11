@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "df new": {
+      "commandName": "Project",
+      "commandLineArgs": "new --name demo.json -c \"Data Source=;"
+    },
+    "df add allfactories": {
+      "commandName": "Project",
+      "commandLineArgs": "add allfactories --project demo.json"
+    }
+,
+    "df add alltables": {
+      "commandName": "Project",
+      "commandLineArgs": "add alltables --project demo.json"
+    }
+  }
+}
