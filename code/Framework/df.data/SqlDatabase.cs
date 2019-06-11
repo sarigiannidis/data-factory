@@ -14,10 +14,8 @@ namespace Df.Data
     {
         public string ConnectionString { get; }
 
-        public SqlDatabase(string connectionString) =>
-            ConnectionString = Check.NotNull(nameof(connectionString), connectionString);
+        public SqlDatabase(string connectionString) => ConnectionString = Check.NotNull(nameof(connectionString), connectionString);
 
-        public override SqlConnection CreateConnection() =>
-            new SqlConnection(ConnectionString);
+        public override SqlConnection CreateConnection() => new SqlConnection(ConnectionString);
     }
 }

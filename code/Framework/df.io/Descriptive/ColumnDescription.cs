@@ -70,7 +70,6 @@ namespace Df.Io.Descriptive
         }
 
         // @TODO: Also Identity == null.
-        public bool IsWritable() =>
-            !(Computed || UserType == Data.Constants.SQL_TYPE_TIMESTAMP);
+        public bool IsWritable() => !(Computed || UserType == Data.Constants.SQL_TYPE_TIMESTAMP);
     }
 }

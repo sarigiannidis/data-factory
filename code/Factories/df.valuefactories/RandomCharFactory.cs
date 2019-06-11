@@ -14,7 +14,6 @@ namespace Df.ValueFactories
     public sealed class RandomCharFactory
         : RandomStringFactory
     {
-        public override IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints) =>
-            new RandomStringConfiguration(DEFAULT_CHAR_PATTERN);
+        public override IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints) => new RandomStringConfiguration(DEFAULT_CHAR_PATTERN);
     }
 }

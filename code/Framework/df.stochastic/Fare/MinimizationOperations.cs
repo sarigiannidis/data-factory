@@ -32,7 +32,6 @@
 
 namespace Df.Stochastic.Fare
 {
-    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -40,12 +39,6 @@ namespace Df.Stochastic.Fare
     [ExcludeFromCodeCoverage]
     internal static partial class MinimizationOperations
     {
-        /// <summary>
-        /// Minimizes (and determinizes if not already deterministic) the given automaton.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
         public static void Minimize(Automaton a)
         {
             if (!a.IsSingleton)
@@ -69,12 +62,6 @@ namespace Df.Stochastic.Fare
             a.RecomputeHashCode();
         }
 
-        /// <summary>
-        /// Minimizes the given automaton using Brzozowski's algorithm.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
         public static void MinimizeBrzozowski(Automaton a)
         {
             if (a.IsSingleton)
@@ -101,7 +88,6 @@ namespace Df.Stochastic.Fare
 
             a.Totalize();
 
-            // Make arrays for numbered states and effective alphabet.
             var ss = a.GetStates();
             var states = new State[ss.Count];
             var number = 0;
@@ -113,7 +99,6 @@ namespace Df.Stochastic.Fare
 
             var sigma = a.GetStartPoints();
 
-            // Initialize data structures.
             var v = Enumerable.Repeat<LinkedList<State>>(default, sigma.Length);
             var reverse = new LinkedList<State>[states.Length][];
             for (var i = 0; i < states.Length; i++)
@@ -144,7 +129,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Find initial partition and reverse edges.
             foreach (var qq in states)
             {
                 var j = qq.Accept ? 0 : 1;
@@ -159,7 +143,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Initialize active sets.
             for (var j = 0; j <= 1; j++)
             {
                 for (var x = 0; x < sigma.Length; x++)
@@ -174,7 +157,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Initialize pending.
             for (var x = 0; x < sigma.Length; x++)
             {
                 var j = active1[0, x].Size <= active1[1, x].Size ? 0 : 1;
@@ -182,14 +164,12 @@ namespace Df.Stochastic.Fare
                 pending2[x, j] = true;
             }
 
-            // Process pending until fixed point.
             var k = 2;
             while (pending1.Count > 0)
             {
                 var ip = pending1.RemoveAndReturnFirst();
                 pending2[ip.Item2, ip.Item1] = false;
 
-                // Find states that need to be split off their blocks.
                 for (var m = active1[ip.Item1, ip.Item2].First; m != null; m = m.Next)
                 {
                     foreach (var s in reverse[m.State.Number][ip.Item2])
@@ -209,7 +189,6 @@ namespace Df.Stochastic.Fare
                     }
                 }
 
-                // Refine blocks.
                 foreach (var j in refine1)
                 {
                     if (splitBlock[j].Count < partition[j].Count)
@@ -232,7 +211,6 @@ namespace Df.Stochastic.Fare
                             }
                         }
 
-                        // Update pending.
                         for (var c = 0; c < sigma.Length; c++)
                         {
                             var aj = active1[j, c].Size;
@@ -265,7 +243,6 @@ namespace Df.Stochastic.Fare
                 refine1.Clear();
             }
 
-            // Make a new state for each equivalence class, set initial state.
             var newstates = new State[k];
             for (var n = 0; n < newstates.Length; n++)
             {
@@ -279,12 +256,11 @@ namespace Df.Stochastic.Fare
                     }
 
                     s.Accept = q.Accept;
-                    s.Number = q.Number; // Select representative.
+                    s.Number = q.Number;
                     q.Number = n;
                 }
             }
 
-            // Build transitions and set acceptance.
             foreach (var s in newstates)
             {
                 s.Accept = states[s.Number].Accept;
@@ -297,12 +273,6 @@ namespace Df.Stochastic.Fare
             a.RemoveDeadTransitions();
         }
 
-        /// <summary>
-        /// Minimizes the given automaton using Huffman's algorithm.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
         public static void MinimizeHuffman(Automaton a)
         {
             a.Determinize();
@@ -318,7 +288,6 @@ namespace Df.Stochastic.Fare
                 triggers[i] = v.ToList();
             }
 
-            // Initialize marks based on acceptance status and find transition arrays.
             for (var n1 = 0; n1 < states.Length; n1++)
             {
                 states[n1].Number = n1;
@@ -332,7 +301,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // For all pairs, see if states agree.
             for (var n1 = 0; n1 < states.Length; n1++)
             {
                 for (var n2 = n1 + 1; n2 < states.Length; n2++)
@@ -353,7 +321,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Assign equivalence class numbers to states.
             var numclasses = 0;
             foreach (var t in states)
             {
@@ -379,14 +346,12 @@ namespace Df.Stochastic.Fare
                 numclasses++;
             }
 
-            // Make a new state for each equivalence class.
             var newstates = new State[numclasses];
             for (var n = 0; n < numclasses; n++)
             {
                 newstates[n] = new State();
             }
 
-            // Select a class representative for each class and find the new initial state.
             for (var n = 0; n < states.Length; n++)
             {
                 newstates[states[n].Number].Number = n;
@@ -396,7 +361,6 @@ namespace Df.Stochastic.Fare
                 }
             }
 
-            // Build transitions and set acceptance.
             for (var n = 0; n < numclasses; n++)
             {
                 var s = newstates[n];
@@ -483,16 +447,8 @@ namespace Df.Stochastic.Fare
             }
         }
 
-        /// <summary>
-        /// Reverses the language of the given (non-singleton) automaton while returning the set of
-        /// new initial states.
-        /// </summary>
-        /// <param name="a">
-        /// The automaton.
-        /// </param>
         private static HashSet<State> Reverse(Automaton a)
         {
-            // Reverse all edges.
             var m = new Dictionary<State, HashSet<Transition>>();
             var states = a.GetStates();
             var accept = a.GetAcceptStates();
@@ -516,12 +472,11 @@ namespace Df.Stochastic.Fare
                 r.Transitions = m[r].ToList();
             }
 
-            // Make new initial+final states.
             a.Initial.Accept = true;
             a.Initial = new State();
             foreach (var r in accept)
             {
-                a.Initial.AddEpsilon(r); // Ensures that all initial states are reachable.
+                a.Initial.AddEpsilon(r);
             }
 
             a.IsDeterministic = false;

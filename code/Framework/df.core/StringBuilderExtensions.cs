@@ -11,7 +11,6 @@ namespace System.Text
 
     public static class StringBuilderExtensions
     {
-        public static StringBuilder AppendFormatInvariant(this StringBuilder sb, string format, params object[] args) =>
-            sb.AppendFormat(CultureInfo.InvariantCulture, format, args);
+        public static StringBuilder AppendFormatInvariant(this StringBuilder sb, string format, params object[] args) => sb.AppendFormat(CultureInfo.InvariantCulture, format, args);
     }
 }

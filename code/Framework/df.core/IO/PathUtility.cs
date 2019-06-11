@@ -14,10 +14,8 @@ namespace Df.IO
     {
         public static string CurrentDirectory => Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-        public static string GetFullPath(string path) =>
-            Path.IsPathFullyQualified(path) ? path : Path.GetFullPath(path, CurrentDirectory);
+        public static string GetFullPath(string path) => Path.IsPathFullyQualified(path) ? path : Path.GetFullPath(path, CurrentDirectory);
 
-        public static string GetTempFileName() =>
-                            Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        public static string GetTempFileName() => Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
     }
 }

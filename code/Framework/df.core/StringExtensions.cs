@@ -19,13 +19,10 @@ namespace System
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private static readonly IFormatProvider InvariantFormatProvider = CultureInfo.InvariantCulture;
 
-        public static string FormatInvariant(this string format, params object[] args) =>
-            string.Format(InvariantFormatProvider, format, args);
+        public static string FormatInvariant(this string format, params object[] args) => string.Format(InvariantFormatProvider, format, args);
 
-        public static string FromBase64(this string value) =>
-            DefaultEncoding.GetString(Convert.FromBase64String(value));
+        public static string FromBase64(this string value) => DefaultEncoding.GetString(Convert.FromBase64String(value));
 
-        public static string ToBase64(this string value) =>
-            Convert.ToBase64String(DefaultEncoding.GetBytes(value));
+        public static string ToBase64(this string value) => Convert.ToBase64String(DefaultEncoding.GetBytes(value));
     }
 }

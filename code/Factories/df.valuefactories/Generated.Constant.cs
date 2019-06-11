@@ -19,8 +19,7 @@ namespace Df.ValueFactories
         : ConstantFactory<DateTime>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<DateTime>(default(DateTime));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<DateTime>(default(DateTime));
     }
 
     [GeneratedCode("df", "")]
@@ -29,8 +28,7 @@ namespace Df.ValueFactories
         : ConstantFactory<DateTimeOffset>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<DateTimeOffset>(default(DateTimeOffset));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<DateTimeOffset>(default(DateTimeOffset));
     }
 
     [GeneratedCode("df", "")]
@@ -39,8 +37,7 @@ namespace Df.ValueFactories
         : ConstantFactory<TimeSpan>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<TimeSpan>(default(TimeSpan));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<TimeSpan>(default(TimeSpan));
     }
 
     [GeneratedCode("df", "")]
@@ -49,8 +46,7 @@ namespace Df.ValueFactories
         : ConstantFactory<bool>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<bool>(default(bool));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<bool>(default(bool));
     }
 
     [GeneratedCode("df", "")]
@@ -59,8 +55,7 @@ namespace Df.ValueFactories
         : ConstantFactory<byte>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<byte>(default(byte));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<byte>(default(byte));
     }
 
     [GeneratedCode("df", "")]
@@ -69,8 +64,7 @@ namespace Df.ValueFactories
         : ConstantFactory<char>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<char>(default(char));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<char>(default(char));
     }
 
     [GeneratedCode("df", "")]
@@ -79,8 +73,7 @@ namespace Df.ValueFactories
         : ConstantFactory<decimal>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<decimal>(default(decimal));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<decimal>(default(decimal));
     }
 
     [GeneratedCode("df", "")]
@@ -89,8 +82,7 @@ namespace Df.ValueFactories
         : ConstantFactory<double>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<double>(default(double));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<double>(default(double));
     }
 
     [GeneratedCode("df", "")]
@@ -99,8 +91,7 @@ namespace Df.ValueFactories
         : ConstantFactory<float>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<float>(default(float));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<float>(default(float));
     }
 
     [GeneratedCode("df", "")]
@@ -109,8 +100,7 @@ namespace Df.ValueFactories
         : ConstantFactory<int>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<int>(default(int));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<int>(default(int));
     }
 
     [GeneratedCode("df", "")]
@@ -119,8 +109,7 @@ namespace Df.ValueFactories
         : ConstantFactory<long>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<long>(default(long));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<long>(default(long));
     }
 
     [GeneratedCode("df", "")]
@@ -129,8 +118,7 @@ namespace Df.ValueFactories
         : ConstantFactory<sbyte>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<sbyte>(default(sbyte));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<sbyte>(default(sbyte));
     }
 
     [GeneratedCode("df", "")]
@@ -139,8 +127,7 @@ namespace Df.ValueFactories
         : ConstantFactory<short>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<short>(default(short));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<short>(default(short));
     }
 
     [GeneratedCode("df", "")]
@@ -149,8 +136,7 @@ namespace Df.ValueFactories
         : ConstantFactory<string>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<string>(default(string));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<string>(default(string));
     }
 
     [GeneratedCode("df", "")]
@@ -159,8 +145,7 @@ namespace Df.ValueFactories
         : ConstantFactory<uint>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<uint>(default(uint));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<uint>(default(uint));
     }
 
     [GeneratedCode("df", "")]
@@ -169,8 +154,7 @@ namespace Df.ValueFactories
         : ConstantFactory<ulong>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<ulong>(default(ulong));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<ulong>(default(ulong));
     }
 
     [GeneratedCode("df", "")]
@@ -179,8 +163,7 @@ namespace Df.ValueFactories
         : ConstantFactory<ushort>
         , IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ConstantConfiguration<ushort>(default(ushort));
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ConstantConfiguration<ushort>(default(ushort));
     }
 }
 #pragma warning restore SA1402 // File may only contain a single type

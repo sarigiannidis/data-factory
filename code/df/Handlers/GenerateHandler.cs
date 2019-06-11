@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     using Df.Io;
     using Df.Options;
@@ -46,8 +46,7 @@ namespace Df.OptionHandlers
             }
         }
 
-        private void GenerateDatabase(Project project, bool disableTriggers, bool dryRun) =>
-            _DatasetGeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
+        private void GenerateDatabase(Project project, bool disableTriggers, bool dryRun) => _DatasetGeneratorFactory.Create(project).GenerateDatabase(disableTriggers, dryRun);
 
         private void GenerateFile(Project project, bool disableTriggers, bool dryRun, string path)
         {

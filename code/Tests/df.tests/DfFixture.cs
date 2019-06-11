@@ -20,6 +20,8 @@ namespace Df.Tests
 
         private const string SECTION_EXTENSIBILITY = "ValueFactoryManagerOptions";
 
+        private const string SECTION_PREFERENCES = "Preferences";
+
         public string ConnectionString { get; }
 
         public IServiceProvider ServiceProvider { get; }
@@ -36,13 +38,12 @@ namespace Df.Tests
             ServiceProvider = ConfigureServices(configuration).BuildServiceProvider();
         }
 
-        private IServiceCollection ConfigureServices(IConfiguration configuration) =>
-            new ServiceCollection()
+        private IServiceCollection ConfigureServices(IConfiguration configuration) => new ServiceCollection()
             .AddLogging(_ => _.AddDebug().AddEventSourceLogger().SetMinimumLevel(LogLevel.Debug))
             .AddDfData()
             .AddDfExtensibility(configuration.GetSection(SECTION_EXTENSIBILITY))
             .AddDfIo()
             .AddDfProduction()
-            .AddDfOptionHandlers();
+            .AddDfOptionHandlers(configuration.GetSection(SECTION_PREFERENCES));
     }
 }

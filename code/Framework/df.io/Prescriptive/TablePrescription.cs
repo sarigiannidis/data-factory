@@ -41,8 +41,7 @@ namespace Df.Io.Prescriptive
         public int Rows { get; set; } = DEFAULTROWSPERTABLE;
 
         [JsonConstructor]
-        public TablePrescription(TableDescription tableDescription) =>
-            TableDescription = Check.NotNull(nameof(tableDescription), tableDescription);
+        public TablePrescription(TableDescription tableDescription) => TableDescription = Check.NotNull(nameof(tableDescription), tableDescription);
 
         public void AddColumn(ColumnPrescription columnPrescription)
         {

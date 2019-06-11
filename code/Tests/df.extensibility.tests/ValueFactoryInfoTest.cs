@@ -21,8 +21,7 @@ namespace Df.Extensibility.Tests
 
         public ITestOutputHelper Output { get; }
 
-        public ValueFactoryInfoTest(ITestOutputHelper output) =>
-            Output = output;
+        public ValueFactoryInfoTest(ITestOutputHelper output) => Output = output;
 
         public static IEnumerable<object[]> GetValueFactoryInfos()
         {

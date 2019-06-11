@@ -43,7 +43,6 @@ namespace Df.Io.Descriptive
         }
 
         [JsonConstructor]
-        internal ColumnRelationshipDescription(int order) =>
-            Order = Check.GreaterThanOrEqual(nameof(order), order, 0);
+        internal ColumnRelationshipDescription(int order) => Order = Check.GreaterThanOrEqual(nameof(order), order, 0);
     }
 }

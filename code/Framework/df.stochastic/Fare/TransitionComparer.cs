@@ -41,23 +41,8 @@ namespace Df.Stochastic.Fare
     {
         private readonly bool _ToFirst;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TransitionComparer"/> class.
-        /// </summary>
-        /// <param name="toFirst">
-        /// if set to <c>true</c> [to first].
-        /// </param>
         public TransitionComparer(bool toFirst) => _ToFirst = toFirst;
 
-        /// <summary>
-        /// Compares by (min, reverse max, to) or (to, min, reverse max).
-        /// </summary>
-        /// <param name="x">
-        /// The first Transition.
-        /// </param>
-        /// <param name="y">
-        /// The second Transition.
-        /// </param>
         public int Compare(Transition x, Transition y)
         {
             if (_ToFirst && x.To != y.To)

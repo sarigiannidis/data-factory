@@ -75,7 +75,6 @@ namespace Df.Collections
             _Comparer = EqualityComparer<TNode>.Default;
         }
 
-        public IOrderedEnumerable<(int Index, TNode Node)> Order(IEnumerable<TNode> nodes) =>
-            new InternalOrderer(this, nodes).Order();
+        public IOrderedEnumerable<(int Index, TNode Node)> Order(IEnumerable<TNode> nodes) => new InternalOrderer(this, nodes).Order();
     }
 }

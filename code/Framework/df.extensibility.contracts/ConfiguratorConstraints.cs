@@ -9,10 +9,9 @@ namespace Df.Extensibility
 {
     using System;
 
-    public class ConfiguratorConstraints
+    public sealed class ConfiguratorConstraints
     {
-        public static ConfiguratorConstraints Empty =>
-            null;
+        public static ConfiguratorConstraints Empty => null;
 
         public object IncrementValue { get; set; }
 

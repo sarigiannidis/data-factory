@@ -20,8 +20,7 @@ namespace Df.ValueFactories
         : RandomListFactory<DateTime>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<DateTime>(new WeightedValueCollection<DateTime>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<DateTime>(new WeightedValueCollection<DateTime>
             {
                 new WeightedValue<DateTime>(default, 0.1f),
             });
@@ -32,8 +31,7 @@ namespace Df.ValueFactories
         : RandomListFactory<DateTimeOffset>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<DateTimeOffset>(new WeightedValueCollection<DateTimeOffset>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<DateTimeOffset>(new WeightedValueCollection<DateTimeOffset>
             {
                 new WeightedValue<DateTimeOffset>(default, 0.1f),
             });
@@ -44,8 +42,7 @@ namespace Df.ValueFactories
         : RandomListFactory<bool>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<bool>(new WeightedValueCollection<bool>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<bool>(new WeightedValueCollection<bool>
             {
                 new WeightedValue<bool>(default, 0.1f),
             });
@@ -56,8 +53,7 @@ namespace Df.ValueFactories
         : RandomListFactory<byte>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<byte>(new WeightedValueCollection<byte>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<byte>(new WeightedValueCollection<byte>
             {
                 new WeightedValue<byte>(default, 0.1f),
             });
@@ -68,8 +64,7 @@ namespace Df.ValueFactories
         : RandomListFactory<char>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<char>(new WeightedValueCollection<char>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<char>(new WeightedValueCollection<char>
             {
                 new WeightedValue<char>(default, 0.1f),
             });
@@ -80,8 +75,7 @@ namespace Df.ValueFactories
         : RandomListFactory<decimal>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<decimal>(new WeightedValueCollection<decimal>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<decimal>(new WeightedValueCollection<decimal>
             {
                 new WeightedValue<decimal>(default, 0.1f),
             });
@@ -92,8 +86,7 @@ namespace Df.ValueFactories
         : RandomListFactory<double>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<double>(new WeightedValueCollection<double>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<double>(new WeightedValueCollection<double>
             {
                 new WeightedValue<double>(default, 0.1f),
             });
@@ -104,8 +97,7 @@ namespace Df.ValueFactories
         : RandomListFactory<float>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<float>(new WeightedValueCollection<float>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<float>(new WeightedValueCollection<float>
             {
                 new WeightedValue<float>(default, 0.1f),
             });
@@ -116,8 +108,7 @@ namespace Df.ValueFactories
         : RandomListFactory<int>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<int>(new WeightedValueCollection<int>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<int>(new WeightedValueCollection<int>
             {
                 new WeightedValue<int>(default, 0.1f),
             });
@@ -128,8 +119,7 @@ namespace Df.ValueFactories
         : RandomListFactory<long>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<long>(new WeightedValueCollection<long>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<long>(new WeightedValueCollection<long>
             {
                 new WeightedValue<long>(default, 0.1f),
             });
@@ -140,8 +130,7 @@ namespace Df.ValueFactories
         : RandomListFactory<sbyte>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<sbyte>(new WeightedValueCollection<sbyte>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<sbyte>(new WeightedValueCollection<sbyte>
             {
                 new WeightedValue<sbyte>(default, 0.1f),
             });
@@ -152,8 +141,7 @@ namespace Df.ValueFactories
         : RandomListFactory<short>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<short>(new WeightedValueCollection<short>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<short>(new WeightedValueCollection<short>
             {
                 new WeightedValue<short>(default, 0.1f),
             });
@@ -164,8 +152,7 @@ namespace Df.ValueFactories
         : RandomListFactory<string>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<string>(new WeightedValueCollection<string>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<string>(new WeightedValueCollection<string>
             {
                 new WeightedValue<string>(default, 0.1f),
             });
@@ -176,8 +163,7 @@ namespace Df.ValueFactories
         : RandomListFactory<uint>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<uint>(new WeightedValueCollection<uint>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<uint>(new WeightedValueCollection<uint>
             {
                 new WeightedValue<uint>(default, 0.1f),
             });
@@ -188,8 +174,7 @@ namespace Df.ValueFactories
         : RandomListFactory<ulong>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<ulong>(new WeightedValueCollection<ulong>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<ulong>(new WeightedValueCollection<ulong>
             {
                 new WeightedValue<ulong>(default, 0.1f),
             });
@@ -200,8 +185,7 @@ namespace Df.ValueFactories
         : RandomListFactory<ushort>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
-            new ListFactoryConfiguration<ushort>(new WeightedValueCollection<ushort>
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ListFactoryConfiguration<ushort>(new WeightedValueCollection<ushort>
             {
                 new WeightedValue<ushort>(default, 0.1f),
             });

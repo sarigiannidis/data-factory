@@ -38,14 +38,13 @@ namespace Df.Extensibility
             set => Configuration = (TConfiguration)value;
         }
 
-        public abstract bool IsRandom { get; }
+        public abstract ValueFactoryKinds Kind { get; }
 
         public event EventHandler ConfigurationChanged;
 
         public abstract TValue CreateValue();
 
-        object IValueFactory.CreateValue() =>
-            CreateValue();
+        object IValueFactory.CreateValue() => CreateValue();
 
         private void OnConfigurationChanged() => ConfigurationChanged?.Invoke(this, EventArgs.Empty);
     }

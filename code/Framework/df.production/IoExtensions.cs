@@ -14,8 +14,7 @@ namespace Df.Production
 
     internal static class IoExtensions
     {
-        public static string SqlDefinition(this ColumnDescription columnDescription) =>
-            SqlTypeUtility.GetSqlColumnDefinition(
+        public static string SqlDefinition(this ColumnDescription columnDescription) => SqlTypeUtility.GetSqlColumnDefinition(
                     columnDescription.Name,
                     columnDescription.UserType,
                     columnDescription.Nullable,
@@ -25,10 +24,8 @@ namespace Df.Production
                     null,
                     null);
 
-        public static string TableName(this TableDescription tableDescription) =>
-            "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name);
+        public static string TableName(this TableDescription tableDescription) => "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name);
 
-        public static string TableName(this TablePrescription tablePrescription) =>
-            TableName(tablePrescription.TableDescription);
+        public static string TableName(this TablePrescription tablePrescription) => TableName(tablePrescription.TableDescription);
     }
 }

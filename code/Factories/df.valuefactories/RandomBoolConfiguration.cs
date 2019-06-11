@@ -17,12 +17,10 @@ namespace Df.ValueFactories
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public float FalseWeight =>
-            GetValue<float>(PROPERTY_FALSE);
+        public float FalseWeight => GetValue<float>(PROPERTY_FALSE);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public float TrueWeight =>
-            GetValue<float>(PROPERTY_TRUE);
+        public float TrueWeight => GetValue<float>(PROPERTY_TRUE);
 
         public RandomBoolConfiguration(float trueWeight, float falseWeight)
         {

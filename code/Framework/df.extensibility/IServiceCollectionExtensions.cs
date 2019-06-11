@@ -13,8 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddDfExtensibility(this IServiceCollection services, IConfigurationSection configurationSection) =>
-            Check.NotNull(nameof(services), services)
+        public static IServiceCollection AddDfExtensibility(this IServiceCollection services, IConfigurationSection configurationSection) => Check.NotNull(nameof(services), services)
                 .Configure<ValueFactoryManagerOptions>(configurationSection)
                 .AddSingleton<IValueFactoryManager, ValueFactoryManager>();
     }

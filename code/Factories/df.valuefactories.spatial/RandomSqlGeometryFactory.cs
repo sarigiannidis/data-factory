@@ -17,8 +17,7 @@ namespace Df.ValueFactories.Spatial
         : RandomFactory<SqlGeometry, RandomSqlGeometryConfiguration>,
         IConfigurator
     {
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            new RandomSqlGeometryConfiguration(SQLGEOMETRY_MINX, SQLGEOMETRY_MAXX, SQLGEOMETRY_MINY, SQLGEOMETRY_MAXY, SQLGEOMETRY_SRID);
+        public IValueFactoryConfiguration CreateConfiguration() => new RandomSqlGeometryConfiguration(SQLGEOMETRY_MINX, SQLGEOMETRY_MAXX, SQLGEOMETRY_MINY, SQLGEOMETRY_MAXY, SQLGEOMETRY_SRID);
 
         public override SqlGeometry CreateValue()
         {

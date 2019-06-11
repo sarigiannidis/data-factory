@@ -31,8 +31,7 @@ namespace Df.Tests
         }
 
         [Fact]
-        public void ListFactories() =>
-            Handle(new ListOptions { Subject = ListSubject.Factories });
+        public void ListFactories() => Handle(new ListOptions { Subject = ListSubject.Factories });
 
         [Fact]
         public void ListTables()

@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     using Df.Collections;
     using Df.Extensibility;
@@ -13,23 +13,29 @@ namespace Df.OptionHandlers
     using Df.Io.Descriptive;
     using Df.Io.Prescriptive;
     using Df.Options;
+    using Microsoft.Extensions.Options;
     using System;
     using System.Diagnostics;
     using System.Linq;
+    using System.Text.RegularExpressions;
 
     internal sealed class AddHandler
         : IHandler<AddOptions>
     {
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private readonly Preferences _Preferences;
+
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IProjectManager _ProjectManager;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IValueFactoryManager _ValueFactoryManager;
 
-        public AddHandler(IProjectManager projectManager, IValueFactoryManager valueFactoryManager)
+        public AddHandler(IProjectManager projectManager, IValueFactoryManager valueFactoryManager, IOptions<Preferences> options)
         {
             _ProjectManager = Check.NotNull(nameof(projectManager), projectManager);
             _ValueFactoryManager = Check.NotNull(nameof(valueFactoryManager), valueFactoryManager);
+            _Preferences = Check.NotNull(nameof(options), options);
         }
 
         public void AddFactory(AddOptions options)
@@ -111,15 +117,7 @@ namespace Df.OptionHandlers
 
         private ValueFactoryPrescription CreateNewValueFactoryPrescription(Project project, ColumnDescription columnDescription)
         {
-            var valueFactoryInfos = _ValueFactoryManager.ValueFactoryInfos.FilterByType(columnDescription.ResolveUserType()).ToArray();
-            var valueFactoryInfo = valueFactoryInfos.Length switch
-            {
-                0 => throw null,
-                1 => valueFactoryInfos[0],
-                _ when columnDescription.Identity != null => valueFactoryInfos.First(_ => !_.ValueFactory.IsRandom),
-                _ => Array.Find(valueFactoryInfos, _ => _.ValueFactory.IsRandom) ?? valueFactoryInfos[0]
-            };
-
+            var valueFactoryInfo = SelectValueFactoryInfo(columnDescription.ResolveUserType(), columnDescription.Identity != null);
             return project.CreateValueFactoryPrescription(valueFactoryInfo, _ => _.ConfigureForColumn(columnDescription));
         }
 
@@ -136,6 +134,31 @@ namespace Df.OptionHandlers
             {
                 return valueFactoryPrescription;
             }
+        }
+
+        /// <summary>
+        /// This function selects a <see cref="IValueFactoryInfo"/> given a <paramref name="userType"/>.
+        /// </summary>
+        /// <param name="userType">The type of the column.</param>
+        /// <param name="isIdentity">Whether the column is an identity.</param>
+        /// <returns>A matching <see cref="IValueFactoryInfo"/>.</returns>
+        /// <remarks>This function picks the preferred <see cref="IValueFactoryInfo"/> for any given <see cref="Type"/>.</remarks>
+        private IValueFactoryInfo SelectValueFactoryInfo(Type userType, bool isIdentity)
+        {
+            var valueFactoryInfos = _ValueFactoryManager
+                .ValueFactoryInfos
+                .FilterByType(userType)
+                .ToArray();
+            Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
+
+            if (isIdentity)
+            {
+                return valueFactoryInfos.First(_ => !_.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
+            }
+
+            var preferred = new Regex(_Preferences.Pattern);
+            var match = Array.Find(valueFactoryInfos, _ => preferred.IsMatch(_.Name));
+            return match ?? valueFactoryInfos[0];
         }
     }
 }

@@ -14,8 +14,7 @@ namespace Df.Io
     {
         private JsonUtility JsonUtility { get; }
 
-        public ProjectManager(JsonUtility jsonUtility) =>
-            JsonUtility = Check.NotNull(nameof(jsonUtility), jsonUtility);
+        public ProjectManager(JsonUtility jsonUtility) => JsonUtility = Check.NotNull(nameof(jsonUtility), jsonUtility);
 
         public Project LoadFromFile(string path)
         {
@@ -24,7 +23,6 @@ namespace Df.Io
             return JsonUtility.Read<Project>(path);
         }
 
-        public void SaveToFile(Project project, string path) =>
-            JsonUtility.Write(Check.NotNull(nameof(project), project), path);
+        public void SaveToFile(Project project, string path) => JsonUtility.Write(Check.NotNull(nameof(project), project), path);
     }
 }

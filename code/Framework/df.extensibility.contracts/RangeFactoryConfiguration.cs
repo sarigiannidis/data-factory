@@ -18,12 +18,10 @@ namespace Df.Extensibility
         where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public TValue MaxValue =>
-            GetValue<TValue>(PROPERTY_MAX);
+        public TValue MaxValue => GetValue<TValue>(PROPERTY_MAX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public TValue MinValue =>
-            GetValue<TValue>(PROPERTY_MIN);
+        public TValue MinValue => GetValue<TValue>(PROPERTY_MIN);
 
         public RangeFactoryConfiguration(TValue min, TValue max)
         {

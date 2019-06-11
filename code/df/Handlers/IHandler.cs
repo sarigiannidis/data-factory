@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     internal interface IHandler<TOptions>
     {

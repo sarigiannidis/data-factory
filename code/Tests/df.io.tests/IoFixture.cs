@@ -50,8 +50,7 @@ namespace Df.Io.Tests
             _ = loggingBuilder.AddEventSourceLogger();
         }
 
-        private IServiceCollection ConfigureServices(IConfiguration configuration) =>
-                    new ServiceCollection()
+        private IServiceCollection ConfigureServices(IConfiguration configuration) => new ServiceCollection()
             .AddDfData()
             .AddDfIo()
             .AddDfExtensibility(configuration.GetSection(SECTION_EXTENSIBILITY))

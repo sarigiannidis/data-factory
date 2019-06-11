@@ -39,50 +39,17 @@ namespace Df.Stochastic.Fare
     using System.Linq;
     using System.Text;
 
-    /// <summary>
-    /// Regular Expression extension to Automaton.
-    /// </summary>
     [ExcludeFromCodeCoverage]
     internal partial class RegExp
     {
-        // Do not capture unnamed groups.
         private const char ExplicitCapture = 'n';
 
-        /// <summary>
-        /// Uses case-insensitive matching.
-        /// </summary>
         private const char IgnoreCase = 'i';
 
-        /// <summary>
-        /// Exclude unescaped white space from the pattern and enable comments after a hash sign
-        /// <code>
-        /// #
-        /// </code>
-        /// .
-        /// </summary>
         private const char IgnorePatternWhitespace = 'x';
 
-        /// <summary>
-        /// Use multiline mode, where
-        /// <code>
-        /// ^
-        /// </code>
-        /// and
-        /// <code>
-        /// $
-        /// </code>
-        /// match the beginning and end of each line, instead of the beginning and end of the input string.
-        /// </summary>
         private const char Multiline = 'm';
 
-        /// <summary>
-        /// Use single-line mode, where the period matches every character, instead of every
-        /// character except
-        /// <code>
-        /// \n
-        /// </code>
-        /// .
-        /// </summary>
         private const char Singleline = 's';
 
         private static readonly char[] RegExpMatchingOptions =
@@ -122,26 +89,11 @@ namespace Df.Stochastic.Fare
 
         private char _To;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegExp"/> class from a string.
-        /// </summary>
-        /// <param name="s">
-        /// A string with the regular expression.
-        /// </param>
         public RegExp(string s)
             : this(s, RegExpSyntaxOptions.All)
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RegExp"/> class from a string.
-        /// </summary>
-        /// <param name="s">
-        /// A string with the regular expression.
-        /// </param>
-        /// <param name="syntaxFlags">
-        /// Boolean 'or' of optional syntax constructs to be enabled.
-        /// </param>
         public RegExp(string s, RegExpSyntaxOptions syntaxFlags)
         {
             _B = s;
@@ -173,19 +125,10 @@ namespace Df.Stochastic.Fare
             _B = null;
         }
 
-        /// <summary>
-        /// Prevents a default instance of the <see cref="RegExp"/> class from being created.
-        /// </summary>
         private RegExp()
         {
         }
 
-        /// <summary>
-        /// Returns the set of automaton identifiers that occur in this regular expression.
-        /// </summary>
-        /// <returns>
-        /// The set of automaton identifiers that occur in this regular expression.
-        /// </returns>
         public HashSet<string> GetIdentifiers()
         {
             var set = new HashSet<string>();
@@ -193,16 +136,6 @@ namespace Df.Stochastic.Fare
             return set;
         }
 
-        /// <summary>
-        /// Sets or resets allow mutate flag. If this flag is set, then automata construction uses
-        /// mutable automata, which is slightly faster but not thread safe.
-        /// </summary>
-        /// <param name="flag">
-        /// if set to <c>true</c> the flag is set.
-        /// </param>
-        /// <returns>
-        /// The previous value of the flag.
-        /// </returns>
         public bool SetAllowMutate(bool flag)
         {
             var @bool = _AllowMutation;
@@ -210,170 +143,53 @@ namespace Df.Stochastic.Fare
             return @bool;
         }
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . Same as
-        /// <code>
-        /// toAutomaton(null)
-        /// </code>
-        /// (empty automaton map).
-        /// </summary>
         public Automaton ToAutomaton() => ToAutomatonAllowMutate(null, null, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . Same as
-        /// <code>
-        /// toAutomaton(null,minimize)
-        /// </code>
-        /// (empty automaton map).
-        /// </summary>
-        /// <param name="minimize">
-        /// if set to <c>true</c> [minimize].
-        /// </param>
         public Automaton ToAutomaton(bool minimize) => ToAutomatonAllowMutate(null, null, minimize);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton is minimal and deterministic and has no transitions to dead states.
-        /// </summary>
-        /// <param name="automatonProvider">
-        /// The provider of automata for named identifiers.
-        /// </param>
         public Automaton ToAutomaton(IAutomatonProvider automatonProvider) => ToAutomatonAllowMutate(null, automatonProvider, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton has no transitions to dead states.
-        /// </summary>
-        /// <param name="automatonProvider">
-        /// The provider of automata for named identifiers.
-        /// </param>
-        /// <param name="minimize">
-        /// if set to <c>true</c> the automaton is minimized and determinized.
-        /// </param>
         public Automaton ToAutomaton(IAutomatonProvider automatonProvider, bool minimize) => ToAutomatonAllowMutate(null, automatonProvider, minimize);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton is minimal and deterministic and has no transitions to dead states.
-        /// </summary>
-        /// <param name="automata">
-        /// The a map from automaton identifiers to automata.
-        /// </param>
         public Automaton ToAutomaton(IDictionary<string, Automaton> automata) => ToAutomatonAllowMutate(automata, null, true);
 
-        /// <summary>
-        /// Constructs new
-        /// <code>
-        /// Automaton
-        /// </code>
-        /// from this
-        /// <code>
-        /// RegExp
-        /// </code>
-        /// . The constructed automaton has no transitions to dead states.
-        /// </summary>
-        /// <param name="automata">
-        /// The map from automaton identifiers to automata.
-        /// </param>
-        /// <param name="minimize">
-        /// if set to <c>true</c> the automaton is minimized and determinized.
-        /// </param>
         public Automaton ToAutomaton(IDictionary<string, Automaton> automata, bool minimize) => ToAutomatonAllowMutate(automata, null, minimize);
 
-        /// <inheritdoc/>
-        ///
         public override string ToString() => ToStringBuilder(new StringBuilder()).ToString();
 
         private static RegExp ExcludeChars(RegExp exclusion, RegExp allChars) => MakeIntersection(allChars, MakeComplement(exclusion));
 
         private static RegExp MakeAnyPrintableASCIIChar() => MakeCharRange(' ', '~');
 
-        private static RegExp MakeAnyString()
+        private static RegExp MakeAnyString() => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpAnyString,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpAnyString,
+        };
 
-        private static RegExp MakeAutomaton(string s)
+        private static RegExp MakeAutomaton(string s) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpAutomaton,
-                _S = s,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpAutomaton,
+            _S = s,
+        };
 
-        private static RegExp MakeChar(char @char)
+        private static RegExp MakeChar(char @char) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpChar,
-                _C = @char,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpChar,
+            _C = @char,
+        };
 
-        private static RegExp MakeCharRange(char from, char to)
+        private static RegExp MakeCharRange(char from, char to) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpCharRange,
-                _From = from,
-                _To = to,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpCharRange,
+            _From = from,
+            _To = to,
+        };
 
-        private static RegExp MakeComplement(RegExp exp)
+        private static RegExp MakeComplement(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpComplement,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpComplement,
+            _Exp1 = exp,
+        };
 
         private static RegExp MakeConcatenation(RegExp exp1, RegExp exp2)
         {
@@ -410,90 +226,58 @@ namespace Df.Stochastic.Fare
             return r;
         }
 
-        private static RegExp MakeEmpty()
+        private static RegExp MakeEmpty() => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpEmpty,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpEmpty,
+        };
 
-        private static RegExp MakeIntersection(RegExp exp1, RegExp exp2)
+        private static RegExp MakeIntersection(RegExp exp1, RegExp exp2) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpIntersection,
-                _Exp1 = exp1,
-                _Exp2 = exp2,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpIntersection,
+            _Exp1 = exp1,
+            _Exp2 = exp2,
+        };
 
-        private static RegExp MakeInterval(int min, int max, int digits)
+        private static RegExp MakeInterval(int min, int max, int digits) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpInterval,
-                _Min = min,
-                _Max = max,
-                _Digits = digits,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpInterval,
+            _Min = min,
+            _Max = max,
+            _Digits = digits,
+        };
 
-        private static RegExp MakeOptional(RegExp exp)
+        private static RegExp MakeOptional(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpOptional,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpOptional,
+            _Exp1 = exp,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp)
+        private static RegExp MakeRepeat(RegExp exp) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeat,
-                _Exp1 = exp,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeat,
+            _Exp1 = exp,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp, int min)
+        private static RegExp MakeRepeat(RegExp exp, int min) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeatMin,
-                _Exp1 = exp,
-                _Min = min,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeatMin,
+            _Exp1 = exp,
+            _Min = min,
+        };
 
-        private static RegExp MakeRepeat(RegExp exp, int min, int max)
+        private static RegExp MakeRepeat(RegExp exp, int min, int max) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpRepeatMinMax,
-                _Exp1 = exp,
-                _Min = min,
-                _Max = max,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpRepeatMinMax,
+            _Exp1 = exp,
+            _Min = min,
+            _Max = max,
+        };
 
-        private static RegExp MakeString(string @string)
+        private static RegExp MakeString(string @string) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpString,
-                _S = @string,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpString,
+            _S = @string,
+        };
 
         private static RegExp MakeString(RegExp exp1, RegExp exp2)
         {
@@ -505,16 +289,12 @@ namespace Df.Stochastic.Fare
             return MakeString(sb.ToString());
         }
 
-        private static RegExp MakeUnion(RegExp exp1, RegExp exp2)
+        private static RegExp MakeUnion(RegExp exp1, RegExp exp2) => new RegExp
         {
-            var r = new RegExp
-            {
-                _Kind = Kind.RegexpUnion,
-                _Exp1 = exp1,
-                _Exp2 = exp2,
-            };
-            return r;
-        }
+            _Kind = Kind.RegexpUnion,
+            _Exp1 = exp1,
+            _Exp2 = exp2,
+        };
 
         private bool Check(RegExpSyntaxOptions flag) => (_Flags & flag) != 0;
 
@@ -640,8 +420,7 @@ namespace Df.Stochastic.Fare
             return Next();
         }
 
-        private RegExp ParseComplExp() =>
-            Check(RegExpSyntaxOptions.Complement) && Match('~')
+        private RegExp ParseComplExp() => Check(RegExpSyntaxOptions.Complement) && Match('~')
                 ? MakeComplement(ParseComplExp())
                 : ParseCharClassExp();
 
@@ -842,7 +621,6 @@ namespace Df.Stochastic.Fare
 
             if (Match('\\'))
             {
-                // Escaped '\' character.
                 if (Match('\\'))
                 {
                     return MakeChar('\\');
@@ -850,22 +628,18 @@ namespace Df.Stochastic.Fare
 
                 bool inclusion;
 
-                // Digits.
                 if ((inclusion = Match('d')) || Match('D'))
                 {
                     var digitChars = MakeCharRange('0', '9');
                     return inclusion ? digitChars : ExcludeChars(digitChars, MakeAnyPrintableASCIIChar());
                 }
 
-                // Whitespace chars only.
                 if ((inclusion = Match('s')) || Match('S'))
                 {
-                    // Do not add line breaks, as usually RegExp is single line.
                     var whitespaceChars = MakeUnion(MakeChar(' '), MakeChar('\t'));
                     return inclusion ? whitespaceChars : ExcludeChars(whitespaceChars, MakeAnyPrintableASCIIChar());
                 }
 
-                // Word character. Range is [A-Za-z0-9_]
                 if ((inclusion = Match('w')) || Match('W'))
                 {
                     var ranges = new[] { MakeCharRange('A', 'Z'), MakeCharRange('a', 'z'), MakeCharRange('0', '9') };
@@ -998,7 +772,7 @@ namespace Df.Stochastic.Fare
                         throw new ArgumentException("'" + _S + "' not found");
                     }
 
-                    a = aa.Clone(); // Always clone here (ignore allowMutate).
+                    a = aa.Clone();
                     break;
 
                 case Kind.RegexpInterval:
@@ -1009,15 +783,12 @@ namespace Df.Stochastic.Fare
             return a;
         }
 
-        private Automaton ToAutomatonAllowMutate(
-            IDictionary<string, Automaton> automata,
-            IAutomatonProvider automatonProvider,
-            bool minimize)
+        private Automaton ToAutomatonAllowMutate(IDictionary<string, Automaton> automata, IAutomatonProvider automatonProvider, bool minimize)
         {
             var @bool = false;
             if (_AllowMutation)
             {
-                @bool = SetAllowMutate(true); // This is not thead safe.
+                @bool = SetAllowMutate(true);
             }
 
             var a = ToAutomaton(automata, automatonProvider, minimize);

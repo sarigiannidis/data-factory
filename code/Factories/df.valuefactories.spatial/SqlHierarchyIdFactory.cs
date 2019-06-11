@@ -17,10 +17,8 @@ namespace Df.ValueFactories.Spatial
         : RandomFactory<SqlHierarchyId, EmptyConfiguration>,
         IConfigurator
     {
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            ValueFactoryConfiguration.Empty;
+        public IValueFactoryConfiguration CreateConfiguration() => ValueFactoryConfiguration.Empty;
 
-        public override SqlHierarchyId CreateValue() =>
-            SqlHierarchyId.Parse("/{0}/".FormatInvariant(Random.NextInt32(0, 11)));
+        public override SqlHierarchyId CreateValue() => SqlHierarchyId.Parse("/{0}/".FormatInvariant(Random.NextInt32(0, 11)));
     }
 }

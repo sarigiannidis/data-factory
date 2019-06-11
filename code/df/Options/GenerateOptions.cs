@@ -15,8 +15,7 @@ namespace Df.Options
     public sealed class GenerateOptions
     {
         [Usage]
-        public static IEnumerable<Example> Examples =>
-            new List<Example>
+        public static IEnumerable<Example> Examples => new List<Example>
             {
                 new Example("Generate a file containing INSERT statements.", new GenerateOptions { Subject = GenerateSubject.File, Project = "testdb.json", Output = "INSERTS.SQL" }),
                 new Example("Generate data in a database.", new GenerateOptions { Subject = GenerateSubject.Database, Project = "testdb.json", DisableTriggers = true }),

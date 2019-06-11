@@ -20,10 +20,8 @@ namespace Df
             return defaultConstructor == null ? (Func<T>)null : (() => (T)defaultConstructor.Invoke(null));
         }
 
-        public static IDictionary<string, object> GetConstructorArguments(CustomAttributeData customAttributeData) =>
-            customAttributeData.Constructor.GetParameters().ToDictionary(_ => _.Name, _ => customAttributeData.ConstructorArguments[_.Position].Value);
+        public static IDictionary<string, object> GetConstructorArguments(CustomAttributeData customAttributeData) => customAttributeData.Constructor.GetParameters().ToDictionary(_ => _.Name, _ => customAttributeData.ConstructorArguments[_.Position].Value);
 
-        public static ConstructorInfo GetDefaultConstructor(Type type) =>
-            type.GetConstructor(BindingFlags.Instance | BindingFlags.Public, null, CallingConventions.HasThis, Array.Empty<Type>(), null);
+        public static ConstructorInfo GetDefaultConstructor(Type type) => type.GetConstructor(BindingFlags.Instance | BindingFlags.Public, null, CallingConventions.HasThis, Array.Empty<Type>(), null);
     }
 }

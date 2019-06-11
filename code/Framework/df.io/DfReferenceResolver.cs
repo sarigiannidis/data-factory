@@ -20,8 +20,7 @@ namespace Df.Io
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IDictionary<string, object> _Referenced = new Dictionary<string, object>();
 
-        public void AddReference(object context, string reference, object value) =>
-            _Referenced[reference] = value;
+        public void AddReference(object context, string reference, object value) => _Referenced[reference] = value;
 
         public string GetReference(object context, object value)
         {
@@ -30,14 +29,11 @@ namespace Df.Io
             return reference;
         }
 
-        public bool IsReferenced(object context, object value) =>
-            _Referenced.ContainsKey(ObjectReference(value));
+        public bool IsReferenced(object context, object value) => _Referenced.ContainsKey(ObjectReference(value));
 
-        public object ResolveReference(object context, string reference) =>
-            _Referenced.TryGetValue(reference, out var value) ? value : null;
+        public object ResolveReference(object context, string reference) => _Referenced.TryGetValue(reference, out var value) ? value : null;
 
-        private static string ObjectReference(object value) =>
-        value switch
+        private static string ObjectReference(object value) => value switch
         {
             ColumnDescription columnDescription => "{0}.[{1}]".FormatInvariant(ObjectReference(columnDescription.Parent), columnDescription.Name),
             TableDescription tableDescription => "[{0}].[{1}]".FormatInvariant(tableDescription.Schema, tableDescription.Name),

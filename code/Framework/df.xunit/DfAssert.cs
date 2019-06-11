@@ -18,28 +18,21 @@ namespace Xunit
             LessThan(id, int.MaxValue);
         }
 
-        public static void GreaterThan<T>(T actualValue, T operand) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, operand) > 0);
+        public static void GreaterThan<T>(T actualValue, T operand) => Assert.True(Comparer<T>.Default.Compare(actualValue, operand) > 0);
 
-        public static void GreaterThanOrEqual<T>(T actualValue, T operand) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, operand) >= 0);
+        public static void GreaterThanOrEqual<T>(T actualValue, T operand) => Assert.True(Comparer<T>.Default.Compare(actualValue, operand) >= 0);
 
-        public static void InClosedInterval<T>(T actualValue, T min, T max) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, min) >= 0
+        public static void InClosedInterval<T>(T actualValue, T min, T max) => Assert.True(Comparer<T>.Default.Compare(actualValue, min) >= 0
                 && Comparer<T>.Default.Compare(actualValue, max) <= 0);
 
-        public static void InOpenInterval<T>(T actualValue, T min, T max) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, min) > 0
+        public static void InOpenInterval<T>(T actualValue, T min, T max) => Assert.True(Comparer<T>.Default.Compare(actualValue, min) > 0
                 && Comparer<T>.Default.Compare(actualValue, max) < 0);
 
-        public static void LessThan<T>(T actualValue, T operand) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, operand) < 0);
+        public static void LessThan<T>(T actualValue, T operand) => Assert.True(Comparer<T>.Default.Compare(actualValue, operand) < 0);
 
-        public static void LessThanOrEqual<T>(T actualValue, T operand) =>
-            Assert.True(Comparer<T>.Default.Compare(actualValue, operand) <= 0);
+        public static void LessThanOrEqual<T>(T actualValue, T operand) => Assert.True(Comparer<T>.Default.Compare(actualValue, operand) <= 0);
 
-        public static void NotEmpty(string str) =>
-            Assert.False(string.IsNullOrWhiteSpace(str));
+        public static void NotEmpty(string str) => Assert.False(string.IsNullOrWhiteSpace(str));
 
         public static void Past(DateTimeOffset dateTimeOffset)
         {

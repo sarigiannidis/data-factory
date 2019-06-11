@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
- namespace Df.Stochastic.Fare
+namespace Df.Stochastic.Fare
 {
     using System;
     using System.Collections.Generic;
@@ -43,20 +43,8 @@
     {
         private static Automaton WhitespaceAutomaton { get; } = Automaton.Minimize(Automaton.MakeCharSet(" \t\n\r").Repeat());
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts any single character.
-        /// </summary>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts any single character.
-        /// </returns>
         public static Automaton MakeAnyChar() => MakeCharRange(char.MinValue, char.MaxValue);
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts all strings.
-        /// </summary>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts all strings.
-        /// </returns>
         public static Automaton MakeAnyString()
         {
             var state = new State
@@ -65,47 +53,19 @@
             };
             state.Transitions.Add(new Transition(char.MinValue, char.MaxValue, state));
 
-            var a = new Automaton
+            return new Automaton
             {
                 Initial = state,
                 IsDeterministic = true,
             };
-            return a;
         }
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts a single character of the given value.
-        /// </summary>
-        /// <param name="c">
-        /// The c.
-        /// </param>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts a single character of the given value.
-        /// </returns>
-        public static Automaton MakeChar(char c)
+        public static Automaton MakeChar(char c) => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = c.ToString(),
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = c.ToString(),
+            IsDeterministic = true,
+        };
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts a single char whose value is in the
-        /// given interval (including both end points).
-        /// </summary>
-        /// <param name="min">
-        /// The min.
-        /// </param>
-        /// <param name="max">
-        /// The max.
-        /// </param>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts a single char whose value is in the given
-        /// interval (including both end points).
-        /// </returns>
         public static Automaton MakeCharRange(char min, char max)
         {
             if (min == max)
@@ -113,11 +73,15 @@
                 return MakeChar(min);
             }
 
-            var a = new Automaton();
+            var s2 = new State
+            {
+                Accept = true,
+            };
             var s1 = new State();
-            var s2 = new State();
-            a.Initial = s1;
-            s2.Accept = true;
+            var a = new Automaton
+            {
+                Initial = s1,
+            };
             if (min <= max)
             {
                 s1.Transitions.Add(new Transition(min, max, s2));
@@ -127,12 +91,6 @@
             return a;
         }
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts a single character in the given set.
-        /// </summary>
-        /// <param name="set">
-        /// The set.
-        /// </param>
         public static Automaton MakeCharSet(string set)
         {
             if (set.Length == 1)
@@ -140,12 +98,15 @@
                 return MakeChar(set[0]);
             }
 
-            var a = new Automaton();
             var s1 = new State();
-            var s2 = new State();
-
-            a.Initial = s1;
-            s2.Accept = true;
+            var a = new Automaton
+            {
+                Initial = s1,
+            };
+            var s2 = new State
+            {
+                Accept = true,
+            };
 
             foreach (var t in set)
             {
@@ -158,13 +119,6 @@
             return a;
         }
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing the given decimal number.
-        /// Surrounding whitespace is permitted.
-        /// </summary>
-        /// <param name="value">
-        /// The value string representation of decimal number.
-        /// </param>
         public static Automaton MakeDecimalValue(string value)
         {
             var minus = false;
@@ -222,63 +176,27 @@
                     .Concatenate(Automaton.MakeString(sb2.ToString()))
                     .Concatenate(Automaton.MakeChar('0')
                                      .Repeat());
-            return Automaton.Minimize(
-                WhitespaceAutomaton.Concatenate(
-                    s.Concatenate(Automaton.MakeChar('0').Repeat())
-                        .Concatenate(Automaton.MakeString(sb1.ToString()))
-                        .Concatenate(d))
-                    .Concatenate(WhitespaceAutomaton));
+            return Automaton.Minimize(WhitespaceAutomaton
+                .Concatenate(s.Concatenate(Automaton.MakeChar('0').Repeat()).Concatenate(Automaton.MakeString(sb1.ToString())).Concatenate(d))
+                .Concatenate(WhitespaceAutomaton));
         }
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton with the empty language.
-        /// </summary>
-        /// <returns>
-        /// A new (deterministic) automaton with the empty language.
-        /// </returns>
-        public static Automaton MakeEmpty()
+        public static Automaton MakeEmpty() => new Automaton
         {
-            var a = new Automaton();
-            var s = new State();
-            a.Initial = s;
-            a.IsDeterministic = true;
-            return a;
-        }
+            Initial = new State(),
+            IsDeterministic = true,
+        };
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts only the empty string.
-        /// </summary>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts only the empty string.
-        /// </returns>
-        public static Automaton MakeEmptyString()
+        public static Automaton MakeEmptyString() => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = string.Empty,
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = string.Empty,
+            IsDeterministic = true,
+        };
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing decimal numbers that can be written
-        /// with at most the given number of digits in the fraction part. Surrounding whitespace is permitted.
-        /// </summary>
-        /// <param name="i">
-        /// The i max number of necessary fraction digits.
-        /// </param>
         public static Automaton MakeFractionDigits(int i) => Automaton.Minimize(
                     new RegExp("[ \t\n\r]*[-+]?[0-9]+(\\.[0-9]{0," + i + "}0*)?[ \t\n\r]*")
                         .ToAutomaton());
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing the given integer. Surrounding
-        /// whitespace is permitted.
-        /// </summary>
-        /// <param name="value">
-        /// The value string representation of integer.
-        /// </param>
         public static Automaton MakeIntegerValue(string value)
         {
             var minus = false;
@@ -314,24 +232,6 @@
                     .Concatenate(WhitespaceAutomaton));
         }
 
-        /// <summary>
-        /// Returns a new automaton that accepts strings representing decimal non-negative integers
-        /// in the given interval.
-        /// </summary>
-        /// <param name="min">
-        /// The minimum value of interval.
-        /// </param>
-        /// <param name="max">
-        /// The maximum value of inverval (both end points are included in the interval).
-        /// </param>
-        /// <param name="digits">
-        /// If f &gt;0, use fixed number of digits (strings must be prefixed by 0's to obtain the
-        /// right length) otherwise, the number of digits is not fixed.
-        /// </param>
-        /// <returns>
-        /// A new automaton that accepts strings representing decimal non-negative integers in the
-        /// given interval.
-        /// </returns>
         public static Automaton MakeInterval(int min, int max, int digits)
         {
             var a = new Automaton();
@@ -379,13 +279,6 @@
             return a;
         }
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing nonnegative integer that are not
-        /// larger than the given value.
-        /// </summary>
-        /// <param name="n">
-        /// The n string representation of maximum value.
-        /// </param>
         public static Automaton MakeMaxInteger(string n)
         {
             var i = 0;
@@ -406,13 +299,6 @@
             return Automaton.Minimize(new RegExp(sb.ToString()).ToAutomaton());
         }
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing nonnegative integers that are not
-        /// less that the given value.
-        /// </summary>
-        /// <param name="n">
-        /// The n string representation of minimum value.
-        /// </param>
         public static Automaton MakeMinInteger(string n)
         {
             var i = 0;
@@ -428,31 +314,12 @@
             return Automaton.Minimize(new RegExp(sb.ToString()).ToAutomaton());
         }
 
-        /// <summary>
-        /// Returns a new (deterministic) automaton that accepts the single given string.
-        /// </summary>
-        /// <param name="s">
-        /// The string.
-        /// </param>
-        /// <returns>
-        /// A new (deterministic) automaton that accepts the single given string.
-        /// </returns>
-        public static Automaton MakeString(string s)
+        public static Automaton MakeString(string s) => new Automaton
         {
-            var a = new Automaton
-            {
-                Singleton = s,
-                IsDeterministic = true,
-            };
-            return a;
-        }
+            Singleton = s,
+            IsDeterministic = true,
+        };
 
-        /// <summary>
-        /// Constructs deterministic automaton that matches strings that contain the given substring.
-        /// </summary>
-        /// <param name="s">
-        /// The s.
-        /// </param>
         public static Automaton MakeStringMatcher(string s)
         {
             var a = new Automaton();
@@ -519,14 +386,6 @@
             return a;
         }
 
-        /// <summary>
-        /// Returns a new (deterministic and minimal) automaton that accepts the union of the given
-        /// set of strings. The input character sequences are internally sorted in-place, so the
-        /// input array is modified. @see StringUnionOperations.
-        /// </summary>
-        /// <param name="strings">
-        /// The strings.
-        /// </param>
         public static Automaton MakeStringUnion(params char[][] strings)
         {
             if (strings.Length == 0)
@@ -545,26 +404,10 @@
             return a;
         }
 
-        /// <summary>
-        /// Constructs automaton that accept strings representing decimal numbers that can be written
-        /// with at most the given number of digits. Surrounding whitespace is permitted.
-        /// </summary>
-        /// <param name="i">
-        /// The i max number of necessary digits.
-        /// </param>
         public static Automaton MakeTotalDigits(int i) => Automaton.Minimize(
                     new RegExp("[ \t\n\r]*[-+]?0*([0-9]{0," + i + "}|((([0-9]\\.*){0," + i + "})&@\\.@)0*)[ \t\n\r]*")
                        .ToAutomaton());
 
-        /// <summary>
-        /// Constructs sub-automaton corresponding to decimal numbers of length x.Substring(n).Length.
-        /// </summary>
-        /// <param name="x">
-        /// The x.
-        /// </param>
-        /// <param name="n">
-        /// The n.
-        /// </param>
         private static State AnyOfRightLength(string x, int n)
         {
             var s = new State();
@@ -581,22 +424,6 @@
             return s;
         }
 
-        /// <summary>
-        /// Constructs sub-automaton corresponding to decimal numbers of value at least
-        /// x.Substring(n) and length x.Substring(n).Length.
-        /// </summary>
-        /// <param name="x">
-        /// The x.
-        /// </param>
-        /// <param name="n">
-        /// The n.
-        /// </param>
-        /// <param name="initials">
-        /// The initials.
-        /// </param>
-        /// <param name="zeros">
-        /// if set to <c>true</c> [zeros].
-        /// </param>
         private static State AtLeast(string x, int n, ICollection<State> initials, bool zeros)
         {
             var s = new State();
@@ -622,16 +449,6 @@
             return s;
         }
 
-        /// <summary>
-        /// Constructs sub-automaton corresponding to decimal numbers of value at most x.Substring(n)
-        /// and length x.Substring(n).Length.
-        /// </summary>
-        /// <param name="x">
-        /// The x.
-        /// </param>
-        /// <param name="n">
-        /// The n.
-        /// </param>
         private static State AtMost(string x, int n)
         {
             var s = new State();
@@ -653,25 +470,6 @@
             return s;
         }
 
-        /// <summary>
-        /// Constructs sub-automaton corresponding to decimal numbers of value between x.Substring(n)
-        /// and y.Substring(n) and of length x.Substring(n).Length (which must be equal to y.Substring(n).Length).
-        /// </summary>
-        /// <param name="x">
-        /// The x.
-        /// </param>
-        /// <param name="y">
-        /// The y.
-        /// </param>
-        /// <param name="n">
-        /// The n.
-        /// </param>
-        /// <param name="initials">
-        /// The initials.
-        /// </param>
-        /// <param name="zeros">
-        /// if set to <c>true</c> [zeros].
-        /// </param>
         private static State Between(string x, string y, int n, ICollection<State> initials, bool zeros)
         {
             var s = new State();
@@ -695,7 +493,6 @@
                 }
                 else
                 {
-                    // cx < cy
                     s.AddTransition(new Transition(cx, AtLeast(x, n + 1, initials, zeros && cx == '0')));
                     s.AddTransition(new Transition(cy, AtMost(y, n + 1)));
                     if (cx + 1 < cy)

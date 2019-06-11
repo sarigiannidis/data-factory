@@ -15,8 +15,7 @@ namespace Df.Options
     public sealed class AddOptions
     {
         [Usage]
-        public static IEnumerable<Example> Examples =>
-            new List<Example>
+        public static IEnumerable<Example> Examples => new List<Example>
             {
                 new Example("Add a random-double value factory to the project", new AddOptions { Subject = AddSubject.Factory, Name = "double-random", Project = "testdb.json" }),
             };

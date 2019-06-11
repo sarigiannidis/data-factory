@@ -47,7 +47,6 @@ namespace Df.Stochastic.Fare
                 "Input must be sorted: " + _Previous + " >= " + current);
             Debug.Assert(SetPrevious(current));
 
-            // Descend in the automaton (find matching prefix).
             var pos = 0;
             var max = current.Length;
             State next;

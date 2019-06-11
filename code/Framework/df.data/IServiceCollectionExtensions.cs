@@ -13,8 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddDfData(this IServiceCollection services) =>
-            Check.NotNull(nameof(services), services)
+        public static IServiceCollection AddDfData(this IServiceCollection services) => Check.NotNull(nameof(services), services)
             .AddTransient<IMetaDbContextFactory, MetaDbContextFactory>()
             .AddTransient<ISqlFactory, SqlFactory>();
     }

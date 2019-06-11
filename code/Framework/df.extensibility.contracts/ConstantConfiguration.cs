@@ -12,14 +12,13 @@ namespace Df.Extensibility
     using static Constants;
 
     [DebuggerDisplay("[{Value}]")]
-    public class ConstantConfiguration<TValue>
+    public sealed class ConstantConfiguration<TValue>
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public TValue Value => GetValue<TValue>(PROPERTY_CONSTANT);
 
-        public ConstantConfiguration(TValue value) =>
-            SetValue(PROPERTY_CONSTANT, value);
+        public ConstantConfiguration(TValue value) => SetValue(PROPERTY_CONSTANT, value);
 
         public ConstantConfiguration(IDictionary<string, object> properties)
             : base(properties)

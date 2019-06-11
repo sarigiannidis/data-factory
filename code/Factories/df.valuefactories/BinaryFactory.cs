@@ -16,8 +16,7 @@ namespace Df.ValueFactories
     : RandomFactory<byte[], BinaryConfiguration>,
         IConstrainableConfigurator
     {
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            new BinaryConfiguration(BINARY_MIN, BINARY_MAX);
+        public IValueFactoryConfiguration CreateConfiguration() => new BinaryConfiguration(BINARY_MIN, BINARY_MAX);
 
         public IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -26,7 +25,6 @@ namespace Df.ValueFactories
             return new BinaryConfiguration(length, length);
         }
 
-        public override byte[] CreateValue() =>
-            Random.NextBytes(Random.NextInt64(Configuration.MinLength, Configuration.MaxLength));
+        public override byte[] CreateValue() => Random.NextBytes(Random.NextInt64(Configuration.MinLength, Configuration.MaxLength));
     }
 }

@@ -17,6 +17,8 @@ namespace Df
 
         public const string SECTION_EXTENSIBILITY = "ValueFactoryManagerOptions";
 
+        public const string SECTION_PREFERENCES = "Preferences";
+
         public const string SQL_COUNT_TABLES = "SELECT COUNT(*) FROM sys.tables";
 
         public const string SQL_LIST_DATABASES = "SELECT name FROM master.sys.databases";

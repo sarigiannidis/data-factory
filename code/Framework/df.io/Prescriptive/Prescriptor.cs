@@ -31,8 +31,7 @@ namespace Df.Io.Prescriptive
         [JsonIgnore]
         public IReadOnlyList<ValueFactoryPrescription> ValueFactoryPrescriptions => _ValueFactoryPrescriptions;
 
-        public void AddTable(TablePrescription tablePrescription) =>
-            _TablePrescriptions.Add(Check.NotNull(nameof(tablePrescription), tablePrescription));
+        public void AddTable(TablePrescription tablePrescription) => _TablePrescriptions.Add(Check.NotNull(nameof(tablePrescription), tablePrescription));
 
         public void AddValueFactory(ValueFactoryPrescription valueFactoryPrescription)
         {

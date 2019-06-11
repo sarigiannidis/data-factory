@@ -31,7 +31,6 @@ namespace Df.Production
             _Logger = Check.NotNull(nameof(logger), logger);
         }
 
-        public IDatasetGenerator Create(Project project) =>
-            new DatasetGenerator(_RecordGeneratorFactory, _SqlFactory, _Logger, project);
+        public IDatasetGenerator Create(Project project) => new DatasetGenerator(_RecordGeneratorFactory, _SqlFactory, _Logger, project);
     }
 }

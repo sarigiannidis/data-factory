@@ -35,8 +35,7 @@ namespace Df.Extensibility
 
         public ValueFactoryManagerOptions Options { get; }
 
-        public IReadOnlyCollection<IValueFactoryInfo> ValueFactoryInfos =>
-            _ValueFactoryInfos;
+        public IReadOnlyCollection<IValueFactoryInfo> ValueFactoryInfos => _ValueFactoryInfos;
 
         public ValueFactoryManager(IOptions<ValueFactoryManagerOptions> options, ILogger<ValueFactoryManager> logger)
         {

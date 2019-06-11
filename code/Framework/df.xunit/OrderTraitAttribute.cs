@@ -17,7 +17,6 @@ namespace Xunit
     {
         public int Order { get; }
 
-        public OrderTraitAttribute(int order) =>
-            Order = order;
+        public OrderTraitAttribute(int order) => Order = order;
     }
 }

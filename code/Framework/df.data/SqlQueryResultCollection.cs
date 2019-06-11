@@ -52,8 +52,7 @@ namespace Df.Data
             return new SqlQueryResultCollectionEnumerator<TResult>(_Command.ExecuteReader(), _Convert);
         }
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         private void Dispose(bool disposing)
         {

@@ -5,5 +5,8 @@
   "ValueFactoryManagerOptions": {
     "Path": ".\\ValueFactories",
     "Timeout": 1000
+  },
+  "Preferences": {
+    "Pattern": "\\w+-random"
   }
 }

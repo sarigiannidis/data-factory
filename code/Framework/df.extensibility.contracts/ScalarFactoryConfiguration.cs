@@ -13,13 +13,12 @@ namespace Df.Extensibility
     using static Constants;
 
     [DebuggerDisplay("[{MinValue}, {MaxValue}] + {Increment}")]
-    public class ScalarFactoryConfiguration<TValue>
+    public sealed class ScalarFactoryConfiguration<TValue>
     : RangeFactoryConfiguration<TValue>, IScalarFactoryConfiguration<TValue>
     where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public TValue Increment =>
-            GetValue<TValue>(PROPERTY_INCREMENT);
+        public TValue Increment => GetValue<TValue>(PROPERTY_INCREMENT);
 
         public ScalarFactoryConfiguration(TValue min, TValue max, TValue increment)
             : base(min, max)

@@ -40,22 +40,17 @@ namespace Df.Production
 
         public int Depth => 0;
 
-        public int FieldCount =>
-            _Factories.Count;
+        public int FieldCount => _Factories.Count;
 
-        public bool IsClosed =>
-            _Closed;
+        public bool IsClosed => _Closed;
 
         public int RecordsAffected { get; private set; }
 
-        public object this[string name] =>
-            ThrowNotImplemented();
+        public object this[string name] => ThrowNotImplemented();
 
-        public object this[int i] =>
-            GetValue(i);
+        public object this[int i] => GetValue(i);
 
-        public void Close() =>
-            _Closed = true;
+        public void Close() => _Closed = true;
 
         public void Dispose()
         {
@@ -63,71 +58,49 @@ namespace Df.Production
             GC.SuppressFinalize(this);
         }
 
-        public bool GetBoolean(int i) =>
-            ThrowNotImplemented();
+        public bool GetBoolean(int i) => ThrowNotImplemented();
 
-        public byte GetByte(int i) =>
-            ThrowNotImplemented();
+        public byte GetByte(int i) => ThrowNotImplemented();
 
-        public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length) =>
-            ThrowNotImplemented();
+        public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length) => ThrowNotImplemented();
 
-        public char GetChar(int i) =>
-            ThrowNotImplemented();
+        public char GetChar(int i) => ThrowNotImplemented();
 
-        public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length) =>
-            ThrowNotImplemented();
+        public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length) => ThrowNotImplemented();
 
-        public IDataReader GetData(int i) =>
-            ThrowNotImplemented();
+        public IDataReader GetData(int i) => ThrowNotImplemented();
 
-        public string GetDataTypeName(int i) =>
-            ThrowNotImplemented();
+        public string GetDataTypeName(int i) => ThrowNotImplemented();
 
-        public DateTime GetDateTime(int i) =>
-            ThrowNotImplemented();
+        public DateTime GetDateTime(int i) => ThrowNotImplemented();
 
-        public decimal GetDecimal(int i) =>
-            ThrowNotImplemented();
+        public decimal GetDecimal(int i) => ThrowNotImplemented();
 
-        public double GetDouble(int i) =>
-            ThrowNotImplemented();
+        public double GetDouble(int i) => ThrowNotImplemented();
 
-        public Type GetFieldType(int i) =>
-            _Factories[i].type;
+        public Type GetFieldType(int i) => _Factories[i].type;
 
-        public float GetFloat(int i) =>
-            ThrowNotImplemented();
+        public float GetFloat(int i) => ThrowNotImplemented();
 
-        public Guid GetGuid(int i) =>
-            ThrowNotImplemented();
+        public Guid GetGuid(int i) => ThrowNotImplemented();
 
-        public short GetInt16(int i) =>
-            ThrowNotImplemented();
+        public short GetInt16(int i) => ThrowNotImplemented();
 
-        public int GetInt32(int i) =>
-            ThrowNotImplemented();
+        public int GetInt32(int i) => ThrowNotImplemented();
 
-        public long GetInt64(int i) =>
-            ThrowNotImplemented();
+        public long GetInt64(int i) => ThrowNotImplemented();
 
-        public string GetName(int i) =>
-            ThrowNotImplemented();
+        public string GetName(int i) => ThrowNotImplemented();
 
-        public int GetOrdinal(string name) =>
-            ThrowNotImplemented();
+        public int GetOrdinal(string name) => ThrowNotImplemented();
 
-        public DataTable GetSchemaTable() =>
-            ThrowNotImplemented();
+        public DataTable GetSchemaTable() => ThrowNotImplemented();
 
-        public string GetString(int i) =>
-            ThrowNotImplemented();
+        public string GetString(int i) => ThrowNotImplemented();
 
-        public object GetValue(int i) =>
-            _Factories[i].factory.CreateValue();
+        public object GetValue(int i) => _Factories[i].factory.CreateValue();
 
-        public int GetValues(object[] values) =>
-            ThrowNotImplemented();
+        public int GetValues(object[] values) => ThrowNotImplemented();
 
         public bool IsDBNull(int i)
         {
@@ -149,11 +122,9 @@ namespace Df.Production
             }
         }
 
-        public bool Read() =>
-            NextResult();
+        public bool Read() => NextResult();
 
-        private static dynamic ThrowNotImplemented() =>
-            throw new NotImplementedException();
+        private static dynamic ThrowNotImplemented() => throw new NotImplementedException();
 
         private void Dispose(bool disposing)
         {

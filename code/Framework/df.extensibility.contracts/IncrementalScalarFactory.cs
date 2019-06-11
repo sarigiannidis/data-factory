@@ -16,12 +16,11 @@ namespace Df.Extensibility
         where TValue : struct, IComparable, IComparable<TValue>, IEquatable<TValue>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private TValue _Next = default;
+        private TValue _Next;
 
-        public override bool IsRandom => false;
+        public override ValueFactoryKinds Kind => ValueFactoryKinds.Incremental;
 
-        protected IncrementalScalarFactory() =>
-            ConfigurationChanged += Reset;
+        protected IncrementalScalarFactory() => ConfigurationChanged += Reset;
 
         public override TValue CreateValue()
         {
@@ -35,7 +34,6 @@ namespace Df.Extensibility
             return result;
         }
 
-        private void Reset(object sender, EventArgs e) =>
-            _Next = Configuration.MinValue;
+        private void Reset(object sender, EventArgs e) => _Next = Configuration.MinValue;
     }
 }

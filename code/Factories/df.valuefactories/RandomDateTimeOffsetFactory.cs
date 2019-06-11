@@ -12,7 +12,6 @@ namespace Df.ValueFactories
 
     public sealed partial class RandomDateTimeOffsetFactory
     {
-        public override DateTimeOffset CreateValue() =>
-            Configuration.MinValue + TimeSpan.FromTicks((long)(Random.NextPercentage() * (Configuration.MaxValue - Configuration.MinValue).Ticks));
+        public override DateTimeOffset CreateValue() => Configuration.MinValue + TimeSpan.FromTicks((long)(Random.NextPercentage() * (Configuration.MaxValue - Configuration.MinValue).Ticks));
     }
 }

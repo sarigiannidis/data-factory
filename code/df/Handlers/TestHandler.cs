@@ -5,7 +5,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------
 
-namespace Df.OptionHandlers
+namespace Df.Handlers
 {
     using Df.Data;
     using Df.Options;
@@ -21,8 +21,7 @@ namespace Df.OptionHandlers
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly ISqlFactory _SqlFactory;
 
-        public TestHandler(ISqlFactory sqlFactory) =>
-            _SqlFactory = Check.NotNull(nameof(sqlFactory), sqlFactory);
+        public TestHandler(ISqlFactory sqlFactory) => _SqlFactory = Check.NotNull(nameof(sqlFactory), sqlFactory);
 
         public void Handle(TestOptions options)
         {

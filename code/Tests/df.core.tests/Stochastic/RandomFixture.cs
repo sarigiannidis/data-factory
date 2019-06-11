@@ -20,8 +20,7 @@ namespace Df.Stochastic.Tests
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private T _Random = new T();
 
-        public IRandom Random =>
-            _Random;
+        public IRandom Random => _Random;
 
         public void Dispose()
         {

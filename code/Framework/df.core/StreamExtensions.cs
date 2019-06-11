@@ -14,8 +14,7 @@ namespace System.IO
     {
         private static readonly Encoding DEFAULTENCODING = Encoding.Unicode;
 
-        public static void WriteLine(this Stream stream, string line) =>
-            WriteLine(stream, line, DEFAULTENCODING);
+        public static void WriteLine(this Stream stream, string line) => WriteLine(stream, line, DEFAULTENCODING);
 
         public static void WriteLine(this Stream stream, string line, Encoding encoding)
         {
@@ -23,8 +22,7 @@ namespace System.IO
             writer.WriteLine(line);
         }
 
-        public static void WriteLines(this Stream stream, IEnumerable<string> lines) =>
-            WriteLines(stream, lines, DEFAULTENCODING);
+        public static void WriteLines(this Stream stream, IEnumerable<string> lines) => WriteLines(stream, lines, DEFAULTENCODING);
 
         public static void WriteLines(this Stream stream, IEnumerable<string> lines, Encoding encoding)
         {

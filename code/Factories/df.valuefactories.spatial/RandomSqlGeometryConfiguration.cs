@@ -17,24 +17,19 @@ namespace Df.ValueFactories.Spatial
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MaxX =>
-            GetValue<double>(PROPERTY_MAXX);
+        public double MaxX => GetValue<double>(PROPERTY_MAXX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MaxY =>
-            GetValue<double>(PROPERTY_MAXY);
+        public double MaxY => GetValue<double>(PROPERTY_MAXY);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MinX =>
-            GetValue<double>(PROPERTY_MINX);
+        public double MinX => GetValue<double>(PROPERTY_MINX);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double MinY =>
-            GetValue<double>(PROPERTY_MINY);
+        public double MinY => GetValue<double>(PROPERTY_MINY);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public int Srid =>
-            GetValue<int>(PROPERTY_SRID);
+        public int Srid => GetValue<int>(PROPERTY_SRID);
 
         public RandomSqlGeometryConfiguration(double minX, double maxX, double minY, double maxY, int srid)
         {

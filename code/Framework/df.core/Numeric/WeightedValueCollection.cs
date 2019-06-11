@@ -26,12 +26,10 @@ namespace Df.Numeric
         private readonly List<WeightedValue<TValue>> _WeightedValues = new List<WeightedValue<TValue>>();
 
         [JsonIgnore]
-        public int Count =>
-            _WeightedValues.Count;
+        public int Count => _WeightedValues.Count;
 
         [JsonIgnore]
-        public bool IsReadOnly =>
-            ((IList<WeightedValue<TValue>>)_WeightedValues).IsReadOnly;
+        public bool IsReadOnly => ((IList<WeightedValue<TValue>>)_WeightedValues).IsReadOnly;
 
         [JsonIgnore]
         public float SumOfWeights { get; private set; }
@@ -56,11 +54,9 @@ namespace Df.Numeric
         {
         }
 
-        public static WeightedValueCollection<TValue> FromJArray(JArray jArray) =>
-            new WeightedValueCollection<TValue>(Check.NotNull(nameof(jArray), jArray).Select(t => (WeightedValue<TValue>)t));
+        public static WeightedValueCollection<TValue> FromJArray(JArray jArray) => new WeightedValueCollection<TValue>(Check.NotNull(nameof(jArray), jArray).Select(t => (WeightedValue<TValue>)t));
 
-        public static implicit operator WeightedValueCollection<TValue>(JArray jArray) =>
-            FromJArray(jArray);
+        public static implicit operator WeightedValueCollection<TValue>(JArray jArray) => FromJArray(jArray);
 
         public void Add(WeightedValue<TValue> item)
         {
@@ -74,14 +70,11 @@ namespace Df.Numeric
             Reset();
         }
 
-        public void Clear() =>
-            _WeightedValues.Clear();
+        public void Clear() => _WeightedValues.Clear();
 
-        public bool Contains(WeightedValue<TValue> item) =>
-            _WeightedValues.Contains(item);
+        public bool Contains(WeightedValue<TValue> item) => _WeightedValues.Contains(item);
 
-        public void CopyTo(WeightedValue<TValue>[] array, int arrayIndex) =>
-            _WeightedValues.CopyTo(array, arrayIndex);
+        public void CopyTo(WeightedValue<TValue>[] array, int arrayIndex) => _WeightedValues.CopyTo(array, arrayIndex);
 
         public bool Equals(WeightedValueCollection<TValue> other)
         {
@@ -110,14 +103,11 @@ namespace Df.Numeric
             return true;
         }
 
-        public override bool Equals(object obj) =>
-            obj is WeightedValueCollection<TValue> o && Equals(o);
+        public override bool Equals(object obj) => obj is WeightedValueCollection<TValue> o && Equals(o);
 
-        public IEnumerator<WeightedValue<TValue>> GetEnumerator() =>
-            _WeightedValues.GetEnumerator();
+        public IEnumerator<WeightedValue<TValue>> GetEnumerator() => _WeightedValues.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            _WeightedValues.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => _WeightedValues.GetEnumerator();
 
         public override int GetHashCode()
         {
@@ -126,17 +116,13 @@ namespace Df.Numeric
             return hashCode.ToHashCode();
         }
 
-        public int IndexOf(WeightedValue<TValue> item) =>
-            _WeightedValues.IndexOf(item);
+        public int IndexOf(WeightedValue<TValue> item) => _WeightedValues.IndexOf(item);
 
-        public void Insert(int index, WeightedValue<TValue> item) =>
-            _WeightedValues.Insert(index, item);
+        public void Insert(int index, WeightedValue<TValue> item) => _WeightedValues.Insert(index, item);
 
-        public bool Remove(WeightedValue<TValue> item) =>
-            _WeightedValues.Remove(item);
+        public bool Remove(WeightedValue<TValue> item) => _WeightedValues.Remove(item);
 
-        public void RemoveAt(int index) =>
-            _WeightedValues.RemoveAt(index);
+        public void RemoveAt(int index) => _WeightedValues.RemoveAt(index);
 
         private void Reset()
         {

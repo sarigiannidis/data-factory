@@ -16,8 +16,7 @@ namespace Df
     {
         public static string ToConsoleTable<TEntity>(IEnumerable<TEntity> entities, params (Func<TEntity, object> property, string name, int length)[] columns)
         {
-            object[] GetValues(TEntity entity) =>
-                columns.Select(_ => _.property(entity)).ToArray();
+            object[] GetValues(TEntity entity) => columns.Select(_ => _.property(entity)).ToArray();
 
             var sb1 = new StringBuilder();
             var sb2 = new StringBuilder();
@@ -40,8 +39,7 @@ namespace Df
 
             return sb2.ToString();
 
-            static string ColumnFormat(int index, int length) =>
-                "{{{0},-{1}}}".FormatInvariant(index, length);
+            static string ColumnFormat(int index, int length) => "{{{0},-{1}}}".FormatInvariant(index, length);
         }
     }
 }

@@ -13,7 +13,6 @@ namespace Df.Extensibility
 
     public static class IValueFactoryInfoCollectionExtensions
     {
-        public static IReadOnlyCollection<IValueFactoryInfo> FilterByType(this IReadOnlyCollection<IValueFactoryInfo> valueFactoryInfos, Type type) =>
-            valueFactoryInfos?.Where(_ => _.ValueType == type).ToList();
+        public static IReadOnlyCollection<IValueFactoryInfo> FilterByType(this IReadOnlyCollection<IValueFactoryInfo> valueFactoryInfos, Type type) => valueFactoryInfos?.Where(_ => _.ValueType == type).ToList();
     }
 }

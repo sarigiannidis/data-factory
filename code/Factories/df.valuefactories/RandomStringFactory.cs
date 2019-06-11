@@ -24,11 +24,11 @@ namespace Df.ValueFactories
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private Xeger _Xeger;
 
-        public RandomStringFactory() =>
-            ConfigurationChanged += Reset;
+        public override ValueFactoryKinds Kind => base.Kind | ValueFactoryKinds.Pattern;
 
-        public IValueFactoryConfiguration CreateConfiguration() =>
-            CreateConfiguration(ConfiguratorConstraints.Empty);
+        public RandomStringFactory() => ConfigurationChanged += Reset;
+
+        public IValueFactoryConfiguration CreateConfiguration() => CreateConfiguration(ConfiguratorConstraints.Empty);
 
         public virtual IValueFactoryConfiguration CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -46,7 +46,6 @@ namespace Df.ValueFactories
             }
         }
 
-        private void Reset(object sender, EventArgs e) =>
-            _Xeger = new Xeger(Configuration.RegexPattern, Random);
+        private void Reset(object sender, EventArgs e) => _Xeger = new Xeger(Configuration.RegexPattern, Random);
     }
 }

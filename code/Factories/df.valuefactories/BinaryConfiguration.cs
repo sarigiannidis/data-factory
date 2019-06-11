@@ -17,12 +17,10 @@ namespace Df.ValueFactories
         : ValueFactoryConfiguration
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public int MaxLength =>
-            GetValue<int>(PROPERTY_MAXLENGTH);
+        public int MaxLength => GetValue<int>(PROPERTY_MAXLENGTH);
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public int MinLength =>
-            GetValue<int>(PROPERTY_MINLENGTH);
+        public int MinLength => GetValue<int>(PROPERTY_MINLENGTH);
 
         public BinaryConfiguration(int minLength, int maxLength)
         {

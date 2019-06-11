@@ -28,8 +28,7 @@ namespace Df.Production
             [DebuggerBrowsable(DebuggerBrowsableState.Never)]
             private readonly DatasetGenerator _Owner;
 
-            internal InternalGenerator(DatasetGenerator generator) =>
-                _Owner = generator;
+            internal InternalGenerator(DatasetGenerator generator) => _Owner = generator;
 
             /// <summary>
             /// Generate the data.
@@ -75,11 +74,9 @@ namespace Df.Production
                 }
             }
 
-            private static void CreateTable(ISql sql, TablePrescription tablePrescription) =>
-                sql.NonQuery(CreateTableDefinition(tablePrescription));
+            private static void CreateTable(ISql sql, TablePrescription tablePrescription) => sql.NonQuery(CreateTableDefinition(tablePrescription));
 
-            private static string CreateTableDefinition(TablePrescription tablePrescription) =>
-                new StringBuilder()
+            private static string CreateTableDefinition(TablePrescription tablePrescription) => new StringBuilder()
                 .AppendFormatInvariant("CREATE TABLE {0} (", tablePrescription.TableName())
                 .AppendFormatInvariant("[@DF1] [BIGINT] IDENTITY(1, 1) NOT NULL PRIMARY KEY, ")
                 .AppendFormatInvariant("[@DF2] [BIGINT] NULL, ")
