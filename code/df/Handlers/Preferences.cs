@@ -9,5 +9,6 @@ namespace Df.Handlers
 {
     public sealed class Preferences
     {
+        public string Pattern { get; set; }
     }
 }

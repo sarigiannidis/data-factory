@@ -17,18 +17,19 @@ namespace Df.Handlers
     using System;
     using System.Diagnostics;
     using System.Linq;
+    using System.Text.RegularExpressions;
 
     internal sealed class AddHandler
         : IHandler<AddOptions>
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private readonly Preferences _Preferences;
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IProjectManager _ProjectManager;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private readonly IValueFactoryManager _ValueFactoryManager;
-
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly Preferences _Preferences;
 
         public AddHandler(IProjectManager projectManager, IValueFactoryManager valueFactoryManager, IOptions<Preferences> options)
         {
@@ -150,16 +151,13 @@ namespace Df.Handlers
                 .ToArray();
             Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
 
-            // @TODO: Use the preferences to determine the factory to use.
-            var preferences = _Preferences;
-
             if (isIdentity)
             {
                 return valueFactoryInfos.First(_ => !_.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
             }
 
-            // @TODO: match a preference defined in settings.
-            var match = Array.Find(valueFactoryInfos, _ => _.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
+            var preferred = new Regex(_Preferences.Pattern);
+            var match = Array.Find(valueFactoryInfos, _ => preferred.IsMatch(_.Name));
             return match ?? valueFactoryInfos[0];
         }
     }
