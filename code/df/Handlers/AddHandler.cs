@@ -153,7 +153,7 @@ namespace Df.Handlers
 
             if (isIdentity)
             {
-                return valueFactoryInfos.First(_ => !_.ValueFactory.Kind.Contains(ValueFactoryKinds.Random));
+                return valueFactoryInfos.First(_ => _.ValueFactory.Kind.Contains(ValueFactoryKinds.Incremental));
             }
 
             var preferred = new Regex(_Preferences.Pattern);
