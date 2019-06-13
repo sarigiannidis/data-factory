@@ -29,7 +29,7 @@ namespace Xunit
                 Prefix = methodUnderTest.Name;
             }
 
-            _ = TemporaryFileContext.AddContext(methodUnderTest, Prefix, Extension);
+            TemporaryFileContext.AddContext(methodUnderTest, Prefix, Extension);
         }
     }
 }

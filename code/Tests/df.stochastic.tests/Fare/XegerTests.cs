@@ -84,7 +84,7 @@
             var randomSeed = Environment.TickCount;
             _TestOutput.WriteLine($"Random seed: {randomSeed}");
 
-            var random = new HardRandom();
+            using var random = new HardRandom();
 
             var sut = new Xeger(pattern, random);
 

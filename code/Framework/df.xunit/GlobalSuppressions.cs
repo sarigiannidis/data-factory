@@ -7,3 +7,4 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Dependency Injection.", Scope = "type", Target = "~T:Xunit.OrderTraitDiscoverer")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "An aggregate exception is thrown.", Scope = "member", Target = "~M:Xunit.TemporaryFileContext.Dispose(System.Boolean)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0067:Dispose objects before losing scope", Justification = "Is too.", Scope = "member", Target = "~M:Xunit.TemporaryFileContext.AddContext(System.Reflection.MemberInfo,System.String,System.String)")]

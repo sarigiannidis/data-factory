@@ -21,7 +21,7 @@ namespace Df.Data
         private readonly Func<IDataRecord, TResult> _Convert;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly DbDataReader _Reader;
+        private DbDataReader _Reader;
 
         public TResult Current => _Convert(_Reader);
 
@@ -33,7 +33,12 @@ namespace Df.Data
             _Convert = Check.NotNull(nameof(convert), convert);
         }
 
-        public void Dispose() => _Reader.Close();
+        public void Dispose()
+        {
+            _Reader?.Close();
+            _Reader?.Dispose();
+            _Reader = null;
+        }
 
         public bool MoveNext() => _Reader.Read();
 

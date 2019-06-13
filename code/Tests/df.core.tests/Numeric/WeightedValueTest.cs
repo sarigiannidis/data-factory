@@ -58,7 +58,7 @@ namespace Df.Numeric.Tests
         [Fact]
         public void ComparisonTest()
         {
-            var random = new HardRandom();
+            using var random = new HardRandom();
             var weightComparer = Comparer<float>.Default;
             var comparer = Comparer<TValue>.Default;
             foreach (var value1 in Range())

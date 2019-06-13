@@ -60,14 +60,10 @@ namespace Xunit
             return path;
         }
 
-        internal static TemporaryFileContext AddContext(MemberInfo memberInfo, string prefix, string extension)
+        internal static void AddContext(MemberInfo memberInfo, string prefix, string extension)
         {
             var value = new TemporaryFileContext(prefix, extension);
-            if (_CreatedTempFilePaths.TryAdd(memberInfo, value))
-            {
-                return value;
-            }
-            else
+            if (!_CreatedTempFilePaths.TryAdd(memberInfo, value))
             {
                 value.Dispose();
                 throw new InvalidOperationException("The context has already been added.");

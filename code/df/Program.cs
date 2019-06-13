@@ -55,7 +55,8 @@ namespace Df
 
         private static void Main(string[] args)
         {
-            var parserResult = new Parser(ConfigureParser)
+            using var parser = new Parser(ConfigureParser);
+            var parserResult = parser
                 .ParseArguments<AddOptions, GenerateOptions, ListOptions, NewOptions, TestOptions>(args);
 
             void HandleNotParsed(IEnumerable<Error> errors)

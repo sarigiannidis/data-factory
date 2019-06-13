@@ -6,3 +6,5 @@
 // --------------------------------------------------------------------------------
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "They don't need to be implemented as they are never used.", Scope = "type", Target = "~T:Df.Production.RecordGenerator")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0067:Dispose objects before losing scope", Justification = "Is too.", Scope = "member", Target = "~M:Df.Production.DatasetGenerator.ExecuteSqlBulkCopy(System.Data.SqlClient.SqlTransaction,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Collections.Generic.IEnumerable{System.String})")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0067:Dispose objects before losing scope", Justification = "Is too.", Scope = "member", Target = "~M:Df.Production.DatasetGenerator.InternalGenerator.FillTable(Df.Data.ISql,Df.Io.Prescriptive.TablePrescription)")]
