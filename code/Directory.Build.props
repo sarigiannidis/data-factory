@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Locations">
-    <ANALYSISDIR>$(SolutionDir)\.analysis\</ANALYSISDIR>
-    <ARTIFACTSDIR>$(SolutionDir)\.artifacts\</ARTIFACTSDIR>
+    <ANALYSISDIR>$(SolutionDir).analysis\</ANALYSISDIR>
+    <ARTIFACTSDIR>$(SolutionDir).artifacts\</ARTIFACTSDIR>
     <FACTORIESDIR>$(SolutionDir)Factories\</FACTORIESDIR>
     <FRAMEWORKDIR>$(SolutionDir)Framework\</FRAMEWORKDIR>
-    <PROPSDIR>$(SolutionDir)\.props\</PROPSDIR>
-    <TESTDATADIR>$(SolutionDir)\.testdata\</TESTDATADIR>
+    <PROPSDIR>$(SolutionDir).props\</PROPSDIR>
+    <TESTDATADIR>$(SolutionDir).testdata\</TESTDATADIR>
     <TESTSDIR>$(SolutionDir)Tests\</TESTSDIR>
   </PropertyGroup>
 
