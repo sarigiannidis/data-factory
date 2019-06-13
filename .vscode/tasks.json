@@ -34,7 +34,7 @@
                 "win-x64",
                 "--self-contained",
                 "-o",
-                "${workspaceFolder}/publish/df-binaries.win-x64"
+                "${workspaceFolder}/.publish/df-binaries.win-x64"
             ],
             "problemMatcher": "$tsc"
         },
@@ -44,8 +44,8 @@
             "type": "process",
             "args": [
                 "a",
-                "${workspaceFolder}/publish/df-binaries.win-x64.zip",
-                "${workspaceFolder}/publish/df-binaries.win-x64/*"
+                "${workspaceFolder}/.publish/df-binaries.win-x64.zip",
+                "${workspaceFolder}/.publish/df-binaries.win-x64/*"
             ],
             "problemMatcher": "$tsc",
             "dependsOn": [
@@ -59,7 +59,7 @@
             "args": [
                 "/Q",
                 "/S",
-                "${workspaceFolder}\\publish\\df-binaries.win-x64"
+                "${workspaceFolder}\\.publish\\df-binaries.win-x64"
             ],
             "problemMatcher": "$tsc",
             "dependsOn": [
