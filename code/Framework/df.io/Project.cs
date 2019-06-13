@@ -21,22 +21,26 @@ namespace Df.Io
         [JsonProperty(Order = 1)]
         public DateTimeOffset Created { get; }
 
-        [JsonProperty(Order = 3)]
+        [JsonProperty(Order = 4)]
         public Descriptor Descriptor { get; }
 
         [JsonProperty(Order = 2)]
         public DateTimeOffset Modified { get; internal set; }
 
-        [JsonProperty(Order = 4)]
+        [JsonProperty(Order = 5)]
         public Prescriptor Prescriptor { get; }
 
+        [JsonProperty(Order = 3)]
+        public string Version { get; }
+
         [JsonConstructor]
-        internal Project(Descriptor descriptor, Prescriptor prescriptor, DateTimeOffset created, DateTimeOffset modified)
+        internal Project(Descriptor descriptor, Prescriptor prescriptor, DateTimeOffset created, DateTimeOffset modified, string version)
         {
             Descriptor = Check.NotNull(nameof(descriptor), descriptor);
             Prescriptor = Check.NotNull(nameof(prescriptor), prescriptor);
             Created = Check.InOpenInterval(nameof(created), created, DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
             Modified = Check.InOpenInterval(nameof(modified), modified, DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
+            Version = Check.NotNull(nameof(version), version);
             _ = Check.GreaterThanOrEqual(nameof(modified), modified, created);
         }
     }
