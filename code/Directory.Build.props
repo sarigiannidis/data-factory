@@ -1,16 +1,16 @@
 <Project>
 
- <PropertyGroup>
-   <Deterministic>true</Deterministic>
-   <LangVersion>8.0</LangVersion>
-   <SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
-   <TargetFramework>netcoreapp3.0</TargetFramework>
-   <NoWarn>CA2227</NoWarn>
- </PropertyGroup>
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
+    <SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <NoWarn>CA2227</NoWarn>
+  </PropertyGroup>
 
   <PropertyGroup Label="Locations">
     <ANALYSISDIR>$(SolutionDir)\.analysis\</ANALYSISDIR>
-    <ARTIFACTSDIR>$(SolutionDir)..\artifacts\</ARTIFACTSDIR>
+    <ARTIFACTSDIR>$(SolutionDir)\.artifacts\</ARTIFACTSDIR>
     <FACTORIESDIR>$(SolutionDir)Factories\</FACTORIESDIR>
     <FRAMEWORKDIR>$(SolutionDir)Framework\</FRAMEWORKDIR>
     <PROPSDIR>$(SolutionDir)\.props\</PROPSDIR>
