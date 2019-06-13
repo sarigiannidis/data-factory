@@ -15,6 +15,7 @@ namespace Df.Io
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Text;
 
     internal sealed class ProjectFactory
@@ -37,7 +38,8 @@ namespace Df.Io
             _ = Check.NotNull(nameof(connectionString), connectionString);
             var descriptor = CreateDescriptor(connectionString);
             var prescriptor = new Prescriptor();
-            return new Project(descriptor, prescriptor, CreationTime, CreationTime);
+            var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return new Project(descriptor, prescriptor, CreationTime, CreationTime, version);
         }
 
         private static void ReadAllForeignKeys(MetaDbContext context, IReadOnlyList<TableDescription> tableDescriptions)
