@@ -47,6 +47,8 @@ namespace Df.Numeric
 
         public static implicit operator WeightedValue<TValue>(JToken jToken)
         {
+            _ = Check.NotNull(nameof(jToken), jToken);
+
             // @TODO: Find a solution that does not depend on WeightedValue knowing the disposition of JsonUtility. Perhaps a WeightedValue<> converter in df.io?
             TValue value;
             if (typeof(TValue) == typeof(DateTime))

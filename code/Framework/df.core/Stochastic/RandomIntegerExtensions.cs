@@ -16,7 +16,7 @@ namespace Df.Stochastic
         public static byte[] NextBytes(this IRandom random, long byteCount)
         {
             var bytes = new byte[byteCount];
-            random.NextBytes(bytes);
+            Check.NotNull(nameof(random), random).NextBytes(bytes);
             return bytes;
         }
 

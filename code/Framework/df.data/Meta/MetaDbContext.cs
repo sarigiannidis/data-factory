@@ -67,7 +67,7 @@ namespace Df.Data.Meta
         /// <returns>The name of the database type with the given id.</returns>
         public static string TypeName(int id) => ThrowLinqOnly();
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => _ = optionsBuilder.ConfigureWarnings(ConfigureWarnings);
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => _ = Check.NotNull(nameof(optionsBuilder), optionsBuilder).ConfigureWarnings(ConfigureWarnings);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

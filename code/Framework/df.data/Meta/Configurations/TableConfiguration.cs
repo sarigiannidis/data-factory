@@ -15,6 +15,7 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<Table> builder)
         {
+            _ = Check.NotNull(nameof(builder), builder);
             _ = builder.ToTable("tables", "sys");
             _ = builder.Property(_ => _.CreateDate).HasColumnName("create_date");
             _ = builder.Property(_ => _.ModifyDate).HasColumnName("modify_date");

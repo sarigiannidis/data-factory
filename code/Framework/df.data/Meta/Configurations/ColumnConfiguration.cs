@@ -15,6 +15,7 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<Column> builder)
         {
+            _ = Check.NotNull(nameof(builder), builder);
             _ = builder.ToTable("columns", "sys");
             _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");
             _ = builder.Property(_ => _.Name).HasColumnName("name");

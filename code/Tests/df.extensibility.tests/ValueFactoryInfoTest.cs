@@ -47,6 +47,7 @@ namespace Df.Extensibility.Tests
         [MemberData(nameof(GetValueFactoryInfos))]
         public void GenerateValuesTest(IValueFactoryInfo factoryInfo)
         {
+            _ = Check.NotNull(nameof(factoryInfo), factoryInfo);
             Output.WriteLine("Generating with: {0}", factoryInfo.Name);
             Assert.NotNull(factoryInfo);
             var valueFactory = factoryInfo.ValueFactory;

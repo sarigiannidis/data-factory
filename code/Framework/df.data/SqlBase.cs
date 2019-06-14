@@ -58,7 +58,7 @@ namespace Df.Data
 
         protected virtual DbCommand CreateCommand(SqlConnection connection, string commandText)
         {
-            var command = connection.CreateCommand();
+            var command = Check.NotNull(nameof(connection), connection).CreateCommand();
             command.CommandText = commandText;
             return command;
         }

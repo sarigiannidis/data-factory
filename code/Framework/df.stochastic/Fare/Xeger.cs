@@ -34,12 +34,7 @@ namespace Df.Stochastic.Fare
 
         public Xeger(string regex, IRandom random)
         {
-            if (string.IsNullOrEmpty(regex))
-            {
-                throw new ArgumentNullException(nameof(regex));
-            }
-
-            _Automaton = new RegExp(RemoveStartEndMarkers(regex), _AllExceptAnyString).ToAutomaton();
+            _Automaton = new RegExp(RemoveStartEndMarkers(Check.NotNull(nameof(regex), regex)), _AllExceptAnyString).ToAutomaton();
             _Random = random ?? throw new ArgumentNullException(nameof(random));
         }
 

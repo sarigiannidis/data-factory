@@ -15,6 +15,7 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<ForeignKey> builder)
         {
+            _ = Check.NotNull(nameof(builder), builder);
             _ = builder.ToTable("foreign_keys", "sys");
             _ = builder.Property(_ => _.Name).HasColumnName("name");
             _ = builder.Property(_ => _.ObjectId).HasColumnName("object_id");

@@ -15,6 +15,7 @@ namespace Df.Data.Meta.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityColumn> builder)
         {
+            _ = Check.NotNull(nameof(builder), builder);
             _ = builder.ToTable("identity_columns", "sys");
             _ = builder.Property(_ => _.ColumnId).HasColumnName("column_id");
             _ = builder.Property(_ => _.IncrementValue).HasColumnName("increment_value").HasColumnType("sql_variant");
