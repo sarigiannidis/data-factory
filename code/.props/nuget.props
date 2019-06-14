@@ -1,6 +1,6 @@
 <Project>
 
-	<PropertyGroup Label="Microsoft products">
+	<PropertyGroup Label="Microsoft packages">
 		<V_MS_A>2.9.3</V_MS_A>
 		<V_MS_EF>3.0.0-preview6.19304.10</V_MS_EF>
 		<V_MS_EX>3.0.0-preview6.19304.6</V_MS_EX>
@@ -10,7 +10,7 @@
 		<V_MS_T>16.2.0-preview-20190606-02</V_MS_T>
 	</PropertyGroup>
 
-	<PropertyGroup Label="3rd parties">
+	<PropertyGroup Label="3rd party packages">
 		<V_CP>2.5.0</V_CP>
 		<V_MC>2.0.0</V_MC>
 		<V_NS>12.0.2</V_NS>
