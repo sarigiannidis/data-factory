@@ -2,7 +2,7 @@
 
   <Import Project="$(PROPSDIR)artifacts_read.props" />
   <Import Project="$(PROPSDIR)testdb.props" />
-  
+
   <PropertyGroup>
     <RootNamespace>Df.Tests</RootNamespace>
   </PropertyGroup>

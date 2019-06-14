@@ -1,19 +1,19 @@
 <Project>
 
-<Import Project="..\Directory.Build.props" />
+  <Import Project="..\Directory.Build.props" />
 
   <ItemGroup>
     <ProjectReference Include="$(FRAMEWORKDIR)df.core\df.core.csproj" />
   </ItemGroup>
 
-<ItemGroup Label="Comon Packages">
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(V_MS_T)" />
-  <PackageReference Include="xunit" Version="$(V_XU)" />
-  <PackageReference Include="xunit.analyzers" Version="$(V_XUA)" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="$(V_XU)">
-    <PrivateAssets>all</PrivateAssets>
-    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-  </PackageReference>
-</ItemGroup>
+  <ItemGroup Label="Comon Packages">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(V_MS_T)" />
+    <PackageReference Include="xunit" Version="$(V_XU)" />
+    <PackageReference Include="xunit.analyzers" Version="$(V_XUA)" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(V_XU)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

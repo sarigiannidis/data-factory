@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="$(PROPSDIR)testdb.props" />
- 
+
   <PropertyGroup>
     <RootNamespace>Df.Data.Tests</RootNamespace>
   </PropertyGroup>
@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-
     <None Update="settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

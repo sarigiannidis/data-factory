@@ -12,5 +12,5 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="$(V_NS)" />
   </ItemGroup>
-  
+
 </Project>

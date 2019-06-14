@@ -12,5 +12,5 @@
     <ProjectReference Include="$(FRAMEWORKDIR)df.extensibility\df.extensibility.csproj" />
     <ProjectReference Include="$(FRAMEWORKDIR)df.io\df.io.csproj" />
   </ItemGroup>
-  
+
 </Project>

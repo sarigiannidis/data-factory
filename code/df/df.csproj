@@ -30,11 +30,11 @@
     <ResolvedFileToPublish Include="@(ValueFactories)">
       <RelativePath>ValueFactories/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
     </ResolvedFileToPublish>
-    
+
   </ItemGroup>
 
   <ItemGroup>
-      <None Update="settings.json">
+    <None Update="settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

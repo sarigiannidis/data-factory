@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <Import Project="$(PROPSDIR)mssql.props" />
   <Import Project="$(PROPSDIR)artifacts_read.props" />
 
@@ -29,5 +29,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  
+
 </Project>
