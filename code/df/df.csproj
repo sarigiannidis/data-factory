@@ -17,11 +17,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftEntityFrameworkCore)" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(MicrosoftExtensions)" />
-    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="$(MicrosoftExtensions)" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(MicrosoftExtensions)" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(MicrosoftExtensions)" />
-    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(MicrosoftExtensions)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(MsEx)" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="$(MsEx)" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(MsEx)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(MsEx)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(MsEx)" />
     <PackageReference Include="CommandLineParser" Version="$(CommandLineParser)" />
   </ItemGroup>
 

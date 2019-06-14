@@ -5,7 +5,7 @@
 		<MartinCostello>2.0.0</MartinCostello>
 		<MicrosoftAnalyzers>2.9.3</MicrosoftAnalyzers>
 		<MicrosoftEntityFrameworkCore>3.0.0-preview6.19304.10</MicrosoftEntityFrameworkCore>
-		<MicrosoftExtensions>3.0.0-preview6.19304.6</MicrosoftExtensions>
+		<MsEx>3.0.0-preview6.19304.6</MsEx>
 		<MicrosoftTestSdk>16.2.0-preview-20190606-02</MicrosoftTestSdk>
 		<MsSqlMo>150.18131.0-preview</MsSqlMo>
 		<MsSqlTypes>14.0.1016.290</MsSqlTypes>
