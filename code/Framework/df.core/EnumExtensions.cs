@@ -14,7 +14,7 @@ namespace Df
         public static bool Contains<T>(this T value, T member)
             where T : struct, IComparable, IFormattable, IConvertible
         {
-            Check.IfNotThrow<ArgumentException>(() => typeof(T).IsEnum, "The value {0} is not a member of an enumerator.", value);
+            Check.IfNotThrow<ArgumentException>(() => typeof(T).IsEnum, Messages.CHECK_VALUE, value);
             return ((dynamic)value & member) == member;
         }
     }

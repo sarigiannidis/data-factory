@@ -14,19 +14,29 @@ namespace Df.Io.Descriptive
 
     public static class ColumnDescriptionExtensions
     {
-        public static ConfiguratorConstraints CreateConstraints(this ColumnDescription columnDescription) => new ConfiguratorConstraints
+        public static ConfiguratorConstraints CreateConstraints(this ColumnDescription columnDescription)
+        {
+            _ = Check.NotNull(nameof(columnDescription), columnDescription);
+            return new ConfiguratorConstraints
             {
+#pragma warning disable CA1062 // Validate arguments of public methods
                 MaxLength = GetMaxCharLength(columnDescription),
+#pragma warning restore CA1062 // Validate arguments of public methods
                 Type = columnDescription.ResolveUserType(),
                 IncrementValue = columnDescription.Identity?.IncrementValue,
                 SeedValue = columnDescription.Identity?.SeedValue,
             };
+        }
 
-        public static Type ResolveUserType(this ColumnDescription columnDescription) => Check.NotNull(nameof(columnDescription), columnDescription).UserType switch
+        public static Type ResolveUserType(this ColumnDescription columnDescription)
+        {
+            _ = Check.NotNull(nameof(columnDescription), columnDescription);
+            return columnDescription.UserType switch
             {
                 "sql_variant" => typeof(int),
                 _ => SqlTypeUtility.GetDataType(columnDescription.UserType, columnDescription.MaxLength),
             };
+        }
 
         private static int GetMaxCharLength(ColumnDescription columnDescription) => columnDescription.UserType switch
             {

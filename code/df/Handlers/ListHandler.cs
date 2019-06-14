@@ -72,7 +72,7 @@ namespace Df.Handlers
             }
             catch
             {
-                Console.WriteLine("Failed to connect.");
+                Console.WriteLine(Messages.FEEDBACK_FAILED_CONNECTION);
                 throw;
             }
         }

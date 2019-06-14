@@ -44,7 +44,7 @@ namespace Df.Data
         {
             var sb = new StringBuilder()
                 .AppendFormatInvariant("[{0}] ", name)
-                .Append(GetSqlType(userType, maxLength, precision, scale));
+                .Append(GetSqlType(Check.NotNull(nameof(userType), userType), maxLength, precision, scale));
 
             if (seedValue != null && incrementValue != null)
             {

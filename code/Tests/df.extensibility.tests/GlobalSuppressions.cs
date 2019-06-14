@@ -6,3 +6,4 @@
 // --------------------------------------------------------------------------------
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "Not applicable.", Scope = "member", Target = "~M:Df.Extensibility.Tests.ValueFactoryInfoTest.GenerateValuesTest(Df.Extensibility.IValueFactoryInfo)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "Misfire.", Scope = "member", Target = "~M:Df.Extensibility.Tests.ValueFactoryInfoTest.GenerateValuesTest(Df.Extensibility.IValueFactoryInfo)")]

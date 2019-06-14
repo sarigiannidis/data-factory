@@ -7,6 +7,7 @@
 
 namespace Xunit
 {
+    using Df;
     using System;
     using System.Reflection;
     using Xunit.Sdk;
@@ -24,6 +25,8 @@ namespace Xunit
 
         public override void Before(MethodInfo methodUnderTest)
         {
+            _ = Check.NotNull(nameof(methodUnderTest), methodUnderTest);
+
             if (string.IsNullOrWhiteSpace(Prefix))
             {
                 Prefix = methodUnderTest.Name;

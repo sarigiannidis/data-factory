@@ -16,13 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0-preview5.19227.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="CommandLineParser" Version="2.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(V_MS_EF)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(V_MS_EX)" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(V_MS_EX)" />
+    <PackageReference Include="CommandLineParser" Version="$(V_CP)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,11 +30,11 @@
     <ResolvedFileToPublish Include="@(ValueFactories)">
       <RelativePath>ValueFactories/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
     </ResolvedFileToPublish>
-    
+
   </ItemGroup>
 
   <ItemGroup>
-      <None Update="settings.json">
+    <None Update="settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

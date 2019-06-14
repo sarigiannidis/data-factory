@@ -71,7 +71,7 @@ namespace Df.Extensibility
             }
             catch (Exception exception)
             {
-                Logger.LogError(exception, "Refresh failed.");
+                Logger.LogError(exception, Messages.LOG_ERR_FAILED, nameof(Refresh));
                 throw;
             }
         }
@@ -81,7 +81,7 @@ namespace Df.Extensibility
             var func = ReflectionUtility.CreateDefaultInstance<T>(type);
             if (func == null)
             {
-                Logger.LogWarning("The type {0} does not have a default constructor.", type.FullName);
+                Logger.LogWarning(Messages.LOG_WRN_NO_DEFAULT_CONSTRUCTOR, type.FullName);
             }
 
             return func;
@@ -117,7 +117,7 @@ namespace Df.Extensibility
 
             if (result == default)
             {
-                Logger.LogWarning("Missing argument {0}.", key);
+                Logger.LogWarning(Messages.LOG_WRN_MISSING_ARG, key);
             }
 
             return result;
@@ -131,7 +131,7 @@ namespace Df.Extensibility
             }
             catch (Exception exception)
             {
-                Logger.LogError(exception, "LoadAssembly failed.");
+                Logger.LogError(exception, Messages.LOG_ERR_FAILED, nameof(Selector_LoadAssembly));
                 throw;
             }
         }
@@ -145,12 +145,12 @@ namespace Df.Extensibility
                 return null;
             }
 
-            Logger.LogInformation("The type {0} has the attribute {1}.", type.FullName, nameof(ValueFactoryAttribute));
+            Logger.LogInformation(Messages.LOG_INF_FOUND_ATTRIBUTE, type.FullName, nameof(ValueFactoryAttribute));
             var args = ReflectionUtility.GetConstructorArguments(attribute);
             if (args == null)
             {
-                Logger.LogError("Failed to get the constructor arguments on {0}", nameof(ValueFactoryAttribute));
-                throw new ValueFactoryAttributeException("Failed to get the constructor arguments on {0}".FormatInvariant(nameof(ValueFactoryAttribute)));
+                Logger.LogError(Messages.LOG_ERR_FAILED_TO_GET_ARGS, nameof(ValueFactoryAttribute));
+                throw new ValueFactoryAttributeException(Messages.EX_NO_ARGS.FormatInvariant(nameof(ValueFactoryAttribute)));
             }
 
             var name = ReadArgument<string>(args, ARG_NAME);
@@ -188,20 +188,20 @@ namespace Df.Extensibility
             IEnumerable<IValueFactoryInfo> result = Array.Empty<IValueFactoryInfo>();
             if (assembly == null)
             {
-                Logger.LogWarning("{0} should not be null.", nameof(assembly));
+                Logger.LogWarning(Messages.LOG_WRN_NULL_ENCOUNTERED, nameof(assembly));
                 return result;
             }
 
             try
             {
-                Logger.LogInformation("Reading exported types from {0}", assembly.FullName);
-                Logger.LogInformation("{0} has {1} exported types.", assembly.FullName, assembly.GetExportedTypes().Length);
+                Logger.LogInformation(Messages.LOG_INF_READING_ASSEMBLY, assembly.FullName);
+                Logger.LogInformation(Messages.LOG_INF_TYPES_EXPORTED, assembly.FullName, assembly.GetExportedTypes().Length);
                 var items = assembly.GetExportedTypes().Select(Selector_LoadValueFactory).Where(_ => _ != null);
                 result = new ValueFactoryCollection(items);
             }
             catch (Exception exception)
             {
-                Logger.LogError(exception, "Failed to read types from assembly {0}", assembly.FullName);
+                Logger.LogError(exception, Messages.LOG_ERR_FAILED_TO_READ_TYPES, assembly.FullName);
                 throw;
             }
 

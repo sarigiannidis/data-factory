@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <Import Project="$(PROPSDIR)mssql.props" />
   <Import Project="$(PROPSDIR)artifacts_read.props" />
 
@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0-preview5.19227.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="3.0.0-preview5.19227.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(V_MS_EX)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,5 +29,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  
+
 </Project>

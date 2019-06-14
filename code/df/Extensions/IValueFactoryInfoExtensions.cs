@@ -12,10 +12,14 @@ namespace Df.Extensibility
     public static class IValueFactoryInfoExtensions
     {
         public static IValueFactoryConfiguration ConfigureForColumn(this IValueFactoryInfo valueFactoryInfo, ColumnDescription columnDescription)
-        => valueFactoryInfo.Configurator switch
+        {
+            _ = Check.NotNull(nameof(valueFactoryInfo), valueFactoryInfo);
+
+            return valueFactoryInfo.Configurator switch
             {
                 IConstrainableConfigurator constrainableConfigurator => constrainableConfigurator.CreateConfiguration(columnDescription.CreateConstraints()),
                 _ => valueFactoryInfo.Configurator.CreateConfiguration(),
             };
+        }
     }
 }

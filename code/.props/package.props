@@ -1,6 +1,5 @@
 <Project>
 
-
   <PropertyGroup>
     <Authors>Michalis Sarigiannidis</Authors>
     <Copyright>Copyright $(CurrentYear) © Michalis Sarigiannidis. All rights reserved.</Copyright>

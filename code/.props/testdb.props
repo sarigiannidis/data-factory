@@ -1,5 +1,5 @@
 <Project>
-  
+
   <ItemGroup>
     <Content Include="$(TESTDATADIR)TESTDB.mdf" Link="TESTDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -9,5 +9,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  
+
 </Project>

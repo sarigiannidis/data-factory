@@ -1,10 +1,12 @@
 <!-- See https://github.com/dotnet/corefx/issues/31775 -->
 <Project>
+
   <PropertyGroup>
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290"/>
-    <PackageReference Include="System.Data.SqlClient" Version="4.7.0-preview5.19224.8"/>
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="$(V_MS_SQL_T)"/>
+    <PackageReference Include="System.Data.SqlClient" Version="$(V_MS_SQL_C)"/>
   </ItemGroup>
+
 </Project>

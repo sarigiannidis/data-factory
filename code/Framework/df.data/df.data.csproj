@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <Import Project="$(PROPSDIR)mssql.props" />
 
   <PropertyGroup>
@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MartinCostello.SqlLocalDb" Version="2.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0-preview5.19227.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="MartinCostello.SqlLocalDb" Version="$(V_MC)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(V_MS_EF)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(V_NS)" />
   </ItemGroup>
 
 </Project>
