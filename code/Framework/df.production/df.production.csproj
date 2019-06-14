@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="150.18118.0" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="150.18131.0-preview" />
   </ItemGroup>
 
   <ItemGroup>
