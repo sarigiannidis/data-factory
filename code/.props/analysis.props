@@ -12,15 +12,15 @@
   </ItemGroup>
 
   <ItemGroup Label="Analysis packages">
-    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="$(MicrosoftAnalyzers)">
+    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="$(V_MS_A)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NetCore.Analyzers" Version="$(MicrosoftAnalyzers)">
+    <PackageReference Include="Microsoft.NetCore.Analyzers" Version="$(V_MS_A)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="$(StyleCop)">
+    <PackageReference Include="StyleCop.Analyzers" Version="$(V_SC)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

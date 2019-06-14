@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MartinCostello.SqlLocalDb" Version="$(MartinCostello)" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MsEf)" />
-    <PackageReference Include="Newtonsoft.Json" Version="$(Newtonsoft)" />
+    <PackageReference Include="MartinCostello.SqlLocalDb" Version="$(V_MC)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(V_MS_EF)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(V_NS)" />
   </ItemGroup>
 
 </Project>

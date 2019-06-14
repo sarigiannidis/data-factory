@@ -7,10 +7,10 @@
   </ItemGroup>
 
 <ItemGroup Label="Comon Packages">
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftTestSdk)" />
-  <PackageReference Include="xunit" Version="$(XUnit)" />
-  <PackageReference Include="xunit.analyzers" Version="$(XunitAnalyzers)" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="$(XUnit)">
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(V_MS_T)" />
+  <PackageReference Include="xunit" Version="$(V_XU)" />
+  <PackageReference Include="xunit.analyzers" Version="$(V_XUA)" />
+  <PackageReference Include="xunit.runner.visualstudio" Version="$(V_XU)">
     <PrivateAssets>all</PrivateAssets>
     <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
   </PackageReference>
