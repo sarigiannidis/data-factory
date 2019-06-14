@@ -1,0 +1,19 @@
+<Project>
+
+	<PropertyGroup Label="Version numbers">
+		<CommandLineParser>2.5.0</CommandLineParser>
+		<MartinCostello>2.0.0</MartinCostello>
+		<MicrosoftAnalyzers>2.9.3</MicrosoftAnalyzers>
+		<MicrosoftEntityFrameworkCore>3.0.0-preview6.19304.10</MicrosoftEntityFrameworkCore>
+		<MicrosoftExtensions>3.0.0-preview6.19304.6</MicrosoftExtensions>
+		<MicrosoftTestSdk>16.2.0-preview-20190606-02</MicrosoftTestSdk>
+		<MsSqlMo>150.18131.0-preview</MsSqlMo>
+		<MsSqlTypes>14.0.1016.290</MsSqlTypes>
+		<Newtonsoft>12.0.2</Newtonsoft>
+		<SqlClient>4.7.0-preview5.19224.8</SqlClient>
+		<StyleCop>1.1.118</StyleCop>
+		<XUnit>2.4.1</XUnit>
+		<XunitAnalyzers>0.10.0</XunitAnalyzers>
+	</PropertyGroup>
+
+</Project>

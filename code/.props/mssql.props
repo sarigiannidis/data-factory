@@ -4,7 +4,7 @@
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290"/>
-    <PackageReference Include="System.Data.SqlClient" Version="4.7.0-preview5.19224.8"/>
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="$(MsSqlTypes)"/>
+    <PackageReference Include="System.Data.SqlClient" Version="$(SqlClient)"/>
   </ItemGroup>
 </Project>
