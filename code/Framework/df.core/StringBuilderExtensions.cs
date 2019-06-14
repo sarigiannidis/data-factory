@@ -7,10 +7,11 @@
 
 namespace System.Text
 {
+    using Df;
     using System.Globalization;
 
     public static class StringBuilderExtensions
     {
-        public static StringBuilder AppendFormatInvariant(this StringBuilder sb, string format, params object[] args) => sb.AppendFormat(CultureInfo.InvariantCulture, format, args);
+        public static StringBuilder AppendFormatInvariant(this StringBuilder sb, string format, params object[] args) => Check.NotNull(nameof(sb), sb).AppendFormat(CultureInfo.InvariantCulture, format, args);
     }
 }

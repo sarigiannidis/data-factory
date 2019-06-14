@@ -19,7 +19,7 @@ namespace Df.Io
         public Project LoadFromFile(string path)
         {
             _ = Check.NotNull(nameof(path), path);
-            Check.IfNotThrow<FileNotFoundException>(() => File.Exists(path), "{0} not found.", nameof(path));
+            Check.IfNotThrow<FileNotFoundException>(() => File.Exists(path), Messages.CHECK_NOT_FOUND, nameof(path));
             return JsonUtility.Read<Project>(path);
         }
 

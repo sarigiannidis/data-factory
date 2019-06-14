@@ -149,7 +149,7 @@ namespace Df.Handlers
                 .ValueFactoryInfos
                 .FilterByType(userType)
                 .ToArray();
-            Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, "There is no {0} matching the given {1}", nameof(IValueFactoryInfo), nameof(userType));
+            Check.IfNotThrow<ArgumentException>(() => valueFactoryInfos.Length > 0, Messages.CHECK_MATCHING, nameof(IValueFactoryInfo), nameof(userType));
 
             if (isIdentity)
             {

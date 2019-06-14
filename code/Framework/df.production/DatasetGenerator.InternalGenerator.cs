@@ -44,7 +44,7 @@ namespace Df.Production
             {
                 ISql sql = null;
 
-                _Owner._Logger.LogInformation("{0} - Started", nameof(Generate));
+                _Owner._Logger.LogInformation(Messages.LOG_INF_STARTED, nameof(Generate));
                 try
                 {
                     sql = _Owner._SqlFactory.CreateTemporaryDatabase(DEFAULT_DATABASENAME);
@@ -64,13 +64,13 @@ namespace Df.Production
                 }
                 catch (Exception exception)
                 {
-                    _Owner._Logger.LogError(exception, "{0} - Failed.", nameof(Generate));
+                    _Owner._Logger.LogError(exception, Messages.LOG_ERR_FAILED, nameof(Generate));
                     sql?.Dispose();
                     throw;
                 }
                 finally
                 {
-                    _Owner._Logger.LogInformation("{0} - Finished.", nameof(Generate));
+                    _Owner._Logger.LogInformation(Messages.LOG_INF_FINISHED, nameof(Generate));
                 }
             }
 
@@ -129,7 +129,7 @@ namespace Df.Production
 
             private void FillTable(ISql sql, TablePrescription tablePrescription)
             {
-                _Owner._Logger.LogInformation("{0}({1}) - Started.", nameof(FillTable), tablePrescription.TableDescription.Name);
+                _Owner._Logger.LogInformation(Messages.LOG_INF_STARTED_1, nameof(FillTable), tablePrescription.TableDescription.Name);
 
                 var columns = tablePrescription.ColumnPrescriptions.Select(_ => _.ColumnDescription.Name).ToArray();
                 var tableName = tablePrescription.TableName();
@@ -151,7 +151,7 @@ namespace Df.Production
                 }
 
                 bulkCopy.WriteToServer(recordGenerator);
-                _Owner._Logger.LogInformation("{0}({1}) - Finished.", nameof(FillTable), tablePrescription.TableDescription.Name);
+                _Owner._Logger.LogInformation(Messages.LOG_INF_FINISHED_1, nameof(FillTable), tablePrescription.TableDescription.Name);
             }
         }
     }

@@ -27,7 +27,7 @@ namespace Df.Extensibility
             Description = Check.NotNull(nameof(description), description);
             Name = Check.NotNull(nameof(name), name);
             DefaultConfigurationFactoryType = Check.NotNull(nameof(defaultConfigurationFactoryType), defaultConfigurationFactoryType);
-            Check.IfNotThrow<ArgumentException>(() => typeof(IValueFactoryConfiguration).IsAssignableFrom(defaultConfigurationFactoryType), "{0} does not implement {1}", nameof(defaultConfigurationFactoryType), nameof(IValueFactoryConfiguration));
+            Check.IfNotThrow<ArgumentException>(() => typeof(IValueFactoryConfiguration).IsAssignableFrom(defaultConfigurationFactoryType), Messages.EX_DOES_NOT_IMPLEMENT, nameof(defaultConfigurationFactoryType), nameof(IValueFactoryConfiguration));
         }
     }
 }

@@ -7,6 +7,7 @@
 
 namespace Xunit
 {
+    using Df;
     using Df.Stochastic;
     using System;
     using System.Collections.Concurrent;
@@ -66,7 +67,7 @@ namespace Xunit
             if (!_CreatedTempFilePaths.TryAdd(memberInfo, value))
             {
                 value.Dispose();
-                throw new InvalidOperationException("The context has already been added.");
+                throw new InvalidOperationException(Messages.CHECK_ADDED);
             }
         }
 

@@ -31,11 +31,11 @@ namespace Df.Handlers
                 using var result = sql.Query(SQL_COUNT_TABLES, dataRecord => (int)dataRecord[0]);
                 var databaseName = new SqlConnectionStringBuilder(options.ConnectionString).InitialCatalog;
                 Console.WriteLine("{0} contains {1} tables.".FormatInvariant(databaseName, result.Single()));
-                Console.WriteLine("Good connection.");
+                Console.WriteLine(Messages.FEEDBACK_GOOD_CONNECTION);
             }
             catch
             {
-                Console.WriteLine("Failed to connect.");
+                Console.WriteLine(Messages.FEEDBACK_FAILED_CONNECTION);
                 throw;
             }
         }

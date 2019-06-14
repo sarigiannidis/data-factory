@@ -71,6 +71,7 @@ namespace Df.Data.Meta
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            _ = Check.NotNull(nameof(modelBuilder), modelBuilder);
             _ = modelBuilder.ApplyConfiguration(new ColumnConfiguration());
             _ = modelBuilder.ApplyConfiguration(new ForeignKeyColumnConfiguration());
             _ = modelBuilder.ApplyConfiguration(new ForeignKeyConfiguration());
@@ -84,7 +85,7 @@ namespace Df.Data.Meta
             _ = modelBuilder.HasDbFunction(() => TypeName(default)).HasName("TYPE_NAME").HasSchema(string.Empty);
         }
 
-        private static dynamic ThrowLinqOnly() => throw new DbFunctionException("Please use this function only in LINQ statements.");
+        private static dynamic ThrowLinqOnly() => throw new DbFunctionException(Messages.EX_ONLY_LINQ);
 
         private void ConfigureWarnings(WarningsConfigurationBuilder warningsConfigurationBuilder) => _ = warningsConfigurationBuilder.Ignore(RelationalEventId.QueryClientEvaluationWarning);
     }

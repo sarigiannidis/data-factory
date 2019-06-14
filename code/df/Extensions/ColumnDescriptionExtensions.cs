@@ -19,7 +19,9 @@ namespace Df.Io.Descriptive
             _ = Check.NotNull(nameof(columnDescription), columnDescription);
             return new ConfiguratorConstraints
             {
+#pragma warning disable CA1062 // Validate arguments of public methods
                 MaxLength = GetMaxCharLength(columnDescription),
+#pragma warning restore CA1062 // Validate arguments of public methods
                 Type = columnDescription.ResolveUserType(),
                 IncrementValue = columnDescription.Identity?.IncrementValue,
                 SeedValue = columnDescription.Identity?.SeedValue,

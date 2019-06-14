@@ -39,7 +39,7 @@ namespace Df.Io.Prescriptive
 
             if (_ValueFactoryPrescriptions.Any(_ => _.Name == valueFactoryPrescription.Name))
             {
-                throw new ArgumentException("The name must be unique.");
+                throw new ArgumentException(Messages.EX_NOT_UNIQUE);
             }
 
             _ValueFactoryPrescriptions.Add(valueFactoryPrescription);
