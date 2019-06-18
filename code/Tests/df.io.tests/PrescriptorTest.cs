@@ -60,8 +60,7 @@ namespace Df.Io.Tests
 
                 foreach (var columnDescription in tableDescription.ColumnDescriptions)
                 {
-                    // @TODO: Use columnDescription.IsWritable
-                    if (columnDescription.Identity != null || columnDescription.Computed)
+                    if (columnDescription.Identity != null || !columnDescription.IsWritable())
                     {
                         continue;
                     }
