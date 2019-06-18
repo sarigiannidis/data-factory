@@ -10,21 +10,42 @@ namespace Df.Stochastic
     using System;
     using System.Diagnostics;
     using System.Security.Cryptography;
+    using System.Threading;
 
     public sealed class HardRandom
         : IRandom,
         IDisposable
     {
-        // @TODO: Make this a singleton of sorts - it's thread-safe, there's no need for more than one of these.
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private RNGCryptoServiceProvider _CryptoServiceProvider = new RNGCryptoServiceProvider();
+        private static readonly object _Sync = new object();
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private static int _Count;
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private static RandomNumberGenerator _RandomNumberGenerator;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool _Disposed;
 
         public void Dispose() => Dispose(true);
 
-        public void NextBytes(byte[] bytes) => _CryptoServiceProvider.GetBytes(bytes);
+        public HardRandom() => _ = Interlocked.Increment(ref _Count);
+
+        private static RandomNumberGenerator GetProvider()
+        {
+            if (_RandomNumberGenerator is null)
+            {
+                lock (_Sync)
+                {
+                    _RandomNumberGenerator ??= new RNGCryptoServiceProvider();
+                }
+            }
+
+            return _RandomNumberGenerator;
+        }
+
+        public void NextBytes(byte[] bytes) => GetProvider().GetBytes(bytes);
 
         private void Dispose(bool disposing)
         {
@@ -33,10 +54,16 @@ namespace Df.Stochastic
                 return;
             }
 
-            if (disposing)
+            if (disposing && Interlocked.Decrement(ref _Count) == 0)
             {
-                _CryptoServiceProvider?.Dispose();
-                _CryptoServiceProvider = null;
+                lock (_Sync)
+                {
+                    if (_Count == 0)
+                    {
+                        _RandomNumberGenerator?.Dispose();
+                        _RandomNumberGenerator = null;
+                    }
+                }
             }
 
             _Disposed = true;
