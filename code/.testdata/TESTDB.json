@@ -1,11 +1,11 @@
 {
-  "Created": "2019-06-18T12:12:01.7949487+02:00",
-  "Modified": "2019-06-18T12:12:01.7949487+02:00",
+  "Created": "2019-06-18T12:29:09.1184388+02:00",
+  "Modified": "2019-06-18T12:29:09.1184388+02:00",
   "Version": "0.17.1.0",
   "Descriptor": {
-    "Checksum": "CF1906742C679C364B98751440986A41A7131CAD156622F373B718A9352EDD9F3E3314DB029B0402D3AF0453BAE8992E1D3A5CD6ACB685B6B98F8B74F386B53B",
-    "Created": "2019-06-18T12:12:01.7949487+02:00",
-    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;AttachDbFilename=B:\\df\\code\\Tests\\df.tests\\bin\\Debug\\netcoreapp3.0\\TESTDB.mdf",
+    "Checksum": "7C7AD82ABC0B2017A1AB221E5DBB112415C4BFBB274168CC5B4C94307739B7247336D16533EDED97119925FA78E4868C179E0AD8A2A9AE1ECEA569277D6B6B5B",
+    "Created": "2019-06-18T12:29:09.1184388+02:00",
+    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_TESTS_DB;AttachDbFilename=B:\\df\\code\\.testdata\\TESTDB.mdf",
     "TableDescriptions": [
       {
         "$id": "[dbo].[SQLTYPE_TABLE_1]",
@@ -971,7 +971,7 @@
         "Schema": "dbo",
         "Name": "TABLE_0",
         "Created": "2019-04-22T18:20:16.947+02:00",
-        "Modified": "2019-06-18T11:46:17.28+02:00",
+        "Modified": "2019-06-18T12:18:10.013+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_0].[RECID]",
@@ -1040,7 +1040,7 @@
         "Schema": "dbo",
         "Name": "TABLE_00",
         "Created": "2019-04-22T18:20:16.95+02:00",
-        "Modified": "2019-06-18T11:46:17.21+02:00",
+        "Modified": "2019-06-18T12:18:09.943+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_00].[RECID]",
@@ -1170,7 +1170,7 @@
         "Schema": "dbo",
         "Name": "TABLE_01",
         "Created": "2019-04-22T18:20:16.953+02:00",
-        "Modified": "2019-06-18T11:46:17.237+02:00",
+        "Modified": "2019-06-18T12:18:09.973+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_01].[RECID]",
@@ -1300,7 +1300,7 @@
         "Schema": "dbo",
         "Name": "TABLE_02",
         "Created": "2019-04-22T18:20:16.96+02:00",
-        "Modified": "2019-06-18T11:46:17.267+02:00",
+        "Modified": "2019-06-18T12:18:10.003+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_02].[RECID]",
@@ -1430,7 +1430,7 @@
         "Schema": "dbo",
         "Name": "TABLE_SOURCE",
         "Created": "2019-04-22T18:20:16.967+02:00",
-        "Modified": "2019-06-18T11:46:17.307+02:00",
+        "Modified": "2019-06-18T12:18:10.033+02:00",
         "ColumnDescriptions": [
           {
             "$id": "[dbo].[TABLE_SOURCE].[RECID]",
@@ -1534,7 +1534,7 @@
       {
         "Name": "FK_TABLE_0_TABLE_00",
         "Created": "2019-04-22T18:20:16.97+02:00",
-        "Modified": "2019-06-18T11:46:17.28+02:00",
+        "Modified": "2019-06-18T12:18:10.013+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1550,7 +1550,7 @@
       {
         "Name": "FK_TABLE_0_TABLE_01",
         "Created": "2019-04-22T18:20:16.973+02:00",
-        "Modified": "2019-06-18T11:46:17.28+02:00",
+        "Modified": "2019-06-18T12:18:10.013+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1566,7 +1566,7 @@
       {
         "Name": "FK_TABLE_0_TABLE_02",
         "Created": "2019-04-22T18:20:16.973+02:00",
-        "Modified": "2019-06-18T11:46:17.28+02:00",
+        "Modified": "2019-06-18T12:18:10.013+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1582,7 +1582,7 @@
       {
         "Name": "FK_TABLE_00_TABLE_000",
         "Created": "2019-04-22T18:20:16.977+02:00",
-        "Modified": "2019-06-18T11:46:17.21+02:00",
+        "Modified": "2019-06-18T12:18:09.943+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1598,7 +1598,7 @@
       {
         "Name": "FK_TABLE_00_TABLE_001",
         "Created": "2019-04-22T18:20:16.98+02:00",
-        "Modified": "2019-06-18T11:46:17.21+02:00",
+        "Modified": "2019-06-18T12:18:09.943+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1614,7 +1614,7 @@
       {
         "Name": "FK_TABLE_01_TABLE_010",
         "Created": "2019-04-22T18:20:16.98+02:00",
-        "Modified": "2019-06-18T11:46:17.237+02:00",
+        "Modified": "2019-06-18T12:18:09.973+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1630,7 +1630,7 @@
       {
         "Name": "FK_TABLE_01_TABLE_011",
         "Created": "2019-04-22T18:20:16.983+02:00",
-        "Modified": "2019-06-18T11:46:17.237+02:00",
+        "Modified": "2019-06-18T12:18:09.973+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1646,7 +1646,7 @@
       {
         "Name": "FK_TABLE_02_TABLE_020",
         "Created": "2019-04-22T18:20:16.983+02:00",
-        "Modified": "2019-06-18T11:46:17.267+02:00",
+        "Modified": "2019-06-18T12:18:10.003+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1662,7 +1662,7 @@
       {
         "Name": "FK_TABLE_02_TABLE_021",
         "Created": "2019-04-22T18:20:16.987+02:00",
-        "Modified": "2019-06-18T11:46:17.267+02:00",
+        "Modified": "2019-06-18T12:18:10.003+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1678,7 +1678,7 @@
       {
         "Name": "FK_TABLE_SOURCE_TABLE_TARGET",
         "Created": "2019-04-22T18:20:16.99+02:00",
-        "Modified": "2019-06-18T11:46:17.307+02:00",
+        "Modified": "2019-06-18T12:18:10.033+02:00",
         "ColumnRelationshipDescriptions": [
           {
             "Order": 1,
@@ -1747,16 +1747,16 @@
         "$id": "datetime-random0",
         "Factory": "datetime-random",
         "Configuration": {
-          "MinValue": "2009-06-20T12:12:06.3365019+02:00",
-          "MaxValue": "2029-06-15T12:12:06.3360904+02:00"
+          "MinValue": "2009-06-20T12:29:13.4002154+02:00",
+          "MaxValue": "2029-06-15T12:29:13.3998455+02:00"
         }
       },
       {
         "$id": "datetimeoffset-random0",
         "Factory": "datetimeoffset-random",
         "Configuration": {
-          "MinValue": "1919-07-13T12:12:06.336517+02:00",
-          "MaxValue": "2119-05-25T12:12:06.3365098+02:00"
+          "MinValue": "1919-07-13T12:29:13.4002315+02:00",
+          "MaxValue": "2119-05-25T12:29:13.400224+02:00"
         }
       },
       {
