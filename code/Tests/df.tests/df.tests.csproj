@@ -18,9 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TESTDB.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Content Include="$(TESTDATADIR)TESTDB.json" Link="TESTDB.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
     <None Update="settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
