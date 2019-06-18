@@ -1,22 +1,23 @@
 <Project>
 
-	<PropertyGroup Label="Microsoft packages">
-		<V_MS_A>2.9.3</V_MS_A>
-		<V_MS_EF>3.0.0-preview5.19227.1</V_MS_EF>
-		<V_MS_EX>3.0.0-preview5.19227.9</V_MS_EX>
-		<V_MS_SQL_C>4.7.0-preview5.19224.8</V_MS_SQL_C>
-		<V_MS_SQL_MO>150.18118.0</V_MS_SQL_MO>
-		<V_MS_SQL_T>14.0.1016.290</V_MS_SQL_T>
-		<V_MS_T>16.1.1</V_MS_T>
-	</PropertyGroup>
+  <PropertyGroup Label="Microsoft packages">
+    <V_MS_A>2.9.3</V_MS_A>
+    <V_MS_EF>3.0.0-preview5.19227.1</V_MS_EF>
+    <V_MS_EX>3.0.0-preview6.19304.6</V_MS_EX>
+    <V_MS_SQL_C>4.7.0-preview5.19224.8</V_MS_SQL_C>
+    <V_MS_SQL_MO>150.18131.0</V_MS_SQL_MO>
+    <V_MS_SQL_T>14.0.1016.290</V_MS_SQL_T>
+    <V_MS_STJ>4.6.0-preview6.19303.8</V_MS_STJ>
+    <V_MS_T>16.2.0-preview-20190606-02</V_MS_T>
+  </PropertyGroup>
 
-	<PropertyGroup Label="3rd party packages">
-		<V_CP>2.5.0</V_CP>
-		<V_MC>2.0.0</V_MC>
-		<V_NS>12.0.2</V_NS>
-		<V_SC>1.1.118</V_SC>
-		<V_XU>2.4.1</V_XU>
-		<V_XUA>0.10.0</V_XUA>
-	</PropertyGroup>
+  <PropertyGroup Label="3rd party packages">
+    <V_CP>2.5.0</V_CP>
+    <V_MC>2.0.0</V_MC>
+    <V_NS>12.0.2</V_NS>
+    <V_SC>1.1.118</V_SC>
+    <V_XU>2.4.1</V_XU>
+    <V_XUA>0.10.0</V_XUA>
+  </PropertyGroup>
 
 </Project>

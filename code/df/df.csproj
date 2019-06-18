@@ -16,13 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="$(V_CP)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(V_MS_EF)" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(V_MS_EX)" />
     <PackageReference Include="microsoft.extensions.dependencyinjection" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(V_MS_EX)" />
-    <PackageReference Include="CommandLineParser" Version="$(V_CP)" />
+    <PackageReference Include="System.Text.Json" Version="$(V_MS_STJ)" />
   </ItemGroup>
 
   <ItemGroup>
