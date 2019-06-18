@@ -16,24 +16,32 @@ The binaries are only published for win-x64. Please check the [releases](https:/
 ## Usage
 
 To create a new project file given a connection string:
+
 ```batchfile
 df new --name demo.json -c "Data Source=(localdb)\DF_SERVER;Initial Catalog=DF_TEST_DB;"
 ```
 
 To auto-configure your project file:
+
 ```batchfile
 df add alltables --project demo.json
 ```
 
 To generate a file with all the SQL INSERT statements:
+
 ```batchfile
 df generate file -n demo.json -o demo.sql
 ```
 
 To write directly to the database named in the above connection string:
+
 ```batchfile
 df generate database -n demo.json
 ```
+
+## Building and testing
+
+Please run the script ```RESTORE.cmd``` to create the SQL Server before running ```TEST.cmd```, which will build and test the code.
 
 ## Extensibility
 
