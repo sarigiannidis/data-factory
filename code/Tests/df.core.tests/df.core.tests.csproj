@@ -9,10 +9,4 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="xunit.runner.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

@@ -1,6 +1,6 @@
 ﻿{
   "ConnectionStrings": {
-    "TestDb": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DF_IO_TESTS_DB;AttachDbFilename=|DataDirectory|TESTDB.mdf"
+    "TestDb": "Data Source=(localdb)\\DF_SERVER;Initial Catalog=DF_TEST_DB;"
   },
   "ValueFactoryManagerOptions": {
     "Path": ".\\ValueFactories",

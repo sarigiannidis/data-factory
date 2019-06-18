@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="$(PROPSDIR)artifacts_read.props" />
-  <Import Project="$(PROPSDIR)testdb.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Tests</RootNamespace>
@@ -18,16 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TESTDB.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="TESTDB.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="settings.json">
+    <Content Include="$(TESTDATADIR)TESTDB.json" Link="TESTDB.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="xunit.runner.json">
+    </Content>
+
+    <None Update="settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

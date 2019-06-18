@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="$(PROPSDIR)artifacts_read.props" />
-  <Import Project="$(PROPSDIR)testdb.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Io.Tests</RootNamespace>
@@ -23,9 +22,6 @@
 
   <ItemGroup>
     <None Update="settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="xunit.runner.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

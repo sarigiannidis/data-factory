@@ -1,0 +1,2514 @@
+{
+  "Created": "2019-06-18T15:27:46.5455124+02:00",
+  "Modified": "2019-06-18T15:27:46.5455124+02:00",
+  "Version": "0.17.1.0",
+  "Descriptor": {
+    "Checksum": "5287A3672B2F9769A39D1333B43CF113873ADA2A1A4D54B3B6564A36F6143E6C18E55514B5516F5B2027F76BD9396D93C0EE4E099AEE8E160C84BB04DEF4DB91",
+    "Created": "2019-06-18T15:27:46.5455124+02:00",
+    "ConnectionString": "Data Source=(localdb)\\DF_SERVER;Initial Catalog=DF_TEST_DB;",
+    "TableDescriptions": [
+      {
+        "$id": "[dbo].[SQLTYPE_TABLE_1]",
+        "ObjectId": 901578250,
+        "Schema": "dbo",
+        "Name": "SQLTYPE_TABLE_1",
+        "Created": "2019-06-18T15:27:43.31+02:00",
+        "Modified": "2019-06-18T15:27:43.31+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE001]",
+            "Order": 2,
+            "Name": "VALUE001",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE002]",
+            "Order": 3,
+            "Name": "VALUE002",
+            "UserType": "binary",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE003]",
+            "Order": 4,
+            "Name": "VALUE003",
+            "UserType": "bit",
+            "MaxLength": 1,
+            "Precision": 1,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE004]",
+            "Order": 5,
+            "Name": "VALUE004",
+            "UserType": "char",
+            "MaxLength": 10,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE005]",
+            "Order": 6,
+            "Name": "VALUE005",
+            "UserType": "date",
+            "MaxLength": 3,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE006]",
+            "Order": 7,
+            "Name": "VALUE006",
+            "UserType": "datetime",
+            "MaxLength": 8,
+            "Precision": 23,
+            "Scale": 3,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE007]",
+            "Order": 8,
+            "Name": "VALUE007",
+            "UserType": "datetime2",
+            "MaxLength": 8,
+            "Precision": 27,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE008]",
+            "Order": 9,
+            "Name": "VALUE008",
+            "UserType": "datetimeoffset",
+            "MaxLength": 10,
+            "Precision": 34,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE009]",
+            "Order": 10,
+            "Name": "VALUE009",
+            "UserType": "decimal",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE010]",
+            "Order": 11,
+            "Name": "VALUE010",
+            "UserType": "float",
+            "MaxLength": 8,
+            "Precision": 53,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE011]",
+            "Order": 12,
+            "Name": "VALUE011",
+            "UserType": "geography",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE012]",
+            "Order": 13,
+            "Name": "VALUE012",
+            "UserType": "geometry",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE013]",
+            "Order": 14,
+            "Name": "VALUE013",
+            "UserType": "hierarchyid",
+            "MaxLength": 892,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE014]",
+            "Order": 15,
+            "Name": "VALUE014",
+            "UserType": "image",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE015]",
+            "Order": 16,
+            "Name": "VALUE015",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE016]",
+            "Order": 17,
+            "Name": "VALUE016",
+            "UserType": "money",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 4,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE017]",
+            "Order": 18,
+            "Name": "VALUE017",
+            "UserType": "ntext",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE018]",
+            "Order": 19,
+            "Name": "VALUE018",
+            "UserType": "numeric",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE019]",
+            "Order": 20,
+            "Name": "VALUE019",
+            "UserType": "nvarchar",
+            "MaxLength": 100,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE020]",
+            "Order": 21,
+            "Name": "VALUE020",
+            "UserType": "nvarchar",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE021]",
+            "Order": 22,
+            "Name": "VALUE021",
+            "UserType": "real",
+            "MaxLength": 4,
+            "Precision": 24,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE022]",
+            "Order": 23,
+            "Name": "VALUE022",
+            "UserType": "smalldatetime",
+            "MaxLength": 4,
+            "Precision": 16,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE023]",
+            "Order": 24,
+            "Name": "VALUE023",
+            "UserType": "sql_variant",
+            "MaxLength": 8016,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE024]",
+            "Order": 25,
+            "Name": "VALUE024",
+            "UserType": "text",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE025]",
+            "Order": 26,
+            "Name": "VALUE025",
+            "UserType": "time",
+            "MaxLength": 5,
+            "Precision": 16,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE026]",
+            "Order": 27,
+            "Name": "VALUE026",
+            "UserType": "timestamp",
+            "MaxLength": 8,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE027]",
+            "Order": 28,
+            "Name": "VALUE027",
+            "UserType": "tinyint",
+            "MaxLength": 1,
+            "Precision": 3,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE028]",
+            "Order": 29,
+            "Name": "VALUE028",
+            "UserType": "uniqueidentifier",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE029]",
+            "Order": 30,
+            "Name": "VALUE029",
+            "UserType": "varbinary",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE030]",
+            "Order": 31,
+            "Name": "VALUE030",
+            "UserType": "varbinary",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE031]",
+            "Order": 32,
+            "Name": "VALUE031",
+            "UserType": "varchar",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE032]",
+            "Order": 33,
+            "Name": "VALUE032",
+            "UserType": "varchar",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_1].[VALUE033]",
+            "Order": 34,
+            "Name": "VALUE033",
+            "UserType": "xml",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[SQLTYPE_TABLE_2]",
+        "ObjectId": 933578364,
+        "Schema": "dbo",
+        "Name": "SQLTYPE_TABLE_2",
+        "Created": "2019-06-18T15:27:43.32+02:00",
+        "Modified": "2019-06-18T15:27:43.32+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE001]",
+            "Order": 2,
+            "Name": "VALUE001",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE002]",
+            "Order": 3,
+            "Name": "VALUE002",
+            "UserType": "binary",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE003]",
+            "Order": 4,
+            "Name": "VALUE003",
+            "UserType": "bit",
+            "MaxLength": 1,
+            "Precision": 1,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE004]",
+            "Order": 5,
+            "Name": "VALUE004",
+            "UserType": "char",
+            "MaxLength": 10,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE005]",
+            "Order": 6,
+            "Name": "VALUE005",
+            "UserType": "date",
+            "MaxLength": 3,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE006]",
+            "Order": 7,
+            "Name": "VALUE006",
+            "UserType": "datetime",
+            "MaxLength": 8,
+            "Precision": 23,
+            "Scale": 3,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE007]",
+            "Order": 8,
+            "Name": "VALUE007",
+            "UserType": "datetime2",
+            "MaxLength": 8,
+            "Precision": 27,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE008]",
+            "Order": 9,
+            "Name": "VALUE008",
+            "UserType": "datetimeoffset",
+            "MaxLength": 10,
+            "Precision": 34,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE009]",
+            "Order": 10,
+            "Name": "VALUE009",
+            "UserType": "decimal",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE010]",
+            "Order": 11,
+            "Name": "VALUE010",
+            "UserType": "float",
+            "MaxLength": 8,
+            "Precision": 53,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE011]",
+            "Order": 12,
+            "Name": "VALUE011",
+            "UserType": "geography",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE012]",
+            "Order": 13,
+            "Name": "VALUE012",
+            "UserType": "geometry",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE013]",
+            "Order": 14,
+            "Name": "VALUE013",
+            "UserType": "hierarchyid",
+            "MaxLength": 892,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE014]",
+            "Order": 15,
+            "Name": "VALUE014",
+            "UserType": "image",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE015]",
+            "Order": 16,
+            "Name": "VALUE015",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE016]",
+            "Order": 17,
+            "Name": "VALUE016",
+            "UserType": "money",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 4,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE017]",
+            "Order": 18,
+            "Name": "VALUE017",
+            "UserType": "ntext",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE018]",
+            "Order": 19,
+            "Name": "VALUE018",
+            "UserType": "numeric",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE019]",
+            "Order": 20,
+            "Name": "VALUE019",
+            "UserType": "nvarchar",
+            "MaxLength": 100,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE020]",
+            "Order": 21,
+            "Name": "VALUE020",
+            "UserType": "nvarchar",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE021]",
+            "Order": 22,
+            "Name": "VALUE021",
+            "UserType": "real",
+            "MaxLength": 4,
+            "Precision": 24,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE022]",
+            "Order": 23,
+            "Name": "VALUE022",
+            "UserType": "smalldatetime",
+            "MaxLength": 4,
+            "Precision": 16,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE023]",
+            "Order": 24,
+            "Name": "VALUE023",
+            "UserType": "sql_variant",
+            "MaxLength": 8016,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE024]",
+            "Order": 25,
+            "Name": "VALUE024",
+            "UserType": "text",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE025]",
+            "Order": 26,
+            "Name": "VALUE025",
+            "UserType": "time",
+            "MaxLength": 5,
+            "Precision": 16,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE026]",
+            "Order": 27,
+            "Name": "VALUE026",
+            "UserType": "timestamp",
+            "MaxLength": 8,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE027]",
+            "Order": 28,
+            "Name": "VALUE027",
+            "UserType": "tinyint",
+            "MaxLength": 1,
+            "Precision": 3,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE028]",
+            "Order": 29,
+            "Name": "VALUE028",
+            "UserType": "uniqueidentifier",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE029]",
+            "Order": 30,
+            "Name": "VALUE029",
+            "UserType": "varbinary",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE030]",
+            "Order": 31,
+            "Name": "VALUE030",
+            "UserType": "varbinary",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE031]",
+            "Order": 32,
+            "Name": "VALUE031",
+            "UserType": "varchar",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE032]",
+            "Order": 33,
+            "Name": "VALUE032",
+            "UserType": "varchar",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_2].[VALUE033]",
+            "Order": 34,
+            "Name": "VALUE033",
+            "UserType": "xml",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[SQLTYPE_TABLE_3]",
+        "ObjectId": 965578478,
+        "Schema": "dbo",
+        "Name": "SQLTYPE_TABLE_3",
+        "Created": "2019-06-18T15:27:43.327+02:00",
+        "Modified": "2019-06-18T15:27:43.327+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE002]",
+            "Order": 2,
+            "Name": "VALUE002",
+            "UserType": "binary",
+            "MaxLength": 50,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE004]",
+            "Order": 3,
+            "Name": "VALUE004",
+            "UserType": "char",
+            "MaxLength": 10,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE007]",
+            "Order": 4,
+            "Name": "VALUE007",
+            "UserType": "datetime2",
+            "MaxLength": 8,
+            "Precision": 27,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE008]",
+            "Order": 5,
+            "Name": "VALUE008",
+            "UserType": "datetimeoffset",
+            "MaxLength": 10,
+            "Precision": 34,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE009]",
+            "Order": 6,
+            "Name": "VALUE009",
+            "UserType": "decimal",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE018]",
+            "Order": 7,
+            "Name": "VALUE018",
+            "UserType": "numeric",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE019]",
+            "Order": 8,
+            "Name": "VALUE019",
+            "UserType": "nvarchar",
+            "MaxLength": 100,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE025]",
+            "Order": 9,
+            "Name": "VALUE025",
+            "UserType": "time",
+            "MaxLength": 5,
+            "Precision": 16,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE030]",
+            "Order": 10,
+            "Name": "VALUE030",
+            "UserType": "varbinary",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_3].[VALUE032]",
+            "Order": 11,
+            "Name": "VALUE032",
+            "UserType": "varchar",
+            "MaxLength": -1,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[SQLTYPE_TABLE_4]",
+        "ObjectId": 997578592,
+        "Schema": "dbo",
+        "Name": "SQLTYPE_TABLE_4",
+        "Created": "2019-06-18T15:27:43.333+02:00",
+        "Modified": "2019-06-18T15:27:43.333+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_4].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_4].[VAL]",
+            "Order": 2,
+            "Name": "VAL",
+            "UserType": "datetime",
+            "MaxLength": 8,
+            "Precision": 23,
+            "Scale": 3,
+            "Computed": true,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[SQLTYPE_TABLE_4].[VAL2]",
+            "Order": 3,
+            "Name": "VAL2",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_0]",
+        "ObjectId": 1029578706,
+        "Schema": "dbo",
+        "Name": "TABLE_0",
+        "Created": "2019-06-18T15:27:43.34+02:00",
+        "Modified": "2019-06-18T15:27:43.533+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_0].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_0].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "uniqueidentifier",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_0].[FK_TABLE_00]",
+            "Order": 3,
+            "Name": "FK_TABLE_00",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_0].[FK_TABLE_01]",
+            "Order": 4,
+            "Name": "FK_TABLE_01",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_0].[FK_TABLE_02]",
+            "Order": 5,
+            "Name": "FK_TABLE_02",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_00]",
+        "ObjectId": 1061578820,
+        "Schema": "dbo",
+        "Name": "TABLE_00",
+        "Created": "2019-06-18T15:27:43.347+02:00",
+        "Modified": "2019-06-18T15:27:43.553+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_00].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_00].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "money",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 4,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_00].[FK_TABLE_000]",
+            "Order": 3,
+            "Name": "FK_TABLE_000",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_00].[FK_TABLE_001]",
+            "Order": 4,
+            "Name": "FK_TABLE_001",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_000]",
+        "ObjectId": 1093578934,
+        "Schema": "dbo",
+        "Name": "TABLE_000",
+        "Created": "2019-06-18T15:27:43.353+02:00",
+        "Modified": "2019-06-18T15:27:43.543+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_000].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_000].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "nvarchar",
+            "MaxLength": 16,
+            "Precision": 0,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_001]",
+        "ObjectId": 1125579048,
+        "Schema": "dbo",
+        "Name": "TABLE_001",
+        "Created": "2019-06-18T15:27:43.36+02:00",
+        "Modified": "2019-06-18T15:27:43.553+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_001].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_001].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "datetime2",
+            "MaxLength": 8,
+            "Precision": 27,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_01]",
+        "ObjectId": 1157579162,
+        "Schema": "dbo",
+        "Name": "TABLE_01",
+        "Created": "2019-06-18T15:27:43.427+02:00",
+        "Modified": "2019-06-18T15:27:43.573+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_01].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_01].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "datetimeoffset",
+            "MaxLength": 10,
+            "Precision": 34,
+            "Scale": 7,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_01].[FK_TABLE_010]",
+            "Order": 3,
+            "Name": "FK_TABLE_010",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_01].[FK_TABLE_011]",
+            "Order": 4,
+            "Name": "FK_TABLE_011",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_010]",
+        "ObjectId": 1189579276,
+        "Schema": "dbo",
+        "Name": "TABLE_010",
+        "Created": "2019-06-18T15:27:43.433+02:00",
+        "Modified": "2019-06-18T15:27:43.563+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_010].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_010].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_011]",
+        "ObjectId": 1221579390,
+        "Schema": "dbo",
+        "Name": "TABLE_011",
+        "Created": "2019-06-18T15:27:43.443+02:00",
+        "Modified": "2019-06-18T15:27:43.573+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_011].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_011].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "bit",
+            "MaxLength": 1,
+            "Precision": 1,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_02]",
+        "ObjectId": 1253579504,
+        "Schema": "dbo",
+        "Name": "TABLE_02",
+        "Created": "2019-06-18T15:27:43.45+02:00",
+        "Modified": "2019-06-18T15:27:43.607+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_02].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_02].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_02].[FK_TABLE_020]",
+            "Order": 3,
+            "Name": "FK_TABLE_020",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          },
+          {
+            "$id": "[dbo].[TABLE_02].[FK_TABLE_021]",
+            "Order": 4,
+            "Name": "FK_TABLE_021",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_020]",
+        "ObjectId": 1285579618,
+        "Schema": "dbo",
+        "Name": "TABLE_020",
+        "Created": "2019-06-18T15:27:43.48+02:00",
+        "Modified": "2019-06-18T15:27:43.597+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_020].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_020].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "real",
+            "MaxLength": 4,
+            "Precision": 24,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_021]",
+        "ObjectId": 1317579732,
+        "Schema": "dbo",
+        "Name": "TABLE_021",
+        "Created": "2019-06-18T15:27:43.487+02:00",
+        "Modified": "2019-06-18T15:27:43.61+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_021].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "bigint",
+            "MaxLength": 8,
+            "Precision": 19,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_021].[Value1]",
+            "Order": 2,
+            "Name": "Value1",
+            "UserType": "decimal",
+            "MaxLength": 9,
+            "Precision": 18,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": true
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_SOURCE]",
+        "ObjectId": 1349579846,
+        "Schema": "dbo",
+        "Name": "TABLE_SOURCE",
+        "Created": "2019-06-18T15:27:43.49+02:00",
+        "Modified": "2019-06-18T15:27:43.62+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_SOURCE].[RECID]",
+            "Order": 1,
+            "Name": "RECID",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_SOURCE].[TRECID1]",
+            "Order": 2,
+            "Name": "TRECID1",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[TABLE_SOURCE].[TRECID2]",
+            "Order": 3,
+            "Name": "TRECID2",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[TABLE_SOURCE].[VALUE]",
+            "Order": 4,
+            "Name": "VALUE",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          }
+        ]
+      },
+      {
+        "$id": "[dbo].[TABLE_TARGET]",
+        "ObjectId": 1381579960,
+        "Schema": "dbo",
+        "Name": "TABLE_TARGET",
+        "Created": "2019-06-18T15:27:43.497+02:00",
+        "Modified": "2019-06-18T15:27:43.62+02:00",
+        "ColumnDescriptions": [
+          {
+            "$id": "[dbo].[TABLE_TARGET].[RECID1]",
+            "Order": 1,
+            "Name": "RECID1",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false,
+            "Identity": {
+              "SeedValue": 1,
+              "IncrementValue": 1
+            }
+          },
+          {
+            "$id": "[dbo].[TABLE_TARGET].[RECID2]",
+            "Order": 2,
+            "Name": "RECID2",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          },
+          {
+            "$id": "[dbo].[TABLE_TARGET].[VALUE]",
+            "Order": 3,
+            "Name": "VALUE",
+            "UserType": "int",
+            "MaxLength": 4,
+            "Precision": 10,
+            "Scale": 0,
+            "Computed": false,
+            "Nullable": false
+          }
+        ]
+      }
+    ],
+    "ForeignKeyDescriptions": [
+      {
+        "Name": "FK_TABLE_0_TABLE_00",
+        "Created": "2019-06-18T15:27:43.507+02:00",
+        "Modified": "2019-06-18T15:27:43.507+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_0].[FK_TABLE_00]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_00].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_0_TABLE_01",
+        "Created": "2019-06-18T15:27:43.52+02:00",
+        "Modified": "2019-06-18T15:27:43.52+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_0].[FK_TABLE_01]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_01].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_0_TABLE_02",
+        "Created": "2019-06-18T15:27:43.533+02:00",
+        "Modified": "2019-06-18T15:27:43.533+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_0].[FK_TABLE_02]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_02].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_00_TABLE_000",
+        "Created": "2019-06-18T15:27:43.543+02:00",
+        "Modified": "2019-06-18T15:27:43.543+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_00].[FK_TABLE_000]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_000].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_00_TABLE_001",
+        "Created": "2019-06-18T15:27:43.553+02:00",
+        "Modified": "2019-06-18T15:27:43.553+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_00].[FK_TABLE_001]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_001].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_01_TABLE_010",
+        "Created": "2019-06-18T15:27:43.563+02:00",
+        "Modified": "2019-06-18T15:27:43.563+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_01].[FK_TABLE_010]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_010].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_01_TABLE_011",
+        "Created": "2019-06-18T15:27:43.573+02:00",
+        "Modified": "2019-06-18T15:27:43.573+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_01].[FK_TABLE_011]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_011].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_02_TABLE_020",
+        "Created": "2019-06-18T15:27:43.59+02:00",
+        "Modified": "2019-06-18T15:27:43.59+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_02].[FK_TABLE_020]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_020].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_02_TABLE_021",
+        "Created": "2019-06-18T15:27:43.607+02:00",
+        "Modified": "2019-06-18T15:27:43.607+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_02].[FK_TABLE_021]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_021].[RECID]"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FK_TABLE_SOURCE_TABLE_TARGET",
+        "Created": "2019-06-18T15:27:43.62+02:00",
+        "Modified": "2019-06-18T15:27:43.62+02:00",
+        "ColumnRelationshipDescriptions": [
+          {
+            "Order": 1,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_SOURCE].[TRECID1]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_TARGET].[RECID1]"
+            }
+          },
+          {
+            "Order": 2,
+            "Parent": {
+              "$ref": "[dbo].[TABLE_SOURCE].[TRECID2]"
+            },
+            "Referenced": {
+              "$ref": "[dbo].[TABLE_TARGET].[RECID2]"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "Prescriptor": {
+    "ValueFactoryPrescriptions": [
+      {
+        "$id": "int-incremental0",
+        "Factory": "int-incremental",
+        "Configuration": {
+          "MinValue": 1,
+          "MaxValue": 2147483647,
+          "Increment": 1
+        }
+      },
+      {
+        "$id": "long-random0",
+        "Factory": "long-random",
+        "Configuration": {
+          "MinValue": -10000,
+          "MaxValue": 10000
+        }
+      },
+      {
+        "$id": "binary0",
+        "Factory": "binary",
+        "Configuration": {
+          "minLength": 50,
+          "maxLength": 50
+        }
+      },
+      {
+        "$id": "bool-constant0",
+        "Factory": "bool-constant",
+        "Configuration": {
+          "Constant": false
+        }
+      },
+      {
+        "$id": "string-random0",
+        "Factory": "string-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{10}"
+        }
+      },
+      {
+        "$id": "datetime-random0",
+        "Factory": "datetime-random",
+        "Configuration": {
+          "MinValue": "2009-06-20T15:27:50.5044543+02:00",
+          "MaxValue": "2029-06-15T15:27:50.5040392+02:00"
+        }
+      },
+      {
+        "$id": "datetimeoffset-random0",
+        "Factory": "datetimeoffset-random",
+        "Configuration": {
+          "MinValue": "1919-07-13T15:27:50.5044703+02:00",
+          "MaxValue": "2119-05-25T15:27:50.5044627+02:00"
+        }
+      },
+      {
+        "$id": "decimal-random0",
+        "Factory": "decimal-random",
+        "Configuration": {
+          "MinValue": -100000.0,
+          "MaxValue": 100000.0
+        }
+      },
+      {
+        "$id": "double-random0",
+        "Factory": "double-random",
+        "Configuration": {
+          "MinValue": -10000.0,
+          "MaxValue": 10000.0
+        }
+      },
+      {
+        "$id": "sqlgeography0",
+        "Factory": "sqlgeography",
+        "Configuration": {
+          "minLatitude": -10.0,
+          "maxLatitude": 10.0,
+          "minLongitude": -10.0,
+          "maxLongitude": 10.0,
+          "srid": 4289
+        }
+      },
+      {
+        "$id": "sqlgeometry0",
+        "Factory": "sqlgeometry",
+        "Configuration": {
+          "minX": -10.0,
+          "maxX": 10.0,
+          "minY": -10.0,
+          "maxY": 10.0,
+          "srid": 0
+        }
+      },
+      {
+        "$id": "sqlhierarchyid0",
+        "Factory": "sqlhierarchyid",
+        "Configuration": {}
+      },
+      {
+        "$id": "binary1",
+        "Factory": "binary",
+        "Configuration": {
+          "minLength": 16,
+          "maxLength": 16
+        }
+      },
+      {
+        "$id": "int-random0",
+        "Factory": "int-random",
+        "Configuration": {
+          "MinValue": -1000,
+          "MaxValue": 1000
+        }
+      },
+      {
+        "$id": "string-random1",
+        "Factory": "string-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{8}"
+        }
+      },
+      {
+        "$id": "string-random2",
+        "Factory": "string-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{50}"
+        }
+      },
+      {
+        "$id": "char-random0",
+        "Factory": "char-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{1}"
+        }
+      },
+      {
+        "$id": "float-random0",
+        "Factory": "float-random",
+        "Configuration": {
+          "MinValue": -1000.0,
+          "MaxValue": 1000.0
+        }
+      },
+      {
+        "$id": "string-random3",
+        "Factory": "string-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{16}"
+        }
+      },
+      {
+        "$id": "timespan-random0",
+        "Factory": "timespan-random",
+        "Configuration": {
+          "MinValue": "00:00:00",
+          "MaxValue": "1.00:00:00"
+        }
+      },
+      {
+        "$id": "byte-random0",
+        "Factory": "byte-random",
+        "Configuration": {
+          "MinValue": 0,
+          "MaxValue": 255
+        }
+      },
+      {
+        "$id": "guid0",
+        "Factory": "guid",
+        "Configuration": {}
+      },
+      {
+        "$id": "binary2",
+        "Factory": "binary",
+        "Configuration": {
+          "minLength": 32,
+          "maxLength": 32
+        }
+      },
+      {
+        "$id": "string-random4",
+        "Factory": "string-random",
+        "Configuration": {
+          "Regex": "[a-zA-Z0-9]{32}"
+        }
+      },
+      {
+        "$id": "long-incremental0",
+        "Factory": "long-incremental",
+        "Configuration": {
+          "MinValue": 1,
+          "MaxValue": 9223372036854775807,
+          "Increment": 1
+        }
+      }
+    ],
+    "TablePrescriptions": [
+      {
+        "$ref": "[dbo].[SQLTYPE_TABLE_1]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "VALUE001",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE002",
+            "Prescription": "binary0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE003",
+            "Prescription": "bool-constant0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE004",
+            "Prescription": "string-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE005",
+            "Prescription": "datetime-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE006",
+            "Prescription": "datetime-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE007",
+            "Prescription": "datetime-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE008",
+            "Prescription": "datetimeoffset-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE009",
+            "Prescription": "decimal-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE010",
+            "Prescription": "double-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE011",
+            "Prescription": "sqlgeography0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE012",
+            "Prescription": "sqlgeometry0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE013",
+            "Prescription": "sqlhierarchyid0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE014",
+            "Prescription": "binary1",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE015",
+            "Prescription": "int-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE016",
+            "Prescription": "decimal-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE017",
+            "Prescription": "string-random1",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE018",
+            "Prescription": "decimal-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE019",
+            "Prescription": "string-random2",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE020",
+            "Prescription": "char-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE021",
+            "Prescription": "float-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE022",
+            "Prescription": "datetime-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE023",
+            "Prescription": "int-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE024",
+            "Prescription": "string-random3",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE025",
+            "Prescription": "timespan-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE027",
+            "Prescription": "byte-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE028",
+            "Prescription": "guid0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE029",
+            "Prescription": "binary0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE030",
+            "Prescription": "binary2",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE031",
+            "Prescription": "string-random2",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE032",
+            "Prescription": "char-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "VALUE033",
+            "Prescription": "string-random4",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[SQLTYPE_TABLE_2]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "VALUE001",
+            "Prescription": "long-random0"
+          },
+          {
+            "Column": "VALUE002",
+            "Prescription": "binary0"
+          },
+          {
+            "Column": "VALUE003",
+            "Prescription": "bool-constant0"
+          },
+          {
+            "Column": "VALUE004",
+            "Prescription": "string-random0"
+          },
+          {
+            "Column": "VALUE005",
+            "Prescription": "datetime-random0"
+          },
+          {
+            "Column": "VALUE006",
+            "Prescription": "datetime-random0"
+          },
+          {
+            "Column": "VALUE007",
+            "Prescription": "datetime-random0"
+          },
+          {
+            "Column": "VALUE008",
+            "Prescription": "datetimeoffset-random0"
+          },
+          {
+            "Column": "VALUE009",
+            "Prescription": "decimal-random0"
+          },
+          {
+            "Column": "VALUE010",
+            "Prescription": "double-random0"
+          },
+          {
+            "Column": "VALUE011",
+            "Prescription": "sqlgeography0"
+          },
+          {
+            "Column": "VALUE012",
+            "Prescription": "sqlgeometry0"
+          },
+          {
+            "Column": "VALUE013",
+            "Prescription": "sqlhierarchyid0"
+          },
+          {
+            "Column": "VALUE014",
+            "Prescription": "binary1"
+          },
+          {
+            "Column": "VALUE015",
+            "Prescription": "int-random0"
+          },
+          {
+            "Column": "VALUE016",
+            "Prescription": "decimal-random0"
+          },
+          {
+            "Column": "VALUE017",
+            "Prescription": "string-random1"
+          },
+          {
+            "Column": "VALUE018",
+            "Prescription": "decimal-random0"
+          },
+          {
+            "Column": "VALUE019",
+            "Prescription": "string-random2"
+          },
+          {
+            "Column": "VALUE020",
+            "Prescription": "char-random0"
+          },
+          {
+            "Column": "VALUE021",
+            "Prescription": "float-random0"
+          },
+          {
+            "Column": "VALUE022",
+            "Prescription": "datetime-random0"
+          },
+          {
+            "Column": "VALUE023",
+            "Prescription": "int-random0"
+          },
+          {
+            "Column": "VALUE024",
+            "Prescription": "string-random3"
+          },
+          {
+            "Column": "VALUE025",
+            "Prescription": "timespan-random0"
+          },
+          {
+            "Column": "VALUE027",
+            "Prescription": "byte-random0"
+          },
+          {
+            "Column": "VALUE028",
+            "Prescription": "guid0"
+          },
+          {
+            "Column": "VALUE029",
+            "Prescription": "binary0"
+          },
+          {
+            "Column": "VALUE030",
+            "Prescription": "binary2"
+          },
+          {
+            "Column": "VALUE031",
+            "Prescription": "string-random2"
+          },
+          {
+            "Column": "VALUE032",
+            "Prescription": "char-random0"
+          },
+          {
+            "Column": "VALUE033",
+            "Prescription": "string-random4"
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[SQLTYPE_TABLE_3]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "VALUE002",
+            "Prescription": "binary0"
+          },
+          {
+            "Column": "VALUE004",
+            "Prescription": "string-random0"
+          },
+          {
+            "Column": "VALUE007",
+            "Prescription": "datetime-random0"
+          },
+          {
+            "Column": "VALUE008",
+            "Prescription": "datetimeoffset-random0"
+          },
+          {
+            "Column": "VALUE009",
+            "Prescription": "decimal-random0"
+          },
+          {
+            "Column": "VALUE018",
+            "Prescription": "decimal-random0"
+          },
+          {
+            "Column": "VALUE019",
+            "Prescription": "string-random2"
+          },
+          {
+            "Column": "VALUE025",
+            "Prescription": "timespan-random0"
+          },
+          {
+            "Column": "VALUE030",
+            "Prescription": "binary2"
+          },
+          {
+            "Column": "VALUE032",
+            "Prescription": "char-random0"
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[SQLTYPE_TABLE_4]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "VAL2",
+            "Prescription": "int-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_000]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "string-random1",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_001]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "datetime-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_00]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "decimal-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_000",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_001",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_010]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "int-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_011]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "bool-constant0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_01]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "datetimeoffset-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_010",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_011",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_020]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "float-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_021]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "decimal-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_02]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_020",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_021",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_0]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "long-incremental0"
+          },
+          {
+            "Column": "Value1",
+            "Prescription": "guid0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_00",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_01",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          },
+          {
+            "Column": "FK_TABLE_02",
+            "Prescription": "long-random0",
+            "NULL": 0.25
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_TARGET]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID1",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "RECID2",
+            "Prescription": "int-random0"
+          },
+          {
+            "Column": "VALUE",
+            "Prescription": "int-random0"
+          }
+        ]
+      },
+      {
+        "$ref": "[dbo].[TABLE_SOURCE]",
+        "Rows": 100,
+        "ColumnPrescriptions": [
+          {
+            "Column": "RECID",
+            "Prescription": "int-incremental0"
+          },
+          {
+            "Column": "TRECID1",
+            "Prescription": "int-random0"
+          },
+          {
+            "Column": "TRECID2",
+            "Prescription": "int-random0"
+          },
+          {
+            "Column": "VALUE",
+            "Prescription": "int-random0"
+          }
+        ]
+      }
+    ]
+  }
+}
