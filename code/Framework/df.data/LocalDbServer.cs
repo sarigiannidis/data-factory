@@ -54,7 +54,6 @@ namespace Df.Data
             var sb = _Instance.GetInstanceInfo().CreateConnectionStringBuilder();
             sb.InitialCatalog = DatabaseName;
             sb.ConnectTimeout = 180;
-            sb.MaxPoolSize = Environment.ProcessorCount * 4; // @TODO: This seems (is) arbitrary.
             sb.Pooling = true;
 
             return new SqlConnection(sb.ToString());
