@@ -1,8 +1,11 @@
+<!-- 
+  See     : https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-roslyncodetaskfactory?view=vs-2019
+-->
 <Project ToolsVersion="15.0" 
   xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <!-- Example:
-    <ReplaceFileText InputFilename="$(OutputPath)TEST.txt" OutputFilename="$(OutputPath)TEST2.txt" MatchExpression="Hello" ReplacementText="Goodbye" />
+  <!-- 
+  Example : <ReplaceFileText InputFilename="$(OutputPath)TEST.txt" OutputFilename="$(OutputPath)TEST2.txt" MatchExpression="Hello" ReplacementText="Goodbye" />
   -->
   <UsingTask TaskName="ReplaceFileText" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
