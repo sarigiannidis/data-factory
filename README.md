@@ -17,7 +17,7 @@ The binaries are only published for win-x64. Please check the [releases](https:/
 
 To create a new project file given a connection string:
 ```batchfile
-df new --name demo.json -c "Data Source=(localdb)\demo_server;Initial Catalog=demo_db;"
+df new --name demo.json -c "Data Source=(localdb)\DF_SERVER;Initial Catalog=DF_TEST_DB;"
 ```
 
 To auto-configure your project file:
