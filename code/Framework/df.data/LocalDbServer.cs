@@ -48,7 +48,6 @@ namespace Df.Data
             _ = createDbComand.ExecuteNonQuery();
         }
 
-        // @TODO: Make this protected.
         public override SqlConnection CreateConnection()
         {
             var sb = _Instance.GetInstanceInfo().CreateConnectionStringBuilder();
