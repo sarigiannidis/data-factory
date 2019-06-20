@@ -2,6 +2,7 @@
 
   <Import Project="$(PROPSDIR)mssql.props" />
   <Import Project="$(PROPSDIR)artifacts_read.props" />
+  <Import Project="$(PROPSDIR)test_settings.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Extensibility.Tests</RootNamespace>
@@ -19,12 +20,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(V_MS_EX)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

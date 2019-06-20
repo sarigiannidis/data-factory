@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="$(PROPSDIR)test_settings.props" />
+
   <PropertyGroup>
     <RootNamespace>Df.Data.Tests</RootNamespace>
   </PropertyGroup>
@@ -13,12 +15,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
     <PackageReference Include="System.Text.Json" Version="$(V_MS_STJ)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,9 @@
+<Project>
+
+  <ItemGroup>
+    <Content Include="$(TESTDATADIR)\settings.json" Link="settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

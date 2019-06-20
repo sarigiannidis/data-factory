@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="$(PROPSDIR)artifacts_read.props" />
+  <Import Project="$(PROPSDIR)test_settings.props" />
 
   <PropertyGroup>
     <RootNamespace>Df.Io.Tests</RootNamespace>
@@ -18,12 +19,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(V_MS_EX)" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="$(V_MS_EX)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿{
+{
   "ConnectionStrings": {
     "TestDb": "Data Source=(localdb)\\DF_SERVER;Initial Catalog=DF_TEST_DB;"
   },
