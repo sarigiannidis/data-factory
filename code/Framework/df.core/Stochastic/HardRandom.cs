@@ -10,63 +10,71 @@ namespace Df.Stochastic
     using System;
     using System.Diagnostics;
     using System.Security.Cryptography;
-    using System.Threading;
 
     public sealed class HardRandom
-        : IRandom,
-        IDisposable
+           : IRandom,
+           IDisposable
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private static readonly object _Sync = new object();
-
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private static int _Count;
+        private static readonly object _SyncObject = new object();
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private static RandomNumberGenerator _RandomNumberGenerator;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private static volatile int _ReferenceCount;
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool _Disposed;
 
-        public void Dispose() => Dispose(true);
-
-        public HardRandom() => _ = Interlocked.Increment(ref _Count);
-
-        private static RandomNumberGenerator GetProvider()
+        public HardRandom()
         {
-            if (_RandomNumberGenerator is null)
+            lock (_SyncObject)
             {
-                lock (_Sync)
-                {
-                    _RandomNumberGenerator ??= new RNGCryptoServiceProvider();
-                }
+                _ReferenceCount++;
             }
-
-            return _RandomNumberGenerator;
         }
 
-        public void NextBytes(byte[] bytes) => GetProvider().GetBytes(bytes);
-
-        private void Dispose(bool disposing)
+        public void Dispose()
         {
             if (_Disposed)
             {
                 return;
             }
 
-            if (disposing && Interlocked.Decrement(ref _Count) == 0)
+            lock (_SyncObject)
             {
-                lock (_Sync)
+                if (_Disposed)
                 {
-                    if (_Count == 0)
+                    return;
+                }
+
+                if (--_ReferenceCount == 0)
+                {
+                    _RandomNumberGenerator?.Dispose();
+                    _RandomNumberGenerator = null;
+                }
+
+                _Disposed = true;
+            }
+        }
+
+        public void NextBytes(byte[] bytes) => GetProvider().GetBytes(bytes);
+
+        private static RandomNumberGenerator GetProvider()
+        {
+            if (_RandomNumberGenerator is null)
+            {
+                lock (_SyncObject)
+                {
+                    if (_RandomNumberGenerator is null && _ReferenceCount > 0)
                     {
-                        _RandomNumberGenerator?.Dispose();
-                        _RandomNumberGenerator = null;
+                        _RandomNumberGenerator = new RNGCryptoServiceProvider();
                     }
                 }
             }
 
-            _Disposed = true;
+            return _RandomNumberGenerator;
         }
     }
 }
