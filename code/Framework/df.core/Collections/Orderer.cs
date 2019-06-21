@@ -32,10 +32,10 @@ namespace Df.Collections
                 _Nodes = Check.NotNull(nameof(nodes), nodes).ToList();
             }
 
-            internal IOrderedEnumerable<(int Index, TNode Node)> Order()
+            internal unsafe IOrderedEnumerable<(int Index, TNode Node)> Order()
             {
-                var indices = new int[_Nodes.Count];
-                for (var i = 0; i < indices.Length; i++)
+                var indices = stackalloc int[_Nodes.Count];
+                for (var i = 0; i < _Nodes.Count; i++)
                 {
                     indices[i] = Index(_Nodes[i], 0, _Nodes[i]);
                 }

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Df</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>

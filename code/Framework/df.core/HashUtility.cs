@@ -23,11 +23,12 @@ namespace Df
 
         public static string ComputeSHA512Hash(Stream stream) => ComputeHash(stream, SHA512.Create);
 
-        private static string ComputeHash(Stream stream, Func<HashAlgorithm> hashAlgorithmFactory)
+        private static unsafe string ComputeHash(Stream stream, Func<HashAlgorithm> hashAlgorithmFactory)
         {
             using var hashAlgorithm = hashAlgorithmFactory();
             var bytes = hashAlgorithm.ComputeHash(stream);
-            var chars = new char[bytes.Length * 2];
+            var length = bytes.Length * 2;
+            var chars = stackalloc char[length];
             for (var i = 0; i < bytes.Length; i++)
             {
                 var b = bytes[i];
@@ -35,7 +36,7 @@ namespace Df
                 chars[(i * 2) + 1] = GetHexValue(b % 16);
             }
 
-            return new string(chars, 0, chars.Length);
+            return new string(chars, 0, length);
         }
 
         private static char GetHexValue(int i) => (char)(i < 10 ? i + 48 : i - 10 + 65);
