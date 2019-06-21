@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\df.stochastic\df.stochastic.csproj" />
+    <ProjectReference Include="$(FRAMEWORKDIR)df.stochastic\df.stochastic.csproj" />
   </ItemGroup>
 
 </Project>
