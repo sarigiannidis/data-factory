@@ -7,10 +7,7 @@
 
 namespace Df.Numeric.Tests
 {
-    using Df.Stochastic;
-    using System;
     using System.Collections.Generic;
-    using Xunit;
 
     public class Int64WeightedValueTest
         : WeightedValueTest<long>

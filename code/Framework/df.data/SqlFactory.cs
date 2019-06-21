@@ -7,8 +7,6 @@
 
 namespace Df.Data
 {
-    using System.Data.SqlClient;
-
     internal sealed class SqlFactory
         : ISqlFactory
     {
