@@ -20,7 +20,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<DateTime>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() => new RangeFactoryConfiguration<DateTime>(DATETIME_MIN, DATETIME_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<DateTime>(DATETIME_MIN, DATETIME_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -29,7 +30,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<DateTimeOffset>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() => new RangeFactoryConfiguration<DateTimeOffset>(DATETIMEOFFSET_MIN, DATETIMEOFFSET_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<DateTimeOffset>(DATETIMEOFFSET_MIN, DATETIMEOFFSET_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -38,7 +40,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<TimeSpan>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() => new RangeFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -47,7 +50,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<byte>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<byte>(BYTE_MIN, BYTE_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<byte>(BYTE_MIN, BYTE_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -56,7 +60,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<decimal>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<decimal>(DECIMAL_MIN, DECIMAL_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<decimal>(DECIMAL_MIN, DECIMAL_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -65,7 +70,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<double>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<double>(DOUBLE_MIN, DOUBLE_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<double>(DOUBLE_MIN, DOUBLE_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -74,7 +80,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<float>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<float>(FLOAT_MIN, FLOAT_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<float>(FLOAT_MIN, FLOAT_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -83,7 +90,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<int>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<int>(INT_MIN, INT_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<int>(INT_MIN, INT_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -92,7 +100,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<long>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<long>(LONG_MIN, LONG_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<long>(LONG_MIN, LONG_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -101,7 +110,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<sbyte>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<sbyte>(SBYTE_MIN, SBYTE_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<sbyte>(SBYTE_MIN, SBYTE_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -110,7 +120,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<short>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<short>(SHORT_MIN, SHORT_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<short>(SHORT_MIN, SHORT_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -119,7 +130,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<uint>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<uint>(UINT_MIN, UINT_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<uint>(UINT_MIN, UINT_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -128,7 +140,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<ulong>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<ulong>(ULONG_MIN, ULONG_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<ulong>(ULONG_MIN, ULONG_MAX);
     }
 
     [GeneratedCode("df", "")]
@@ -137,7 +150,8 @@ namespace Df.ValueFactories
         : RandomScalarFactory<ushort>,
         IConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new RangeFactoryConfiguration<ushort>(USHORT_MIN, USHORT_MAX);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new RangeFactoryConfiguration<ushort>(USHORT_MIN, USHORT_MAX);
     }
 }
 #pragma warning restore SA1402 // File may only contain a single type

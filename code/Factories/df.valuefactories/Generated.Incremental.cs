@@ -21,7 +21,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<TimeSpan>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX, TIMESPAN_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<TimeSpan>(TIMESPAN_MIN, TIMESPAN_MAX, TIMESPAN_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -44,7 +45,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<byte>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<byte>(BYTE_MIN, BYTE_MAX, BYTE_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<byte>(BYTE_MIN, BYTE_MAX, BYTE_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -67,7 +69,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<decimal>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<decimal>(DECIMAL_MIN, DECIMAL_MAX, DECIMAL_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<decimal>(DECIMAL_MIN, DECIMAL_MAX, DECIMAL_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -90,7 +93,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<double>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<double>(DOUBLE_MIN, DOUBLE_MAX, DOUBLE_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<double>(DOUBLE_MIN, DOUBLE_MAX, DOUBLE_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -113,7 +117,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<float>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<float>(FLOAT_MIN, FLOAT_MAX, FLOAT_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<float>(FLOAT_MIN, FLOAT_MAX, FLOAT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -136,7 +141,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<int>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<int>(INT_MIN, INT_MAX, INT_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<int>(INT_MIN, INT_MAX, INT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -159,7 +165,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<long>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<long>(LONG_MIN, LONG_MAX, LONG_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<long>(LONG_MIN, LONG_MAX, LONG_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -182,7 +189,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<sbyte>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<sbyte>(SBYTE_MIN, SBYTE_MAX, SBYTE_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<sbyte>(SBYTE_MIN, SBYTE_MAX, SBYTE_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -205,7 +213,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<short>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<short>(SHORT_MIN, SHORT_MAX, SHORT_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<short>(SHORT_MIN, SHORT_MAX, SHORT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -228,7 +237,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<uint>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<uint>(UINT_MIN, UINT_MAX, UINT_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<uint>(UINT_MIN, UINT_MAX, UINT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -251,7 +261,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<ulong>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<ulong>(ULONG_MIN, ULONG_MAX, ULONG_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<ulong>(ULONG_MIN, ULONG_MAX, ULONG_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
@@ -274,7 +285,8 @@ namespace Df.ValueFactories
         : IncrementalScalarFactory<ushort>,
         IConstrainableConfigurator
     {
-        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>new ScalarFactoryConfiguration<ushort>(USHORT_MIN, USHORT_MAX, USHORT_STEP);
+        IValueFactoryConfiguration IConfigurator.CreateConfiguration() =>
+            new ScalarFactoryConfiguration<ushort>(USHORT_MIN, USHORT_MAX, USHORT_STEP);
 
         IValueFactoryConfiguration IConstrainableConfigurator.CreateConfiguration(ConfiguratorConstraints configuratorConstraints)
         {
