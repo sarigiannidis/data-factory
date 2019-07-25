@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup Label="Analysis packages">
-    <AdditionalFiles Include="$(ANALYSISDIR)\stylecop.json" Link="stylecop.json" />
-    <AdditionalFiles Include="$(ANALYSISDIR)\df.ruleset" Link="df.ruleset" />
+    <AdditionalFiles Include="$(ANALYSISDIR)\stylecop.json" Link="stylecop.json" Visible="false" />
+    <AdditionalFiles Include="$(ANALYSISDIR)\df.ruleset" Link="df.ruleset" Visible="false" />
   </ItemGroup>
 
   <ItemGroup Label="Analysis packages">
