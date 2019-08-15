@@ -538,7 +538,7 @@ namespace Df.Stochastic.Fare
                     throw new ArgumentException("expected '\"' at position " + _Pos);
                 }
 
-                return MakeString(_B[start.._Pos - 1]);
+                return MakeString(_B.Substring(start, _Pos - 1 - start));
             }
 
             if (Match('('))
@@ -575,7 +575,7 @@ namespace Df.Stochastic.Fare
                     throw new ArgumentException("expected '>' at position " + _Pos);
                 }
 
-                var str = _B[start.._Pos - 1];
+                var str = _B.Substring(start, _Pos - 1 - start);
                 var i = str.IndexOf('-');
                 if (i == -1)
                 {
@@ -599,8 +599,8 @@ namespace Df.Stochastic.Fare
                         throw new FormatException();
                     }
 
-                    var smin = str[..i];
-                    var smax = str[i + 1..];
+                    var smin = str.Substring(0, i - 0);
+                    var smax = str.Substring(i + 1, str.Length - (i + 1));
                     var imin = int.Parse(smin);
                     var imax = int.Parse(smax);
                     var numdigits = smin.Length == smax.Length ? smin.Length : 0;

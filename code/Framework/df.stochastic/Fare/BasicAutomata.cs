@@ -342,7 +342,7 @@ namespace Df.Stochastic.Fare
                 for (var j = i; j >= 1; j--)
                 {
                     var d = s[j - 1];
-                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s[i - j + 1..i]))
+                    if (!done.Contains(d) && s.Substring(0, j - 1).Equals(s.Substring(i - j + 1, i - (i - j + 1))))
                     {
                         states[i].Transitions.Add(new Transition(d, states[j]));
                         _ = done.Add(d);
