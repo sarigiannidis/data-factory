@@ -66,4 +66,4 @@ A good developer always reviews their licenses.
 
 ## Contributing
 
-If you would like to contribute, submit a bug, or suggest a feature, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+If you would like to contribute, submit a bug, or suggest a feature, please see [CONTRIBUTING.md](CONTRIBUTING.md)
