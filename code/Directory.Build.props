@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Deterministic>true</Deterministic>
     <LangVersion>8.0</LangVersion>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <NoWarn>CA2227</NoWarn>
   </PropertyGroup>
 

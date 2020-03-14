@@ -115,7 +115,7 @@ namespace Df.Extensibility
                 result = (T)(value ?? default(T));
             }
 
-            if (result == default)
+            if (EqualityComparer<T>.Default.Equals(result, default))
             {
                 Logger.LogWarning(Messages.LOG_WRN_MISSING_ARG, key);
             }

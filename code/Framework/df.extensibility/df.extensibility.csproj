@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Df.Extensibility</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
